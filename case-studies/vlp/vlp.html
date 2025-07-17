@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VLP Case Study - Tushar Roy</title>
+    <meta name="description" content="How trust, small wins, and design-led thinking helped transform a 20-year-old internal tool into a commercial SaaS product generating over $1M annually.">
+    <meta name="keywords" content="VLP, VMware Learning Platform, Cloud Labs, UX Case Study, Product Design, Enterprise UX">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="VLP Case Study - Delivering Cloud-based Labs at Scale">
+    <meta property="og:description" content="How trust and design-led thinking transformed an internal tool into a $1M+ SaaS product.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://tusharroy.com/case-studies/vlp">
+    <meta property="og:image" content="../images/case-study-vlp2.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@300;600&display=swap" rel="stylesheet">
+
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+
+    <style>
+        :root {
+            --primary: #1F2A44;
+            --primary-high: #121929;
+            --accent: #E6B400;
+            --accent-high: #F7C948;
+            --highlight: #2196C9;
+            --support1: #E5E8EC;
+            --support2: #FFFFFF;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: white;
+            line-height: 1.6;
+        }
+
+        .creative-text {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--highlight);
+            font-size: 1.2em;
+            line-height: 1;
+            letter-spacing: -0.1rem;
+            display: inline;
+            vertical-align: baseline;
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .text-accent-high {
+            color: var(--accent-high);
+            font-weight: 500;
+        }
+
+        .text-high-contrast {
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-medium-contrast {
+            color: #e5e7eb;
+        }
+
+        .section-bg1 {
+            background-color: var(--primary-high);
+        }
+
+        .section-bg2 {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #2a3a5c 75%, #1F2A44 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-bg2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(33, 150, 201, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 80%, rgba(230, 180, 0, 0.05) 0%, transparent 50%), radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .case-hero {
+            background: linear-gradient(135deg, var(--primary-high) 0%, var(--primary) 50%, #2a3a5c 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .case-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 30%, rgba(33, 150, 201, 0.15) 0%, transparent 60%), radial-gradient(circle at 70% 70%, rgba(230, 180, 0, 0.08) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-button {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2rem;
+            border-radius: 0;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px) translateX(8px);
+            box-shadow: -8px 8px 0 var(--accent);
+        }
+
+        .cta-button:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+
+        .cta-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .highlight-bar {
+            position: relative;
+            padding-left: 20px;
+            margin: 24px 0;
+        }
+
+        .highlight-bar::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .stat-highlight {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-high) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 600;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .metric-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .metric-card:hover::before {
+            left: 100%;
+        }
+
+        .metric-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(230, 180, 0, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(230, 180, 0, 0.1);
+        }
+
+        .section-header {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            color: var(--accent-high);
+        }
+
+        .case-image {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 2rem 0;
+        }
+
+        .case-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .case-image:hover img {
+            transform: scale(1.02);
+        }
+
+        .pill-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--accent-high);
+            margin: 0.25rem;
+        }
+
+        .quote-block {
+            background: rgba(230, 180, 0, 0.1);
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: var(--accent-high);
+        }
+
+        .back-nav {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            z-index: 50;
+            background: rgba(31, 42, 68, 0.8);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 0.75rem;
+            transition: all 0.3s ease;
+        }
+
+        .back-nav:hover {
+            background: rgba(31, 42, 68, 0.95);
+            border-color: rgba(230, 180, 0, 0.3);
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            position: relative;
+        }
+
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--highlight);
+            border-radius: 0 0 0 12px;
+        }
+
+        .user-type-card {
+            background: rgba(33, 150, 201, 0.05);
+            border: 1px solid rgba(33, 150, 201, 0.15);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--accent), var(--highlight));
+            transform-origin: left;
+            transform: scaleX(0);
+            z-index: 1000;
+        }
+
+        @media (max-width: 768px) {
+            .back-nav {
+                top: 1rem;
+                left: 1rem;
+            }
+
+            .case-image {
+                margin: 1rem 0;
+            }
+
+            .content-card {
+                padding: 1.5rem;
+                margin: 1.5rem 0;
+            }
+
+            .metric-card {
+                padding: 1.25rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans">
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
+    <!-- Back Navigation -->
+    <a href="../" class="back-nav text-white hover:text-accent-high transition-colors" aria-label="Back to Portfolio">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+        </svg>
+    </a>
+
+    <!-- Hero Section -->
+    <section class="case-hero py-32 relative">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-12">
+                <div class="text-sm font-light text-accent-high tracking-widest mb-4">CLOUD PLATFORM • 2023</div>
+                <h1 class="text-4xl md:text-6xl font-extralight tracking-tight mb-8 text-high-contrast">
+                    Delivering <span class="creative-text">Cloud-based</span> Labs at Scale
+                </h1>
+                <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
+                <p class="text-xl font-light text-medium-contrast leading-relaxed max-w-3xl mx-auto">
+                    VMware Learning Platform was a powerful but aging internal tool. This is the story of how I helped reshape it into a SaaS offering — by earning trust, embedding design, and transforming the experience, one module at a time.
+                </p>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="case-image max-w-5xl mx-auto">
+                <img src="../images/case-study-vlp2.png" alt="VLP Cloud Platform Interface showing hands-on lab environment and learning tools" loading="eager">
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary Section -->
+    <section class="py-16 relative section-bg1">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="content-card">
+                    <h2 class="section-header">What is VLP?</h2>
+                    <p class="text-medium-contrast font-light leading-relaxed">
+                        VMware Learning Platform is a browser-based lab platform that allows companies to deliver hands-on IT training without complex installations. It powers instructor-led sessions, sales demos, sandbox trials, and cybersecurity exercises.
+                    </p>
+                </div>
+                <div class="content-card">
+                    <h2 class="section-header">What is this case study about?</h2>
+                    <p class="text-medium-contrast font-light leading-relaxed">
+                        How <span class="stat-highlight">trust, small wins, and design-led thinking</span> helped transform a 20-year-old internal tool into a commercial SaaS product generating <span class="stat-highlight">over $1M annually</span>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team & Role Section -->
+    <section class="py-16 relative section-bg2">
+        <div class="max-w-6xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Team -->
+                <div class="content-card">
+                    <h2 class="section-header">Team</h2>
+                    <div class="space-y-4">
+                        <div>
+                            <strong class="text-high-contrast">Engineering:</strong>
+                            <span class="text-medium-contrast font-light">14 Developers, 1 Director</span>
+                        </div>
+                        <div>
+                            <strong class="text-high-contrast">Product:</strong>
+                            <span class="text-medium-contrast font-light">1 Product Manager, 2 Solution Architects</span>
+                        </div>
+                        <div>
+                            <strong class="text-high-contrast">Design:</strong>
+                            <span class="text-medium-contrast font-light">Me (Lead Designer), later hired 1 Designer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- My Role -->
+                <div class="content-card">
+                    <h2 class="section-header">My Role</h2>
+                    <p class="text-medium-contrast font-light leading-relaxed">
+                        As the Lead Designer, I brought UX thinking to an engineering-first team, gradually introducing design value and leading the end-to-end transformation. Over time, I moved into a managerial role, hired a new designer, and led the complete redesign of the platform's core modules.
+                    </p>
+                </div>
+
+                <!-- Constraints -->
+                <div class="content-card">
+                    <h2 class="section-header">Constraints</h2>
+                    <ul class="space-y-2 text-medium-contrast font-light">
+                        <li>• Tight engineering schedules and legacy systems</li>
+                        <li>• Team hesitant to collaborate with UX</li>
+                        <li>• No prior design involvement on the product</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Metrics -->
+    <section class="py-16 relative section-bg1">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-extralight tracking-tight mb-6 text-high-contrast">
+                    Impact <span class="text-accent-high">Delivered</span>
+                </h2>
+                <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="metric-card text-center">
+                    <div class="stat-highlight text-3xl font-extralight mb-3">$1M+</div>
+                    <div class="text-xs font-light text-accent-high tracking-widest mb-2">ANNUAL REVENUE</div>
+                    <p class="text-xs text-medium-contrast font-light">From internal tool to productized SaaS</p>
+                </div>
+
+                <div class="metric-card text-center">
+                    <div class="stat-highlight text-3xl font-extralight mb-3">12K+</div>
+                    <div class="text-xs font-light text-accent-high tracking-widest mb-2">LIVE TRAININGS</div>
+                    <p class="text-xs text-medium-contrast font-light">Delivered since platform redesign</p>
+                </div>
+
+                <div class="metric-card text-center">
+                    <div class="stat-highlight text-3xl font-extralight mb-3">30+</div>
+                    <div class="text-xs font-light text-accent-high tracking-widest mb-2">ENTERPRISE CUSTOMERS</div>
+                    <p class="text-xs text-medium-contrast font-light">Onboarded in first year</p>
+                </div>
+
+                <div class="metric-card text-center">
+                    <div class="stat-highlight text-3xl font-extralight mb-3">1M+</div>
+                    <div class="text-xs font-light text-accent-high tracking-widest mb-2">HANDS-ON DEMOS</div>
+                    <p class="text-xs text-medium-contrast font-light">Completed by users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Users Section -->
+    <section class="py-16 relative section-bg2">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-extralight tracking-tight mb-12 text-high-contrast text-center">
+                Hands-on <span class="text-accent-high">Users</span>
+            </h2>
+
+            <div class="space-y-6">
+                <div class="user-type-card">
+                    <h3 class="text-xl font-medium text-high-contrast mb-2">Developers and Instructors</h3>
+                    <p class="text-medium-contrast font-light">Try, learn, or test complex enterprise hardware or software.</p>
+                </div>
+
+                <div class="user-type-card">
+                    <h3 class="text-xl font-medium text-high-contrast mb-2">Solution Architects</h3>
+                    <p class="text-medium-contrast font-light">Build custom solutions for VMware Customers.</p>
+                </div>
+
+                <div class="user-type-card">
+                    <h3 class="text-xl font-medium text-high-contrast mb-2">VMware Field Sales</h3>
+                    <p class="text-medium-contrast font-light">Demo VMware products to customers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16 relative section-bg1">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-extralight tracking-tight mb-6 text-high-contrast">
+                    Design <span class="text-accent-high">Process</span>
+                </h2>
+                <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto"></div>
+            </div>
+
+            <!-- Building Trust First -->
+            <div class="process-step">
+                <h3 class="text-2xl font-medium text-high-contrast mb-4">Building Trust First</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <div>
+                        <div class="pill-badge">PRODUCT</div>
+                        <p class="text-medium-contrast font-light mt-2">Conducted 1:1 interviews and shadowing sessions with Solution Architects to map current usage challenges and mental models.</p>
+                    </div>
+                    <div>
+                        <div class="pill-badge">ENGINEERING</div>
+                        <p class="text-medium-contrast font-light mt-2">Embedded with engineering, joined daily standups, and reviewed sprint plans—offering design input without disrupting velocity.</p>
+                    </div>
+                    <div>
+                        <div class="pill-badge">MARKET</div>
+                        <p class="text-medium-contrast font-light mt-2">Analyzed competing platforms and identified positioning opportunities.</p>
+                    </div>
+                </div>
+                <div class="highlight-bar">
+                    <p class="text-high-contrast font-medium">This low-friction approach built credibility, understand the ecosystem, and approach without disrupting dynamics.</p>
+                </div>
+            </div>
+
+            <!-- Early Wins -->
+            <div class="process-step">
+                <h3 class="text-2xl font-medium text-high-contrast mb-4">Early Wins: Showing Value Without Friction</h3>
+                <p class="text-medium-contrast font-light leading-relaxed mb-4">
+                    Instead of pushing big redesigns, I suggested small design tweaks per sprint - improving consistency, usability, and legibility across modules, earning engineering trust.
+                </p>
+                <div class="quote-block">
+                    "A few 'good-to-haves' quietly improved usability - and caught their attention!"
+                </div>
+            </div>
+
+            <!-- Spark Moment -->
+            <div class="process-step">
+                <h3 class="text-2xl font-medium text-high-contrast mb-4">Spark Moment: Designing a New Module</h3>
+                <p class="text-medium-contrast font-light leading-relaxed mb-4">
+                    I was invited me to design a brand-new "Classroom Experience" module from scratch. Rather than designing it in isolation, I showed how it could fit into a more holistic, intuitive experience across the app.
+                </p>
+                <div class="highlight-bar">
+                    <p class="text-high-contrast font-medium">Though only a module was built, the preview seeded interest in full redesign.</p>
+                </div>
+            </div>
+
+            <!-- Gaining Momentum -->
+            <div class="process-step">
+                <h3 class="text-2xl font-medium text-high-contrast mb-4">Gaining Momentum: Billing UI</h3>
+                <p class="text-medium-contrast font-light leading-relaxed mb-4">
+                    Next, I tackled the billing interface—making usage and consumption data transparent and user-friendly, adding a dashboard to aid subscription decisions. Positive user feedback led to its adoption.
+                </p>
+                <div class="quote-block">
+                    "This is fantastic! It will really clarify decision-making." 👋<br>
+                    <small class="text-medium-contrast">Customer feedback was overwhelmingly positive, and the design was adopted.</small>
+                </div>
+            </div>
+
+            <!-- VLP Lite -->
+            <div class="process-step">
+                <h3 class="text-2xl font-medium text-high-contrast mb-4">VLP Lite: Designing for Simplicity</h3>
+                <p class="text-medium-contrast font-light leading-relaxed mb-4">
+                    To onboard trial users better, I designed a "Lite" version of the product:
+                </p>
+                <ul class="list-disc list-inside text-medium-contrast font-light space-y-2 mb-4">
+                    <li>Simplified language</li>
+                    <li>Progressive disclosure</li>
+                    <li>Clearer information architecture</li>
+                </ul>
+                <p class="text-medium-contrast font-light leading-relaxed">
+                    We tested this at VMworld—and it resonated. Customers found it approachable and engaging.
+                </p>
+            </div>
+
+            <!-- Scaling Up -->
+            <div class="process-step">
+                <h3 class="text-2xl font-medium text-high-contrast mb-4">Scaling Up: Team & Product Expansion</h3>
+                <p class="text-medium-contrast font-light leading-relaxed mb-4">
+                    As I moved into a manager role, I hired a full-time designer for VLP. Together, we delivered full redesigns of VLP LabBuilder, Event Management, and Instructor Dashboard modules.
+                </p>
+                <div class="highlight-bar">
+                    <p class="text-high-contrast font-medium">Finally VLP had cohesive, intentional design across its entire experience.</p>
+                </div>
+            </div>
+
+            <!-- Execution -->
+            <div class="process-step">
+                <h3 class="text-2xl font-medium text-high-contrast mb-4">Execution: Developer-Friendly Handoffs</h3>
+                <p class="text-medium-contrast font-light leading-relaxed mb-4">
+                    Having a developer background, I knew what good handoff looked like—and what frustrated engineers. I built a handoff system that was:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <strong class="text-high-contrast">Clear:</strong>
+                        <span class="text-medium-contrast font-light">standardized naming and documentation</span>
+                    </div>
+                    <div>
+                        <strong class="text-high-contrast">Accessible:</strong>
+                        <span class="text-medium-contrast font-light">everyone had Figma access + guidance</span>
+                    </div>
+                    <div>
+                        <strong class="text-high-contrast">Complete:</strong>
+                        <span class="text-medium-contrast font-light">included edge cases, empty states, and fallback paths</span>
+                    </div>
+                    <div>
+                        <strong class="text-high-contrast">Collaborative:</strong>
+                        <span class="text-medium-contrast font-light">feedback-friendly and technically feasible</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Highlights -->
+    <section class="py-16 relative section-bg2">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-extralight tracking-tight mb-12 text-high-contrast text-center">
+                Product <span class="text-accent-high">Highlights</span>
+            </h2>
+
+            <div class="space-y-4">
+                <div class="content-card">
+                    <p class="text-medium-contrast font-light">• Access labs from any HTML5 browser</p>
+                </div>
+                <div class="content-card">
+                    <p class="text-medium-contrast font-light">• Modular UI embedded into virtual consoles</p>
+                </div>
+                <div class="content-card">
+                    <p class="text-medium-contrast font-light">• True VM Console experience for advanced users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Results -->
+    <section class="py-16 relative section-bg1">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-extralight tracking-tight mb-12 text-high-contrast text-center">
+                Final <span class="text-accent-high">Results</span>
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="metric-card">
+                    <div class="stat-highlight text-2xl font-medium mb-2">30+ enterprise customers</div>
+                    <p class="text-medium-contrast font-light">onboarded</p>
+                </div>
+                <div class="metric-card">
+                    <div class="stat-highlight text-2xl font-medium mb-2">12,000+ trainings</div>
+                    <p class="text-medium-contrast font-light">delivered since 2022</p>
+                </div>
+                <div class="metric-card">
+                    <div class="stat-highlight text-2xl font-medium mb-2">1M+ hands-on demos</div>
+                    <p class="text-medium-contrast font-light">completed</p>
+                </div>
+                <div class="metric-card">
+                    <div class="stat-highlight text-2xl font-medium mb-2">$1M+ in revenue</div>
+                    <p class="text-medium-contrast font-light">transforming an internal tool into a product</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What This Taught Me -->
+    <section class="py-16 relative section-bg2">
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-extralight tracking-tight mb-12 text-high-contrast text-center">
+                What This <span class="text-accent-high">Taught Me</span>
+            </h2>
+
+            <div class="content-card text-center">
+                <p class="text-lg text-medium-contrast font-light leading-relaxed max-w-3xl mx-auto">
+                    <span class="text-high-contrast font-medium">Small wins build big trust.</span> With VLP, I learned that being humble, technical, and collaborative allows design to lead from within, without disrupting momentum - especially in deeply engineering-driven environments.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation -->
+    <section class="py-16 relative section-bg1">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <div class="space-y-8">
+                <div>
+                    <a href="../" class="cta-button">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 19l-7-7 7-7" />
+                        </svg>
+                        Back to Portfolio
+                    </a>
+                </div>
+
+                <div class="text-center">
+                    <p class="text-lg font-light text-accent-high">Thanks for stopping by!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-700 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-sm font-light text-medium-contrast">
+                © 2025 Tushar Roy. Crafted with precision and care.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Scroll indicator
+        window.addEventListener('scroll', () => {
+            const scrolled = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+            document.getElementById('scrollIndicator').style.transform = `scaleX(${scrolled / 100})`;
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

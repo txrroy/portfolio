@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HelpNow Case Study - Tushar Roy</title>
+    <meta name="description" content="Deep dive into the HelpNow project - transforming enterprise service management with user-centered design.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'mono': ['SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', 'monospace'],
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                        'serif': ['Playfair Display', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary: #1F2A44;
+            --accent: #E6B400;
+            --highlight: #2196C9;
+            --support1: #E5E8EC;
+            --support2: #FFFFFF;
+            --dark-section: #121929;
+            --glass-bg: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .creative-text {
+            font-family: "Playfair Display", serif;
+            font-optical-sizing: auto;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--highlight);
+        }
+
+        .text-accent {
+            color: var(--accent);
+        }
+
+        .hamburger-container {
+            background: rgba(31, 42, 68, 0.6);
+            backdrop-filter: blur(15px);
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger-container:hover {
+            background: rgba(31, 42, 68, 0.9);
+            border-color: rgba(230, 180, 0, 0.4);
+        }
+
+        .hamburger {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+
+        .hamburger span:nth-child(1) {
+            top: 6px;
+        }
+
+        .hamburger span:nth-child(2) {
+            top: 12px;
+        }
+
+        .hamburger span:nth-child(3) {
+            top: 18px;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            top: 12px;
+            transform: rotate(45deg);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            top: 12px;
+            transform: rotate(-45deg);
+        }
+
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu.active {
+            transform: translateX(0);
+        }
+
+        .cta-button {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+            padding: 1rem 2rem;
+            border-radius: 0;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-size: 0.875rem;
+        }
+
+        .cta-button:hover,
+        .cta-button:focus {
+            background: white;
+            color: var(--primary);
+            transform: translateY(-2px) translateX(8px);
+            box-shadow: -8px 8px 0 var(--accent);
+        }
+
+        .cta-button:hover .cta-arrow {
+            transform: translateX(4px);
+        }
+
+        .cta-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .pill-border {
+            border: 1px solid rgba(255, 255, 255, 0.25);
+        }
+
+        .text-high-contrast {
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-medium-contrast {
+            color: #e5e7eb;
+        }
+
+        .text-accent-high {
+            color: #fbbf24;
+            font-weight: 500;
+        }
+
+        .hero-pattern {
+            background:
+                radial-gradient(circle at 20% 20%, rgba(33, 150, 201, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(230, 180, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 3rem;
+            transition: all 0.3s ease;
+        }
+
+        .content-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .highlight-number {
+            background: linear-gradient(135deg, var(--accent) 0%, #ffcc33 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: 300;
+        }
+
+        .image-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .password-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(31, 42, 68, 0.95);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .password-form {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 3rem;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+        }
+
+        .password-input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.5rem;
+            color: white;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .password-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .password-input:focus {
+            outline: none;
+            border-color: var(--accent);
+            box-shadow: 0 0 0 2px rgba(230, 180, 0, 0.2);
+        }
+
+        .error-message {
+            color: #ff6b6b;
+            font-size: 0.875rem;
+            margin-top: 0.5rem;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-4px);
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, #ffcc33 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            color: var(--primary);
+            margin: 0 auto 1rem;
+        }
+
+        .quote-section {
+            background: linear-gradient(135deg, rgba(33, 150, 201, 0.1) 0%, rgba(230, 180, 0, 0.1) 100%);
+            border-left: 4px solid var(--accent);
+            padding: 2rem;
+            border-radius: 0 1rem 1rem 0;
+            position: relative;
+        }
+
+        .quote-section::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent);
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            font-family: serif;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .metric-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: scale(1.02);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+
+            .content-card,
+            .password-form {
+                padding: 2rem;
+            }
+
+            .process-step {
+                padding: 1.5rem;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="font-sans overflow-x-hidden">
+    <!-- Password Protection Overlay -->
+    <div class="password-overlay" id="passwordOverlay">
+        <div class="password-form">
+            <div class="text-3xl mb-4">🔒</div>
+            <h2 class="text-2xl font-light text-high-contrast mb-4">Protected Case Study</h2>
+            <p class="text-medium-contrast mb-6">
+                This case study contains confidential information. Please enter the password to continue.
+            </p>
+            <input type="password" class="password-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
+            <div id="errorMessage" class="error-message hidden">Incorrect password. Please try again.</div>
+            <button onclick="checkPassword()" class="cta-button w-full justify-center mt-4">
+                Access Case Study
+                <svg class="w-4 h-4 cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Skip to content link for screen readers -->
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-white text-black p-2 z-50">Skip to main content</a>
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-40 px-8 py-8">
+        <div class="w-full flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <a href="/" class="flex items-center space-x-4">
+                    <img src="images/favicon.png" alt="Tushar Roy personal logo" class="w-10 h-10">
+                    <div class="text-2xl font-light tracking-wider text-high-contrast">
+                        <span>TUSHAR ROY</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Fixed Hamburger Menu -->
+    <div class="fixed top-6 right-6 z-50">
+        <button class="hamburger-container" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+            <div class="hamburger text-high-contrast">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu fixed top-0 right-0 w-full h-screen z-40" id="mobileMenu" style="background-color: var(--dark-section);">
+        <div class="flex flex-col items-center justify-center h-full space-y-10 text-2xl font-light tracking-wide">
+            <a href="/" class="text-high-contrast hover:text-accent transition-colors duration-300 mobile-menu-link">Home</a>
+            <a href="/about" class="text-high-contrast hover:text-accent transition-colors duration-300 mobile-menu-link">About</a>
+            <a href="/case-studies" class="text-accent mobile-menu-link">Case Studies</a>
+            <a href="/#contact" class="text-high-contrast hover:text-accent transition-colors duration-300 mobile-menu-link">Contact</a>
+        </div>
+    </div>
+
+    <main id="main-content">
+        <!-- Case Study Hero Section -->
+        <section class="relative min-h-screen flex items-center hero-pattern overflow-hidden pt-24">
+            <div class="max-w-7xl mx-auto px-6 w-full">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <div class="text-sm font-light text-accent-high tracking-widest mb-6">ENTERPRISE • 2024</div>
+                        <h1 class="text-5xl md:text-6xl lg:text-7xl text-high-contrast mb-8 leading-tight font-extralight">
+                            Transforming <span class="creative-text">Service Management</span>
+                        </h1>
+                        <p class="text-xl md:text-2xl text-medium-contrast mb-12 leading-relaxed font-light max-w-2xl">
+                            How we redesigned enterprise workplace support to unlock $5M+ savings, 2x productivity, and 95% satisfaction.
+                        </p>
+                        <div class="flex flex-wrap gap-3 mb-8">
+                            <span class="px-4 py-2 bg-white bg-opacity-10 pill-border rounded-full text-sm font-light text-medium-contrast">Mobile First</span>
+                            <span class="px-4 py-2 bg-white bg-opacity-10 pill-border rounded-full text-sm font-light text-medium-contrast">Enterprise UX</span>
+                            <span class="px-4 py-2 bg-white bg-opacity-10 pill-border rounded-full text-sm font-light text-medium-contrast">Service Design</span>
+                        </div>
+                        <a href="#overview" class="cta-button">
+                            Read Full Study
+                            <svg class="w-4 h-4 cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="image-container min-h-[500px]">
+                        <img src="images/case-study-helpnow2.png" alt="HelpNow platform interface showing the redesigned service management dashboard" loading="eager">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Metrics Section -->
+        <section class="py-16 relative" style="background-color: var(--dark-section);">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="highlight-number text-4xl font-extralight mb-3">$5M+</div>
+                        <div class="text-sm font-light text-accent-high tracking-widest mb-2">COST SAVINGS</div>
+                        <p class="text-sm text-medium-contrast font-light">Annual operational efficiency gains</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="highlight-number text-4xl font-extralight mb-3">2x</div>
+                        <div class="text-sm font-light text-accent-high tracking-widest mb-2">PRODUCTIVITY</div>
+                        <p class="text-sm text-medium-contrast font-light">Fulfillment team efficiency increase</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="highlight-number text-4xl font-extralight mb-3">95%</div>
+                        <div class="text-sm font-light text-accent-high tracking-widest mb-2">SATISFACTION</div>
+                        <p class="text-sm text-medium-contrast font-light">Employee experience rating</p>
+                    </div>
+                    <div class="metric-card">
+                        <div class="highlight-number text-4xl font-extralight mb-3">50%</div>
+                        <div class="text-sm font-light text-accent-high tracking-widest mb-2">TIME REDUCTION</div>
+                        <p class="text-sm text-medium-contrast font-light">Average request resolution time</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Overview Section -->
+        <section id="overview" class="py-32 relative hero-pattern">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
+                        Project <span class="text-accent-high">Overview</span>
+                    </h2>
+                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+                    <div class="content-card">
+                        <h3 class="text-2xl font-light text-high-contrast mb-6">The Challenge</h3>
+                        <p class="text-lg text-medium-contrast leading-relaxed font-light mb-6">
+                            Enterprise employees were struggling with a fragmented, outdated service management system that led to
+                            frustration, inefficient workflows, and significant operational costs.
+                        </p>
+                        <ul class="space-y-3 text-medium-contrast">
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Multiple disconnected systems and touchpoints
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Average resolution time of 5+ days for simple requests
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                                65% employee satisfaction with IT services
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
+                                $8M+ annual operational costs due to inefficiencies
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="content-card">
+                        <h3 class="text-2xl font-light text-high-contrast mb-6">The Solution</h3>
+                        <p class="text-lg text-medium-contrast leading-relaxed font-light mb-6">
+                            We designed a unified, mobile-first platform that streamlined service requests, automated workflows,
+                            and provided transparent status tracking for all stakeholders.
+                        </p>
+                        <ul class="space-y-3 text-medium-contrast">
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Single, intuitive interface for all service requests
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Intelligent routing and automated approval workflows
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Real-time status tracking and proactive notifications
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Self-service capabilities with guided assistance
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section class="py-32 relative" style="background-color: var(--dark-section);">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
+                        Design <span class="text-accent-high">Process</span>
+                    </h2>
+                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
+                    <p class="text-lg text-medium-contrast max-w-2xl mx-auto">
+                        A human-centered approach focusing on understanding pain points and crafting solutions that work for everyone.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="process-step">
+                        <div class="step-number">01</div>
+                        <h3 class="text-xl font-medium text-high-contrast mb-4">Discover</h3>
+                        <p class="text-medium-contrast font-light">
+                            User interviews, stakeholder mapping, and system analysis to understand current pain points.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">02</div>
+                        <h3 class="text-xl font-medium text-high-contrast mb-4">Define</h3>
+                        <p class="text-medium-contrast font-light">
+                            Synthesized insights into user personas, journey maps, and clear problem statements.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">03</div>
+                        <h3 class="text-xl font-medium text-high-contrast mb-4">Design</h3>
+                        <p class="text-medium-contrast font-light">
+                            Iterative prototyping, usability testing, and design system development.
+                        </p>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number">04</div>
+                        <h3 class="text-xl font-medium text-high-contrast mb-4">Deliver</h3>
+                        <p class="text-medium-contrast font-light">
+                            Implementation support, training materials, and success metrics tracking.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Research Insights -->
+        <section class="py-32 relative hero-pattern">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
+                        Key <span class="text-accent-high">Insights</span>
+                    </h2>
+                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
+                </div>
+
+                <div class="space-y-16">
+                    <div class="quote-section">
+                        <p class="text-xl text-high-contrast font-light italic leading-relaxed mb-4">
+                            I just want to know when my laptop will arrive. Right now, I submit a request and it disappears
+                            into a black hole. No updates, no timeline, nothing.
+                        </p>
+                        <div class="text-sm text-accent-high font-medium">
+                            — Marketing Manager, Primary Research
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <div class="content-card text-center">
+                            <div class="text-3xl mb-4">📱</div>
+                            <h3 class="text-xl font-medium text-high-contrast mb-4">Mobile-First Need</h3>
+                            <p class="text-medium-contrast font-light">
+                                78% of users wanted to submit and track requests from their mobile devices
+                            </p>
+                        </div>
+                        <div class="content-card text-center">
+                            <div class="text-3xl mb-4">⚡</div>
+                            <h3 class="text-xl font-medium text-high-contrast mb-4">Speed Matters</h3>
+                            <p class="text-medium-contrast font-light">
+                                Users abandon requests if they take more than 3 minutes to complete
+                            </p>
+                        </div>
+                        <div class="content-card text-center">
+                            <div class="text-3xl mb-4">🔍</div>
+                            <h3 class="text-xl font-medium text-high-contrast mb-4">Transparency Crucial</h3>
+                            <p class="text-medium-contrast font-light">
+                                Real-time status updates were the #1 requested feature across all user groups
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Solution Deep Dive -->
+        <section class="py-32 relative" style="background-color: var(--dark-section);">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
+                        Solution <span class="text-accent-high">Deep Dive</span>
+                    </h2>
+                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
+                </div>
+
+                <div class="space-y-24">
+                    <!-- Feature 1 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h3 class="text-3xl font-light text-high-contrast mb-6">Smart Request Creation</h3>
+                            <p class="text-lg text-medium-contrast leading-relaxed font-light mb-6">
+                                Intelligent form fields that adapt based on request type, pre-populate known information,
+                                and guide users through the process with contextual help.
+                            </p>
+                            <ul class="space-y-3 text-medium-contrast">
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    Dynamic forms that show only relevant fields
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    Auto-complete from previous requests
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    Real-time validation and error prevention
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="image-container min-h-[400px]">
+                            <img src="images/case-study-feature1.png" alt="Smart request creation interface showing dynamic form fields" loading="lazy">
+                        </div>
+                    </div>
+
+                    <!-- Feature 2 -->
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div class="image-container min-h-[400px] lg:order-1">
+                            <img src="images/case-study-feature2.png" alt="Real-time tracking dashboard showing request status and timeline" loading="lazy">
+                        </div>
+                        <div class="lg:order-2">
+                            <h3 class="text-3xl font-light text-high-contrast mb-6">Real-time Tracking</h3>
+                            <p class="text-lg text-medium-contrast leading-relaxed font-light mb-6">
+                                Transparent status tracking with proactive notifications keeps users informed throughout
+                                the entire request lifecycle.
+                            </p>
+                            <ul class="space-y-3 text-medium-contrast">
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    Visual timeline with current status
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    Automated email and push notifications
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <div class="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                                    Estimated completion times based on historical data
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Results & Impact -->
+        <section class="py-32 relative hero-pattern">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
+                        Results & <span class="text-accent-high">Impact</span>
+                    </h2>
+                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
+                </div>
+
+                <div class="content-card mb-16">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                        <div>
+                            <h3 class="text-2xl font-light text-high-contrast mb-8">Business Impact</h3>
+                            <div class="space-y-6">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-medium-contrast">Operational Cost Reduction</span>
+                                    <span class="text-green-400 font-semibold">$5.2M annually</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-medium-contrast">Request Processing Time</span>
+                                    <span class="text-green-400 font-semibold">-50% reduction</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-medium-contrast">Support Team Productivity</span>
+                                    <span class="text-green-400 font-semibold">+112% increase</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-medium-contrast">Employee Satisfaction</span>
+                                    <span class="text-green-400 font-semibold">65% → 95%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-light text-high-contrast mb-8">User Experience</h3>
+                            <div class="space-y-6">
+                                <div class="flex justify-between items-center">
+                                    <span class="text-medium-contrast">Mobile Adoption Rate</span>
+                                    <span class="text-blue-400 font-semibold">85% within 6 months</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-medium-contrast">Request Completion Rate</span>
+                                    <span class="text-blue-400 font-semibold">92% (was 68%)</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-medium-contrast">Average Session Time</span>
+                                    <span class="text-blue-400 font-semibold">3.2 min (was 12 min)</span>
+                                </div>
+                                <div class="flex justify-between items-center">
+                                    <span class="text-medium-contrast">User Retention</span>
+                                    <span class="text-blue-400 font-semibold">Week 1: 94%</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="quote-section">
+                    <p class="text-xl text-high-contrast font-light italic leading-relaxed mb-4">
+                        This transformation has fundamentally changed how our organization operates. What used to take
+                        weeks now happens in days, and our employees are finally happy with IT services.
+                    </p>
+                    <div class="text-sm text-accent-high font-medium">
+                        — Director of IT Operations
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lessons Learned -->
+        <section class="py-32 relative" style="background-color: var(--dark-section);">
+            <div class="max-w-6xl mx-auto px-6">
+                <div class="text-center mb-20">
+                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
+                        Lessons <span class="text-accent-high">Learned</span>
+                    </h2>
+                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="content-card">
+                        <h3 class="text-xl font-medium text-high-contrast mb-4">What Worked Well</h3>
+                        <ul class="space-y-3 text-medium-contrast">
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Early stakeholder alignment prevented scope creep
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Continuous user testing caught usability issues early
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Mobile-first approach exceeded adoption expectations
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Phased rollout allowed for iterative improvements
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="content-card">
+                        <h3 class="text-xl font-medium text-high-contrast mb-4">Areas for Improvement</h3>
+                        <ul class="space-y-3 text-medium-contrast">
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Change management needed more upfront investment
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Integration complexity was underestimated initially
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Training materials could have been more comprehensive
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
+                                Performance monitoring should start earlier
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Next Steps -->
+        <section class="py-32 relative hero-pattern">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-extralight tracking-tight mb-8 text-high-contrast">
+                    Want to Learn <span class="text-accent-high">More?</span>
+                </h2>
+                <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-12"></div>
+
+                <p class="text-xl font-light text-medium-contrast mb-16 max-w-2xl mx-auto leading-relaxed">
+                    This case study represents just one aspect of the transformation. I'd love to discuss the full details,
+                    including design artifacts, research findings, and implementation strategies.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                    <a href="mailto:tushar7up@gmail.com?subject=HelpNow Case Study Discussion" class="cta-button">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                        </svg>
+                        Discuss This Project
+                        <svg class="w-4 h-4 cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                    <a href="/" class="cta-button">
+                        View More Work
+                        <svg class="w-4 h-4 cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-gray-700 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="text-sm font-light text-medium-contrast">
+                © 2025 Tushar Roy. Crafted with precision and care.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Password Protection
+        const correctPassword = 'design2025';
+
+        function checkPassword() {
+            const inputPassword = document.getElementById('passwordInput').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const overlay = document.getElementById('passwordOverlay');
+
+            if (inputPassword === correctPassword) {
+                overlay.style.display = 'none';
+                // You could also store this in sessionStorage to remember for the session
+                sessionStorage.setItem('caseStudyAccess', 'granted');
+            } else {
+                errorMessage.classList.remove('hidden');
+                document.getElementById('passwordInput').value = '';
+                document.getElementById('passwordInput').focus();
+            }
+        }
+
+        // Check if user already has access this session
+        if (sessionStorage.getItem('caseStudyAccess') === 'granted') {
+            document.getElementById('passwordOverlay').style.display = 'none';
+        }
+
+        // Allow Enter key to submit password
+        document.getElementById('passwordInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                checkPassword();
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+
+        let isMenuOpen = false;
+
+        mobileMenuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            mobileMenuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on links
+        mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                isMenuOpen = false;
+                mobileMenuBtn.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
