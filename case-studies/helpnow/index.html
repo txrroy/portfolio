@@ -1222,6 +1222,109 @@
             </div>
         </footer>
         <script>
+            // ==========================================
+            // PASSWORD PROTECTION CONFIGURATION
+            // ==========================================
+
+            // 🔧 EASY TOGGLE: Set to false to disable password protection
+            const PASSWORD_ENABLED = true;
+
+            // 🔑 Set your password here
+            const CASE_STUDY_PASSWORD = "vmware2024";
+
+            // 📝 Optional: Customize the session duration (in hours)
+            const SESSION_DURATION_HOURS = 24;
+
+            // ==========================================
+
+            // Password Protection Logic
+            function initPasswordProtection() {
+                if (!PASSWORD_ENABLED) {
+                    // Password protection is disabled - show content immediately
+                    document.getElementById('passwordOverlay').classList.add('hidden');
+                    document.getElementById('mainContent').classList.remove('hidden');
+
+                    // Initialize other functionality
+                    setTimeout(() => {
+                        initMobileMenu();
+                        initImageOverlay();
+                    }, 100);
+                    return;
+                }
+
+                // Check if user is already authenticated in this session
+                const authKey = 'helpnow_case_study_auth';
+                const authData = sessionStorage.getItem(authKey);
+
+                if (authData) {
+                    const { timestamp, authenticated } = JSON.parse(authData);
+                    const hoursElapsed = (Date.now() - timestamp) / (1000 * 60 * 60);
+
+                    if (authenticated && hoursElapsed < SESSION_DURATION_HOURS) {
+                        // User is still authenticated
+                        showMainContent();
+                        return;
+                    }
+                }
+
+                // Show password prompt
+                showPasswordPrompt();
+            }
+
+            function showPasswordPrompt() {
+                document.getElementById('passwordOverlay').classList.remove('hidden');
+                document.getElementById('mainContent').classList.add('hidden');
+                document.getElementById('passwordInput').focus();
+            }
+
+            function showMainContent() {
+                document.getElementById('passwordOverlay').classList.add('hidden');
+                document.getElementById('mainContent').classList.remove('hidden');
+
+                // Initialize other functionality after content is shown
+                setTimeout(() => {
+                    initMobileMenu();
+                    initImageOverlay();
+                }, 100);
+            }
+
+            function authenticateUser(password) {
+                if (password === CASE_STUDY_PASSWORD) {
+                    // Store authentication in session
+                    const authData = {
+                        authenticated: true,
+                        timestamp: Date.now()
+                    };
+                    sessionStorage.setItem('helpnow_case_study_auth', JSON.stringify(authData));
+
+                    showMainContent();
+                    return true;
+                }
+                return false;
+            }
+
+            // Password form handling
+            document.getElementById('passwordForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                const password = document.getElementById('passwordInput').value;
+                const errorDiv = document.getElementById('passwordError');
+
+                if (authenticateUser(password)) {
+                    errorDiv.textContent = '';
+                } else {
+                    errorDiv.textContent = 'Incorrect password. Please try again.';
+                    document.getElementById('passwordInput').value = '';
+                    document.getElementById('passwordInput').focus();
+                }
+            });
+
+            // Initialize all functionality when DOM is loaded
+            document.addEventListener('DOMContentLoaded', initPasswordProtection);
+
+            // Mobile Menu Functionality
+            // ... (rest of the mobile menu and image overlay code)
+        </script>
+        <script>
             // Mobile Menu Functionality
             const mobileMenuBtn = document.getElementById('mobileMenuBtn');
             const mobileMenu = document.getElementById('mobileMenu');
