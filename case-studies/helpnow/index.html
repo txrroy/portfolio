@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HelpNow Case Study - Tushar Roy</title>
-    <meta name="description" content="Deep dive into the HelpNow project - transforming enterprise service management with user-centered design.">
+    <title>HelpNow+ Case Study – Transforming Service Management for Enterprises</title>
+
+    <meta name="description" content="How we redesigned VMware's internal service platform to unlock $36M+ savings, 2x fulfillment productivity, and 94% employee satisfaction through user-centered design.">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -21,17 +22,20 @@
             }
         }
     </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,600;1,300;1,400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
 
     <style>
         :root {
             --primary: #1F2A44;
+            --primary-high: #121929;
             --accent: #E6B400;
+            --accent-high: #F7C948;
             --highlight: #2196C9;
             --support1: #E5E8EC;
             --support2: #FFFFFF;
-            --dark-section: #121929;
             --glass-bg: rgba(255, 255, 255, 0.1);
             --glass-border: rgba(255, 255, 255, 0.2);
         }
@@ -40,25 +44,143 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--primary);
             color: white;
+            line-height: 1.7;
         }
 
         .creative-text {
-            font-family: "Playfair Display", serif;
-            font-optical-sizing: auto;
-            font-weight: 600;
+            font-family: "Playfair Display", "Times New Roman", "Georgia", serif;
+            font-weight: 300;
             font-style: italic;
-            color: var(--highlight);
+            color: var(--accent);
+            font-size: 1em;
+            line-height: 1.1;
+            letter-spacing: -0.1rem;
+            display: inline;
+            vertical-align: baseline;
         }
 
         .text-accent {
             color: var(--accent);
         }
 
+        .text-accent-high {
+            color: var(--accent-high);
+            font-weight: 500;
+        }
+
+        .text-high-contrast {
+            color: #ffffff;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-medium-contrast {
+            color: #e5e7eb;
+        }
+
+        .section-bg1 {
+            background-color: var(--primary-high);
+        }
+
+        .section-bg2 {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #2a3a5c 75%, #1F2A44 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section-bg2::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 20%, rgba(33, 150, 201, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(230, 180, 0, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .case-study-image {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .case-study-image img,
+        .case-study-image video {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .case-study-image:hover img,
+        .case-study-image:hover video {
+            transform: scale(1.02);
+        }
+
+        /* Image Overlay/Lightbox */
+        .image-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .image-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .overlay-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+
+        .overlay-image {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .overlay-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+
+        .overlay-close:hover {
+            color: var(--accent);
+        }
+
+        /* Header styles from homepage */
         .hamburger-container {
             background: rgba(31, 42, 68, 0.6);
             backdrop-filter: blur(15px);
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -84,7 +206,7 @@
             background: currentColor;
             position: absolute;
             left: 0;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
             transform-origin: center;
         }
 
@@ -107,6 +229,7 @@
 
         .hamburger.active span:nth-child(2) {
             opacity: 0;
+            transform: scale(0);
         }
 
         .hamburger.active span:nth-child(3) {
@@ -116,844 +239,1057 @@
 
         .mobile-menu {
             transform: translateX(100%);
-            transition: transform 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            background: rgba(18, 25, 41, 0.97);
+            backdrop-filter: blur(25px);
+            width: 100%;
+            max-width: 50%;
+            clip-path: polygon(15% 0%, 100% 0%, 100% 100%, 0% 100%);
         }
 
         .mobile-menu.active {
             transform: translateX(0);
         }
 
-        .cta-button {
-            background: transparent;
-            color: white;
-            border: 2px solid white;
-            padding: 1rem 2rem;
-            border-radius: 0;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
+        .mobile-menu-link {
+            display: block;
+            width: 100%;
+            padding: 12px 36px;
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 300;
             letter-spacing: 0.05em;
-            font-size: 0.875rem;
+            color: #ffffff;
+            text-decoration: none;
+            position: relative;
+            border-bottom: 2px solid transparent;
         }
 
-        .cta-button:hover,
-        .cta-button:focus {
-            background: white;
+        .mobile-menu-link:hover {
+            color: var(--accent-high);
+            border-bottom-color: var(--accent-high);
+        }
+
+        .mobile-menu-action {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            width: 100%;
+            padding: 16px 40px;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            text-decoration: none;
+            position: relative;
+            margin: 8px 0;
+            border-bottom: 2px solid transparent;
+        }
+
+        .mobile-menu-action.resume {
+            color: var(--accent-high);
+            border: 2px solid var(--accent);
+            background: rgba(230, 180, 0, 0.1);
+        }
+
+        .mobile-menu-action.resume:hover {
+            background: var(--accent);
             color: var(--primary);
-            transform: translateY(-2px) translateX(8px);
-            box-shadow: -8px 8px 0 var(--accent);
+            border-bottom-color: transparent;
         }
 
-        .cta-button:hover .cta-arrow {
-            transform: translateX(4px);
+        .mobile-menu-action.linkedin {
+            color: #0077B5;
+            border: 2px solid #0077B5;
+            background: rgba(0, 119, 181, 0.1);
         }
 
-        .cta-arrow {
-            transition: transform 0.3s ease;
+        .mobile-menu-action.linkedin:hover {
+            background: #0077B5;
+            color: white;
+            border-bottom-color: transparent;
+        }
+
+        /* Image size variations */
+        .hero-image {
+            max-width: 900px;
+            height: 500px;
+        }
+
+        .content-image {
+            max-width: 600px;
+            height: 400px;
+        }
+
+        .supporting-image {
+            max-width: 400px;
+            height: 280px;
+            margin: 0 auto;
+        }
+
+        .persona-image {
+            max-width: 320px;
+            height: 240px;
+            margin: 0 auto;
+        }
+
+        /* Light background for interface screenshots */
+        .light-bg-container {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .light-bg-container .case-study-image {
+            background: transparent;
+            border: none;
+        }
+
+        .light-bg-container .case-study-image img,
+        .light-bg-container .case-study-image video {
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .light-bg-container h4,
+        .light-bg-container p {
+            color: #374151;
+        }
+
+        .light-bg-container .text-accent-high {
+            color: #d97706;
+        }
+
+        /* Process grid for multiple related images */
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .process-step {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .process-step .case-study-image {
+            max-width: 200px;
+            height: 140px;
+            margin: 0 auto 1rem;
+        }
+
+        .stat-highlight {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-high) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .pill-border {
             border: 1px solid rgba(255, 255, 255, 0.25);
         }
 
-        .text-high-contrast {
-            color: #ffffff;
-            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+        .highlight-bar {
+            position: relative;
+            padding-left: 20px;
+            margin: 24px 0;
         }
 
-        .text-medium-contrast {
-            color: #e5e7eb;
+        .highlight-bar::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: var(--accent);
+            border-radius: 2px;
         }
 
-        .text-accent-high {
-            color: #fbbf24;
+        .quote-section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            position: relative;
+            margin: 2rem 0;
+        }
+
+        .quote-section::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent);
+            font-family: "Playfair Display", serif;
+            line-height: 1;
+        }
+
+        .breadcrumb {
+            color: var(--accent-high);
+            text-decoration: none;
             font-weight: 500;
+            transition: color 0.3s ease;
         }
 
-        .hero-pattern {
-            background:
-                radial-gradient(circle at 20% 20%, rgba(33, 150, 201, 0.1) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(230, 180, 0, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.02) 0%, transparent 50%);
+        .breadcrumb:hover {
+            color: var(--accent);
         }
 
-        .content-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            padding: 3rem;
+        .metric-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .content-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
+        .metric-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(230, 180, 0, 0.2);
+            transform: translateY(-4px);
         }
 
-        .highlight-number {
+        .metric-number {
             background: linear-gradient(135deg, var(--accent) 0%, #ffcc33 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            font-size: 2.5rem;
             font-weight: 300;
+            margin-bottom: 0.5rem;
         }
 
-        .image-container {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            overflow: hidden;
-            position: relative;
+        .section-divider {
+            width: 60px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            margin: 3rem auto;
         }
 
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+        .content-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 1.5rem 0;
         }
 
+        /* Password Protection Styles */
         .password-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(31, 42, 68, 0.95);
-            backdrop-filter: blur(20px);
-            z-index: 1000;
+            background: var(--primary);
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 2000;
+            opacity: 1;
+            visibility: visible;
         }
 
-        .password-form {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 1rem;
+        .password-overlay.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .password-container {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
             padding: 3rem;
+            text-align: center;
             max-width: 400px;
             width: 90%;
-            text-align: center;
         }
 
         .password-input {
             width: 100%;
             padding: 1rem;
+            margin: 1rem 0;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
             background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 0.5rem;
             color: white;
             font-size: 1rem;
-            margin: 1rem 0;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .password-input:focus {
+            border-color: var(--accent);
         }
 
         .password-input::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
 
-        .password-input:focus {
-            outline: none;
-            border-color: var(--accent);
-            box-shadow: 0 0 0 2px rgba(230, 180, 0, 0.2);
-        }
-
-        .error-message {
-            color: #ff6b6b;
-            font-size: 0.875rem;
-            margin-top: 0.5rem;
-        }
-
-        .process-step {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .process-step:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: translateY(-4px);
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--accent) 0%, #ffcc33 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
+        .password-submit {
+            background: var(--accent);
             color: var(--primary);
-            margin: 0 auto 1rem;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
         }
 
-        .quote-section {
-            background: linear-gradient(135deg, rgba(33, 150, 201, 0.1) 0%, rgba(230, 180, 0, 0.1) 100%);
-            border-left: 4px solid var(--accent);
-            padding: 2rem;
-            border-radius: 0 1rem 1rem 0;
-            position: relative;
+        .password-submit:hover {
+            background: var(--accent-high);
         }
 
-        .quote-section::before {
-            content: '"';
-            font-size: 4rem;
-            color: var(--accent);
-            position: absolute;
-            top: -1rem;
-            left: 1rem;
-            font-family: serif;
+        .password-error {
+            color: #ef4444;
+            margin-top: 1rem;
+            font-size: 0.9rem;
         }
 
-        .metrics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+        .main-content {
+            transition: opacity 0.3s ease;
         }
 
-        .metric-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 1rem;
-            padding: 2rem;
-            text-align: center;
-            transition: all 0.3s ease;
+        .main-content.hidden {
+            opacity: 0;
+            pointer-events: none;
         }
 
-        .metric-card:hover {
-            background: rgba(255, 255, 255, 0.08);
-            transform: scale(1.02);
-        }
-
-        .hidden {
-            display: none;
+        .emoji-highlight {
+            font-size: 1.2em;
+            margin-right: 0.5rem;
         }
 
         @media (max-width: 768px) {
-
-            .content-card,
-            .password-form {
-                padding: 2rem;
+            .case-study-image {
+                min-height: 250px;
             }
 
-            .process-step {
+            .quote-section {
                 padding: 1.5rem;
+            }
+
+            .quote-section::before {
+                font-size: 3rem;
+                top: -5px;
+                left: 15px;
+            }
+
+            .supporting-image,
+            .persona-image {
+                max-width: 100%;
+            }
+
+            .light-bg-container {
+                padding: 1.5rem;
+            }
+
+            .mobile-menu-link {
+                font-size: 1.125rem;
+                padding: 14px 30px;
+            }
+
+            .mobile-menu-action {
+                font-size: 0.9rem;
+                padding: 14px 30px;
+            }
+
+            .mobile-menu {
+                max-width: 85%;
+            }
+
+            .overlay-content {
+                max-width: 95%;
+                max-height: 85%;
+            }
+
+            .overlay-close {
+                top: -30px;
+                font-size: 1.5rem;
             }
         }
 
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
+        @media (max-width: 480px) {
+            .mobile-menu {
+                max-width: 90%;
             }
         }
     </style>
 </head>
 
-<body class="font-sans overflow-x-hidden">
+<body class="font-sans">
     <!-- Password Protection Overlay -->
     <div class="password-overlay" id="passwordOverlay">
-        <div class="password-form">
-            <div class="text-3xl mb-4">🔒</div>
+        <div class="password-container">
             <h2 class="text-2xl font-light text-high-contrast mb-4">Protected Case Study</h2>
-            <p class="text-medium-contrast mb-6">
-                This case study contains confidential information. Please enter the password to continue.
-            </p>
-            <input type="password" class="password-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
-            <div id="errorMessage" class="error-message hidden">Incorrect password. Please try again.</div>
-            <button onclick="checkPassword()" class="cta-button w-full justify-center mt-4">
-                Access Case Study
-                <svg class="w-4 h-4 cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-            </button>
+            <p class="text-medium-contrast mb-6">This case study contains confidential work. Please enter the password to continue.</p>
+            <form id="passwordForm">
+                <input type="password" id="passwordInput" class="password-input" placeholder="Enter password" autocomplete="off">
+                <button type="submit" class="password-submit">Access Case Study</button>
+            </form>
+            <div class="password-error" id="passwordError"></div>
         </div>
     </div>
 
-    <!-- Skip to content link for screen readers -->
-    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-0 focus:left-0 bg-white text-black p-2 z-50">Skip to main content</a>
+    <!-- Main Content Wrapper -->
+    <div class="main-content" id="mainContent">
 
-    <!-- Navigation -->
-    <nav class="fixed top-0 left-0 w-full z-40 px-8 py-8">
-        <div class="w-full flex justify-between items-center">
-            <div class="flex items-center space-x-4">
-                <a href="/" class="flex items-center space-x-4">
-                    <img src="images/favicon.png" alt="Tushar Roy personal logo" class="w-10 h-10">
-                    <div class="text-2xl font-light tracking-wider text-high-contrast">
+        <!-- Navigation -->
+        <nav class="absolute top-0 left-0 w-full z-40 px-7 py-8">
+            <div class="w-full flex justify-between items-center">
+                <div class="flex items-center space-x-4">
+                    <img src="../../images/favicon.png" alt="Tushar Roy personal logo" class="w-10 h-10">
+                    <div class="text-2xl tracking-wider text-high-contrast">
                         <span>TUSHAR ROY</span>
                     </div>
-                </a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="fixed top-5 right-5 z-50">
+            <button class="hamburger-container" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <div class="hamburger text-high-contrast" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </div>
+
+        <div class="mobile-menu fixed top-0 right-0 w-full h-screen z-40" id="mobileMenu">
+            <div class="flex flex-col justify-center h-full p-12 pr-0">
+                <div class="flex flex-col items-center space-y-4 m-12">
+                    <a href="../../index.html" class="mobile-menu-link">← Back to Portfolio</a>
+                    <a href="../../index.html#work" class="mobile-menu-link">Work</a>
+                    <a href="../../index.html#about" class="mobile-menu-link">About</a>
+                    <a href="../../files/tushar-roy-cv-2025.pdf" target="_blank" rel="noopener" class="mobile-menu-action resume">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M6,2A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2H6M6,4H13V9H18V20H6V4M8,12V14H16V12H8M8,16V18H13V16H8Z" />
+                        </svg>
+                        Resume
+                    </a>
+                    <a href="https://www.linkedin.com/in/tusharroy/" target="_blank" rel="noopener" class="mobile-menu-action linkedin">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+                        </svg>
+                        LinkedIn
+                    </a>
+                </div>
             </div>
         </div>
-    </nav>
 
-    <!-- Fixed Hamburger Menu -->
-    <div class="fixed top-6 right-6 z-50">
-        <button class="hamburger-container" id="mobileMenuBtn" aria-label="Toggle navigation menu">
-            <div class="hamburger text-high-contrast">
-                <span></span>
-                <span></span>
-                <span></span>
+        <!-- Image Overlay -->
+        <div class="image-overlay" id="imageOverlay">
+            <div class="overlay-content">
+                <button class="overlay-close" id="overlayClose">&times;</button>
+                <img class="overlay-image" id="overlayImage" src="" alt="">
             </div>
-        </button>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu fixed top-0 right-0 w-full h-screen z-40" id="mobileMenu" style="background-color: var(--dark-section);">
-        <div class="flex flex-col items-center justify-center h-full space-y-10 text-2xl font-light tracking-wide">
-            <a href="/" class="text-high-contrast hover:text-accent transition-colors duration-300 mobile-menu-link">Home</a>
-            <a href="/about" class="text-high-contrast hover:text-accent transition-colors duration-300 mobile-menu-link">About</a>
-            <a href="/case-studies" class="text-accent mobile-menu-link">Case Studies</a>
-            <a href="/#contact" class="text-high-contrast hover:text-accent transition-colors duration-300 mobile-menu-link">Contact</a>
         </div>
-    </div>
 
-    <main id="main-content">
-        <!-- Case Study Hero Section -->
-        <section class="relative min-h-screen flex items-center hero-pattern overflow-hidden pt-24">
-            <div class="max-w-7xl mx-auto px-6 w-full">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <div class="text-sm font-light text-accent-high tracking-widest mb-6">ENTERPRISE • 2024</div>
-                        <h1 class="text-5xl md:text-6xl lg:text-7xl text-high-contrast mb-8 leading-tight font-extralight">
-                            Transforming <span class="creative-text">Service Management</span>
+        <main class="relative">
+            <!-- Hero Section -->
+            <section class="py-16 pt-24 relative section-bg2">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="text-center mb-12">
+                        <h1 class="text-5xl md:text-7xl font-extralight tracking-tight mb-8 text-high-contrast">
+                            <span class="creative-text">Transforming</span> Service Management
                         </h1>
-                        <p class="text-xl md:text-2xl text-medium-contrast mb-12 leading-relaxed font-light max-w-2xl">
-                            How we redesigned enterprise workplace support to unlock $5M+ savings, 2x productivity, and 95% satisfaction.
+                        <p class="text-xl text-medium-contrast font-light max-w-3xl mx-auto leading-relaxed">
+                            How we redesigned VMware's internal service platform to unlock <span class="stat-highlight">$36M+ savings, 2x fulfillment productivity, and 94% employee satisfaction</span> through user-centered design.
                         </p>
-                        <div class="flex flex-wrap gap-3 mb-8">
-                            <span class="px-4 py-2 bg-white bg-opacity-10 pill-border rounded-full text-sm font-light text-medium-contrast">Mobile First</span>
-                            <span class="px-4 py-2 bg-white bg-opacity-10 pill-border rounded-full text-sm font-light text-medium-contrast">Enterprise UX</span>
-                            <span class="px-4 py-2 bg-white bg-opacity-10 pill-border rounded-full text-sm font-light text-medium-contrast">Service Design</span>
+                        <div class="mt-8">
+                            <a href="https://www.youtube.com/watch?v=Fm2HucL4iLw" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-accent-high hover:text-accent transition-colors">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                                View this Case Study on VMware's YouTube channel
+                            </a>
                         </div>
-                        <a href="#overview" class="cta-button">
-                            Read Full Study
-                            <svg class="w-4 h-4 cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                            </svg>
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div class="case-study-image hero-image mx-auto">
+                        <img src="images/hn1-web.avif" alt="HelpNow+ platform overview showing the redesigned service management interface" loading="eager">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Project Overview -->
+            <section class="py-24 section-bg1">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                        <div>
+                            <h2 class="text-2xl font-medium text-accent-high mb-4">What is HelpNow+?</h2>
+                            <p class="text-medium-contrast font-light leading-relaxed">
+                                A VMware internal service platform that enables employees to request help across HR, Finance, Logistics, IT and other departments.
+                            </p>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-medium text-accent-high mb-4">The Project</h2>
+                            <p class="text-medium-contrast font-light leading-relaxed">
+                                Rebuild trust and boost efficiency by streamlining how services are discovered, requested, tracked, and fulfilled across the company.
+                            </p>
+                            <div class="mt-6 space-y-2 text-sm text-medium-contrast">
+                                <div><span class="text-accent-high">Team:</span> 3 Designers • 12 Engineers • 3 PMs • 1 Product Owner</div>
+                                <div><span class="text-accent-high">Timeline:</span> 6 Quarters</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-medium text-accent-high mb-4">My Role</h2>
+                            <p class="text-medium-contrast font-light leading-relaxed">
+                                As the Lead Product Designer, I drove UX strategy, research, and design execution - leading workshops, co-sketching with stakeholders, testing with users, and guiding delivery across two major platform releases.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="section-divider"></div>
+
+                    <!-- Success Metrics -->
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="metric-card">
+                            <div class="metric-number">75%</div>
+                            <div class="text-sm font-medium text-accent-high mb-2">COST REDUCTION</div>
+                            <p class="text-xs text-medium-contrast">Phone service cost reduction</p>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">2x</div>
+                            <div class="text-sm font-medium text-accent-high mb-2">PRODUCTIVITY</div>
+                            <p class="text-xs text-medium-contrast">Fulfillment productivity increase</p>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-number">95%</div>
+                            <div class="text-sm font-medium text-accent-high mb-2">SATISFACTION</div>
+                            <p class="text-xs text-medium-contrast">User satisfaction achieved</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Context -->
+            <section class="py-24 section-bg2">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extralight tracking-tight mb-8 text-high-contrast">
+                            The <span class="text-accent-high">Context</span>
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                        <div>
+                            <h3 class="text-3xl font-light text-high-contrast mb-6">
+                                In a workplace known for happiness, the support experience wasn't part of the joy.
+                            </h3>
+                            <p class="text-medium-contrast font-light leading-relaxed mb-6">
+                                Company of 40,000+ employees. Award-winning culture. Nestled in 100 acres of nature.
+                            </p>
+                            <p class="text-medium-contrast font-light leading-relaxed">
+                                Yet, every time someone needed HR help, or requested office supplies, they dreaded the help desk portal, and instead just picked up the phone!
+                            </p>
+                        </div>
+                        <div class="case-study-image content-image">
+                            <img src="images/2event.jpeg" alt="VMware campus showing the beautiful work environment" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Problem -->
+            <section class="py-24 section-bg1">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extralight tracking-tight mb-8 text-high-contrast">
+                            The <span class="text-accent-high">Problem</span>
+                        </h2>
+                    </div>
+
+                    <div class="content-card">
+                        <h3 class="text-2xl font-medium text-accent-high mb-6">Unhappy Employees, and a costly affair</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-4">
+                                <span class="text-accent text-lg">•</span>
+                                <p class="text-medium-contrast font-light">$5M+ lost annually in phone support and licensing costs</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="text-accent text-lg">•</span>
+                                <p class="text-medium-contrast font-light">Employees frustrated</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="text-accent text-lg">•</span>
+                                <p class="text-medium-contrast font-light">Departments blamed</p>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <span class="text-accent text-lg">•</span>
+                                <p class="text-medium-contrast font-light">Internal reputation damaged</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="highlight-bar mt-12">
+                        <div class="quote-section">
+                            <p class="text-xl font-light text-high-contrast leading-relaxed">
+                                The leadership team gave us a bold challenge: "Make internal support as delightful as everything else here."
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Discovery -->
+            <section class="py-24 section-bg2">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extralight tracking-tight mb-8 text-high-contrast">
+                            <span class="creative-text">Discovery</span> & Research
+                        </h2>
+                    </div>
+
+                    <!-- User Research -->
+                    <div class="mb-20">
+                        <h3 class="text-2xl font-medium text-accent-high mb-8">User Research</h3>
+                        <p class="text-lg text-medium-contrast font-light mb-12 leading-relaxed">
+                            I listened, shadowed, and learned from 3 key user groups:
+                        </p>
+
+                        <!-- User Personas Grid -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                            <div class="text-center">
+                                <div class="case-study-image persona-image mb-6">
+                                    <img src="images/hn3-employee.webp" alt="Employee persona illustration" loading="lazy">
+                                </div>
+                                <h4 class="text-xl font-medium text-high-contrast mb-4">Employees</h4>
+                                <p class="text-medium-contrast font-light mb-4">
+                                    <span class="text-accent-high font-medium">Task:</span> Request for support or service at work.
+                                </p>
+                                <p class="text-medium-contrast font-light mb-4">
+                                    <span class="text-accent-high font-medium">Privacy Risks:</span> Employees hesitated to log sensitive issues due to lack of confidentiality.
+                                </p>
+                                <div class="quote-section">
+                                    <p class="text-lg font-light text-high-contrast italic">
+                                        I just can't trust the system when I really need help!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="case-study-image persona-image mb-6">
+                                    <img src="images/hn3-fullfiller.avif" alt="Fulfiller persona illustration" loading="lazy">
+                                </div>
+                                <h4 class="text-xl font-medium text-high-contrast mb-4">Fulfillers</h4>
+                                <p class="text-medium-contrast font-light mb-4">
+                                    <span class="text-accent-high font-medium">Task:</span> Support Employees by resolving issues.
+                                </p>
+                                <p class="text-medium-contrast font-light mb-4">
+                                    <span class="text-accent-high font-medium">Lack of Accountability:</span> Tickets were often rerouted multiple times, leading to confusion and delays.
+                                </p>
+                                <div class="quote-section">
+                                    <p class="text-lg font-light text-high-contrast italic">
+                                        This $#@&%# system makes it all so overwhelming!
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="case-study-image persona-image mb-6">
+                                    <img src="images/hn3-admin.avif" alt="Admin persona illustration" loading="lazy">
+                                </div>
+                                <h4 class="text-xl font-medium text-high-contrast mb-4">Admins</h4>
+                                <p class="text-medium-contrast font-light mb-4">
+                                    <span class="text-accent-high font-medium">Task:</span> Define what services are supported and how.
+                                </p>
+                                <p class="text-medium-contrast font-light mb-4">
+                                    <span class="text-accent-high font-medium">IT as a Bottleneck:</span> Every change in a service workflow or SLA had to go through IT department.
+                                </p>
+                                <div class="quote-section">
+                                    <p class="text-lg font-light text-high-contrast italic">
+                                        Why do we need IT for every single change?!?
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Competitive Analysis -->
+                    <div class="content-card">
+                        <h3 class="text-2xl font-medium text-accent-high mb-6">Competitive Analysis: Spotting a Market Gap</h3>
+                        <p class="text-medium-contrast font-light leading-relaxed mb-6">
+                            I found most tools were built as ITSM (IT Service Management) systems - later retrofitted for HR, Finance, and other departments. This force-fit approach led to fragmented experiences and low adoption across non-IT teams.
+                        </p>
+                        <div class="highlight-bar">
+                            <p class="text-lg font-medium text-high-contrast">
+                                <span class="emoji-highlight">💡</span> We had a strategic opportunity to design a system that serves every department - ESM (Enterprise Service Management) systems - a need the market was just beginning to recognize.
+                            </p>
+                        </div>
+                        <div class="case-study-image supporting-image mx-auto mt-8">
+                            <img src="images/hn-competitive.avif" alt="Competitive analysis findings showing market gap" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Solutions -->
+            <section class="py-24 section-bg1">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extralight tracking-tight mb-8 text-high-contrast">
+                            Design <span class="text-accent-high">Solutions</span>
+                        </h2>
+                    </div>
+
+                    <!-- Solving for Employees: Ease of Use -->
+                    <div class="mb-20">
+                        <h3 class="text-3xl font-light text-high-contrast mb-8">Solving for Employees: Ease of Use</h3>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-12">
+                            <div>
+                                <h4 class="text-xl font-medium text-accent-high mb-6">Rationale</h4>
+                                <p class="text-medium-contrast font-light leading-relaxed mb-6">
+                                    Heuristic Evaluation (based on Jakob Nielsen's 10 usability heuristics) showed multiple issues with Navigation Overload, Terminology Clarity and Visual Hierarchy. 1-1 interviews (n=6) revealed:
+                                </p>
+                                <div class="space-y-3">
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-accent text-lg">•</span>
+                                        <p class="text-medium-contrast font-light">Power users used the incident form, meant for IT, creating an extra hop in resolution</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-accent text-lg">•</span>
+                                        <p class="text-medium-contrast font-light">Casual users spent over 2 minutes to find the right 'form' to request for a service!</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="case-study-image content-image">
+                                <img src="images/hn5-discovery.avif" alt="User research findings and heuristic evaluation results" loading="lazy">
+                            </div>
+                        </div>
+
+                        <!-- Interface Screenshots with Light Background -->
+                        <div class="light-bg-container">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                                <div class="case-study-image content-image">
+                                    <img src="images/hn-usability-issues.avif" alt="First iteration design with radical simplification" loading="lazy">
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-medium text-accent-high mb-6">Design Iteration 1</h4>
+                                    <p class="text-medium-contrast font-light leading-relaxed mb-6">
+                                        My team explored ways to simplify and streamline the end user experience, while engineering did a proof of concept (POC) on elastic search using NLP. With this power, we experimented with:
+                                    </p>
+                                    <div class="space-y-3">
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-green-600">✅</span>
+                                            <p class="text-gray-700 font-light">Radical simplification</p>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-green-600">✅</span>
+                                            <p class="text-gray-700 font-light">Powerful elastic search</p>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <span class="text-green-600">✅</span>
+                                            <p class="text-gray-700 font-light">NLP Service Tagging</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="content-card">
+                            <h4 class="text-xl font-medium text-accent-high mb-4">Usability Testing: Failing Early</h4>
+                            <p class="text-medium-contrast font-light leading-relaxed">
+                                We failed to meet the users where they were! Our radical approach confused users who were accustomed to traditional service catalogs.
+                            </p>
+                        </div>
+
+                        <div class="light-bg-container">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h4 class="text-xl font-medium text-accent-high mb-6">Iteration 2: The Pivot</h4>
+                                    <p class="text-gray-700 font-light leading-relaxed">
+                                        We restored the familiar service catalog, but added smart shortcuts to departments. This balanced innovation with familiarity, giving users the confidence they needed while still improving efficiency.
+                                    </p>
+                                </div>
+                                <div class="case-study-image content-image">
+                                    <img src="images/hn-iteration2.avif" alt="Final iteration with balanced approach combining familiar patterns with smart shortcuts" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Solving for Trust -->
+                    <div class="mb-20">
+                        <h3 class="text-3xl font-light text-high-contrast mb-8">Solving for Employees: Rebuilding Trust</h3>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h4 class="text-xl font-medium text-accent-high mb-6">Rationale</h4>
+                                <p class="text-medium-contrast font-light leading-relaxed mb-6">
+                                    We had learned from users:
+                                </p>
+                                <div class="space-y-3 mb-8">
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-accent text-lg">•</span>
+                                        <p class="text-medium-contrast font-light">Information changed hands, so they avoided using the system for sensitive issues (mainly HR and Finance)</p>
+                                    </div>
+                                    <div class="flex items-start gap-3">
+                                        <span class="text-accent text-lg">•</span>
+                                        <p class="text-medium-contrast font-light">Tickets changed status mysteriously!</p>
+                                    </div>
+                                </div>
+
+                                <h4 class="text-xl font-medium text-accent-high mb-6">Design Solutions</h4>
+                                <div class="space-y-3">
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-green-400">✅</span>
+                                        <p class="text-medium-contrast font-light">Private tickets that routed securely</p>
+                                    </div>
+                                    <div class="flex items-center gap-3">
+                                        <span class="text-green-400">✅</span>
+                                        <p class="text-medium-contrast font-light">A unified status model: Internal teams used custom statuses, Users saw simple stages like Received → In Progress → Resolved</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="case-study-image content-image">
+                                <video autoplay muted loop playsinline preload="metadata" poster="images/custom-status.png" aria-label="Status model demonstration showing unified user experience">
+                                    <source src="images/custom-status.mp4" type="video/mp4">
+                                    <source src="images/custom-status.webm" type="video/webm">
+                                    <img src="images/custom-status.png" alt="Status model interface design" style="width:100%;height:100%;object-fit:cover;">
+                                </video>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Efficiency for Fulfillers -->
+                    <div class="mb-20">
+                        <h3 class="text-3xl font-light text-high-contrast mb-8">Efficiency for Fulfillers</h3>
+
+                        <div class="light-bg-container mb-12">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                                <div class="case-study-image content-image">
+                                    <img src="images/hn10-ticketlist.avif" alt="Before state showing scattered ticket management" loading="lazy">
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-medium text-accent-high mb-6">Flocks of the same feather</h4>
+                                    <p class="text-gray-700 font-light leading-relaxed">
+                                        Fulfillers struggled with jobs that comprised of multiple, dependent, or sub tasks (think onboarding a new employee or procurement). They had to manually search each ticket to make sense of the progress of the job. We started by simplifying that view.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                            <div>
+                                <h4 class="text-xl font-medium text-accent-high mb-6">Form a meaningful view</h4>
+                                <p class="text-medium-contrast font-light leading-relaxed mb-6">
+                                    And then I crafted a cohesive UI that brought all related tickets together, improving efficiency by 3x. This prompted the team to ideate a new 'ticket-item' object model to technically design a framework that scaled across departments and allowed solving for dependencies.
+                                </p>
+                                <div class="quote-section">
+                                    <p class="text-lg font-light text-high-contrast italic">
+                                        Now I can see everything in one place. No hunting.
+                                    </p>
+                                    <p class="text-sm text-accent-high mt-2">- Field Fulfillment Agent</p>
+                                </div>
+                            </div>
+                            <div class="case-study-image content-image">
+                                <img src="images/hn-admin-workshop.avif" alt="Workshop session with admin users" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Autonomy for Admins -->
+                    <div>
+                        <h3 class="text-3xl font-light text-high-contrast mb-8">Autonomy + Efficiency for Admins</h3>
+
+                        <div class="content-card mb-12">
+                            <h4 class="text-xl font-medium text-accent-high mb-6">400+ forms. Hard-coded. IT-dependent.</h4>
+                            <p class="text-medium-contrast font-light leading-relaxed">
+                                Departments had 400+ service forms to manage. I ran workshops with the admins to brainstorm ways to reduce maintenance - eventually coming up with a re-architecture that made it scalable and future proof.
+                            </p>
+                        </div>
+
+                        <div class="light-bg-container">
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h4 class="text-xl font-medium text-accent-high mb-6">Co-design Process</h4>
+                                    <p class="text-gray-700 font-light leading-relaxed mb-8">
+                                        I ran co-design workshops with Admins → Mapped overlap → Built modular form templates
+                                    </p>
+                                    <div class="grid grid-cols-3 gap-4 mb-8">
+                                        <div class="text-center">
+                                            <div class="text-3xl font-light text-amber-600 mb-2">5</div>
+                                            <p class="text-xs text-amber-700 font-medium">Working sessions</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-light text-amber-600 mb-2">4</div>
+                                            <p class="text-xs text-amber-700 font-medium">Admin Users</p>
+                                        </div>
+                                        <div class="text-center">
+                                            <div class="text-3xl font-light text-amber-600 mb-2">&lt;100</div>
+                                            <p class="text-xs text-amber-700 font-medium">Final services</p>
+                                        </div>
+                                    </div>
+                                    <p class="text-gray-700 font-light leading-relaxed">
+                                        Admins now easily managed their services, without IT help.
+                                    </p>
+                                </div>
+                                <div class="case-study-image content-image">
+                                    <img src="images/hn-admin-solution.avif" alt="Modular form builder interface allowing admins to create services independently" loading="lazy">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results -->
+            <section class="py-24 section-bg2">
+                <div class="max-w-6xl mx-auto px-6">
+                    <div class="text-center mb-16">
+                        <h2 class="text-4xl md:text-5xl font-extralight tracking-tight mb-8 text-high-contrast">
+                            <span class="creative-text">Results</span> & Impact
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-16">
+                        <div>
+                            <h3 class="text-2xl font-medium text-accent-high mb-8">Product Impact</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <span class="text-accent text-lg">•</span>
+                                    <p class="text-medium-contrast font-light">Fulfillment productivity and mobile adoption increase 35%</p>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-accent text-lg">•</span>
+                                    <p class="text-medium-contrast font-light">$5M+ cost savings through reduced phone services and licensing costs</p>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-accent text-lg">•</span>
+                                    <p class="text-medium-contrast font-light">~95% user satisfaction & average ticket filing time under 1 minute</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="case-study-image content-image">
+                            <img src="images/hn17-impact.avif" alt="Results dashboard showing improved metrics and user satisfaction scores" loading="lazy">
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <h3 class="text-2xl font-medium text-accent-high mb-6">What This Taught Me</h3>
+                        <p class="text-lg text-medium-contrast font-light leading-relaxed mb-6">
+                            True transformation happens when you design with the people, not just for them.
+                        </p>
+                        <p class="text-medium-contrast font-light leading-relaxed mb-6">
+                            Our users were co-creators, not just 'requirement sources'. We ended up uncovering root causes - and the solutions were more meaningful and sustainable.
+                        </p>
+                        <div class="highlight-bar">
+                            <p class="text-lg font-medium text-high-contrast italic">
+                                One of my best journeys of discovery, iteration, and collaboration. This project showed me the power of user-centered design in solving complex organizational challenges.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation -->
+            <section class="py-16 section-bg1">
+                <div class="max-w-6xl mx-auto px-6 text-center">
+                    <div class="flex flex-col md:flex-row gap-6 justify-center items-center">
+                        <a href="../../index.html" class="inline-flex items-center gap-2 px-6 py-3 border border-white border-opacity-20 rounded-lg text-medium-contrast hover:text-white hover:border-opacity-40 transition-colors">
+                            ← Back to Portfolio
+                        </a>
+                        <a href="devhub.html" class="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent-high text-primary font-medium rounded-lg transition-colors">
+                            Next Case Study: DevHub →
                         </a>
                     </div>
-                    <div class="image-container min-h-[500px]">
-                        <img src="images/case-study-helpnow2.png" alt="HelpNow platform interface showing the redesigned service management dashboard" loading="eager">
-                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="border-t border-gray-700 py-12">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <div class="text-sm font-light text-medium-contrast">
+                    © 2025 Tushar Roy. Crafted with precision and care.
                 </div>
             </div>
-        </section>
+        </footer>
+        <script>
+            // Mobile Menu Functionality
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const hamburger = document.getElementById('hamburger');
+            const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link, .mobile-menu-action');
+            let isMenuOpen = false;
 
-        <!-- Quick Metrics Section -->
-        <section class="py-16 relative" style="background-color: var(--dark-section);">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="metrics-grid">
-                    <div class="metric-card">
-                        <div class="highlight-number text-4xl font-extralight mb-3">$5M+</div>
-                        <div class="text-sm font-light text-accent-high tracking-widest mb-2">COST SAVINGS</div>
-                        <p class="text-sm text-medium-contrast font-light">Annual operational efficiency gains</p>
-                    </div>
-                    <div class="metric-card">
-                        <div class="highlight-number text-4xl font-extralight mb-3">2x</div>
-                        <div class="text-sm font-light text-accent-high tracking-widest mb-2">PRODUCTIVITY</div>
-                        <p class="text-sm text-medium-contrast font-light">Fulfillment team efficiency increase</p>
-                    </div>
-                    <div class="metric-card">
-                        <div class="highlight-number text-4xl font-extralight mb-3">95%</div>
-                        <div class="text-sm font-light text-accent-high tracking-widest mb-2">SATISFACTION</div>
-                        <p class="text-sm text-medium-contrast font-light">Employee experience rating</p>
-                    </div>
-                    <div class="metric-card">
-                        <div class="highlight-number text-4xl font-extralight mb-3">50%</div>
-                        <div class="text-sm font-light text-accent-high tracking-widest mb-2">TIME REDUCTION</div>
-                        <p class="text-sm text-medium-contrast font-light">Average request resolution time</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Overview Section -->
-        <section id="overview" class="py-32 relative hero-pattern">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
-                        Project <span class="text-accent-high">Overview</span>
-                    </h2>
-                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
-                    <div class="content-card">
-                        <h3 class="text-2xl font-light text-high-contrast mb-6">The Challenge</h3>
-                        <p class="text-lg text-medium-contrast leading-relaxed font-light mb-6">
-                            Enterprise employees were struggling with a fragmented, outdated service management system that led to
-                            frustration, inefficient workflows, and significant operational costs.
-                        </p>
-                        <ul class="space-y-3 text-medium-contrast">
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Multiple disconnected systems and touchpoints
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Average resolution time of 5+ days for simple requests
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                                65% employee satisfaction with IT services
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-red-400 rounded-full mt-2 flex-shrink-0"></div>
-                                $8M+ annual operational costs due to inefficiencies
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="content-card">
-                        <h3 class="text-2xl font-light text-high-contrast mb-6">The Solution</h3>
-                        <p class="text-lg text-medium-contrast leading-relaxed font-light mb-6">
-                            We designed a unified, mobile-first platform that streamlined service requests, automated workflows,
-                            and provided transparent status tracking for all stakeholders.
-                        </p>
-                        <ul class="space-y-3 text-medium-contrast">
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Single, intuitive interface for all service requests
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Intelligent routing and automated approval workflows
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Real-time status tracking and proactive notifications
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Self-service capabilities with guided assistance
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Process Section -->
-        <section class="py-32 relative" style="background-color: var(--dark-section);">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
-                        Design <span class="text-accent-high">Process</span>
-                    </h2>
-                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
-                    <p class="text-lg text-medium-contrast max-w-2xl mx-auto">
-                        A human-centered approach focusing on understanding pain points and crafting solutions that work for everyone.
-                    </p>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                    <div class="process-step">
-                        <div class="step-number">01</div>
-                        <h3 class="text-xl font-medium text-high-contrast mb-4">Discover</h3>
-                        <p class="text-medium-contrast font-light">
-                            User interviews, stakeholder mapping, and system analysis to understand current pain points.
-                        </p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">02</div>
-                        <h3 class="text-xl font-medium text-high-contrast mb-4">Define</h3>
-                        <p class="text-medium-contrast font-light">
-                            Synthesized insights into user personas, journey maps, and clear problem statements.
-                        </p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">03</div>
-                        <h3 class="text-xl font-medium text-high-contrast mb-4">Design</h3>
-                        <p class="text-medium-contrast font-light">
-                            Iterative prototyping, usability testing, and design system development.
-                        </p>
-                    </div>
-                    <div class="process-step">
-                        <div class="step-number">04</div>
-                        <h3 class="text-xl font-medium text-high-contrast mb-4">Deliver</h3>
-                        <p class="text-medium-contrast font-light">
-                            Implementation support, training materials, and success metrics tracking.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- User Research Insights -->
-        <section class="py-32 relative hero-pattern">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
-                        Key <span class="text-accent-high">Insights</span>
-                    </h2>
-                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
-                </div>
-
-                <div class="space-y-16">
-                    <div class="quote-section">
-                        <p class="text-xl text-high-contrast font-light italic leading-relaxed mb-4">
-                            I just want to know when my laptop will arrive. Right now, I submit a request and it disappears
-                            into a black hole. No updates, no timeline, nothing.
-                        </p>
-                        <div class="text-sm text-accent-high font-medium">
-                            — Marketing Manager, Primary Research
-                        </div>
-                    </div>
-
-                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                        <div class="content-card text-center">
-                            <div class="text-3xl mb-4">📱</div>
-                            <h3 class="text-xl font-medium text-high-contrast mb-4">Mobile-First Need</h3>
-                            <p class="text-medium-contrast font-light">
-                                78% of users wanted to submit and track requests from their mobile devices
-                            </p>
-                        </div>
-                        <div class="content-card text-center">
-                            <div class="text-3xl mb-4">⚡</div>
-                            <h3 class="text-xl font-medium text-high-contrast mb-4">Speed Matters</h3>
-                            <p class="text-medium-contrast font-light">
-                                Users abandon requests if they take more than 3 minutes to complete
-                            </p>
-                        </div>
-                        <div class="content-card text-center">
-                            <div class="text-3xl mb-4">🔍</div>
-                            <h3 class="text-xl font-medium text-high-contrast mb-4">Transparency Crucial</h3>
-                            <p class="text-medium-contrast font-light">
-                                Real-time status updates were the #1 requested feature across all user groups
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Solution Deep Dive -->
-        <section class="py-32 relative" style="background-color: var(--dark-section);">
-            <div class="max-w-7xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
-                        Solution <span class="text-accent-high">Deep Dive</span>
-                    </h2>
-                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
-                </div>
-
-                <div class="space-y-24">
-                    <!-- Feature 1 -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div>
-                            <h3 class="text-3xl font-light text-high-contrast mb-6">Smart Request Creation</h3>
-                            <p class="text-lg text-medium-contrast leading-relaxed font-light mb-6">
-                                Intelligent form fields that adapt based on request type, pre-populate known information,
-                                and guide users through the process with contextual help.
-                            </p>
-                            <ul class="space-y-3 text-medium-contrast">
-                                <li class="flex items-start gap-3">
-                                    <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                                    Dynamic forms that show only relevant fields
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                                    Auto-complete from previous requests
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                                    Real-time validation and error prevention
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="image-container min-h-[400px]">
-                            <img src="images/case-study-feature1.png" alt="Smart request creation interface showing dynamic form fields" loading="lazy">
-                        </div>
-                    </div>
-
-                    <!-- Feature 2 -->
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                        <div class="image-container min-h-[400px] lg:order-1">
-                            <img src="images/case-study-feature2.png" alt="Real-time tracking dashboard showing request status and timeline" loading="lazy">
-                        </div>
-                        <div class="lg:order-2">
-                            <h3 class="text-3xl font-light text-high-contrast mb-6">Real-time Tracking</h3>
-                            <p class="text-lg text-medium-contrast leading-relaxed font-light mb-6">
-                                Transparent status tracking with proactive notifications keeps users informed throughout
-                                the entire request lifecycle.
-                            </p>
-                            <ul class="space-y-3 text-medium-contrast">
-                                <li class="flex items-start gap-3">
-                                    <div class="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                                    Visual timeline with current status
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                                    Automated email and push notifications
-                                </li>
-                                <li class="flex items-start gap-3">
-                                    <div class="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                                    Estimated completion times based on historical data
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Results & Impact -->
-        <section class="py-32 relative hero-pattern">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
-                        Results & <span class="text-accent-high">Impact</span>
-                    </h2>
-                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
-                </div>
-
-                <div class="content-card mb-16">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                        <div>
-                            <h3 class="text-2xl font-light text-high-contrast mb-8">Business Impact</h3>
-                            <div class="space-y-6">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-medium-contrast">Operational Cost Reduction</span>
-                                    <span class="text-green-400 font-semibold">$5.2M annually</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-medium-contrast">Request Processing Time</span>
-                                    <span class="text-green-400 font-semibold">-50% reduction</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-medium-contrast">Support Team Productivity</span>
-                                    <span class="text-green-400 font-semibold">+112% increase</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-medium-contrast">Employee Satisfaction</span>
-                                    <span class="text-green-400 font-semibold">65% → 95%</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                            <h3 class="text-2xl font-light text-high-contrast mb-8">User Experience</h3>
-                            <div class="space-y-6">
-                                <div class="flex justify-between items-center">
-                                    <span class="text-medium-contrast">Mobile Adoption Rate</span>
-                                    <span class="text-blue-400 font-semibold">85% within 6 months</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-medium-contrast">Request Completion Rate</span>
-                                    <span class="text-blue-400 font-semibold">92% (was 68%)</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-medium-contrast">Average Session Time</span>
-                                    <span class="text-blue-400 font-semibold">3.2 min (was 12 min)</span>
-                                </div>
-                                <div class="flex justify-between items-center">
-                                    <span class="text-medium-contrast">User Retention</span>
-                                    <span class="text-blue-400 font-semibold">Week 1: 94%</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="quote-section">
-                    <p class="text-xl text-high-contrast font-light italic leading-relaxed mb-4">
-                        This transformation has fundamentally changed how our organization operates. What used to take
-                        weeks now happens in days, and our employees are finally happy with IT services.
-                    </p>
-                    <div class="text-sm text-accent-high font-medium">
-                        — Director of IT Operations
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Lessons Learned -->
-        <section class="py-32 relative" style="background-color: var(--dark-section);">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="text-center mb-20">
-                    <h2 class="text-4xl md:text-5xl font-extralight text-high-contrast mb-8 leading-tight">
-                        Lessons <span class="text-accent-high">Learned</span>
-                    </h2>
-                    <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-8"></div>
-                </div>
-
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div class="content-card">
-                        <h3 class="text-xl font-medium text-high-contrast mb-4">What Worked Well</h3>
-                        <ul class="space-y-3 text-medium-contrast">
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Early stakeholder alignment prevented scope creep
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Continuous user testing caught usability issues early
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Mobile-first approach exceeded adoption expectations
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-green-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Phased rollout allowed for iterative improvements
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="content-card">
-                        <h3 class="text-xl font-medium text-high-contrast mb-4">Areas for Improvement</h3>
-                        <ul class="space-y-3 text-medium-contrast">
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Change management needed more upfront investment
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Integration complexity was underestimated initially
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Training materials could have been more comprehensive
-                            </li>
-                            <li class="flex items-start gap-3">
-                                <div class="w-2 h-2 bg-yellow-400 rounded-full mt-2 flex-shrink-0"></div>
-                                Performance monitoring should start earlier
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Next Steps -->
-        <section class="py-32 relative hero-pattern">
-            <div class="max-w-4xl mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-extralight tracking-tight mb-8 text-high-contrast">
-                    Want to Learn <span class="text-accent-high">More?</span>
-                </h2>
-                <div class="w-24 h-px bg-gradient-to-r from-transparent via-yellow-400 to-transparent mx-auto mb-12"></div>
-
-                <p class="text-xl font-light text-medium-contrast mb-16 max-w-2xl mx-auto leading-relaxed">
-                    This case study represents just one aspect of the transformation. I'd love to discuss the full details,
-                    including design artifacts, research findings, and implementation strategies.
-                </p>
-
-                <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                    <a href="mailto:tushar7up@gmail.com?subject=HelpNow Case Study Discussion" class="cta-button">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                        </svg>
-                        Discuss This Project
-                        <svg class="w-4 h-4 cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </a>
-                    <a href="/" class="cta-button">
-                        View More Work
-                        <svg class="w-4 h-4 cta-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-gray-700 py-12">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="text-sm font-light text-medium-contrast">
-                © 2025 Tushar Roy. Crafted with precision and care.
-            </div>
-        </div>
-    </footer>
-
-    <script>
-        // Password Protection
-        const correctPassword = 'design2025';
-
-        function checkPassword() {
-            const inputPassword = document.getElementById('passwordInput').value;
-            const errorMessage = document.getElementById('errorMessage');
-            const overlay = document.getElementById('passwordOverlay');
-
-            if (inputPassword === correctPassword) {
-                overlay.style.display = 'none';
-                // You could also store this in sessionStorage to remember for the session
-                sessionStorage.setItem('caseStudyAccess', 'granted');
-            } else {
-                errorMessage.classList.remove('hidden');
-                document.getElementById('passwordInput').value = '';
-                document.getElementById('passwordInput').focus();
-            }
-        }
-
-        // Check if user already has access this session
-        if (sessionStorage.getItem('caseStudyAccess') === 'granted') {
-            document.getElementById('passwordOverlay').style.display = 'none';
-        }
-
-        // Allow Enter key to submit password
-        document.getElementById('passwordInput').addEventListener('keypress', function (e) {
-            if (e.key === 'Enter') {
-                checkPassword();
-            }
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-
-        let isMenuOpen = false;
-
-        mobileMenuBtn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            mobileMenuBtn.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-
-        // Close mobile menu when clicking on links
-        mobileMenuLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                isMenuOpen = false;
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
+            mobileMenuBtn.addEventListener('click', () => {
+                isMenuOpen = !isMenuOpen;
+                hamburger.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                document.body.style.overflow = isMenuOpen ? 'hidden' : '';
             });
-        });
 
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (e) => {
-            if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
-                isMenuOpen = false;
-                mobileMenuBtn.classList.remove('active');
-                mobileMenu.classList.remove('active');
-            }
-        });
+            mobileMenuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    isMenuOpen = false;
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
 
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            document.addEventListener('click', (e) => {
+                if (isMenuOpen && !mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+                    isMenuOpen = false;
+                    hamburger.classList.remove('active');
+                    mobileMenu.classList.remove('active');
+                    document.body.style.overflow = '';
                 }
             });
-        });
-    </script>
+
+            // Image Overlay Functionality
+            const imageOverlay = document.getElementById('imageOverlay');
+            const overlayImage = document.getElementById('overlayImage');
+            const overlayClose = document.getElementById('overlayClose');
+
+            // Add click listeners to all images in case study images
+            document.querySelectorAll('.case-study-image img').forEach(img => {
+                img.addEventListener('click', () => {
+                    overlayImage.src = img.src;
+                    overlayImage.alt = img.alt;
+                    imageOverlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // Close overlay functionality
+            function closeOverlay() {
+                imageOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+
+            overlayClose.addEventListener('click', closeOverlay);
+
+            imageOverlay.addEventListener('click', (e) => {
+                if (e.target === imageOverlay) {
+                    closeOverlay();
+                }
+            });
+
+            // Close overlay with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && imageOverlay.classList.contains('active')) {
+                    closeOverlay();
+                }
+            });
+        </script>
 </body>
 
 </html>
