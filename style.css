@@ -1,0 +1,65 @@
+/* Typography Styles */
+
+.h1-hero {
+    @apply text-5xl md:text-7xl font-extralight tracking-tight mb-8 text-high-contrast;
+}
+
+.h2-section {
+    @apply text-4xl md:text-5xl font-extralight tracking-tight mb-8 text-high-contrast;
+}
+
+.h2-subtle {
+    @apply text-2xl font-medium text-accent-high mb-4;
+}
+
+.h3-highlight {
+    @apply text-3xl font-light text-high-contrast mb-8;
+}
+
+.h3-accent {
+    @apply text-2xl font-medium text-accent-high mb-6;
+}
+
+.h4-accent {
+    @apply text-xl font-medium text-accent-high mb-6;
+}
+
+.body-text {
+    @apply text-medium-contrast font-light leading-relaxed;
+}
+
+.body-lg {
+    @apply text-lg text-medium-contrast font-light leading-relaxed;
+}
+
+.body-sm {
+    @apply text-sm text-medium-contrast;
+}
+
+.body-xs {
+    @apply text-xs text-medium-contrast;
+}
+
+.callout-text {
+    @apply text-xl font-light text-high-contrast italic leading-relaxed;
+}
+
+.quote-highlight {
+    @apply text-lg font-medium text-high-contrast italic;
+}
+
+.stat-number {
+    @apply text-3xl font-light text-amber-600 mb-2;
+}
+
+.stat-label {
+    @apply text-xs text-amber-700 font-medium;
+}
+
+.stat-title {
+    @apply text-sm font-medium text-accent-high mb-2;
+}
+
+.stat-caption {
+    @apply text-xs text-medium-contrast;
+}
