@@ -1,0 +1,543 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+import ImageZoom from "../../components/ImageZoom.astro";
+import PasswordGate from "../../components/PasswordGate.astro";
+
+const projectMetadata = {
+    title: "HelpNow+",
+    role: "Lead Product Designer",
+    timeline: "2021 - 2023 (6 Quarters)",
+    team: "Me + 2 Designers, 12+ Engineers, 1 PM, 3 Analysts",
+    platform: "Web & Mobile PWA",
+    responsibilities: [
+        "Service Design Strategy",
+        "User Research",
+        "Mobile PWA Strategy",
+        "Prototyping",
+    ],
+};
+---
+
+<Layout title="HelpNow - Case Study">
+    <PasswordGate />
+    <main class="max-w-4xl mx-auto px-6 pt-32 pb-24">
+        <button
+            onclick="history.back()"
+            class="btn-link opacity-60 hover:opacity-100 mb-12 block cursor-pointer"
+            >← BACK</button
+        >
+        <!-- SECTION: CONTEXT -->
+        <span class="eyebrow block mb-6">Case Study: HelpNow+</span>
+
+        <h2>
+            In a workplace known for happiness, the support experience wasn’t
+            part of the joy.
+        </h2>
+
+        <p class="mb-8 font-bold text-2xl">
+            Unhappy employees raised multiple escalations everyday, while VMware
+            lost money on expensive and overloaded phone support.
+        </p>
+
+        <p class="mb-12 text-2xl">
+            I was a part of the team that was given a bold challenge to <em
+                >“Make internal support as delightful as everything else here.”</em
+            >
+        </p>
+
+        <section class="mb-24 image-full-width">
+            <img src="/images/case-study/helpnow/hero.png" alt="HelpNow Hero" />
+        </section>
+
+        <!-- SECTION: OVERVIEW GRID -->
+        <section class="mb-24">
+            <span class="eyebrow">OVERVIEW</span>
+
+            <!-- Metadata Grid -->
+            <div
+                class="grid grid-cols-2 md:grid-cols-2 gap-12 border-y border-[var(--color-text-primary)]/10 py-12 mb-12"
+            >
+                <div class="metric-item">
+                    <span class="metric-label">Role</span>
+                    <span class="font-sans text-lg">{projectMetadata.role}</span
+                    >
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Timeline</span>
+                    <span class="font-sans text-lg"
+                        >{projectMetadata.timeline}</span
+                    >
+                </div>
+                <div class="metric-item">
+                    <span class="metric-label">Team</span>
+                    <span class="font-sans text-lg">{projectMetadata.team}</span
+                    >
+                </div>
+                <!-- Updated: Key Responsibilities -->
+                <div class="metric-item">
+                    <span class="metric-label">Key Responsibilities</span>
+                    <ul class="font-sans text-lg list-disc ml-4 space-y-1">
+                        {
+                            projectMetadata.responsibilities.map((item) => (
+                                <li>{item}</li>
+                            ))
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <!-- TLDR / Product Overview Grid -->
+            <div
+                class="bg-[#fcfaf8] p-8 md:p-12 rounded-2xl border border-[#e0ba9b]/30 mb-12 relative overflow-hidden"
+            >
+                <span
+                    class="font-serif italic text-3xl text-[#e0ba9b] absolute top-8 right-8 opacity-30 md:opacity-100"
+                    >TL;DR</span
+                >
+
+                <!-- Row 1: Overview -->
+                <div class="mb-12">
+                    <h3>Product Overview</h3>
+                    <p class="max-w-prose">
+                        HelpNow+ is an omnichannel internal support platform
+                        designed to consolidate IT, HR, and Workplace services
+                        into a single, intuitive experience for 40,000+
+                        employees.
+                    </p>
+                </div>
+
+                <!-- Row 2: Challenge & Constraints -->
+                <div class="grid md:grid-cols-2 gap-12 mb-12">
+                    <div>
+                        <h3>Challenge</h3>
+                        <p>
+                            To replace a generic ITSM tool forcing employees
+                            into complex forms with a delightful, consumer-grade
+                            experience, reducing the heavy reliance on phone
+                            support.
+                        </p>
+                    </div>
+                    <div>
+                        <h3>Constraints</h3>
+                        <p>
+                            Strict SLAs (incident capture &lt; 6s), limited
+                            backend customization to ensure upgrade
+                            compatibility, and diverse stakeholder requirements
+                            across IT, HR, and Finance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Row 3: Metrics & Impact -->
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h3>Success Metrics</h3>
+                        <ul class="space-y-2">
+                            <li>40% reduction in support tickets in year 1</li>
+                            <li>91% CSAT score from employees</li>
+                            <li>94% overall satisfaction rate (n=178)</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h3>Design Impact</h3>
+                        <ul class="space-y-2">
+                            <li>
+                                <strong>Restored trust</strong> through "Private Mode"
+                                and transparency
+                            </li>
+                            <li>
+                                <strong>Empowered workforce</strong> with Mobile PWA
+                                for 24/7 access
+                            </li>
+                            <li>
+                                <strong>Shifted culture</strong> from reactive tickets
+                                to proactive self-service
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: THE CHALLENGE -->
+        <span class="eyebrow">THE CHALLENGE</span>
+
+        <h2>ITSM pretending to be an Employee Portal</h2>
+
+        <div class="mb-24">
+            <span class="eyebrow mb-2">Problem</span>
+            <h3>Built for IT</h3>
+            <p class="mb-4">
+                The existing system, an IT Service Management (ITSM) tool, was
+                force fitted for a geo-diverse rapidly growing organization.
+            </p>
+            <ul class="mb-8 space-y-2">
+                <li>
+                    Non IT teams (HR, Finance, Real Estate & Workplace etc) felt
+                    like second-class citizens.
+                </li>
+                <li>
+                    84% survey participants used phone service to emails to
+                    report non-IT issues.
+                </li>
+            </ul>
+
+            <span class="eyebrow mb-2">Problem</span>
+            <h3>Navigation Friction & Hidden Costs</h3>
+            <p class="mb-4">
+                My initial Heuristic Evaluation revealed that <strong
+                    >Navigation Overload</strong
+                > was driving up operational costs. Interviewing over a dozen employees,
+                I found:
+            </p>
+            <ul class="mb-0 space-y-2">
+                <li>
+                    <strong>Cognitive Load:</strong> Casual users spent over 2 minutes
+                    navigating complexity.
+                </li>
+                <li>
+                    <strong>System Abuse:</strong> Power users were bypassing correct
+                    channels to use generic 'Incident Forms,' creating a 'false path'
+                    that required manual triage.
+                </li>
+            </ul>
+        </div>
+
+        <!-- SECTION: ITERATION 1 -->
+        <span class="eyebrow">ITERATION #1</span>
+        <h2>Radical Simplification</h2>
+        <p class="mb-4">
+            We hypothesized that a <strong>Search-First</strong> paradigm (powered
+            by NLP and Elastic Search) would reduce friction. We pushed for <strong
+                >Radical Simplification</strong
+            >, effectively removing the browsing interface to rely entirely on
+            intent detection.
+        </p>
+        <ul class="mb-8 space-y-2">
+            <li>
+                Engineering POC of NLP driven elastic-search was our first
+                success party moment!
+            </li>
+            <li>
+                Google-like minimalistic UI was considered the safest and best
+                approach.
+            </li>
+        </ul>
+
+        <h3>Design Trade-off</h3>
+        <ul class="list-disc pl-5 mb-12 space-y-2">
+            <li>
+                For important services (like IT incidents & HR complaints) we
+                had to expose dedicated shortcuts to support department-specific
+                constraints.
+            </li>
+        </ul>
+
+        <section class="mb-24">
+            <img
+                src="/images/case-study/helpnow/01-nav-friction.png"
+                alt="Iteration 1"
+                class="rounded-lg shadow-lg"
+            />
+        </section>
+
+        <span class="eyebrow">STRATEGIC FAILURE</span>
+        <h2>Early ‘Oh’ moment in the design</h2>
+        <p class="mb-12">
+            The design failed <strong>Jakob’s Law</strong>. Users rely on <strong
+                >Recognition over Recall</strong
+            >. Removing the service catalog confused users and they felt lost.
+        </p>
+
+        <section class="mb-24 image-full-width">
+            <img
+                src="/images/case-study/helpnow/02-recognition.png"
+                alt="Strategic Failure"
+            />
+        </section>
+
+        <span class="eyebrow">Pivot</span>
+        <h2>Contextual Relevance</h2>
+        <p class="mb-4">
+            We recognized that efficiency requires a balance between <strong
+                >Discovery</strong
+            > and <strong>Speed</strong>. We had to bring a <strong
+                >Hybrid Navigation Model</strong
+            >:
+        </p>
+        <ul class="list-disc pl-5 mb-12 space-y-2">
+            <li>
+                <strong>Restored Affordance:</strong> We reintroduced the Service
+                Catalog to ground the user's mental model and provide 'Information
+                Scent.'
+            </li>
+            <li>
+                <strong>Predictive Accelerators:</strong> Instead of forcing search,
+                we added <strong>Smart Shortcuts</strong> (Recent Searches, Most Used,
+                Pins). This effectively personalized the dashboard, turning distinct
+                user behaviors into fast-access paths without cluttering the global
+                interface.
+            </li>
+        </ul>
+        <section class="mb-24">
+            <img
+                src="/images/case-study/helpnow/03-contextual.png"
+                alt="Pivot UI"
+            />
+        </section>
+        <section class="mb-24 image-full-width">
+            <h3>Final Homepage Experience</h3>
+
+            <video
+                src="/videos/case-study/helpnow/hn-final.mov"
+                autoplay
+                loop
+                muted
+                playsinline
+                class="shadow-2xl rounded-xl border-10"></video>
+        </section>
+
+        <!-- SECTION: THE TRUST DEFICIT -->
+        <span class="eyebrow">THE TRUST DEFICIT</span>
+
+        <h2>Designing for Psychological Safety</h2>
+
+        <span class="eyebrow mb-2">The Challenge</span>
+        <h3>Systemic Avoidance</h3>
+        <p class="mb-12">
+            My research uncovered a critical barrier to adoption: <strong
+                >Lack of Trust</strong
+            >. 10 out of 12 interviewees admitted they bypassed the portal for
+            sensitive HR requests. Without visible privacy controls, employees
+            defaulted to calling agents or emailing directly. This overloaded
+            the support agents, slowed responses, and in turn caused
+            escalations, turning it into a vicious cycle.
+        </p>
+
+        <span class="eyebrow mb-2">The Solution</span>
+        <h3>Visibility & Agency</h3>
+        <p class="mb-8">
+            We decided to moved privacy and accountability from backend policies
+            to <strong>First-Class UI Elements</strong>.
+        </p>
+        <ul class="list-disc pl-5 mb-12 space-y-2">
+            <li>
+                <strong>User-Controlled Visibility:</strong>We introduced an
+                explicit <strong>"Private Mode" Toggle</strong>. By giving users
+                granular control over who sees their ticket <em>before</em> they submit
+                it, we reduced the anxiety of reporting sensitive issues.
+            </li>
+            <li>
+                <strong>Operational Accountability:</strong>We replaced the
+                feeling of helplessness with agency by adding a direct <strong
+                    >"Escalate" Action</strong
+                >. This served as a psychological safety net—users knew that if
+                the system stalled, they had a "break glass" mechanism to get
+                attention, eliminating the need to preemptively escalate via
+                email.
+            </li>
+        </ul>
+
+        <aside
+            class="mb-12 p-6 bg-[#fcfaf8] rounded-lg italic text-[var(--color-text-secondary)] border-1 border-[var(--color-accent)]"
+        >
+            ( We had the constraint of limited customization of UI, so we chose
+            to redesign the ticket details page from scratch as a custom portal
+            on top of the current system )
+        </aside>
+
+        <section class="mb-24">
+            <img
+                src="/images/case-study/helpnow/04-visibility.png"
+                alt="Visibility UI"
+                class="rounded-lg shadow-lg"
+            />
+        </section>
+
+        <!-- SECTION: SOLVING FOR THE MOMENT -->
+        <span class="eyebrow">Mobile Experience</span>
+
+        <h2>Turning ‘good-to-have’ to a major use case</h2>
+
+        <span class="eyebrow mb-2">Challenge</span>
+        <h3>Lack of support on the go</h3>
+        <p class="mb-8">
+            The legacy system did not work on mobile screens. My designs were
+            responsive (as a standard practice), but using native features like <strong
+                >camera and voice became one of the most useful</strong
+            > and delightful experience.
+        </p>
+
+        <h3>Reducing Barriers to Entry: The PWA Strategy.</h3>
+        <p class="mb-8">
+            We bypassed the App Store friction by deploying a <strong
+                >Progressive Web App (PWA)</strong
+            >. This allowed us to leverage native hardware (Camera for barcode
+            scanning) without the high <strong>Interaction Cost</strong> of installation.
+        </p>
+
+        <h3>Prioritizing Speed of Resolution over Speed of Submission</h3>
+        <p class="mb-12">
+            We strategically <strong>'shifted left'</strong> the categorization process.
+            By replacing the generic open text field with a <strong
+                >structured service catalog</strong
+            >, we empowered users to self-triage. This effectively distributed
+            the routing workload and prevented the Help Desk from becoming a <strong
+                >Single Point of Failure (SPOF)</strong
+            >.
+        </p>
+
+        <section class="mb-24 image-full-width bg-[#000000]">
+            <video
+                src="/videos/case-study/helpnow/hn-early-app-concept.mov"
+                autoplay
+                loop
+                muted
+                playsinline
+                class="max-h-[60vh] mx-auto"></video>
+        </section>
+
+        <!-- SECTION: BEYOND THE PRODUCT -->
+        <span class="eyebrow">Omnichannel Entry</span>
+
+        <h2>Contextual Support at the Point of Need</h2>
+
+        <p class="mb-12">
+            We moved beyond the screen to establish a <strong
+                >Presence-Based Support Model</strong
+            >. By embedding physical triggers (IoT buttons, NFC tags) directly
+            into the office environment, we reduced the friction of 'finding
+            help' to near zero.
+        </p>
+
+        <figure class="mb-24">
+            <img
+                src="/images/case-study/helpnow/06-iot.png"
+                alt="Beyond Product"
+                class="rounded-lg shadow-lg"
+            />
+            <figcaption
+                class="text-sm text-[var(--color-text-secondary)] italic mt-2"
+            >
+                Fidelity Evolution: From 'Wizard of Oz' paper prototypes to
+                deployed IoT touchpoints.
+            </figcaption>
+        </figure>
+
+        <blockquote
+            class="border-none text-2xl md:text-4xl text-center leading-tight not-italic font-serif pl-0 my-24"
+        >
+            "Overnight, 40,000+ employees had multiple channels to request, and
+            stay on top of their issues at work."
+        </blockquote>
+
+        <!-- SECTION: IMPACT -->
+        <span class="eyebrow">Impact</span>
+
+        <h2>The Game Changer</h2>
+        <div
+            class="bg-[var(--color-text-primary)] text-white p-12 rounded-2xl mb-12"
+        >
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                <div class="border-l border-white/20 pl-6">
+                    <div
+                        class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
+                    >
+                        40%
+                    </div>
+                    <div class="text-sm opacity-80 uppercase tracking-widest">
+                        Reduction in Tickets
+                    </div>
+                    <div class="text-xs opacity-60 mt-1">
+                        Phone and email support in year 1
+                    </div>
+                </div>
+                <div class="border-l border-white/20 pl-6">
+                    <div
+                        class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
+                    >
+                        94%
+                    </div>
+                    <div class="text-sm opacity-80 uppercase tracking-widest">
+                        Task Completion Setup
+                    </div>
+                    <div class="text-xs opacity-60 mt-1">
+                        Satisfied with ease of creation
+                    </div>
+                </div>
+                <div class="border-l border-white/20 pl-6">
+                    <div
+                        class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
+                    >
+                        91%
+                    </div>
+                    <div class="text-sm opacity-80 uppercase tracking-widest">
+                        Overall CSAT Score
+                    </div>
+                    <div class="text-xs opacity-60 mt-1">
+                        Overall satisfaction (n=178)
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <h2>Encouraging whats next</h2>
+
+        <p class="mb-8">
+            The success of HelpNow demonstrated to leadership that a superior
+            support experience not only cuts costs, but also reinforces our
+            "Best Place to Work" culture.
+        </p>
+
+        <p class="mb-24">
+            This earned us the green light to build a brand-new service
+            management backend from scratch, which we later spun out as a
+            commercial offering.
+        </p>
+
+        <!-- SECTION: LEARNINGS -->
+        <span class="eyebrow">Learnings</span>
+        <h2>What This Taught Me</h2>
+        <ul class="grid md:grid-cols-3 gap-8 mb-24 list-none ml-0 pl-0">
+            <li class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
+                <h4>Design for Safety</h4>
+                <p class="text-sm text-[var(--color-text-secondary)]">
+                    Psychological safety dictates usage; give users granular
+                    control over their information visibility early on.
+                </p>
+            </li>
+            <li class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
+                <h4>Balance Discovery & Speed</h4>
+                <p class="text-sm text-[var(--color-text-secondary)]">
+                    Radical simplification without familiar grounding elements
+                    (like a service catalog) frustrates expert users.
+                </p>
+            </li>
+            <li class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
+                <h4>PWA is an Enabler</h4>
+                <p class="text-sm text-[var(--color-text-secondary)]">
+                    Lowering the barrier of entry by avoiding app stores makes
+                    internal tech adoption seamless.
+                </p>
+            </li>
+        </ul>
+
+        <!-- SECTION: NAV -->
+        <div
+            class="mt-24 pt-12 border-t border-black/10 flex justify-between items-center"
+        >
+            <a
+                href="/case-study/vlp"
+                class="btn-link opacity-60 hover:opacity-100"
+                >← Previous Case Study</a
+            >
+            <a href="/case-study/devhub" class="btn-primary">
+                Next Case Study (DevHub)
+                <span class="btn-link-icon">→</span>
+            </a>
+        </div>
+    </main>
+    <Footer />
+    <ImageZoom />
+</Layout>

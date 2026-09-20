@@ -1,0 +1,96 @@
+---
+
+---
+
+<div
+    id="image-zoom-overlay"
+    class="fixed inset-0 bg-black/90 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4"
+>
+    <button
+        id="image-zoom-close"
+        class="absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none"
+        aria-label="Close zoom"
+    >
+        <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="32"
+            height="32"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+        >
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+    <img
+        id="image-zoom-img"
+        src=""
+        alt="Zoomed view"
+        class="max-w-full max-h-full object-contain shadow-2xl rounded-sm"
+    />
+</div>
+
+<script>
+    const overlay = document.getElementById("image-zoom-overlay");
+    const zoomImg = document.getElementById(
+        "image-zoom-img",
+    ) as HTMLImageElement;
+    const closeBtn = document.getElementById("image-zoom-close");
+    let isOpen = false;
+
+    function openZoom(src: string, alt: string) {
+        if (!overlay || !zoomImg) return;
+        zoomImg.src = src;
+        zoomImg.alt = alt;
+        overlay.classList.remove("hidden");
+        // Small delay to allow display:block to apply before opacity transition
+        requestAnimationFrame(() => {
+            overlay.classList.remove("opacity-0");
+        });
+        document.body.style.overflow = "hidden"; // Prevent scrolling
+        isOpen = true;
+    }
+
+    function closeZoom() {
+        if (!overlay) return;
+        overlay.classList.add("opacity-0");
+        setTimeout(() => {
+            overlay.classList.add("hidden");
+            if (zoomImg) zoomImg.src = "";
+        }, 300);
+        document.body.style.overflow = "";
+        isOpen = false;
+    }
+
+    // Attach listeners to all images in main
+    const images = document.querySelectorAll("main img");
+    images.forEach((img) => {
+        // Add cursor pointer to indicate clickability
+        (img as HTMLElement).style.cursor = "zoom-in";
+        img.addEventListener("click", (e) => {
+            const target = e.target as HTMLImageElement;
+            openZoom(target.src, target.alt);
+        });
+    });
+
+    // Close button
+    closeBtn?.addEventListener("click", closeZoom);
+
+    // Close on click outside (overlay background)
+    overlay?.addEventListener("click", (e) => {
+        if (e.target === overlay) {
+            closeZoom();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && isOpen) {
+            closeZoom();
+        }
+    });
+</script>

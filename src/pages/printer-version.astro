@@ -1,0 +1,665 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PrinterSvg from "../components/PrinterSvg.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Tushar Roy – Product Designer • Dot Matrix Printer Edition">
+	<!-- Top Navigation Banner to Switch Back -->
+	<div class="fixed top-2 left-1/2 -translate-x-1/2 z-50 flex items-center gap-3 bg-black/90 text-white font-departure text-xs px-4 py-1.5 rounded-full border border-white/20 backdrop-blur shadow-lg">
+		<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+		<span>DOT MATRIX EMULATION MODE</span>
+		<span class="text-white/40">|</span>
+		<a href="/" class="text-emerald-300 hover:text-white underline transition-colors">
+			← Return to Standard Edition
+		</a>
+	</div>
+
+	<!-- Workspace Desk Background -->
+	<div class="min-h-screen bg-[#141312] text-black relative pt-16 selection:bg-neutral-300">
+		<!-- Subtle Desk Surface Grid Pattern -->
+		<div
+			class="absolute inset-0 opacity-[0.03] pointer-events-none"
+			style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"
+		>
+		</div>
+
+		<!-- ========================================================= -->
+		<!-- TRACTOR FEED CONTINUOUS PAPER CONTAINER (Max Width <1280px) -->
+		<!-- ========================================================= -->
+		<div class="relative max-w-[1240px] mx-auto flex shadow-[0_20px_60px_rgba(0,0,0,0.8)]">
+			<!-- Left Tractor Margin (Perforated Feed Holes) -->
+			<div class="hidden sm:block tractor-feed-left"></div>
+
+			<!-- Main Continuous Sheet (White Computer Paper) -->
+			<div class="flex-1 bg-[#faf8f2] px-6 sm:px-10 md:px-14 pt-8 md:pt-12 pb-56 md:pb-64 border-x border-black/10">
+				<!-- Top Paper Tear Margin / Job Header -->
+				<div class="border-b-2 border-dashed border-black/20 pb-4 mb-8 font-departure text-[11px] text-black/60 flex flex-wrap justify-between items-center gap-2">
+					<div class="flex items-center gap-2">
+						<span class="font-bold text-black">JOB: TR_PORTFOLIO_V2.PRN</span>
+						<span>•</span>
+						<span>EMULATION: EPSON ESC/P 24-PIN</span>
+						<span>•</span>
+						<span>DRAFT 360 DPI</span>
+					</div>
+					<div>
+						<span>FORM LENGTH: CONTINUOUS • BUFFER: 100% OK</span>
+					</div>
+				</div>
+
+				<!-- ===================================================== -->
+				<!-- 1. NEWSPAPER MASTHEAD & DATELINE                      -->
+				<!-- ===================================================== -->
+				<header class="mb-12">
+					<!-- Top Meta Ticker -->
+					<div
+						class="hidden sm:flex justify-between items-center text-[10px] uppercase font-departure text-black/60 tracking-widest pb-2 border-b border-black/20"
+					>
+						<span>Weather: Sunny in the Bay Area • 68°F</span>
+						<span>Bits, Pixels & Latency: Nominal</span>
+						<span>Circulation: Global • Dot Matrix Edition</span>
+					</div>
+
+					<!-- Main Broadsheet Nameplate -->
+					<div class="text-center py-6 md:py-8 border-b-2 border-black">
+						<h1
+							class="font-serif text-5xl sm:text-7xl md:text-8xl font-black tracking-tight uppercase text-black leading-none mb-3"
+						>
+							The Roy Dispatch
+						</h1>
+						<p
+							class="font-serif italic text-sm md:text-base text-black/75 tracking-normal max-w-2xl mx-auto"
+						>
+							A Chronicle of Enterprise Systems, AI Architecture & Inclusive Product Strategy
+						</p>
+					</div>
+
+					<!-- Dateline Strip (Double Rule) -->
+					<div
+						class="news-rule-thick-thin py-2 px-1 flex flex-wrap items-center justify-between gap-2 font-departure text-xs text-black uppercase tracking-wider"
+					>
+						<div class="flex items-center gap-3">
+							<span class="font-bold">San Francisco, CA</span>
+							<span class="text-black/30">•</span>
+							<span>Vol. MMXXVI</span>
+							<span class="text-black/30">•</span>
+							<span>Issue No. 01</span>
+						</div>
+						<div class="flex items-center gap-3">
+							<span class="font-bold">Apple Inc.</span>
+							<span class="text-black/30">•</span>
+							<span class="text-black/70">Ex-VMware, Broadcom, IBM</span>
+						</div>
+					</div>
+				</header>
+
+				<!-- ===================================================== -->
+				<!-- 2. FRONT-PAGE HERO / LEAD STORY                       -->
+				<!-- ===================================================== -->
+				<section class="mb-16 border-b-2 border-black pb-14">
+					<div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+						<!-- Lead Column (Left: 8 cols) -->
+						<div class="lg:col-span-8 flex flex-col justify-between">
+							<div class="border-b border-black/20 pb-6 mb-6">
+								<span
+									class="font-departure text-xs uppercase tracking-[0.2em] text-black/60 block mb-2"
+								>
+									Lead Editorial • Product Architecture
+								</span>
+								<h2
+									class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold leading-[0.95] tracking-tight text-black mb-4"
+								>
+									Systematic by <span class="font-pixel font-normal underline decoration-2 underline-offset-8">Design</span>
+								</h2>
+								<p
+									class="font-serif italic text-xl md:text-2xl text-black/80 font-light leading-snug"
+								>
+									Engineering-fluent product designer crafting resilient AI systems and enterprise platforms.
+								</p>
+							</div>
+
+							<!-- Two-Column Broadsheet Copy -->
+							<div class="grid sm:grid-cols-2 gap-8 text-[16px] leading-relaxed text-black/85 font-sans mb-8">
+								<p class="drop-cap">
+									Specializing in mission-critical environments where extreme data complexity meets human friction. Over the past 17+ years, I have architected systems across IBM, VMware, Broadcom, and Apple—transforming fragmented workflows into coherent, high-velocity tools that teams depend on daily.
+								</p>
+								<p>
+									Whether building unified developer ecosystems or spearheading AI-powered workplace tooling, I operate at the intersection of technical systems and emotional craft. (And yes, frequently accompanied and interrupted in the studio by a spirited golden retriever).
+								</p>
+							</div>
+
+							<!-- Front-Page Quick Actions -->
+							<div class="flex flex-wrap items-center gap-4 pt-2">
+								<a
+									href="#work"
+									class="inline-flex items-center gap-2 font-departure text-xs uppercase tracking-widest bg-black text-white px-6 py-3.5 hover:bg-neutral-800 transition-colors border border-black shadow-[3px_3px_0_0_#999]"
+								>
+									<span>Inspect 3 Case Studies</span>
+									<span>↓</span>
+								</a>
+								<a
+									href="#about"
+									class="inline-flex items-center gap-2 font-departure text-xs uppercase tracking-widest bg-transparent text-black px-6 py-3.5 hover:bg-black hover:text-white transition-colors border border-black"
+								>
+									<span>Editorial Profile</span>
+									<span>→</span>
+								</a>
+							</div>
+						</div>
+
+						<!-- Front-Page Photo Frame (Right: 4 cols) -->
+						<div class="lg:col-span-4">
+							<figure class="border-2 border-black p-3 bg-white shadow-[6px_6px_0_0_#000000]">
+								<div class="overflow-hidden border border-black bg-neutral-900">
+									<img
+										src="/images/rex.jpg"
+										alt="Tushar Roy and Rex"
+										class="w-full aspect-[3/4] object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-500"
+									/>
+								</div>
+								<figcaption class="font-departure text-[11px] uppercase tracking-wider text-black/80 mt-3 pt-2 border-t border-black/30 leading-normal">
+									<strong>Fig. 1.0</strong> — Tushar Roy with Rex (Head of Studio Barketing & Morale). Dot matrix halftone render.
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+				</section>
+
+				<!-- ===================================================== -->
+				<!-- 3. THE THREE CASE STUDIES                             -->
+				<!-- ===================================================== -->
+				<section id="work" class="mb-20 scroll-mt-24">
+					<!-- Section Title Banner -->
+					<div class="border-t-4 border-b-2 border-black py-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-3">
+						<div>
+							<span class="font-departure text-xs uppercase tracking-[0.2em] text-black/60 block mb-1">
+								Front-Page Investigation • Special Report
+							</span>
+							<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black m-0">
+								Selected Works: Three Flagship Studies
+							</h2>
+						</div>
+						<div class="font-departure text-xs text-black/80 bg-neutral-100 border border-black px-3 py-1.5 self-start md:self-auto">
+							INDEX: 01 HELPNOW+ • 02 DEVHUB • 03 VLP
+						</div>
+					</div>
+
+					<!-- Executive Summary Matrix for Hiring Managers -->
+					<div class="border-2 border-black bg-[#faf9f6] mb-12 shadow-[4px_4px_0_0_#000]">
+						<div class="px-4 py-2 border-b border-black bg-black text-white font-departure text-xs uppercase tracking-wider flex justify-between items-center">
+							<span class="font-bold">Executive At-A-Glance Dossier (For Hiring Managers & Leads)</span>
+							<span class="text-neutral-400 text-[10px] hidden sm:inline">10-SECOND QUICK SCAN MATRIX</span>
+						</div>
+						<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black text-sm">
+							<!-- Item 1 -->
+							<div class="p-5 flex flex-col justify-between">
+								<div>
+									<div class="font-departure text-[11px] text-black/60 uppercase">Domain: Enterprise IT & AI Support</div>
+									<div class="font-serif font-bold text-xl text-black mt-1">HelpNow+</div>
+									<div class="font-departure text-xs font-bold text-black mt-2 bg-neutral-200/70 p-1.5 inline-block border border-black/20">
+										$36M+ Annual Savings • 2x Productivity
+									</div>
+									<p class="text-xs text-black/75 mt-2 leading-relaxed">
+										Reimagining the workplace service model across 35,000+ employees with unified self-service & agent workflows.
+									</p>
+								</div>
+								<a href="/case-study/helpnow" class="font-departure text-xs uppercase font-bold text-black hover:underline mt-4 inline-block">
+									Read Story 01 →
+								</a>
+							</div>
+
+							<!-- Item 2 -->
+							<div class="p-5 flex flex-col justify-between">
+								<div>
+									<div class="font-departure text-[11px] text-black/60 uppercase">Domain: Developer Experience (DevEx)</div>
+									<div class="font-serif font-bold text-xl text-black mt-1">DevHub</div>
+									<div class="font-departure text-xs font-bold text-black mt-2 bg-neutral-200/70 p-1.5 inline-block border border-black/20">
+										20k+ Engineers • 5 Tools Unified
+									</div>
+									<p class="text-xs text-black/75 mt-2 leading-relaxed">
+										Consolidating fragmented portals and APIs into a unified, high-velocity engineering platform.
+									</p>
+								</div>
+								<a href="/case-study/devhub" class="font-departure text-xs uppercase font-bold text-black hover:underline mt-4 inline-block">
+									Read Story 02 →
+								</a>
+							</div>
+
+							<!-- Item 3 -->
+							<div class="p-5 flex flex-col justify-between">
+								<div>
+									<div class="font-departure text-[11px] text-black/60 uppercase">Domain: Cloud Virtual Infrastructure</div>
+									<div class="font-serif font-bold text-xl text-black mt-1">VLP (Hands-on Labs)</div>
+									<div class="font-departure text-xs font-bold text-black mt-2 bg-neutral-200/70 p-1.5 inline-block border border-black/20">
+										Hardware → Cloud • Global Scale
+									</div>
+									<p class="text-xs text-black/75 mt-2 leading-relaxed">
+										Migrating VMware’s live hardware lab environment into an on-demand, cloud-native learning SaaS platform.
+									</p>
+								</div>
+								<a href="/case-study/vlp" class="font-departure text-xs uppercase font-bold text-black hover:underline mt-4 inline-block">
+									Read Story 03 →
+								</a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Three-Column Broadsheet Articles Grid -->
+					<div class="grid grid-cols-1 md:grid-cols-3 border-y-2 border-black divide-y md:divide-y-0 md:divide-x divide-black">
+						<!-- Article 01: HelpNow+ -->
+						<article class="p-6 lg:p-8 flex flex-col justify-between bg-white">
+							<div>
+								<div class="font-departure text-[11px] uppercase tracking-widest text-black/60 border-b border-black/20 pb-2 mb-3 flex justify-between">
+									<span>DISPATCH NO. 01</span>
+									<span>VMWARE</span>
+								</div>
+								<h3 class="font-serif text-2xl lg:text-3xl font-bold leading-tight text-black mb-3">
+									<a href="/case-study/helpnow" class="hover:underline text-black no-underline">
+										Workplace Support, Humanized
+									</a>
+								</h3>
+								<p class="font-sans text-sm text-black/80 leading-relaxed mb-4">
+									<span class="font-departure text-xs font-bold">[PALO ALTO] — </span>
+									Faced with an antiquated enterprise ticketing model that caused employee frustration and ballooning operational overhead, HelpNow+ reinvented workplace support from the ground up.
+								</p>
+
+								<!-- Image with Newspaper Border -->
+								<div class="my-4 border border-black overflow-hidden bg-neutral-900 shadow-[3px_3px_0_0_#000]">
+									<img
+										src="/images/case-study-helpnow3.png"
+										alt="HelpNow Case Study"
+										class="w-full h-44 object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-300"
+									/>
+								</div>
+
+								<!-- Impact Ledger -->
+								<div class="border-y border-black/20 py-3 my-4 font-departure text-xs space-y-1.5 bg-neutral-50 px-3">
+									<div class="flex justify-between border-b border-black/10 pb-1">
+										<span class="text-black/60">ANNUAL IMPACT</span>
+										<strong class="font-bold text-black">$36M+ Saved</strong>
+									</div>
+									<div class="flex justify-between border-b border-black/10 pb-1">
+										<span class="text-black/60">PRODUCTIVITY</span>
+										<strong class="font-bold text-black">2x Fulfillment</strong>
+									</div>
+									<div class="flex justify-between">
+										<span class="text-black/60">EMPLOYEE CSAT</span>
+										<strong class="font-bold text-black">94% Positive</strong>
+									</div>
+								</div>
+
+								<!-- Broadsheet Quote -->
+								<blockquote class="font-serif italic text-sm text-black/80 border-l-2 border-black pl-3 my-4 leading-relaxed">
+									"Finally, I truly feel supported by VMware, no matter where I am."
+								</blockquote>
+							</div>
+
+							<div class="pt-4 border-t border-black/20">
+								<a
+									href="/case-study/helpnow"
+									class="inline-flex items-center justify-between w-full font-departure text-xs uppercase tracking-wider bg-black text-white px-4 py-2.5 hover:bg-neutral-800 transition-colors no-underline"
+								>
+									<span>Read Full Investigation</span>
+									<span>→</span>
+								</a>
+							</div>
+						</article>
+
+						<!-- Article 02: DevHub -->
+						<article class="p-6 lg:p-8 flex flex-col justify-between bg-white">
+							<div>
+								<div class="font-departure text-[11px] uppercase tracking-widest text-black/60 border-b border-black/20 pb-2 mb-3 flex justify-between">
+									<span>DISPATCH NO. 02</span>
+									<span>DEV PLATFORM</span>
+								</div>
+								<h3 class="font-serif text-2xl lg:text-3xl font-bold leading-tight text-black mb-3">
+									<a href="/case-study/devhub" class="hover:underline text-black no-underline">
+										Developer Ecosystem, Unified
+									</a>
+								</h3>
+								<p class="font-sans text-sm text-black/80 leading-relaxed mb-4">
+									<span class="font-departure text-xs font-bold">[SAN JOSE] — </span>
+									Engineering velocity was bottlenecked by five disjointed internal platforms. DevHub established a centralized, API-first nervous system connecting tools, docs, and metrics.
+								</p>
+
+								<!-- Image with Newspaper Border -->
+								<div class="my-4 border border-black overflow-hidden bg-neutral-900 shadow-[3px_3px_0_0_#000]">
+									<img
+										src="/images/case-study-devhub3.png"
+										alt="DevHub Case Study"
+										class="w-full h-44 object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-300"
+									/>
+								</div>
+
+								<!-- Impact Ledger -->
+								<div class="border-y border-black/20 py-3 my-4 font-departure text-xs space-y-1.5 bg-neutral-50 px-3">
+									<div class="flex justify-between border-b border-black/10 pb-1">
+										<span class="text-black/60">AUDIENCE REACH</span>
+										<strong class="font-bold text-black">20,000+ Engineers</strong>
+									</div>
+									<div class="flex justify-between border-b border-black/10 pb-1">
+										<span class="text-black/60">CONSOLIDATION</span>
+										<strong class="font-bold text-black">5 Systems into 1</strong>
+									</div>
+									<div class="flex justify-between">
+										<span class="text-black/60">VELOCITY</span>
+										<strong class="font-bold text-black">Friction Eliminated</strong>
+									</div>
+								</div>
+
+								<!-- Broadsheet Quote -->
+								<blockquote class="font-serif italic text-sm text-black/80 border-l-2 border-black pl-3 my-4 leading-relaxed">
+									"This platform transformed how we build and ship products across distributed teams."
+								</blockquote>
+							</div>
+
+							<div class="pt-4 border-t border-black/20">
+								<a
+									href="/case-study/devhub"
+									class="inline-flex items-center justify-between w-full font-departure text-xs uppercase tracking-wider bg-black text-white px-4 py-2.5 hover:bg-neutral-800 transition-colors no-underline"
+								>
+									<span>Read Full Investigation</span>
+									<span>→</span>
+								</a>
+							</div>
+						</article>
+
+						<!-- Article 03: VLP -->
+						<article class="p-6 lg:p-8 flex flex-col justify-between bg-white">
+							<div>
+								<div class="font-departure text-[11px] uppercase tracking-widest text-black/60 border-b border-black/20 pb-2 mb-3 flex justify-between">
+									<span>DISPATCH NO. 03</span>
+									<span>CLOUD LABS</span>
+								</div>
+								<h3 class="font-serif text-2xl lg:text-3xl font-bold leading-tight text-black mb-3">
+									<a href="/case-study/vlp" class="hover:underline text-black no-underline">
+										Hands-on Labs, Transformed
+									</a>
+								</h3>
+								<p class="font-sans text-sm text-black/80 leading-relaxed mb-4">
+									<span class="font-departure text-xs font-bold">[GLOBAL SCALE] — </span>
+									Taking VMware’s largest product trial engine off costly dedicated hardware arrays and architecting a modern multi-tenant cloud SaaS platform delivered worldwide.
+								</p>
+
+								<!-- Image with Newspaper Border -->
+								<div class="my-4 border border-black overflow-hidden bg-neutral-900 shadow-[3px_3px_0_0_#000]">
+									<img
+										src="/images/case-study-vlp3.png"
+										alt="VLP Case Study"
+										class="w-full h-44 object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-300"
+									/>
+								</div>
+
+								<!-- Impact Ledger -->
+								<div class="border-y border-black/20 py-3 my-4 font-departure text-xs space-y-1.5 bg-neutral-50 px-3">
+									<div class="flex justify-between border-b border-black/10 pb-1">
+										<span class="text-black/60">ARCHITECTURE</span>
+										<strong class="font-bold text-black">100% Cloud SaaS</strong>
+									</div>
+									<div class="flex justify-between border-b border-black/10 pb-1">
+										<span class="text-black/60">INFRASTRUCTURE</span>
+										<strong class="font-bold text-black">Elastic & Instant</strong>
+									</div>
+									<div class="flex justify-between">
+										<span class="text-black/60">COMMERCIAL</span>
+										<strong class="font-bold text-black">New Monetization</strong>
+									</div>
+								</div>
+
+								<!-- Broadsheet Quote -->
+								<blockquote class="font-serif italic text-sm text-black/80 border-l-2 border-black pl-3 my-4 leading-relaxed">
+									"The new platform enables us to scale beyond what we ever imagined."
+								</blockquote>
+							</div>
+
+							<div class="pt-4 border-t border-black/20">
+								<a
+									href="/case-study/vlp"
+									class="inline-flex items-center justify-between w-full font-departure text-xs uppercase tracking-wider bg-black text-white px-4 py-2.5 hover:bg-neutral-800 transition-colors no-underline"
+								>
+									<span>Read Full Investigation</span>
+									<span>→</span>
+								</a>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<!-- ===================================================== -->
+				<!-- 4. SECTION B: PODCAST PIECE                           -->
+				<!-- ===================================================== -->
+				<section id="podcast" class="mb-20 scroll-mt-24">
+					<div class="border-t-4 border-b-2 border-black py-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-3">
+						<div>
+							<span class="font-departure text-xs uppercase tracking-[0.2em] text-black/60 block mb-1">
+								Section B • Audio Broadcast & Critical Dialogue
+							</span>
+							<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black m-0">
+								The Enterprise Design Podcast
+							</h2>
+						</div>
+						<div class="font-departure text-xs text-black/80 bg-neutral-100 border border-black px-3 py-1.5 self-start md:self-auto">
+							12-EPISODE SERIES • SPOTIFY
+						</div>
+					</div>
+
+					<!-- Newspaper Audio Card -->
+					<div class="border-2 border-black bg-white p-6 md:p-10 shadow-[6px_6px_0_0_#000]">
+						<div class="grid lg:grid-cols-12 gap-8 items-center">
+							<div class="lg:col-span-6 flex flex-col justify-between">
+								<div class="border-b border-black/20 pb-4 mb-4">
+									<span class="font-departure text-xs uppercase text-black/60 tracking-wider">Special Audio Dispatch</span>
+									<h3 class="font-serif text-2xl sm:text-3xl font-bold text-black mt-1">
+										Humanizing Enterprise Software at Scale
+									</h3>
+								</div>
+
+								<p class="font-sans text-[16px] text-black/80 leading-relaxed mb-4">
+									I co-created and hosted this 12-episode series to explore how design leaders, principal engineers, and product directors overcome organizational silos to build humane, cohesive digital products.
+								</p>
+
+								<p class="font-sans text-[15px] text-black/70 leading-relaxed mb-6">
+									We dive deep into the messy reality of enterprise UX—tackling design debt, cross-functional trust, and bringing engineering and design to the same table.
+								</p>
+
+								<div class="flex flex-wrap items-center gap-4">
+									<a
+										href="https://open.spotify.com/show/3klvSJS3QPLVLYBEf7UDWF"
+										target="_blank"
+										class="inline-flex items-center gap-3 bg-black text-white px-6 py-3 font-departure text-xs uppercase tracking-widest hover:bg-neutral-800 transition-colors no-underline border border-black"
+									>
+										<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" class="text-white">
+											<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path>
+										</svg>
+										<span>Listen on Spotify</span>
+									</a>
+									<span class="font-departure text-xs text-black/50">Free Streaming • 12 Full Episodes</span>
+								</div>
+							</div>
+
+							<div class="lg:col-span-6">
+								<div class="border-2 border-black p-2 bg-neutral-100 shadow-[4px_4px_0_0_#000]">
+									<iframe
+										style="border-radius: 0px;"
+										src="https://open.spotify.com/embed/episode/4AUNRf6VUxG6s9d0BvfBp5?utm_source=generator&theme=0"
+										width="100%"
+										height="260"
+										frameborder="0"
+										allowfullscreen=""
+										allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+										loading="lazy"
+										class="filter grayscale contrast-125"
+									></iframe>
+									<div class="font-departure text-[10px] uppercase text-black/60 pt-2 px-1 text-center">
+										Featured Episode: Enterprise Friction & Systems Alignment
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- ===================================================== -->
+				<!-- 5. SECTION C: ABOUT ME & REVIEWS                      -->
+				<!-- ===================================================== -->
+				<section id="about" class="mb-16 scroll-mt-24">
+					<div class="border-t-4 border-b-2 border-black py-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-3">
+						<div>
+							<span class="font-departure text-xs uppercase tracking-[0.2em] text-black/60 block mb-1">
+								Section C • Profile & Editorial Reviews
+							</span>
+							<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black m-0">
+								Rooted in Purpose and Play
+							</h2>
+						</div>
+						<div class="font-departure text-xs text-black/80">
+							<a href="/about" class="border border-black px-3 py-1.5 bg-neutral-100 hover:bg-black hover:text-white transition-colors text-black no-underline inline-block">
+								Full Dossier & Journey →
+							</a>
+						</div>
+					</div>
+
+					<!-- Profile Feature -->
+					<div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16 border-b-2 border-black pb-14">
+						<div class="lg:col-span-6">
+							<span class="font-departure text-xs uppercase tracking-widest text-black/60 block mb-2">
+								Personal Philosophy
+							</span>
+							<h3 class="font-serif text-3xl md:text-4xl font-bold leading-tight text-black mb-4">
+								Engineer at Heart, Product Designer by Calling.
+							</h3>
+							<p class="font-sans text-[16px] text-black/80 leading-relaxed mb-4">
+								Enterprise tools do not have to feel cold or bureaucratic. By cultivating high-trust collaborative environments, demystifying complex data systems, and treating play as a superpower, teams create software with less friction and more joy.
+							</p>
+							<p class="font-sans text-[15px] text-black/70 leading-relaxed mb-6">
+								From mentoring next-gen designers on ADPList to facilitating cross-functional workshops, my goal is always to make complexity understandable—both for the end users and for the multidisciplinary teams building them.
+							</p>
+
+							<a
+								href="/about"
+								class="inline-flex items-center gap-2 font-departure text-xs uppercase tracking-widest bg-black text-white px-6 py-3.5 hover:bg-neutral-800 transition-colors no-underline border border-black shadow-[3px_3px_0_0_#999]"
+							>
+								<span>Read Biography & Career Journey</span>
+								<span>→</span>
+							</a>
+						</div>
+
+						<div class="lg:col-span-6">
+							<figure class="border-2 border-black p-3 bg-white shadow-[6px_6px_0_0_#000]">
+								<div class="aspect-video border border-black overflow-hidden bg-black">
+									<video
+										autoplay
+										loop
+										muted
+										playsinline
+										class="w-full h-full object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-500"
+									>
+										<source src="/images/speaking-video.mp4" type="video/mp4" />
+									</video>
+								</div>
+								<figcaption class="font-departure text-[11px] uppercase tracking-wider text-black/80 mt-3 pt-2 border-t border-black/30 leading-normal">
+									<strong>Fig. 2.0</strong> — Presenting our Enterprise Design Goals & Strategy at the annual team offsite.
+								</figcaption>
+							</figure>
+						</div>
+					</div>
+
+					<!-- Testimonials: Voices from the Field -->
+					<div>
+						<div class="text-center mb-8">
+							<span class="font-departure text-xs uppercase tracking-[0.25em] text-black/60 block mb-1">
+								Critical Acclaim & Endorsements
+							</span>
+							<h3 class="font-serif text-2xl sm:text-3xl font-bold text-black">
+								Voices from the Field
+							</h3>
+						</div>
+
+						<div class="grid grid-cols-1 md:grid-cols-3 border-y-2 border-black divide-y md:divide-y-0 md:divide-x divide-black bg-white">
+							<!-- Review 1 -->
+							<div class="p-6 lg:p-8 flex flex-col justify-between">
+								<div>
+									<div class="font-serif text-5xl leading-none text-black/20 font-bold mb-2">“</div>
+									<blockquote class="font-serif italic text-[16px] text-black/90 leading-relaxed mb-6">
+										Tushar brings people together. His energy and commitment led to a <strong class="not-italic font-bold font-sans">standout enterprise culture</strong>. From internal conferences to engaging podcasts, Tushar was the driving force behind many impactful initiatives.
+									</blockquote>
+								</div>
+								<div class="pt-4 border-t border-black/20 flex items-center gap-3">
+									<img
+										src="/images/testimonial-joy.jpeg"
+										alt="Joy Busse"
+										class="w-10 h-10 rounded-full object-cover border border-black filter grayscale"
+									/>
+									<div>
+										<div class="font-sans font-bold text-sm text-black">Joy Busse</div>
+										<div class="font-departure text-[10px] uppercase text-black/60">Sr. Director of UX, Cribl</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review 2 -->
+							<div class="p-6 lg:p-8 flex flex-col justify-between">
+								<div>
+									<div class="font-serif text-5xl leading-none text-black/20 font-bold mb-2">“</div>
+									<blockquote class="font-serif italic text-[16px] text-black/90 leading-relaxed mb-6">
+										Tushar's talents extend beyond design—<strong class="not-italic font-bold font-sans">he is a problem solver</strong>. His leadership of the UI dev team allowed us to stay on course. It would be a privilege to work with him again on complex systems.
+									</blockquote>
+								</div>
+								<div class="pt-4 border-t border-black/20 flex items-center gap-3">
+									<img
+										src="/images/testimonial-razz.jpeg"
+										alt="Razz Cortes-Maceda"
+										class="w-10 h-10 rounded-full object-cover border border-black filter grayscale"
+									/>
+									<div>
+										<div class="font-sans font-bold text-sm text-black">Razz Cortes-Maceda</div>
+										<div class="font-departure text-[10px] uppercase text-black/60">VP Digital Strategy, Bellco</div>
+									</div>
+								</div>
+							</div>
+
+							<!-- Review 3 -->
+							<div class="p-6 lg:p-8 flex flex-col justify-between">
+								<div>
+									<div class="font-serif text-5xl leading-none text-black/20 font-bold mb-2">“</div>
+									<blockquote class="font-serif italic text-[16px] text-black/90 leading-relaxed mb-6">
+										The most tenacious, creative, and funny person I've worked with. His mastery in <strong class="not-italic font-bold font-sans">inclusive leadership</strong> helped me grow tremendously. He always finds solutions—even in the most complex scenarios.
+									</blockquote>
+								</div>
+								<div class="pt-4 border-t border-black/20 flex items-center gap-3">
+									<img
+										src="/images/testimonial-ashlesh.jpeg"
+										alt="Ashlesh Londhe"
+										class="w-10 h-10 rounded-full object-cover border border-black filter grayscale"
+									/>
+									<div>
+										<div class="font-sans font-bold text-sm text-black">Ashlesh Londhe</div>
+										<div class="font-departure text-[10px] uppercase text-black/60">Sr. Product Designer, Mindstix</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- End of Transmission Stamp -->
+				<div class="text-center font-departure text-xs text-black/60 uppercase tracking-widest border-t-2 border-dashed border-black/20 pt-8 pb-4">
+					<span>*** [END OF TRANSMISSION] • 35,420 CHARACTERS PRINTED • READY FOR TEAR-OFF ***</span>
+				</div>
+			</div>
+
+			<!-- Right Tractor Margin (Perforated Feed Holes) -->
+			<div class="hidden sm:block tractor-feed-right"></div>
+		</div>
+
+		<!-- Colophon & Contact Footer (Inside Workspace) -->
+		<div class="relative z-10 pb-44">
+			<Footer />
+		</div>
+	</div>
+
+	<!-- ========================================================= -->
+	<!-- FIXED BOTTOM SVG DOT MATRIX PRINTER (Full Width Chassis)  -->
+	<!-- ========================================================= -->
+	<PrinterSvg />
+</Layout>

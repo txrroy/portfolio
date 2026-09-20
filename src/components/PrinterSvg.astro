@@ -1,0 +1,208 @@
+---
+---
+
+<div class="fixed bottom-0 left-0 right-0 w-full z-40 select-none pointer-events-none" id="printer-chassis">
+	<!-- Upward Shadow Cast onto the Emerging Paper -->
+	<div class="w-full h-12 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
+
+	<!-- Printer Top Chassis (Full Width) -->
+	<div class="relative w-full bg-[#2b2a28] border-t-2 border-[#45433f] shadow-[0_-15px_40px_rgba(0,0,0,0.6)] pointer-events-auto">
+		<!-- Platen Roller & Paper Feed Throat (SVG) -->
+		<svg
+			viewBox="0 0 1440 130"
+			fill="none"
+			xmlns="http://www.w3.org/2000/svg"
+			class="w-full h-[110px] md:h-[135px] block object-cover"
+			preserveAspectRatio="none"
+		>
+			<defs>
+				<!-- Linear Gradients for 3D Chassis Lighting -->
+				<linearGradient id="chassis-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+					<stop offset="0%" stop-color="#3c3b37" />
+					<stop offset="15%" stop-color="#2e2d2a" />
+					<stop offset="70%" stop-color="#22211f" />
+					<stop offset="100%" stop-color="#181716" />
+				</linearGradient>
+
+				<linearGradient id="roller-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+					<stop offset="0%" stop-color="#111111" />
+					<stop offset="40%" stop-color="#3a3a3a" />
+					<stop offset="70%" stop-color="#1f1f1f" />
+					<stop offset="100%" stop-color="#0a0a0a" />
+				</linearGradient>
+
+				<linearGradient id="acrylic-guide" x1="0%" y1="0%" x2="0%" y2="100%">
+					<stop offset="0%" stop-color="rgba(255,255,255,0.45)" />
+					<stop offset="25%" stop-color="rgba(255,255,255,0.15)" />
+					<stop offset="85%" stop-color="rgba(255,255,255,0.05)" />
+					<stop offset="100%" stop-color="rgba(200,200,200,0.3)" />
+				</linearGradient>
+
+				<linearGradient id="metal-trim" x1="0%" y1="0%" x2="0%" y2="100%">
+					<stop offset="0%" stop-color="#888782" />
+					<stop offset="50%" stop-color="#5a5955" />
+					<stop offset="100%" stop-color="#383734" />
+				</linearGradient>
+
+				<pattern id="vent-pattern" width="16" height="8" patternUnits="userSpaceOnUse">
+					<rect x="2" y="2" width="12" height="2" rx="1" fill="#141312" />
+					<rect x="2" y="3" width="12" height="1" rx="0.5" fill="#383734" />
+				</pattern>
+
+				<pattern id="platen-grip" width="6" height="20" patternUnits="userSpaceOnUse">
+					<line x1="1" y1="0" x2="1" y2="20" stroke="#444" stroke-width="1" />
+					<line x1="4" y1="0" x2="4" y2="20" stroke="#181818" stroke-width="1" />
+				</pattern>
+			</defs>
+
+			<!-- 1. Background Feed Slot (The deep void the paper enters) -->
+			<rect x="0" y="0" width="1440" height="26" fill="#0d0d0c" />
+			<line x1="0" y1="26" x2="1440" y2="26" stroke="#000000" stroke-width="3" />
+
+			<!-- 2. Platen Cylinder / Feed Roller visible inside the throat -->
+			<rect x="120" y="4" width="1200" height="18" rx="2" fill="url(#roller-grad)" />
+			<rect x="120" y="4" width="1200" height="18" fill="url(#platen-grip)" opacity="0.25" />
+
+			<!-- Left Tractor Feed Sprocket Wheel & Clamp -->
+			<g transform="translate(100, 0)">
+				<rect x="0" y="2" width="28" height="22" rx="3" fill="#4f4d48" stroke="#1f1e1c" stroke-width="1.5" />
+				<circle cx="14" cy="13" r="5" fill="#181716" />
+				<circle cx="14" cy="13" r="2" fill="#78756e" />
+				<!-- Sprocket pin -->
+				<rect x="12" y="3" width="4" height="4" fill="#a3a097" />
+			</g>
+
+			<!-- Right Tractor Feed Sprocket Wheel & Clamp -->
+			<g transform="translate(1312, 0)">
+				<rect x="0" y="2" width="28" height="22" rx="3" fill="#4f4d48" stroke="#1f1e1c" stroke-width="1.5" />
+				<circle cx="14" cy="13" r="5" fill="#181716" />
+				<circle cx="14" cy="13" r="2" fill="#78756e" />
+				<rect x="12" y="3" width="4" height="4" fill="#a3a097" />
+			</g>
+
+			<!-- 3. Clear Acrylic Tear-Off Bar with Serrated Ruler Lip -->
+			<!-- Sits directly over the feed slot where paper emerges -->
+			<rect x="60" y="22" width="1320" height="18" fill="url(#acrylic-guide)" stroke="rgba(255,255,255,0.4)" stroke-width="1" />
+			<!-- Serrated / Perforated Ruler Marks -->
+			<line x1="80" y1="24" x2="1360" y2="24" stroke="rgba(255,255,255,0.5)" stroke-width="1" stroke-dasharray="2, 6" />
+			<line x1="80" y1="36" x2="1360" y2="36" stroke="rgba(0,0,0,0.4)" stroke-width="1" />
+
+			<!-- 4. Main Front Casing Body -->
+			<rect x="0" y="40" width="1440" height="90" fill="url(#chassis-grad)" />
+
+			<!-- Beveled Top Edge Highlight -->
+			<line x1="0" y1="40" x2="1440" y2="40" stroke="#5a5852" stroke-width="2" />
+			<line x1="0" y1="42" x2="1440" y2="42" stroke="#252422" stroke-width="1" />
+
+			<!-- Left Air Vents / Heat Grille -->
+			<rect x="80" y="54" width="240" height="48" fill="url(#vent-pattern)" />
+			<rect x="80" y="54" width="240" height="48" stroke="#181716" stroke-width="1" fill="none" />
+
+			<!-- Left Manufacturer Badge -->
+			<g transform="translate(340, 56)">
+				<rect x="0" y="0" width="200" height="44" rx="2" fill="#1e1d1b" stroke="#3d3b37" stroke-width="1" />
+				<text x="14" y="20" font-family="'Departure Mono', monospace" font-size="11" font-weight="bold" fill="#dedad2" letter-spacing="2">
+					EPSON-STYLE
+				</text>
+				<text x="14" y="34" font-family="'Departure Mono', monospace" font-size="8" fill="#8c8981" letter-spacing="1">
+					24-PIN DOT MATRIX • TR-2026
+				</text>
+			</g>
+
+			<!-- Center Paper Release Lever Graphic -->
+			<g transform="translate(570, 60)">
+				<rect x="0" y="0" width="70" height="20" rx="3" fill="#383734" stroke="#1a1918" stroke-width="1" />
+				<text x="10" y="14" font-family="'Departure Mono', monospace" font-size="8" fill="#a09d94" letter-spacing="1">
+					TRACTOR
+				</text>
+			</g>
+
+			<!-- Right Platen Knob Simulation -->
+			<g transform="translate(1360, 48)">
+				<rect x="0" y="0" width="55" height="55" rx="6" fill="#1f1e1c" stroke="#4a4843" stroke-width="2" />
+				<!-- Grip ribs -->
+				<line x1="14" y1="8" x2="14" y2="47" stroke="#3d3b37" stroke-width="2" />
+				<line x1="28" y1="8" x2="28" y2="47" stroke="#3d3b37" stroke-width="2" />
+				<line x1="42" y1="8" x2="42" y2="47" stroke="#3d3b37" stroke-width="2" />
+				<text x="7" y="52" font-family="'Departure Mono', monospace" font-size="6" fill="#75736c">MANUAL</text>
+			</g>
+		</svg>
+
+		<!-- Tactical Control Panel Bar Overlay (HTML for clickability) -->
+		<div class="absolute right-4 md:right-28 top-[48px] md:top-[56px] flex items-center gap-3 md:gap-5 bg-[#1a1918] border border-[#3e3c38] px-3 md:px-5 py-2 md:py-2.5 rounded shadow-inner">
+			<!-- LED Indicators -->
+			<div class="flex items-center gap-3 border-r border-[#3a3834] pr-3 md:pr-4">
+				<!-- Power LED -->
+				<div class="flex flex-col items-center">
+					<div class="w-2.5 h-2.5 rounded-full bg-[#10b981] shadow-[0_0_8px_#10b981] animate-pulse"></div>
+					<span class="font-departure text-[8px] text-[#9ca3af] mt-1 tracking-tighter">POWER</span>
+				</div>
+				<!-- Ready LED -->
+				<div class="flex flex-col items-center">
+					<div class="w-2.5 h-2.5 rounded-full bg-[#10b981] shadow-[0_0_8px_#10b981]"></div>
+					<span class="font-departure text-[8px] text-[#9ca3af] mt-1 tracking-tighter">READY</span>
+				</div>
+				<!-- Print Status LED -->
+				<div class="hidden sm:flex flex-col items-center">
+					<div class="w-2.5 h-2.5 rounded-full bg-[#f59e0b] shadow-[0_0_6px_#f59e0b]"></div>
+					<span class="font-departure text-[8px] text-[#9ca3af] mt-1 tracking-tighter">FEED</span>
+				</div>
+			</div>
+
+			<!-- Tactile Control Buttons -->
+			<div class="flex items-center gap-2">
+				<button
+					id="btn-line-feed"
+					type="button"
+					title="Advance paper down"
+					class="cursor-pointer bg-[#33312e] hover:bg-[#45423e] active:translate-y-0.5 border border-[#524f4a] text-[#dedad2] font-departure text-[9px] md:text-[10px] uppercase px-2.5 md:px-3 py-1.5 rounded transition-all shadow-[0_2px_0_0_#141312]"
+				>
+					LF (Line)
+				</button>
+
+				<button
+					id="btn-form-feed"
+					type="button"
+					title="Advance paper to next section"
+					class="cursor-pointer bg-[#33312e] hover:bg-[#45423e] active:translate-y-0.5 border border-[#524f4a] text-[#dedad2] font-departure text-[9px] md:text-[10px] uppercase px-2.5 md:px-3 py-1.5 rounded transition-all shadow-[0_2px_0_0_#141312]"
+				>
+					FF (Page)
+				</button>
+
+				<button
+					id="btn-top-paper"
+					type="button"
+					title="Scroll to beginning of document"
+					class="cursor-pointer bg-[#1e3a2e] hover:bg-[#254b3b] active:translate-y-0.5 border border-[#34d399]/40 text-[#a7f3d0] font-departure text-[9px] md:text-[10px] uppercase px-2.5 md:px-3.5 py-1.5 rounded transition-all shadow-[0_2px_0_0_#0f1f18]"
+				>
+					TOP
+				</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	// Interactive Printer Controls
+	const btnLineFeed = document.getElementById("btn-line-feed");
+	const btnFormFeed = document.getElementById("btn-form-feed");
+	const btnTop = document.getElementById("btn-top-paper");
+
+	if (btnLineFeed) {
+		btnLineFeed.addEventListener("click", () => {
+			window.scrollBy({ top: 120, behavior: "smooth" });
+		});
+	}
+
+	if (btnFormFeed) {
+		btnFormFeed.addEventListener("click", () => {
+			window.scrollBy({ top: window.innerHeight * 0.75, behavior: "smooth" });
+		});
+	}
+
+	if (btnTop) {
+		btnTop.addEventListener("click", () => {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		});
+	}
+</script>
