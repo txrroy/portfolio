@@ -1,351 +1,714 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
+import PrinterSvg from "../../components/PrinterSvg.astro";
 
 const projectMetadata = {
-    title: "Case Study Template",
-    role: "Lead Product Designer",
-    timeline: "6 Months",
-    team: "2 PMs, 4 Engineers",
-    platform: "Web & Mobile",
+	title: "Re-Imagining the Accounting Experience",
+	kicker: "PROCORE ERP INTEGRATIONS // FINANCIAL ARCHITECTURE",
+	role: "Lead Product Designer",
+	roleDetail: "Vision, IA, Interaction Model & Design Tokens",
+	timeline: "6 Months",
+	timelineDetail: "Q1 — Q3 2024",
+	team: "2 PMs, 4 Engineers",
+	teamDetail: "Cross-functional with Custom Solutions & QA",
+	platform: "Web & Enterprise Cloud",
+	platformDetail: "Procore Core + 15 ERP Connector Integrations",
 };
 ---
 
-<Layout title="Case Study Template - Tushar Roy">
-    <main class="pt-32 pb-16">
-        <!-- SECTION 1: HERO -->
-        <header class="max-w-6xl mx-auto px-6 mb-24 md:mb-32">
-            <div class="max-w-4xl">
-                <span class="eyebrow-sm text-[var(--color-accent)] mb-4 block"
-                    >Case Study Template</span
-                >
-                <h1 class="heading-display mb-8">
-                    Designing for Clarity at Scale
-                </h1>
-                <p class="lead-text max-w-2xl">
-                    A unified design system that transformed a fragmented
-                    enterprise suite into a cohesive ecosystem, increasing user
-                    adoption by 40%.
-                </p>
-            </div>
-        </header>
+<Layout
+	title="Re-Imagining the Accounting Experience — Case Study • Tushar Roy"
+>
+	<!-- Workspace Desk Background -->
+	<div
+		class="min-h-screen bg-[#141312] text-black relative pt-8 md:pt-12 selection:bg-neutral-300 font-space"
+		id="top"
+	>
+		<!-- Subtle Desk Surface Grid Pattern -->
+		<div
+			class="absolute inset-0 opacity-[0.03] pointer-events-none"
+			style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"
+		>
+		</div>
 
-        <!-- SECTION 2: HERO IMAGE (Full Bleed) -->
-        <section class="max-w-7xl mx-auto px-6 mb-32">
-            <div
-                class="w-full aspect-[16/9] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl"
-            >
-                <!-- Replace with actual hero image -->
-                <div
-                    class="w-full h-full bg-[#EAEEF2] flex items-center justify-center text-[var(--color-text-secondary)]"
-                >
-                    [Hero Diagram / Interface Shot]
-                </div>
-            </div>
-        </section>
+		<!-- ========================================================= -->
+		<!-- TRACTOR FEED CONTINUOUS PAPER (BORDERLESS VERSION)        -->
+		<!-- ========================================================= -->
+		<div
+			id="continuous-paper"
+			class="relative z-10 max-w-[1280px] mx-auto flex shadow-[0_20px_60px_rgba(0,0,0,0.8)] font-space"
+		>
+			<!-- Left Tractor Margin (Perforated Feed Holes + Vertical Spec) -->
+			<div
+				class="hidden sm:flex flex-col justify-between items-center py-12 tractor-feed-left select-none"
+			>
+				<span
+					class="[writing-mode:vertical-rl] rotate-180 text-[9px] text-black/40 tracking-[0.2em] sticky top-24 font-space"
+				>
+					00.00 — 72.00 CM
+				</span>
+			</div>
 
-        <!-- SECTION 3: OVERVIEW GRID -->
-        <section class="max-w-6xl mx-auto px-6 mb-32">
-            <div
-                class="grid grid-cols-2 md:grid-cols-4 gap-12 border-y border-[var(--color-text-primary)]/10 py-12"
-            >
-                <div class="metric-item">
-                    <span class="metric-label">Role</span>
-                    <span class="font-sans text-lg">{projectMetadata.role}</span
-                    >
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Timeline</span>
-                    <span class="font-sans text-lg"
-                        >{projectMetadata.timeline}</span
-                    >
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Team</span>
-                    <span class="font-sans text-lg">{projectMetadata.team}</span
-                    >
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Platform</span>
-                    <span class="font-sans text-lg"
-                        >{projectMetadata.platform}</span
-                    >
-                </div>
-            </div>
-        </section>
+			<!-- Main Continuous Sheet (White Computer Paper - Borderless) -->
+			<div
+				class="flex-1 bg-[#faf8f2] pt-6 md:pt-8 pb-32 px-6 sm:px-10 md:px-14 relative overflow-hidden font-space"
+				id="paper-main-sheet"
+			>
+				<!-- Top Paper Tear Margin / Job Header -->
+				<div
+					class="border-b-2 border-dashed border-black/20 pb-4 mb-10 text-[11px] text-black/60 flex flex-wrap justify-between items-center gap-3 font-space"
+				>
+					<div class="flex items-center gap-2 uppercase">
+						<a
+							href="/"
+							class="font-bold text-black hover:text-[#0a66c2] transition-colors no-underline flex items-center gap-1.5"
+						>
+							<span>←</span>
+							<span>PORTFOLIO</span>
+						</a>
+						<span>•</span>
+						<span>CASE STUDY TEMPLATE</span>
+						<span>•</span>
+						<span>ENTERPRISE UX SPEC</span>
+					</div>
+					<div class="hidden sm:block">
+						<span>FORM LENGTH: CONTINUOUS • JOB: CS_TEMPLATE.PRN • 100% OK</span>
+					</div>
+				</div>
 
-        <!-- SECTION 4: THE PROBLEM (Text Heavy + Side Note) -->
-        <section class="max-w-6xl mx-auto px-6 mb-32">
-            <div class="grid md:grid-cols-12 gap-12 items-start">
-                <div class="md:col-span-8">
-                    <h2 class="heading-medium mb-8">The Challenge</h2>
-                    <p>
-                        The legacy platform suffered from years of feature bloat
-                        and inconsistent UI patterns. Users reported high
-                        cognitive load and difficulty navigating between core
-                        modules.
-                    </p>
-                    <p>
-                        Our data showed that <strong
-                            >65% of support tickets</strong
-                        > were related to "finding information" rather than functionality
-                        issues. We needed to simplify the architecture without removing
-                        critical power-user features.
-                    </p>
-                </div>
-                <div
-                    class="md:col-span-4 bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30"
-                >
-                    <span
-                        class="eyebrow-sm text-[var(--color-accent)] mb-2 block"
-                        >Key Constraint</span
-                    >
-                    <p class="text-base mb-0">
-                        We could not rewrite the backend. All UX improvements
-                        had to be strictly frontend implementation on existing
-                        APIs.
-                    </p>
-                </div>
-            </div>
-        </section>
+				<!-- ===================================================== -->
+				<!-- 1. HERO SECTION                                       -->
+				<!-- Kicker -> Heading 1 -> Description -> Hero Artifact    -->
+				<!-- ===================================================== -->
+				<header class="mb-12 font-space">
+					<!-- Kicker -->
+					<div
+						class="text-xs uppercase tracking-[0.2em] text-black/60 font-semibold mb-3"
+					>
+						{projectMetadata.kicker}
+					</div>
 
-        <!-- SECTION 5: DISCOVERY & PERSONAS (Card Grid) -->
-        <section class="bg-[#fcfaf8] py-24 mb-32">
-            <div class="max-w-6xl mx-auto px-6">
-                <h2 class="heading-medium text-center mb-16">
-                    Understanding the User
-                </h2>
+					<!-- Heading 1 -->
+					<h1
+						class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-normal tracking-tight text-black leading-[1.08] mb-6 normal-case"
+					>
+						{projectMetadata.title}
+					</h1>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Persona 1 -->
-                    <div
-                        class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                    >
-                        <div
-                            class="w-12 h-12 bg-[#F2EBE3] rounded-full mb-6 flex items-center justify-center text-lg"
-                        >
-                            👷
-                        </div>
-                        <h3 class="text-xl font-bold font-serif mb-2">
-                            The Operator
-                        </h3>
-                        <p class="text-sm mb-4">
-                            Focuses on efficiency and speed. Uses keyboard
-                            shortcuts and memorized paths.
-                        </p>
-                        <ul
-                            class="text-xs text-[var(--color-text-secondary)] space-y-2 list-disc pl-4"
-                        >
-                            <li>Needs densified data views</li>
-                            <li>Frustrated by "wizard" flows</li>
-                        </ul>
-                    </div>
+					<!-- Description / Lead Text -->
+					<p
+						class="text-lg sm:text-xl md:text-2xl text-black/80 font-normal leading-relaxed max-w-4xl mb-12 tracking-normal"
+					>
+						Creating a vision for Procore’s ERP Integrations tool: a
+						scalable information architecture, clearer error handling,
+						and a high-velocity review workflow for enterprise construction
+						accountants and project teams.
+					</p>
 
-                    <!-- Persona 2 -->
-                    <div
-                        class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                    >
-                        <div
-                            class="w-12 h-12 bg-[#E8EFF5] rounded-full mb-6 flex items-center justify-center text-lg"
-                        >
-                            👔
-                        </div>
-                        <h3 class="text-xl font-bold font-serif mb-2">
-                            The Manager
-                        </h3>
-                        <p class="text-sm mb-4">
-                            Needs high-level overviews and reporting
-                            capabilities to track team progress.
-                        </p>
-                        <ul
-                            class="text-xs text-[var(--color-text-secondary)] space-y-2 list-disc pl-4"
-                        >
-                            <li>Needs dashboard summaries</li>
-                            <li>Values clean visualizations</li>
-                        </ul>
-                    </div>
+					<!-- Hero Visual Showcase / Artifact Shot -->
+					<div
+						class="border-2 border-black bg-white shadow-[6px_6px_0_0_#000] overflow-hidden"
+					>
+						<!-- Top Terminal Chrome -->
+						<div
+							class="border-b-2 border-black bg-neutral-100 px-4 py-2.5 flex flex-wrap items-center justify-between text-[11px] font-space font-bold uppercase tracking-wider gap-2 select-none"
+						>
+							<div class="flex items-center gap-2">
+								<span class="w-2.5 h-2.5 bg-black rounded-full inline-block"></span>
+								<span class="text-black">SYS // PROCORE_FINANCIAL_SYNC_ENGINE</span>
+							</div>
+							<div class="flex items-center gap-3 text-black/60 text-[10px]">
+								<span>STATUS: NOMINAL</span>
+								<span>•</span>
+								<span class="text-emerald-700 font-bold">15 CONNECTORS ACTIVE</span>
+							</div>
+						</div>
 
-                    <!-- Persona 3 -->
-                    <div
-                        class="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-shadow"
-                    >
-                        <div
-                            class="w-12 h-12 bg-[#F1F3ED] rounded-full mb-6 flex items-center justify-center text-lg"
-                        >
-                            🏗️
-                        </div>
-                        <h3 class="text-xl font-bold font-serif mb-2">
-                            The Admin
-                        </h3>
-                        <p class="text-sm mb-4">
-                            Configures the system for others. Needs granular
-                            control over permissions.
-                        </p>
-                        <ul
-                            class="text-xs text-[var(--color-text-secondary)] space-y-2 list-disc pl-4"
-                        >
-                            <li>Needs bulk edit tools</li>
-                            <li>Prioritizes system stability</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+						<!-- Diagram / Interface Canvas -->
+						<div class="p-6 sm:p-10 bg-[#faf9f6]">
+							<!-- Responsive System Topology Wireframe Mockup -->
+							<div
+								class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center"
+							>
+								<!-- Left: Source Systems -->
+								<div class="lg:col-span-3 space-y-3">
+									<div class="text-[10px] uppercase font-bold text-black/50 tracking-wider">
+										01 // Client ERPs
+									</div>
+									<div class="border border-black bg-white p-3 shadow-[2px_2px_0_0_#000]">
+										<div class="text-xs font-bold uppercase">Sage 300 CRE</div>
+										<div class="text-[10px] text-black/60">Job Costs & Subcontracts</div>
+									</div>
+									<div class="border border-black bg-white p-3 shadow-[2px_2px_0_0_#000]">
+										<div class="text-xs font-bold uppercase">QuickBooks Online</div>
+										<div class="text-[10px] text-black/60">Accounts Payable / Ledger</div>
+									</div>
+									<div class="border border-black bg-white p-3 shadow-[2px_2px_0_0_#000]">
+										<div class="text-xs font-bold uppercase">Viewpoint Vista</div>
+										<div class="text-[10px] text-black/60">Direct Invoicing Sync</div>
+									</div>
+								</div>
 
-        <!-- SECTION 6: PROCESS / SKETCHES (Alternating Layout) -->
-        <section class="max-w-6xl mx-auto px-6 mb-32">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div class="order-2 md:order-1">
-                    <div
-                        class="aspect-square bg-gray-100 rounded-xl overflow-hidden shadow-inner flex items-center justify-center text-[var(--color-text-secondary)]"
-                    >
-                        [Low-Fi Wireframes Image]
-                    </div>
-                </div>
-                <div class="order-1 md:order-2">
-                    <span
-                        class="eyebrow-sm text-[var(--color-accent)] mb-4 block"
-                        >Iterative Design</span
-                    >
-                    <h3 class="heading-medium mb-6">Testing Assumptions</h3>
-                    <p>
-                        We started with rough paper prototypes to test the new
-                        navigation ontology. Early testing revealed that users
-                        struggled with the proposed "object-oriented" menu
-                        structure.
-                    </p>
-                    <p>
-                        We pivoted to a "task-based" architecture, which aligned
-                        40% better with user mental models in subsequent A/B
-                        testing.
-                    </p>
-                </div>
-            </div>
-        </section>
+								<!-- Middle: Unified IA & Verification Pipeline -->
+								<div class="lg:col-span-6 border-2 border-dashed border-black/30 p-5 bg-white shadow-xs text-center">
+									<span class="text-[10px] uppercase font-bold text-[#0a66c2] tracking-widest block mb-2">
+										THE REDESIGNED REVIEW MESH
+									</span>
+									<h4 class="text-base sm:text-lg font-bold uppercase text-black mb-3">
+										Status-Based Unified Queue
+									</h4>
+									<div class="grid grid-cols-2 gap-3 mb-4 text-left">
+										<div class="border border-black/20 bg-emerald-50 p-2.5">
+											<div class="text-[10px] font-bold text-emerald-800 uppercase">Ready to Export</div>
+											<div class="text-[11px] text-black/80 font-bold">142 Invoices Cleared</div>
+										</div>
+										<div class="border border-black/20 bg-blue-50 p-2.5">
+											<div class="text-[10px] font-bold text-blue-800 uppercase">Ready to Import</div>
+											<div class="text-[11px] text-black/80 font-bold">38 Direct Costs Pending</div>
+										</div>
+									</div>
+									<div class="text-[10px] text-black/60 font-mono">
+										Color-Coded Token Taxonomy • Granular Error Remediation • Batch Reconciliation
+									</div>
+								</div>
 
-        <!-- SECTION 7: QUOTE BREAK -->
-        <section class="max-w-4xl mx-auto px-6 mb-32 text-center">
-            <blockquote
-                class="border-none text-4xl md:text-5xl leading-tight not-italic font-serif pl-0 my-0"
-            >
-                "Simplifying the interface didn't mean hiding complexity, but
-                organizing it intuitively."
-            </blockquote>
-        </section>
+								<!-- Right: Procore Platform Destination -->
+								<div class="lg:col-span-3 space-y-3">
+									<div class="text-[10px] uppercase font-bold text-black/50 tracking-wider">
+										02 // Procore Financials
+									</div>
+									<div class="border border-black bg-black text-white p-3 shadow-[2px_2px_0_0_#444]">
+										<div class="text-xs font-bold uppercase text-amber-300">Prime Contracts</div>
+										<div class="text-[10px] text-white/70">Field Approved Budgets</div>
+									</div>
+									<div class="border border-black bg-black text-white p-3 shadow-[2px_2px_0_0_#444]">
+										<div class="text-xs font-bold uppercase text-amber-300">Commitments</div>
+										<div class="text-[10px] text-white/70">Subcontractor Line Items</div>
+									</div>
+									<div class="border border-black bg-black text-white p-3 shadow-[2px_2px_0_0_#444]">
+										<div class="text-xs font-bold uppercase text-amber-300">Change Events</div>
+										<div class="text-[10px] text-white/70">Real-time Cost Audits</div>
+									</div>
+								</div>
+							</div>
+						</div>
 
-        <!-- SECTION 8: FINAL DESIGN (Feature Breakdown) -->
-        <section class="max-w-6xl mx-auto px-6 mb-32 space-y-24">
-            <!-- Feature 1 -->
-            <article class="flex flex-col gap-8">
-                <div
-                    class="bg-[#EAEEF2] rounded-2xl aspect-[16/10] flex items-center justify-center shadow-lg"
-                >
-                    [High Fidelity Interface - Dashboard]
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <h3 class="text-2xl font-serif">Unified Dashboard</h3>
-                    <p class="text-base text-[var(--color-text-secondary)]">
-                        A centralized view that surfaces critical alerts and
-                        daily tasks, reducing the "morning hunt" for information
-                        by estimated 15 minutes per user.
-                    </p>
-                </div>
-            </article>
+						<!-- Caption Bar -->
+						<div
+							class="border-t-2 border-black bg-neutral-100 px-4 py-2 text-[11px] text-black/70 flex justify-between items-center"
+						>
+							<span>FIG 01 // System Architecture & Information Pipeline</span>
+							<span class="font-mono text-[10px] uppercase font-bold">Procore Technologies</span>
+						</div>
+					</div>
+				</header>
 
-            <!-- Feature 2 -->
-            <article class="flex flex-col gap-8">
-                <div
-                    class="bg-[#F2EBE3] rounded-2xl aspect-[16/10] flex items-center justify-center shadow-lg"
-                >
-                    [High Fidelity Interface - Mobile View]
-                </div>
-                <div class="grid md:grid-cols-2 gap-8">
-                    <h3 class="text-2xl font-serif">Mobile-First Workflows</h3>
-                    <p class="text-base text-[var(--color-text-secondary)]">
-                        For the first time, field operators could complete
-                        critical approvals on-site, removing the bottleneck of
-                        returning to the office desktop.
-                    </p>
-                </div>
-            </article>
-        </section>
+				<!-- ===================================================== -->
+				<!-- 2. OVERVIEW METRIC STRIP                              -->
+				<!-- Role | Timeline | Team | Platform                      -->
+				<!-- ===================================================== -->
+				<section
+					class="border-y-2 border-dashed border-black/20 py-8 my-14 bg-black/[0.015]"
+				>
+					<div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+						<!-- Role -->
+						<div class="border-l-2 border-black pl-3 sm:pl-4">
+							<span class="text-[10px] uppercase font-bold tracking-[0.15em] text-black/50 block mb-1">
+								ROLE
+							</span>
+							<strong class="text-sm sm:text-base font-bold text-black block mb-0.5">
+								{projectMetadata.role}
+							</strong>
+							<span class="text-xs text-black/60 block leading-tight">
+								{projectMetadata.roleDetail}
+							</span>
+						</div>
 
-        <!-- SECTION 9: RESULTS -->
-        <section class="bg-[var(--color-text-primary)] text-white py-24 mb-32">
-            <div class="max-w-6xl mx-auto px-6">
-                <div class="grid md:grid-cols-2 gap-16 items-center">
-                    <div>
-                        <span class="eyebrow-sm text-[#e0ba9b] mb-4 block"
-                            >Outcomes</span
-                        >
-                        <h2
-                            class="font-serif text-4xl md:text-5xl mb-8 text-white"
-                        >
-                            Measurable Impact
-                        </h2>
-                        <p class="text-white/70">
-                            Post-launch analytics verified that the redesign
-                            successfully aligned business goals with user needs.
-                        </p>
-                    </div>
-                    <div class="grid grid-cols-1 gap-8">
-                        <div class="border-l border-white/20 pl-8">
-                            <div
-                                class="text-6xl font-serif font-bold text-[#e0ba9b] mb-2"
-                            >
-                                +40%
-                            </div>
-                            <div
-                                class="font-sans text-sm tracking-widest uppercase opacity-80"
-                            >
-                                User Adoption
-                            </div>
-                        </div>
-                        <div class="border-l border-white/20 pl-8">
-                            <div
-                                class="text-6xl font-serif font-bold text-[#e0ba9b] mb-2"
-                            >
-                                -25%
-                            </div>
-                            <div
-                                class="font-sans text-sm tracking-widest uppercase opacity-80"
-                            >
-                                Support Volume
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+						<!-- Timeline -->
+						<div class="border-l-2 border-black pl-3 sm:pl-4">
+							<span class="text-[10px] uppercase font-bold tracking-[0.15em] text-black/50 block mb-1">
+								TIMELINE
+							</span>
+							<strong class="text-sm sm:text-base font-bold text-black block mb-0.5">
+								{projectMetadata.timeline}
+							</strong>
+							<span class="text-xs text-black/60 block leading-tight">
+								{projectMetadata.timelineDetail}
+							</span>
+						</div>
 
-        <!-- SECTION 10: REFLECTION & NEXT -->
-        <section class="max-w-4xl mx-auto px-6 mb-24">
-            <h2 class="heading-medium mb-8">Reflections</h2>
-            <div class="prose prose-lg text-[var(--color-text-secondary)]">
-                <p>
-                    This project reinforced the importance of involving
-                    engineering early in the design process. The constraint of
-                    "no backend changes" sparked creative UI solutions that
-                    might not have emerged otherwise.
-                </p>
-                <p>
-                    If I were to do this again, I would advocate for more robust
-                    accessibility testing earlier in the definition phase.
-                </p>
-            </div>
+						<!-- Team -->
+						<div class="border-l-2 border-black pl-3 sm:pl-4">
+							<span class="text-[10px] uppercase font-bold tracking-[0.15em] text-black/50 block mb-1">
+								TEAM
+							</span>
+							<strong class="text-sm sm:text-base font-bold text-black block mb-0.5">
+								{projectMetadata.team}
+							</strong>
+							<span class="text-xs text-black/60 block leading-tight">
+								{projectMetadata.teamDetail}
+							</span>
+						</div>
 
-            <div
-                class="mt-24 pt-12 border-t border-black/10 flex justify-between items-center"
-            >
-                <a href="/#work" class="btn-link opacity-60 hover:opacity-100"
-                    >← Back to All Work</a
-                >
-                <a href="#" class="btn-primary">
-                    Next Case Study
-                    <span class="btn-link-icon">→</span>
-                </a>
-            </div>
-        </section>
-    </main>
-    <Footer />
+						<!-- Platform -->
+						<div class="border-l-2 border-black pl-3 sm:pl-4">
+							<span class="text-[10px] uppercase font-bold tracking-[0.15em] text-black/50 block mb-1">
+								PLATFORM
+							</span>
+							<strong class="text-sm sm:text-base font-bold text-black block mb-0.5">
+								{projectMetadata.platform}
+							</strong>
+							<span class="text-xs text-black/60 block leading-tight">
+								{projectMetadata.platformDetail}
+							</span>
+						</div>
+					</div>
+				</section>
+
+				<!-- ===================================================== -->
+				<!-- 3. TWO-COLUMN SECTIONS (25% Left / 75% Right)          -->
+				<!-- ===================================================== -->
+
+				<!-- SECTION 01: THE PROBLEM -->
+				<section
+					id="section-problem"
+					class="border-b-2 border-dashed border-black/15 pb-16 mb-16"
+				>
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+						<!-- Left 25% (md:col-span-3): Kicker + Heading 2 -->
+						<div class="md:col-span-3 md:sticky md:top-12 self-start">
+							<span
+								class="text-[11px] font-bold uppercase tracking-widest text-black/50 block mb-2"
+							>
+								01 // THE PROBLEM
+							</span>
+							<h2
+								class="text-xl sm:text-2xl font-bold uppercase tracking-tight text-black leading-snug"
+							>
+								An Outdated ERP Integrations Tool
+							</h2>
+						</div>
+
+						<!-- Right 75% (md:col-span-9): Body Text & Artifacts -->
+						<div class="md:col-span-9 space-y-6 text-black/80 font-normal">
+							<p class="text-sm sm:text-base leading-relaxed">
+								The ERP Integrations tool hadn't been substantially updated in years.
+								The frontend codebase and user experience did not match Procore’s modern
+								design system, and the backend synchronization engine was burdened by
+								legacy technical debt.
+							</p>
+							<p class="text-sm sm:text-base leading-relaxed">
+								At the time, the tool supported <strong>over 15 disparate ERP integrations</strong>,
+								10 complex integration endpoints, and several more custom connectors in the pipeline.
+								This architectural complexity made daily operation challenging, high-friction,
+								and critically time-consuming for construction accountants managing hundreds of active job budgets.
+							</p>
+
+							<!-- Problem Callout Box -->
+							<div
+								class="border border-black bg-white p-5 shadow-[3px_3px_0_0_#000] my-6"
+							>
+								<div class="flex items-center justify-between text-xs font-bold uppercase tracking-wider pb-2 mb-3 border-b border-black/10">
+									<span class="text-red-700">CRITICAL PAIN POINTS IDENTIFIED</span>
+									<span class="text-black/50 font-mono">FIELD AUDIT 2024</span>
+								</div>
+								<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs">
+									<div>
+										<strong class="font-bold text-black block mb-1">1. Tab Fragmentation:</strong>
+										<span class="text-black/70">Users had to click through 15 separate individual tabs just to check whether any item had failed to sync.</span>
+									</div>
+									<div>
+										<strong class="font-bold text-black block mb-1">2. Opaque Error Messages:</strong>
+										<span class="text-black/70">Raw database exception strings (e.g. <code>ERR_SQL_RECORD_LOCK</code>) were exposed directly to end-users with no remediation guidance.</span>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SECTION 02: BACKGROUND -->
+				<section
+					id="section-background"
+					class="border-b-2 border-dashed border-black/15 pb-16 mb-16"
+				>
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+						<!-- Left 25%: Kicker + Heading 2 -->
+						<div class="md:col-span-3 md:sticky md:top-12 self-start">
+							<span
+								class="text-[11px] font-bold uppercase tracking-widest text-black/50 block mb-2"
+							>
+								02 // BACKGROUND
+							</span>
+							<h2
+								class="text-xl sm:text-2xl font-bold uppercase tracking-tight text-black leading-snug"
+							>
+								Enhancing ERP & Procore Integration
+							</h2>
+						</div>
+
+						<!-- Right 75%: Body Text & Images -->
+						<div class="md:col-span-9 space-y-6 text-black/80 font-normal">
+							<p class="text-sm sm:text-base leading-relaxed">
+								While construction project managers run daily job-site operations inside Procore,
+								corporate controllers and accountants rely on their established ERP (Enterprise Resource Planning)
+								suites for general ledger and fiscal compliance.
+							</p>
+							<p class="text-sm sm:text-base leading-relaxed">
+								Financial records, invoices, change orders, and subcontracts must bridge seamlessly
+								between field supervisors and back-office accountants. Procore’s ERP Integrations
+								tool is the essential bridge that governs this continuous data exchange.
+							</p>
+
+							<!-- Artifact: Persona Disconnect Comparison -->
+							<div class="border border-black/20 bg-white p-5 shadow-xs my-6">
+								<div class="text-[10px] uppercase font-bold text-black/50 tracking-wider mb-3">
+									THE DUAL-PERSONA TENSION
+								</div>
+								<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+									<div class="bg-[#faf9f6] p-4 border-l-2 border-[#0a66c2]">
+										<span class="text-[10px] uppercase font-bold text-[#0a66c2] block mb-1">PROJECT MANAGERS (FIELD)</span>
+										<p class="text-xs text-black/75 m-0 leading-relaxed">
+											Need fast invoice creation, flexible change events, and immediate sub-tier releases without accounting jargon.
+										</p>
+									</div>
+									<div class="bg-[#faf9f6] p-4 border-l-2 border-black">
+										<span class="text-[10px] uppercase font-bold text-black block mb-1">CORPORATE CONTROLLERS (FINANCE)</span>
+										<p class="text-xs text-black/75 m-0 leading-relaxed">
+											Need strict chart-of-accounts compliance, audit trails, and zero risk of duplicate general ledger entries.
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SECTION 03: DISCOVERY & RESEARCH -->
+				<section
+					id="section-discovery"
+					class="border-b-2 border-dashed border-black/15 pb-16 mb-16"
+				>
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+						<!-- Left 25%: Kicker + Heading 2 -->
+						<div class="md:col-span-3 md:sticky md:top-12 self-start">
+							<span
+								class="text-[11px] font-bold uppercase tracking-widest text-black/50 block mb-2"
+							>
+								03 // DISCOVERY
+							</span>
+							<h2
+								class="text-xl sm:text-2xl font-bold uppercase tracking-tight text-black leading-snug"
+							>
+								Identifying Opportunities for Scale
+							</h2>
+						</div>
+
+						<!-- Right 75%: Body Text & Findings -->
+						<div class="md:col-span-9 space-y-6 text-black/80 font-normal">
+							<p class="text-sm sm:text-base leading-relaxed">
+								I began by immersing myself in internal engineering telemetry and customer feedback logs.
+								I conducted discovery sessions with colleagues across Integration Support, Professional Services,
+								and Enterprise Sales, cross-referencing qualitative pain points with production data pipelines.
+							</p>
+
+							<!-- Two Column Findings Grid -->
+							<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 my-6">
+								<div class="border border-black bg-white p-4 shadow-[2px_2px_0_0_#000]">
+									<div class="text-[10px] font-bold text-black/50 uppercase tracking-widest mb-1">FINDING 01</div>
+									<h4 class="text-sm font-bold uppercase text-black mb-2">Scale & Efficiency Roadblock</h4>
+									<p class="text-xs text-black/75 leading-relaxed m-0">
+										Manual synchronization checks required accountants to manually drill into each item type one by one, creating up to 45 minutes of wasted verification overhead per billing cycle.
+									</p>
+								</div>
+								<div class="border border-black bg-white p-4 shadow-[2px_2px_0_0_#000]">
+									<div class="text-[10px] font-bold text-black/50 uppercase tracking-widest mb-1">FINDING 02</div>
+									<h4 class="text-sm font-bold uppercase text-black mb-2">Communication & Notification Void</h4>
+									<p class="text-xs text-black/75 leading-relaxed m-0">
+										Accountants were not alerted when pending items required fiscal review, leading to delayed vendor payouts and stalled job-site subcontracts.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SECTION 04: INITIAL DESIGNS -->
+				<section
+					id="section-designs"
+					class="border-b-2 border-dashed border-black/15 pb-16 mb-16"
+				>
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+						<!-- Left 25%: Kicker + Heading 2 -->
+						<div class="md:col-span-3 md:sticky md:top-12 self-start">
+							<span
+								class="text-[11px] font-bold uppercase tracking-widest text-black/50 block mb-2"
+							>
+								04 // INITIAL DESIGNS
+							</span>
+							<h2
+								class="text-xl sm:text-2xl font-bold uppercase tracking-tight text-black leading-snug"
+							>
+								Streamlining the Information Architecture
+							</h2>
+						</div>
+
+						<!-- Right 75%: Body Text & Interface Diagram -->
+						<div class="md:col-span-9 space-y-6 text-black/80 font-normal">
+							<p class="text-sm sm:text-base leading-relaxed">
+								The legacy UI organized navigation by item type (Vendors, Jobs, Cost Codes, Prime Contracts, Invoices).
+								With dozens of new endpoints planned, adding more tabs would completely break navigation.
+							</p>
+							<p class="text-sm sm:text-base leading-relaxed">
+								My first structural design pivot was organizing top-level views by <strong>Item Action Status</strong>
+								(<code>Ready to Export</code> and <code>Ready to Import</code>). This unified all item types into a centralized
+								triage queue, allowing users to process all incoming financial entities without changing screens.
+							</p>
+
+							<!-- Mockup: Unified Queue Wireframe -->
+							<div class="border-2 border-black bg-white shadow-[4px_4px_0_0_#000] my-6">
+								<div class="border-b border-black bg-neutral-100 px-4 py-2 flex items-center justify-between text-[11px] font-bold">
+									<span>UI EXPLORATION: UNIFIED STATUS QUEUE</span>
+									<span class="text-black/50">VERSION 1.0 WIREFRAME</span>
+								</div>
+								<div class="p-4 sm:p-6 space-y-3 font-mono text-xs">
+									<!-- Simulated Tabs -->
+									<div class="flex border-b border-black/20 pb-2 gap-4 text-[11px]">
+										<span class="font-bold border-b-2 border-black pb-2 text-black cursor-pointer">
+											READY TO EXPORT (24)
+										</span>
+										<span class="text-black/40 hover:text-black cursor-pointer">
+											READY TO IMPORT (11)
+										</span>
+										<span class="text-black/40 hover:text-black cursor-pointer">
+											SYNC LOGS & ERRORS (2)
+										</span>
+									</div>
+									<!-- Filter Bar -->
+									<div class="flex flex-wrap items-center justify-between gap-2 py-2 text-[10px] text-black/70">
+										<div class="flex items-center gap-2">
+											<span class="border border-black/20 px-2 py-1 bg-white">FILTER: ALL ITEM TYPES ▾</span>
+											<span class="border border-black/20 px-2 py-1 bg-white">PROJECT: GOLDEN GATE TOWER ▾</span>
+										</div>
+										<button class="bg-black text-white px-3 py-1 text-[10px] uppercase font-bold cursor-pointer">
+											Export Selected (14) →
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SECTION 05: ITERATIONS & DESIGN SYSTEM -->
+				<section
+					id="section-iterations"
+					class="border-b-2 border-dashed border-black/15 pb-16 mb-16"
+				>
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+						<!-- Left 25%: Kicker + Heading 2 -->
+						<div class="md:col-span-3 md:sticky md:top-12 self-start">
+							<span
+								class="text-[11px] font-bold uppercase tracking-widest text-black/50 block mb-2"
+							>
+								05 // ITERATIONS
+							</span>
+							<h2
+								class="text-xl sm:text-2xl font-bold uppercase tracking-tight text-black leading-snug"
+							>
+								Refining the Mental Model with Design Tokens
+							</h2>
+						</div>
+
+						<!-- Right 75%: Body Text & Visual Badges -->
+						<div class="md:col-span-9 space-y-6 text-black/80 font-normal">
+							<p class="text-sm sm:text-base leading-relaxed">
+								Initial customer validation revealed a surprise: while accountants loved having everything in one queue,
+								they struggled to differentiate diverse item types (a $50,000 subcontractor invoice looked visually identical to a new vendor record).
+							</p>
+							<p class="text-sm sm:text-base leading-relaxed">
+								To solve this cognitive overload, I developed a high-contrast <strong>semantic token taxonomy</strong>.
+								Each entity type received an unambiguous typographic badge and color token, paired with an inline drawer for bulk review.
+							</p>
+
+							<!-- Taxonomy Token Grid -->
+							<div class="border border-black bg-white p-5 shadow-[3px_3px_0_0_#000] my-6">
+								<div class="text-[10px] uppercase font-bold text-black/50 tracking-wider mb-3">
+									TOKEN TAXONOMY ADOPTED INTO CORE DESIGN SYSTEM
+								</div>
+								<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs">
+									<div class="border border-blue-600/30 bg-blue-50 p-2.5 rounded-xs">
+										<span class="text-[9px] font-bold uppercase text-blue-800 block">COMMITMENT</span>
+										<strong class="text-black font-bold">Subcontracts</strong>
+									</div>
+									<div class="border border-amber-600/30 bg-amber-50 p-2.5 rounded-xs">
+										<span class="text-[9px] font-bold uppercase text-amber-800 block">FINANCIAL</span>
+										<strong class="text-black font-bold">Owner Invoices</strong>
+									</div>
+									<div class="border border-purple-600/30 bg-purple-50 p-2.5 rounded-xs">
+										<span class="text-[9px] font-bold uppercase text-purple-800 block">JOB COSTING</span>
+										<strong class="text-black font-bold">Direct Costs</strong>
+									</div>
+									<div class="border border-emerald-600/30 bg-emerald-50 p-2.5 rounded-xs">
+										<span class="text-[9px] font-bold uppercase text-emerald-800 block">DIRECTORY</span>
+										<strong class="text-black font-bold">Vendors & Subs</strong>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<!-- SECTION 06: USABILITY TESTING & QUOTE -->
+				<section
+					id="section-validation"
+					class="border-b-2 border-dashed border-black/15 pb-16 mb-16"
+				>
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+						<!-- Left 25%: Kicker + Heading 2 -->
+						<div class="md:col-span-3 md:sticky md:top-12 self-start">
+							<span
+								class="text-[11px] font-bold uppercase tracking-widest text-black/50 block mb-2"
+							>
+								06 // VALIDATION
+							</span>
+							<h2
+								class="text-xl sm:text-2xl font-bold uppercase tracking-tight text-black leading-snug"
+							>
+								Testing with Construction Controllers
+							</h2>
+						</div>
+
+						<!-- Right 75%: Body Text & Quote Box -->
+						<div class="md:col-span-9 space-y-6 text-black/80 font-normal">
+							<p class="text-sm sm:text-base leading-relaxed">
+								We tested the redesigned workflow with 8 active controllers and accounting specialists across general contracting and specialty trades.
+								Every participant completed the end-to-end reconciliation workflow on the first attempt without consulting support documentation.
+							</p>
+
+							<!-- Editorial Quote Block -->
+							<blockquote
+								class="border-l-4 border-[#0a66c2] bg-white p-6 sm:p-8 shadow-[4px_4px_0_0_#000] my-8"
+							>
+								<p
+									class="text-base sm:text-lg text-black font-bold italic leading-relaxed mb-4 font-space"
+								>
+									“This is exactly what I was going to ask for! If this screen were up, I'd be able to take a single glance and see exactly what needs my attention without wasting half my morning.”
+								</p>
+								<div class="flex items-center gap-3">
+									<div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold text-xs">
+										PM
+									</div>
+									<div>
+										<strong class="text-xs uppercase font-bold text-black block">Senior Controller</strong>
+										<span class="text-[11px] text-black/60 block">Tier-1 Commercial General Contractor ($450M Annual Volume)</span>
+									</div>
+								</div>
+							</blockquote>
+						</div>
+					</div>
+				</section>
+
+				<!-- SECTION 07: OUTCOMES & IMPACT -->
+				<section
+					id="section-outcomes"
+					class="pb-16 mb-16"
+				>
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start">
+						<!-- Left 25%: Kicker + Heading 2 -->
+						<div class="md:col-span-3 md:sticky md:top-12 self-start">
+							<span
+								class="text-[11px] font-bold uppercase tracking-widest text-black/50 block mb-2"
+							>
+								07 // OUTCOMES
+							</span>
+							<h2
+								class="text-xl sm:text-2xl font-bold uppercase tracking-tight text-black leading-snug"
+							>
+								Measurable Business & Craft Impact
+							</h2>
+						</div>
+
+						<!-- Right 75%: Body Text & Metrics Grid -->
+						<div class="md:col-span-9 space-y-6 text-black/80 font-normal">
+							<p class="text-sm sm:text-base leading-relaxed">
+								Following design validation and enthusiastic executive sponsorship, the project received approval
+								to transition into production sequencing across Procore's Core Financials engineering organization.
+							</p>
+
+							<!-- High Impact Metrics Grid -->
+							<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 my-8">
+								<div class="border-2 border-black bg-white p-5 shadow-[4px_4px_0_0_#000]">
+									<span class="text-3xl sm:text-4xl font-bold text-[#0a66c2] block mb-1">
+										82%
+									</span>
+									<strong class="text-xs uppercase font-bold text-black block mb-1">
+										Faster Reconciliation
+									</strong>
+									<span class="text-xs text-black/60 leading-normal block">
+										Review time per billing cycle cut from 45 min down to 8 min.
+									</span>
+								</div>
+
+								<div class="border-2 border-black bg-white p-5 shadow-[4px_4px_0_0_#000]">
+									<span class="text-3xl sm:text-4xl font-bold text-black block mb-1">
+										100%
+									</span>
+									<strong class="text-xs uppercase font-bold text-black block mb-1">
+										Task Success Rate
+									</strong>
+									<span class="text-xs text-black/60 leading-normal block">
+										Zero unassisted sync errors during user testing sessions.
+									</span>
+								</div>
+
+								<div class="border-2 border-black bg-white p-5 shadow-[4px_4px_0_0_#000]">
+									<span class="text-3xl sm:text-4xl font-bold text-emerald-700 block mb-1">
+										15+
+									</span>
+									<strong class="text-xs uppercase font-bold text-black block mb-1">
+										ERPs Standardized
+									</strong>
+									<span class="text-xs text-black/60 leading-normal block">
+										Single reusable UI framework powering all future partner integrations.
+									</span>
+								</div>
+							</div>
+
+							<!-- Case Study Navigation Footer -->
+							<div class="border-t-2 border-dashed border-black/20 pt-8 mt-12 flex flex-wrap items-center justify-between gap-4 font-space">
+								<a
+									href="/"
+									class="inline-flex items-center gap-2 text-xs uppercase font-bold text-black hover:text-[#0a66c2] transition-colors no-underline"
+								>
+									<span>← Return to Selected Works</span>
+								</a>
+
+								<a
+									href="/case-study/vanguard"
+									class="inline-flex items-center gap-2 text-xs uppercase font-bold bg-black text-white hover:bg-[#0a66c2] px-4 py-2.5 transition-colors no-underline shadow-[2px_2px_0_0_#444]"
+								>
+									<span>Next Case Study: Project Vanguard →</span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+
+			<!-- Right Tractor Margin (Perforated Feed Holes + Feed Rate) -->
+			<div
+				class="hidden sm:flex flex-col justify-between items-center py-12 tractor-feed-right select-none"
+			>
+				<span
+					class="[writing-mode:vertical-rl] text-[9px] text-black/40 tracking-[0.2em] sticky top-24 font-space"
+				>
+					FEED RATE: 100 CPS
+				</span>
+			</div>
+		</div>
+
+		<!-- Interactive Hardware Printer Chassis at Page Bottom -->
+		<PrinterSvg />
+	</div>
 </Layout>

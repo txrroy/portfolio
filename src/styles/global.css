@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "tailwindcss";
 
 @font-face {
@@ -12,10 +13,18 @@
 
 @theme {
     /* Fonts */
-    --font-serif: "Fraunces", serif;
+    --font-serif: "Homemade Apple", cursive;
+    --font-instrument: "Homemade Apple", cursive;
+    --font-homemade: "Homemade Apple", cursive;
+    --font-corinthia: "Homemade Apple", cursive;
+    --font-birthstone: "Homemade Apple", cursive;
+    --font-meow: "Homemade Apple", cursive;
+    --font-msmadi: "Homemade Apple", cursive;
     --font-sans: "DM Sans", sans-serif;
-    --font-pixel: "Departure Mono", monospace;
-    --font-departure: "Departure Mono", monospace;
+    --font-space: "Space Mono", monospace;
+    --font-mono: "Space Mono", monospace;
+    --font-pixel: "Space Mono", monospace;
+    --font-departure: "Space Mono", monospace;
 
     /* Colors */
     --color-bg-primary: #ffffff;
@@ -43,6 +52,13 @@
     /* Global Defaults */
     html {
         @apply bg-[var(--color-bg-primary)] text-[var(--color-text-primary)] antialiased scroll-smooth;
+        font-family: var(--font-space), monospace;
+        overflow-x: hidden;
+    }
+
+    body {
+        font-family: var(--font-space), monospace;
+        overflow-x: hidden;
     }
 
     /* 
@@ -57,29 +73,29 @@
    * Usage: <span class="eyebrow">Title</span>
    */
     .eyebrow {
-        @apply font-sans text-sm uppercase tracking-[0.2em] font-bold text-[var(--color-text-secondary)] block mb-2;
+        @apply font-departure text-sm uppercase tracking-[0.2em] font-bold text-[var(--color-text-secondary)] block mb-2;
     }
 
     /** 
    * H1 - Main Heading Style
    */
     h1 {
-        @apply font-serif text-5xl md:text-6xl font-light text-[var(--color-text-primary)] leading-tight mb-6;
+        @apply font-departure text-4xl md:text-5xl font-normal text-[var(--color-text-primary)] leading-tight mb-6 normal-case tracking-tight;
     }
 
     /** 
    * H2 - Section Heading Style
    */
     h2 {
-        @apply font-serif text-3xl md:text-4xl font-light text-[var(--color-text-primary)] leading-tight mb-8;
+        @apply font-departure text-2xl md:text-3xl font-bold text-[var(--color-text-primary)] leading-tight mb-8 uppercase tracking-tight;
     }
 
     h3 {
-        @apply font-bold text-xl text-[var(--color-text-primary)] mb-4;
+        @apply font-departure font-bold text-xl text-[var(--color-text-primary)] mb-4 uppercase;
     }
 
     h4 {
-        @apply font-bold text-lg text-[var(--color-text-primary)] mb-4;
+        @apply font-departure font-bold text-lg text-[var(--color-text-primary)] mb-4 uppercase;
     }
 
     /**
@@ -87,7 +103,7 @@
    * Usage: Markdown content
    */
     p {
-        @apply font-sans text-lg md:text-xl text-[var(--color-text-secondary)] leading-normal max-w-[65ch] mb-6;
+        @apply font-departure text-base md:text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-[65ch] mb-6;
     }
 
     /* Links */
@@ -101,14 +117,20 @@
         @apply font-semibold text-[var(--color-text-primary)];
     }
 
+    /* Emphasis / Italic - Editorial Homemade Apple */
+    em,
+    i {
+        font-family: var(--font-homemade), "Homemade Apple", cursive;
+    }
+
     /* Blockquote */
     blockquote {
-        @apply border-l-4 border-[var(--color-accent)] pl-6 italic text-2xl font-serif text-[var(--color-text-primary)] my-8;
+        @apply border-l-4 border-[var(--color-accent)] pl-6 italic text-lg font-departure text-[var(--color-text-primary)] my-8;
     }
 
     /* Lists */
     ul {
-        @apply list-disc list-outside ml-5 mb-6 text-[var(--color-text-secondary)] font-sans text-lg md:text-xl leading-normal;
+        @apply list-disc list-outside ml-5 mb-6 text-[var(--color-text-secondary)] font-departure text-base md:text-lg leading-relaxed;
     }
 
     li {
@@ -128,20 +150,20 @@
     }
 
     .metric-value {
-        @apply font-serif text-4xl md:text-5xl font-bold text-[var(--color-text-primary)] mb-2;
+        @apply font-departure text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-2 uppercase;
     }
 
     .metric-label {
-        @apply font-sans uppercase tracking-[0.15em] text-xs font-bold text-[var(--color-text-secondary)] mb-2;
+        @apply font-departure uppercase tracking-[0.15em] text-xs font-bold text-[var(--color-text-secondary)] mb-2;
     }
 
     .metric-desc {
-        @apply font-sans text-sm text-[var(--color-text-secondary)] leading-normal;
+        @apply font-departure text-xs sm:text-sm text-[var(--color-text-secondary)] leading-relaxed;
     }
 
     /* Timeline */
     .timeline {
-        @apply relative border-l border-[var(--color-accent)] ml-4 md:ml-8 pl-8 md:pl-12 space-y-12;
+        @apply relative border-l border-[var(--color-accent)] ml-4 md:ml-8 pl-8 md:pl-12 space-y-12 font-departure;
     }
 
     .timeline-item {
@@ -157,64 +179,76 @@
     }
 
     .timeline-card {
-        @apply bg-white/50 p-6 md:p-8 rounded-sm border-l-2 border-transparent transition-all duration-300 hover:border-[var(--color-accent)];
+        @apply bg-white/50 p-6 md:p-8 rounded-sm border-l-2 border-transparent transition-all duration-300 hover:border-[var(--color-accent)] font-departure;
     }
 
     .timeline-year {
-        @apply font-sans text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2 block;
+        @apply font-departure text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2 block;
     }
 
     /* Testimonials */
     .testimonial-card {
-        @apply bg-[var(--color-bg-primary)] p-8 rounded-xl relative;
+        @apply bg-[var(--color-bg-primary)] p-8 rounded-xl relative font-departure;
     }
 
     .testimonial-quote {
-        @apply font-sans text-lg md:text-xl text-[var(--color-text-primary)] mb-6 not-italic;
+        @apply font-departure text-base md:text-lg text-[var(--color-text-primary)] mb-6 not-italic leading-relaxed;
     }
 
     .testimonial-author {
-        @apply flex items-center gap-4;
+        @apply flex items-center gap-4 font-departure;
     }
 
     /* Podcast Card */
     .podcast-card {
-        @apply bg-[#1a1a1a] text-white p-8 md:p-12 rounded-2xl grid md:grid-cols-2 gap-8 items-center;
+        @apply bg-[#1a1a1a] text-white p-8 md:p-12 rounded-2xl grid md:grid-cols-2 gap-8 items-center font-departure;
     }
 
     /* Typography Utilities */
     .heading-display {
-        @apply font-serif text-6xl md:text-7xl font-light leading-[0.9] tracking-tight normal-case;
+        @apply font-departure text-5xl md:text-6xl font-bold leading-tight tracking-tight uppercase;
     }
 
+    .font-space,
+    .font-mono,
     .font-pixel,
     .font-departure {
-        font-family: var(--font-pixel);
+        font-family: var(--font-space), monospace;
+    }
+
+    .font-instrument,
+    .font-homemade,
+    .font-corinthia,
+    .font-birthstone,
+    .font-meow,
+    .font-msmadi,
+    .font-serif {
+        font-family: var(--font-homemade), "Homemade Apple", cursive;
     }
 
     .contrast-pixel {
-        font-family: var(--font-pixel);
+        font-family: var(--font-space), monospace;
         @apply font-normal inline-block tracking-normal;
     }
 
     .heading-medium {
-        @apply font-serif text-3xl md:text-5xl leading-tight;
+        @apply font-departure text-2xl md:text-4xl font-bold leading-tight uppercase;
     }
 
     .lead-text {
-        @apply font-sans text-xl md:text-2xl leading-normal opacity-90;
+        @apply font-departure text-lg md:text-xl leading-relaxed opacity-90;
     }
 
     .case-title {
-        @apply font-sans text-3xl md:text-[40px] leading-tight md:leading-[1.2] font-semibold tracking-tight text-[var(--color-text-primary)];
+        @apply font-departure text-2xl md:text-3xl leading-tight font-bold tracking-tight text-[var(--color-text-primary)] uppercase;
     }
 
     .eyebrow-sm {
-        @apply font-sans text-sm font-semibold uppercase tracking-widest text-[var(--color-text-secondary)];
+        @apply font-departure text-xs font-bold uppercase tracking-widest text-[var(--color-text-secondary)];
     }
 
     .btn-link {
-        @apply inline-flex items-center gap-2 font-bold text-[var(--color-text-primary)] border-b border-black/10 hover:text-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] transition-all pb-1 no-underline;
+        @apply inline-flex items-center gap-2 font-bold text-[var(--color-text-primary)] border-b border-black/10 hover:text-[var(--color-accent-hover)] hover:border-[var(--color-accent-hover)] transition-all pb-1 no-underline font-departure;
     }
 
     .btn-link-icon {
@@ -271,22 +305,28 @@
 
     /* Tractor Feed Computer Paper Utilities */
     .tractor-feed-left {
-        width: 36px;
+        width: 44px;
         flex-shrink: 0;
         background-color: #faf8f2;
-        background-image: radial-gradient(circle at 18px 12px, #1a1917 3.5px, transparent 4px);
-        background-size: 36px 24px;
+        background-image: 
+            radial-gradient(circle at 22px 16px, #1a1917 3.5px, transparent 4.5px),
+            linear-gradient(to bottom, transparent 31px, rgba(0,0,0,0.25) 31px, rgba(0,0,0,0.25) 32px, transparent 32px);
+        background-size: 44px 32px;
         background-repeat: repeat-y;
-        border-right: 1px dashed rgba(0, 0, 0, 0.25);
+        border-right: 1px dashed rgba(0, 0, 0, 0.35);
+        position: relative;
     }
 
     .tractor-feed-right {
-        width: 36px;
+        width: 44px;
         flex-shrink: 0;
         background-color: #faf8f2;
-        background-image: radial-gradient(circle at 18px 12px, #1a1917 3.5px, transparent 4px);
-        background-size: 36px 24px;
+        background-image: 
+            radial-gradient(circle at 22px 16px, #1a1917 3.5px, transparent 4.5px),
+            linear-gradient(to bottom, transparent 31px, rgba(0,0,0,0.25) 31px, rgba(0,0,0,0.25) 32px, transparent 32px);
+        background-size: 44px 32px;
         background-repeat: repeat-y;
-        border-left: 1px dashed rgba(0, 0, 0, 0.25);
+        border-left: 1px dashed rgba(0, 0, 0, 0.35);
+        position: relative;
     }
 }

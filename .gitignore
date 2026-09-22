@@ -16,6 +16,25 @@ pnpm-debug.log*
 # environment variables
 .env
 .env.production
+.env.*.local
 
 # macOS
 .DS_Store
+*.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Temporary experimentation and test scratch assets
+public/images/test_*.png
+public/images/ref_*.png
+public/images/*_rotated_crop.png
+public/images/*_cutout.png
+

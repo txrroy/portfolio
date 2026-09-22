@@ -3,667 +3,1464 @@ import Layout from "../layouts/Layout.astro";
 import PrinterSvg from "../components/PrinterSvg.astro";
 ---
 
-<Layout title="Tushar Roy – Product Designer • Dot Matrix Printer Edition">
-	
+<Layout
+	title="Tushar Roy – Systematic by Design • Enterprise UX & Design Systems"
+>
+	<!-- Workspace Desk Background -->
+	<div
+		class="min-h-screen bg-[#141312] text-black relative pt-0 sm:pt-8 md:pt-12 selection:bg-neutral-300 font-space"
+		id="top"
+	>
+		<!-- Subtle Desk Surface Grid Pattern -->
+		<div
+			class="absolute inset-0 opacity-[0.03] pointer-events-none"
+			style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 24px 24px;"
+		>
+		</div>
 
-				<!-- ===================================================== -->
-				<!-- 1. NEWSPAPER MASTHEAD & DATELINE                      -->
-				<!-- ===================================================== -->
-				<header class="mb-12">
-					<!-- Top Meta Ticker -->
+		<!-- ========================================================= -->
+		<!-- FLOATING STICKY NOTES ON BLACK BACKGROUND (BEHIND PAPER)  -->
+		<!-- Revealed when the continuous paper is bent downwards      -->
+		<!-- ========================================================= -->
+		<div
+			id="floating-notes-backdrop"
+			class="absolute top-10 sm:top-14 left-0 right-0 max-w-[1000px] mx-auto px-6 z-0 pointer-events-none flex flex-wrap items-center justify-center gap-6 sm:gap-10 md:gap-16 select-none font-space"
+		>
+			<!-- Sticky Note 01: kids gamified learning -->
+			<div
+				class="w-72 sm:w-80 bg-[#fef9c3] text-[#713f12] p-6 shadow-[12px_18px_36px_rgba(0,0,0,0.9),0_2px_4px_rgba(0,0,0,0.4)] transform -rotate-3 hover:rotate-0 transition-transform duration-300 relative pointer-events-auto floating-note-1"
+			>
+				<!-- Translucent frosted tape at top -->
+				<div
+					class="w-16 h-4 bg-white/75 backdrop-blur-xs absolute -top-2 left-1/2 -translate-x-1/2 shadow-xs rotate-1"
+				>
+				</div>
+				<span
+					class="text-[9px] uppercase tracking-wider text-[#854d0e] font-bold block mb-2"
+					>NOTE 01</span
+				>
+				<h3
+					class="font-bold text-xl uppercase tracking-tight text-[#422006] leading-tight mb-2"
+				>
+					kids gamified learning
+				</h3>
+				<p
+					class="font-homemade text-base sm:text-lg text-[#713f12] leading-relaxed"
+				>
+					Tactile learning mechanics, spatial canvas models, and
+					joyful narrative discovery for young explorers. Making math
+					and literacy feel like play.
+				</p>
+			</div>
+
+			<!-- Sticky Note 02: design system for AI -->
+			<div
+				class="w-72 sm:w-80 bg-[#e0f2fe] text-[#0369a1] p-6 shadow-[12px_18px_36px_rgba(0,0,0,0.9),0_2px_4px_rgba(0,0,0,0.4)] transform rotate-2 hover:rotate-0 transition-transform duration-300 relative pointer-events-auto floating-note-2"
+			>
+				<!-- Translucent frosted tape at top -->
+				<div
+					class="w-16 h-4 bg-white/75 backdrop-blur-xs absolute -top-2 left-1/2 -translate-x-1/2 shadow-xs -rotate-1"
+				>
+				</div>
+				<span
+					class="text-[9px] uppercase tracking-wider text-[#0284c7] font-bold block mb-2"
+					>NOTE 02</span
+				>
+				<h3
+					class="font-bold text-xl uppercase tracking-tight text-[#0c4a6e] leading-tight mb-2"
+				>
+					design system for AI
+				</h3>
+				<p
+					class="font-homemade text-base sm:text-lg text-[#0369a1] leading-relaxed"
+				>
+					Token taxonomy for streaming LLMs, probabilistic UI
+					components, human verification audit trails & agent markdown
+					specs.
+				</p>
+			</div>
+		</div>
+
+		<!-- ========================================================= -->
+		<!-- TRACTOR FEED CONTINUOUS PAPER (BORDERLESS VERSION)        -->
+		<!-- ========================================================= -->
+		<div
+			id="continuous-paper"
+			class="relative z-10 max-w-[1280px] mx-auto flex shadow-[0_20px_60px_rgba(0,0,0,0.8)] font-space"
+		>
+			<!-- Left Tractor Margin (Perforated Feed Holes + Vertical Spec) -->
+			<div
+				class="hidden sm:flex flex-col justify-between items-center py-12 tractor-feed-left select-none"
+			>
+				<span
+					class="[writing-mode:vertical-rl] rotate-180 text-[9px] text-black/40 tracking-[0.2em] sticky top-24 font-space"
+				>
+					00.00 — 48.00 CM
+				</span>
+			</div>
+
+			<!-- Main Continuous Sheet (White Computer Paper - Borderless) -->
+			<div
+				class="flex-1 bg-[#faf8f2] pt-6 md:pt-8 pb-16 relative overflow-hidden"
+				id="paper-main-sheet"
+			>
+				<!-- Interactive Clippy Mascot (Microsoft Clippit) -->
+				<div
+					id="magic-clippy"
+					class="absolute z-50 pointer-events-none opacity-0 select-none"
+					style="left: 0px; top: 0px;"
+					aria-hidden="true"
+				>
 					<div
-						class="hidden sm:flex justify-between items-center text-[10px] uppercase font-departure text-black/60 tracking-widest pb-2 border-b border-black/20"
+						id="clippy-inner"
+						class="relative cursor-pointer pointer-events-auto transition-transform duration-300 w-8 sm:w-10 flex flex-col items-center justify-center"
 					>
-						<span>Weather: Sunny in the Bay Area • 68°F</span>
-						<span>Bits, Pixels & Latency: Nominal</span>
-						<span>Circulation: Global • Dot Matrix Edition</span>
-					</div>
-
-					<!-- Main Broadsheet Nameplate -->
-					<div class="text-center py-6 md:py-8 border-b-2 border-black">
-						<h1
-							class="font-serif text-5xl sm:text-7xl md:text-8xl font-black tracking-tight uppercase text-black leading-none mb-3"
+						<!-- Retro Comic Speech Bubble (Positioned directly relative to Clippy's head) -->
+						<div
+							id="clippy-bubble"
+							class="absolute bottom-[calc(100%+10px)] left-1/2 -translate-x-1/2 w-64 max-w-[270px] bg-[#ffffd9] border-1.5 border-black text-black shadow-[3px_3px_0_0_#000] p-2.5 sm:p-3 text-[11px] leading-snug rounded-xs font-space opacity-0 pointer-events-none transition-all duration-200 transform translate-y-1 z-60 text-center select-none"
 						>
-							The Roy Dispatch
-						</h1>
-						<p
-							class="font-serif italic text-sm md:text-base text-black/75 tracking-normal max-w-2xl mx-auto"
-						>
-							A Chronicle of Enterprise Systems, AI Architecture & Inclusive Product Strategy
-						</p>
-					</div>
+							<span
+								id="clippy-bubble-text"
+								class="block font-medium text-black text-center"
+							>
+								I am back as the first class netizen!
+							</span>
+							<!-- Speech Bubble Triangle Tail pointing straight down into head -->
+							<div
+								id="clippy-bubble-tail"
+								class="absolute -bottom-2 left-1/2 -translate-x-1/2 w-0 h-0 border-l-[6px] border-l-transparent border-r-[6px] border-r-transparent border-t-[8px] border-t-black pointer-events-none"
+							>
+							</div>
+							<div
+								id="clippy-bubble-tail-inner"
+								class="absolute -bottom-[6px] left-1/2 -translate-x-1/2 w-0 h-0 border-l-[5px] border-l-transparent border-r-[5px] border-r-transparent border-t-[7px] border-t-[#ffffd9] pointer-events-none"
+							>
+							</div>
+						</div>
 
-					<!-- Dateline Strip (Double Rule) -->
+						<img
+							src="/images/clippy.png"
+							alt="Clippy"
+							id="clippy-img"
+							class="w-8 sm:w-10 h-auto select-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)] block mx-auto"
+							draggable="false"
+						/>
+					</div>
+				</div>
+
+				<!-- FRONT HERO SECTION (60vh Viewport-Aware Mono Layout) -->
+				<div
+					id="front-hero-content"
+					class="px-6 sm:px-8 md:px-12 mb-16 font-space"
+					style="height: 60vh; min-height: 60vh; display: flex; flex-direction: column; justify-content: space-between;"
+				>
+					<!-- Top Metadata Header (Sticks up exactly how it is now) -->
 					<div
-						class="news-rule-thick-thin py-2 px-1 flex flex-wrap items-center justify-between gap-2 font-departure text-xs text-black uppercase tracking-wider"
+						class="border-b-2 border-dashed border-black/20 pb-4 text-[11px] text-black/60 flex flex-wrap justify-between items-center gap-3 w-full font-space shrink-0"
 					>
-						<div class="flex items-center gap-3">
-							<span class="font-bold">San Francisco, CA</span>
-							<span class="text-black/30">•</span>
-							<span>Vol. MMXXVI</span>
-							<span class="text-black/30">•</span>
-							<span>Issue No. 01</span>
+						<div class="flex items-center gap-2 uppercase">
+							<span class="font-bold text-black">PORTFOLIO</span>
+							<span>•</span>
+							<span>enterprise ux architect</span>
+							<span>•</span>
+							<span>San Fransisco bay Area</span>
 						</div>
-						<div class="flex items-center gap-3">
-							<span class="font-bold">Apple Inc.</span>
-							<span class="text-black/30">•</span>
-							<span class="text-black/70">Ex-VMware, Broadcom, IBM</span>
+						<div class="hidden sm:block">
+							<span
+								>FORM LENGTH: CONTINUOUS • BUFFER: 100% OK</span
+							>
 						</div>
 					</div>
-				</header>
 
-				<!-- ===================================================== -->
-				<!-- 2. FRONT-PAGE HERO / LEAD STORY                       -->
-				<!-- ===================================================== -->
-				<section class="mb-16 border-b-2 border-black pb-14">
-					<div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-						<!-- Lead Column (Left: 8 cols) -->
-						<div class="lg:col-span-8 flex flex-col justify-between">
-							<div class="border-b border-black/20 pb-6 mb-6">
-								<span
-									class="font-departure text-xs uppercase tracking-[0.2em] text-black/60 block mb-2"
+					<!-- Vertically Centered Hero Lines -->
+					<section
+						class="flex-1 flex flex-col justify-center py-4 sm:py-6"
+					>
+						<div class="w-full">
+							<!-- Role -->
+							<span
+								class="text-s uppercase tracking-[0.2em] text-black/60 block mb-3 font-semibold"
+								>Tushar Roy
+							</span>
+
+							<!-- Name / Headline -->
+							<h1
+								class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-normal leading-none mb-4 normal-case"
+							>
+								Systematic <span
+									class="inline-flex items-baseline flex-wrap sm:flex-nowrap"
 								>
-									Lead Editorial • Product Architecture
+									<span
+										class="font-homemade font-normal normal-case text-[1em] text-[#0A66C2]"
+										>by design</span
+									><span
+										id="clippy-home-anchor"
+										class="inline-block w-8 sm:w-10 h-8 sm:h-10 ml-1.5 sm:ml-2.5 align-middle pointer-events-none"
+										aria-hidden="true"></span>
+								</span>
+							</h1>
+
+							<!-- Tagline -->
+							<p
+								class="text-xl sm:text-2xl md:text-3xl text-black/85 font-normal leading-tight m-0 tracking-wide"
+							>
+								Building systems for humans and AI.
+							</p>
+						</div>
+					</section>
+
+					<!-- Bottom Perforation of the 80vh Hero Section -->
+					<div
+						class="border-b-2 border-dashed border-black/20 w-full shrink-0"
+					>
+					</div>
+				</div>
+
+				<!-- ===================================================== -->
+				<!-- THREE CASE STUDIES SECTION (BORDERLESS EDITORIAL MONO) -->
+				<!-- ===================================================== -->
+				<section
+					id="work"
+					class="w-full scroll-mt-16 px-6 sm:px-8 md:px-12 mb-20 font-space"
+				>
+					<div class="flex flex-col">
+						<!-- Case Study 01: Apple (AI Business Intelligence) -->
+						<a
+							href="/case-study/vanguard"
+							class="case-study-card block group no-underline text-inherit cursor-pointer border-b-2 border-dashed border-black/20 pb-14 mb-14 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2] focus-visible:ring-offset-4"
+							data-case-index="1"
+							aria-label="Read Case Study: The Security Trust Engine (Apple)"
+						>
+							<div
+								class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center"
+							>
+								<div
+									class="md:col-span-5 flex flex-col justify-between h-full"
+								>
+									<div>
+										<div
+											class="flex items-center justify-between text-xs tracking-wider pb-2 mb-3"
+										>
+											<span
+												class="text-black/80 font-bold uppercase"
+												>DISPATCH 01 // AI BUSINESS
+												INTELLIGENCE</span
+											>
+											<span
+												class="text-[10px] uppercase font-bold text-black/60"
+												>APPLE</span
+											>
+										</div>
+
+										<h2
+											class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-black mb-4 uppercase tracking-tight"
+										>
+											The Security Trust Engine
+										</h2>
+
+										<p
+											class="text-xs sm:text-sm text-black/75 leading-relaxed mb-6 font-normal"
+										>
+											Architecting multi-tenant trust
+											tiers, audit trails, and lineage
+											telemetry for Apple's internal
+											business intelligence systems.
+										</p>
+
+										<!-- Hashtags -->
+										<div
+											class="text-[11px] text-black/60 flex flex-wrap gap-2 mb-6"
+										>
+											<span>#EnterpriseAI</span>
+											<span>#TrustTiers</span>
+											<span>#DataLineage</span>
+										</div>
+									</div>
+
+									<div class="flex items-center">
+										<div
+											class="case-study-btn inline-flex items-center gap-2.5 text-xs uppercase tracking-wider font-bold py-2.5 px-4 border transition-all duration-300"
+										>
+											<span>Read Case Study</span>
+											<span
+												class="transition-transform duration-300 group-hover:translate-x-1.5"
+												>→</span
+											>
+										</div>
+										<span
+											class="case-study-clippy-anchor inline-block w-8 sm:w-10 h-8 sm:h-10 ml-2.5 pointer-events-none"
+											aria-hidden="true"></span>
+									</div>
+								</div>
+
+								<!-- Image: Project Vanguard -->
+								<div
+									class="case-study-img-wrapper md:col-span-7 overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.12)] bg-black/5 relative rounded-sm"
+								>
+									<img
+										src="/images/case-study/vanguard/platform-overview.png"
+										alt="Project Vanguard Platform Overview"
+										class="case-study-img w-full aspect-[16/10] object-cover"
+									/>
+									<div class="case-study-sheen"></div>
+								</div>
+							</div>
+						</a>
+
+						<!-- Case Study 02: Broadcom (Security & Compliance) -->
+						<a
+							href="/case-study/devhub"
+							class="case-study-card block group no-underline text-inherit cursor-pointer border-b-2 border-dashed border-black/20 pb-14 mb-14 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2] focus-visible:ring-offset-4"
+							data-case-index="2"
+							aria-label="Read Case Study: Developer Ecosystem, Unified (Broadcom)"
+						>
+							<div
+								class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center"
+							>
+								<div
+									class="md:col-span-5 flex flex-col justify-between h-full"
+								>
+									<div>
+										<div
+											class="flex items-center justify-between text-xs tracking-wider pb-2 mb-3"
+										>
+											<span
+												class="text-black/80 font-bold uppercase"
+												>DISPATCH 02 // SECURITY &
+												COMPLIANCE</span
+											>
+											<span
+												class="text-[10px] uppercase font-bold text-black/60"
+												>BROADCOM</span
+											>
+										</div>
+
+										<h2
+											class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-black mb-4 uppercase tracking-tight"
+										>
+											Developer Ecosystem, Unified
+										</h2>
+
+										<p
+											class="text-xs sm:text-sm text-black/75 leading-relaxed mb-6 font-normal"
+										>
+											Consolidating fragmented developer
+											portals and policy tools into a
+											single high-velocity internal
+											engineering workspace for 20,000+
+											engineers.
+										</p>
+
+										<!-- Hashtags -->
+										<div
+											class="text-[11px] text-black/60 flex flex-wrap gap-2 mb-6"
+										>
+											<span>#DevEx</span>
+											<span>#UnifiedSecurity</span>
+											<span>#ComplianceMesh</span>
+										</div>
+									</div>
+
+									<div class="flex items-center">
+										<div
+											class="case-study-btn inline-flex items-center gap-2.5 text-xs uppercase tracking-wider font-bold py-2.5 px-4 border transition-all duration-300"
+										>
+											<span>Read Case Study</span>
+											<span
+												class="transition-transform duration-300 group-hover:translate-x-1.5"
+												>→</span
+											>
+										</div>
+										<span
+											class="case-study-clippy-anchor inline-block w-8 sm:w-10 h-8 sm:h-10 ml-2.5 pointer-events-none"
+											aria-hidden="true"></span>
+									</div>
+								</div>
+
+								<!-- Image: DevHub -->
+								<div
+									class="case-study-img-wrapper md:col-span-7 overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.12)] bg-black/5 relative rounded-sm"
+								>
+									<img
+										src="/images/case-study/devhub/dashboard.png"
+										alt="DevHub Unified Developer Platform"
+										class="case-study-img w-full aspect-[16/10] object-cover"
+									/>
+									<div class="case-study-sheen"></div>
+								</div>
+							</div>
+						</a>
+
+						<!-- Case Study 03: VMware (Enterprise Service Management) -->
+						<a
+							href="/case-study/helpnow"
+							class="case-study-card block group no-underline text-inherit cursor-pointer border-b-2 border-dashed border-black/20 pb-14 mb-4 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#0A66C2] focus-visible:ring-offset-4"
+							data-case-index="3"
+							aria-label="Read Case Study: Workplace Support, Humanized (VMware)"
+						>
+							<div
+								class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 items-center"
+							>
+								<div
+									class="md:col-span-5 flex flex-col justify-between h-full"
+								>
+									<div>
+										<div
+											class="flex items-center justify-between text-xs tracking-wider pb-2 mb-3"
+										>
+											<span
+												class="text-black/80 font-bold uppercase"
+												>DISPATCH 03 // SERVICE
+												MANAGEMENT</span
+											>
+											<span
+												class="text-[10px] uppercase font-bold text-black/60"
+												>VMWARE</span
+											>
+										</div>
+
+										<h2
+											class="text-2xl sm:text-3xl md:text-4xl font-bold leading-tight text-black mb-4 uppercase tracking-tight"
+										>
+											Workplace Support, Humanized
+										</h2>
+
+										<p
+											class="text-xs sm:text-sm text-black/75 leading-relaxed mb-6 font-normal"
+										>
+											Reimagining enterprise IT and
+											service operations across 35,000+
+											employees with AI intent
+											classification and unified support
+											queues.
+										</p>
+
+										<!-- Hashtags -->
+										<div
+											class="text-[11px] text-black/60 flex flex-wrap gap-2 mb-6"
+										>
+											<span>#ServiceManagement</span>
+											<span>#IntentAI</span>
+											<span>#SelfService</span>
+										</div>
+									</div>
+
+									<div class="flex items-center">
+										<div
+											class="case-study-btn inline-flex items-center gap-2.5 text-xs uppercase tracking-wider font-bold py-2.5 px-4 border transition-all duration-300"
+										>
+											<span>Read Case Study</span>
+											<span
+												class="transition-transform duration-300 group-hover:translate-x-1.5"
+												>→</span
+											>
+										</div>
+										<span
+											class="case-study-clippy-anchor inline-block w-8 sm:w-10 h-8 sm:h-10 ml-2.5 pointer-events-none"
+											aria-hidden="true"></span>
+									</div>
+								</div>
+
+								<!-- Image: HelpNow -->
+								<div
+									class="case-study-img-wrapper md:col-span-7 overflow-hidden shadow-[0_6px_24px_rgba(0,0,0,0.12)] bg-black/5 relative rounded-sm"
+								>
+									<img
+										src="/images/case-study/helpnow/hero.png"
+										alt="HelpNow Workplace Support AI Platform"
+										class="case-study-img w-full aspect-[16/10] object-cover"
+									/>
+									<div class="case-study-sheen"></div>
+								</div>
+							</div>
+						</a>
+					</div>
+				</section>
+
+				<!-- ===================================================== -->
+				<!-- DESIGN SYSTEMS SECTION (BORDERLESS EDITORIAL MONO)    -->
+				<!-- ===================================================== -->
+				<section
+					id="design-systems"
+					class="px-6 sm:px-8 md:px-12 mb-20 scroll-mt-24 font-space"
+				>
+					<div
+						class="border-b-2 border-dashed border-black/20 pb-14 mb-4"
+					>
+						<div
+							class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-3"
+						>
+							<div>
+								<span
+									class="text-xs uppercase tracking-[0.2em] text-black/60 block mb-2"
+								>
+									Foundational Systems Philosophy
 								</span>
 								<h2
-									class="font-serif text-4xl sm:text-6xl md:text-7xl font-bold leading-[0.95] tracking-tight text-black mb-4"
+									class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-black m-0 uppercase"
 								>
-									Systematic by <span class="font-pixel font-normal underline decoration-2 underline-offset-8">Design</span>
+									Design Systems: The Convergence
 								</h2>
-								<p
-									class="font-serif italic text-xl md:text-2xl text-black/80 font-light leading-snug"
-								>
-									Engineering-fluent product designer crafting resilient AI systems and enterprise platforms.
-								</p>
 							</div>
-
-							<!-- Two-Column Broadsheet Copy -->
-							<div class="grid sm:grid-cols-2 gap-8 text-[16px] leading-relaxed text-black/85 font-sans mb-8">
-								<p class="drop-cap">
-									Specializing in mission-critical environments where extreme data complexity meets human friction. Over the past 17+ years, I have architected systems across IBM, VMware, Broadcom, and Apple—transforming fragmented workflows into coherent, high-velocity tools that teams depend on daily.
-								</p>
-								<p>
-									Whether building unified developer ecosystems or spearheading AI-powered workplace tooling, I operate at the intersection of technical systems and emotional craft. (And yes, frequently accompanied and interrupted in the studio by a spirited golden retriever).
-								</p>
-							</div>
-
-							<!-- Front-Page Quick Actions -->
-							<div class="flex flex-wrap items-center gap-4 pt-2">
-								<a
-									href="#work"
-									class="inline-flex items-center gap-2 font-departure text-xs uppercase tracking-widest bg-black text-white px-6 py-3.5 hover:bg-neutral-800 transition-colors border border-black shadow-[3px_3px_0_0_#999]"
-								>
-									<span>Inspect 3 Case Studies</span>
-									<span>↓</span>
-								</a>
-								<a
-									href="#about"
-									class="inline-flex items-center gap-2 font-departure text-xs uppercase tracking-widest bg-transparent text-black px-6 py-3.5 hover:bg-black hover:text-white transition-colors border border-black"
-								>
-									<span>Editorial Profile</span>
-									<span>→</span>
-								</a>
+							<div
+								class="text-xs text-black/60 self-start md:self-auto uppercase"
+							>
+								TRIAD: ENGINEERING • CRAFT • ACCESSIBILITY
 							</div>
 						</div>
 
-						<!-- Front-Page Photo Frame (Right: 4 cols) -->
-						<div class="lg:col-span-4">
-							<figure class="border-2 border-black p-3 bg-white shadow-[6px_6px_0_0_#000000]">
-								<div class="overflow-hidden border border-black bg-neutral-900">
-									<img
-										src="/images/rex.jpg"
-										alt="Tushar Roy and Rex"
-										class="w-full aspect-[3/4] object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-500"
-									/>
-								</div>
-								<figcaption class="font-departure text-[11px] uppercase tracking-wider text-black/80 mt-3 pt-2 border-t border-black/30 leading-normal">
-									<strong>Fig. 1.0</strong> — Tushar Roy with Rex (Head of Studio Barketing & Morale). Dot matrix halftone render.
-								</figcaption>
-							</figure>
-						</div>
-					</div>
-				</section>
-
-				<!-- ===================================================== -->
-				<!-- 3. THE THREE CASE STUDIES                             -->
-				<!-- ===================================================== -->
-				<section id="work" class="mb-20 scroll-mt-24">
-					<!-- Section Title Banner -->
-					<div class="border-t-4 border-b-2 border-black py-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-3">
 						<div>
-							<span class="font-departure text-xs uppercase tracking-[0.2em] text-black/60 block mb-1">
-								Front-Page Investigation • Special Report
-							</span>
-							<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black m-0">
-								Selected Works: Three Flagship Studies
-							</h2>
-						</div>
-						<div class="font-departure text-xs text-black/80 bg-neutral-100 border border-black px-3 py-1.5 self-start md:self-auto">
-							INDEX: 01 HELPNOW+ • 02 DEVHUB • 03 VLP
-						</div>
-					</div>
+							<p
+								class="text-base sm:text-lg text-black/85 leading-relaxed max-w-3xl mb-12 font-normal"
+							>
+								A resilient enterprise design system is more
+								than a component kit. It is the shared
+								operational discipline where <strong
+									class="font-bold text-black"
+									>engineering rigor</strong
+								>, <strong class="font-bold text-black"
+									>product craft</strong
+								>, and an uncompromised commitment to <strong
+									class="font-bold text-black"
+									>accessibility</strong
+								> converge to accelerate shipping without accumulating
+								debt.
+							</p>
 
-					<!-- Executive Summary Matrix for Hiring Managers -->
-					<div class="border-2 border-black bg-[#faf9f6] mb-12 shadow-[4px_4px_0_0_#000]">
-						<div class="px-4 py-2 border-b border-black bg-black text-white font-departure text-xs uppercase tracking-wider flex justify-between items-center">
-							<span class="font-bold">Executive At-A-Glance Dossier (For Hiring Managers & Leads)</span>
-							<span class="text-neutral-400 text-[10px] hidden sm:inline">10-SECOND QUICK SCAN MATRIX</span>
-						</div>
-						<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black text-sm">
-							<!-- Item 1 -->
-							<div class="p-5 flex flex-col justify-between">
+							<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+								<!-- Pillar 1: Engineering Rigor -->
 								<div>
-									<div class="font-departure text-[11px] text-black/60 uppercase">Domain: Enterprise IT & AI Support</div>
-									<div class="font-serif font-bold text-xl text-black mt-1">HelpNow+</div>
-									<div class="font-departure text-xs font-bold text-black mt-2 bg-neutral-200/70 p-1.5 inline-block border border-black/20">
-										$36M+ Annual Savings • 2x Productivity
+									<div
+										class="text-[10px] text-black/50 uppercase font-bold mb-2"
+									>
+										01 // CODE ARCHITECTURE
 									</div>
-									<p class="text-xs text-black/75 mt-2 leading-relaxed">
-										Reimagining the workplace service model across 35,000+ employees with unified self-service & agent workflows.
-									</p>
-								</div>
-								<a href="/case-study/helpnow" class="font-departure text-xs uppercase font-bold text-black hover:underline mt-4 inline-block">
-									Read Story 01 →
-								</a>
-							</div>
-
-							<!-- Item 2 -->
-							<div class="p-5 flex flex-col justify-between">
-								<div>
-									<div class="font-departure text-[11px] text-black/60 uppercase">Domain: Developer Experience (DevEx)</div>
-									<div class="font-serif font-bold text-xl text-black mt-1">DevHub</div>
-									<div class="font-departure text-xs font-bold text-black mt-2 bg-neutral-200/70 p-1.5 inline-block border border-black/20">
-										20k+ Engineers • 5 Tools Unified
-									</div>
-									<p class="text-xs text-black/75 mt-2 leading-relaxed">
-										Consolidating fragmented portals and APIs into a unified, high-velocity engineering platform.
-									</p>
-								</div>
-								<a href="/case-study/devhub" class="font-departure text-xs uppercase font-bold text-black hover:underline mt-4 inline-block">
-									Read Story 02 →
-								</a>
-							</div>
-
-							<!-- Item 3 -->
-							<div class="p-5 flex flex-col justify-between">
-								<div>
-									<div class="font-departure text-[11px] text-black/60 uppercase">Domain: Cloud Virtual Infrastructure</div>
-									<div class="font-serif font-bold text-xl text-black mt-1">VLP (Hands-on Labs)</div>
-									<div class="font-departure text-xs font-bold text-black mt-2 bg-neutral-200/70 p-1.5 inline-block border border-black/20">
-										Hardware → Cloud • Global Scale
-									</div>
-									<p class="text-xs text-black/75 mt-2 leading-relaxed">
-										Migrating VMware’s live hardware lab environment into an on-demand, cloud-native learning SaaS platform.
-									</p>
-								</div>
-								<a href="/case-study/vlp" class="font-departure text-xs uppercase font-bold text-black hover:underline mt-4 inline-block">
-									Read Story 03 →
-								</a>
-							</div>
-						</div>
-					</div>
-
-					<!-- Three-Column Broadsheet Articles Grid -->
-					<div class="grid grid-cols-1 md:grid-cols-3 border-y-2 border-black divide-y md:divide-y-0 md:divide-x divide-black">
-						<!-- Article 01: HelpNow+ -->
-						<article class="p-6 lg:p-8 flex flex-col justify-between bg-white">
-							<div>
-								<div class="font-departure text-[11px] uppercase tracking-widest text-black/60 border-b border-black/20 pb-2 mb-3 flex justify-between">
-									<span>DISPATCH NO. 01</span>
-									<span>VMWARE</span>
-								</div>
-								<h3 class="font-serif text-2xl lg:text-3xl font-bold leading-tight text-black mb-3">
-									<a href="/case-study/helpnow" class="hover:underline text-black no-underline">
-										Workplace Support, Humanized
-									</a>
-								</h3>
-								<p class="font-sans text-sm text-black/80 leading-relaxed mb-4">
-									<span class="font-departure text-xs font-bold">[PALO ALTO] — </span>
-									Faced with an antiquated enterprise ticketing model that caused employee frustration and ballooning operational overhead, HelpNow+ reinvented workplace support from the ground up.
-								</p>
-
-								<!-- Image with Newspaper Border -->
-								<div class="my-4 border border-black overflow-hidden bg-neutral-900 shadow-[3px_3px_0_0_#000]">
-									<img
-										src="/images/case-study-helpnow3.png"
-										alt="HelpNow Case Study"
-										class="w-full h-44 object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-300"
-									/>
-								</div>
-
-								<!-- Impact Ledger -->
-								<div class="border-y border-black/20 py-3 my-4 font-departure text-xs space-y-1.5 bg-neutral-50 px-3">
-									<div class="flex justify-between border-b border-black/10 pb-1">
-										<span class="text-black/60">ANNUAL IMPACT</span>
-										<strong class="font-bold text-black">$36M+ Saved</strong>
-									</div>
-									<div class="flex justify-between border-b border-black/10 pb-1">
-										<span class="text-black/60">PRODUCTIVITY</span>
-										<strong class="font-bold text-black">2x Fulfillment</strong>
-									</div>
-									<div class="flex justify-between">
-										<span class="text-black/60">EMPLOYEE CSAT</span>
-										<strong class="font-bold text-black">94% Positive</strong>
-									</div>
-								</div>
-
-								<!-- Broadsheet Quote -->
-								<blockquote class="font-serif italic text-sm text-black/80 border-l-2 border-black pl-3 my-4 leading-relaxed">
-									"Finally, I truly feel supported by VMware, no matter where I am."
-								</blockquote>
-							</div>
-
-							<div class="pt-4 border-t border-black/20">
-								<a
-									href="/case-study/helpnow"
-									class="inline-flex items-center justify-between w-full font-departure text-xs uppercase tracking-wider bg-black text-white px-4 py-2.5 hover:bg-neutral-800 transition-colors no-underline"
-								>
-									<span>Read Full Investigation</span>
-									<span>→</span>
-								</a>
-							</div>
-						</article>
-
-						<!-- Article 02: DevHub -->
-						<article class="p-6 lg:p-8 flex flex-col justify-between bg-white">
-							<div>
-								<div class="font-departure text-[11px] uppercase tracking-widest text-black/60 border-b border-black/20 pb-2 mb-3 flex justify-between">
-									<span>DISPATCH NO. 02</span>
-									<span>DEV PLATFORM</span>
-								</div>
-								<h3 class="font-serif text-2xl lg:text-3xl font-bold leading-tight text-black mb-3">
-									<a href="/case-study/devhub" class="hover:underline text-black no-underline">
-										Developer Ecosystem, Unified
-									</a>
-								</h3>
-								<p class="font-sans text-sm text-black/80 leading-relaxed mb-4">
-									<span class="font-departure text-xs font-bold">[SAN JOSE] — </span>
-									Engineering velocity was bottlenecked by five disjointed internal platforms. DevHub established a centralized, API-first nervous system connecting tools, docs, and metrics.
-								</p>
-
-								<!-- Image with Newspaper Border -->
-								<div class="my-4 border border-black overflow-hidden bg-neutral-900 shadow-[3px_3px_0_0_#000]">
-									<img
-										src="/images/case-study-devhub3.png"
-										alt="DevHub Case Study"
-										class="w-full h-44 object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-300"
-									/>
-								</div>
-
-								<!-- Impact Ledger -->
-								<div class="border-y border-black/20 py-3 my-4 font-departure text-xs space-y-1.5 bg-neutral-50 px-3">
-									<div class="flex justify-between border-b border-black/10 pb-1">
-										<span class="text-black/60">AUDIENCE REACH</span>
-										<strong class="font-bold text-black">20,000+ Engineers</strong>
-									</div>
-									<div class="flex justify-between border-b border-black/10 pb-1">
-										<span class="text-black/60">CONSOLIDATION</span>
-										<strong class="font-bold text-black">5 Systems into 1</strong>
-									</div>
-									<div class="flex justify-between">
-										<span class="text-black/60">VELOCITY</span>
-										<strong class="font-bold text-black">Friction Eliminated</strong>
-									</div>
-								</div>
-
-								<!-- Broadsheet Quote -->
-								<blockquote class="font-serif italic text-sm text-black/80 border-l-2 border-black pl-3 my-4 leading-relaxed">
-									"This platform transformed how we build and ship products across distributed teams."
-								</blockquote>
-							</div>
-
-							<div class="pt-4 border-t border-black/20">
-								<a
-									href="/case-study/devhub"
-									class="inline-flex items-center justify-between w-full font-departure text-xs uppercase tracking-wider bg-black text-white px-4 py-2.5 hover:bg-neutral-800 transition-colors no-underline"
-								>
-									<span>Read Full Investigation</span>
-									<span>→</span>
-								</a>
-							</div>
-						</article>
-
-						<!-- Article 03: VLP -->
-						<article class="p-6 lg:p-8 flex flex-col justify-between bg-white">
-							<div>
-								<div class="font-departure text-[11px] uppercase tracking-widest text-black/60 border-b border-black/20 pb-2 mb-3 flex justify-between">
-									<span>DISPATCH NO. 03</span>
-									<span>CLOUD LABS</span>
-								</div>
-								<h3 class="font-serif text-2xl lg:text-3xl font-bold leading-tight text-black mb-3">
-									<a href="/case-study/vlp" class="hover:underline text-black no-underline">
-										Hands-on Labs, Transformed
-									</a>
-								</h3>
-								<p class="font-sans text-sm text-black/80 leading-relaxed mb-4">
-									<span class="font-departure text-xs font-bold">[GLOBAL SCALE] — </span>
-									Taking VMware’s largest product trial engine off costly dedicated hardware arrays and architecting a modern multi-tenant cloud SaaS platform delivered worldwide.
-								</p>
-
-								<!-- Image with Newspaper Border -->
-								<div class="my-4 border border-black overflow-hidden bg-neutral-900 shadow-[3px_3px_0_0_#000]">
-									<img
-										src="/images/case-study-vlp3.png"
-										alt="VLP Case Study"
-										class="w-full h-44 object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-300"
-									/>
-								</div>
-
-								<!-- Impact Ledger -->
-								<div class="border-y border-black/20 py-3 my-4 font-departure text-xs space-y-1.5 bg-neutral-50 px-3">
-									<div class="flex justify-between border-b border-black/10 pb-1">
-										<span class="text-black/60">ARCHITECTURE</span>
-										<strong class="font-bold text-black">100% Cloud SaaS</strong>
-									</div>
-									<div class="flex justify-between border-b border-black/10 pb-1">
-										<span class="text-black/60">INFRASTRUCTURE</span>
-										<strong class="font-bold text-black">Elastic & Instant</strong>
-									</div>
-									<div class="flex justify-between">
-										<span class="text-black/60">COMMERCIAL</span>
-										<strong class="font-bold text-black">New Monetization</strong>
-									</div>
-								</div>
-
-								<!-- Broadsheet Quote -->
-								<blockquote class="font-serif italic text-sm text-black/80 border-l-2 border-black pl-3 my-4 leading-relaxed">
-									"The new platform enables us to scale beyond what we ever imagined."
-								</blockquote>
-							</div>
-
-							<div class="pt-4 border-t border-black/20">
-								<a
-									href="/case-study/vlp"
-									class="inline-flex items-center justify-between w-full font-departure text-xs uppercase tracking-wider bg-black text-white px-4 py-2.5 hover:bg-neutral-800 transition-colors no-underline"
-								>
-									<span>Read Full Investigation</span>
-									<span>→</span>
-								</a>
-							</div>
-						</article>
-					</div>
-				</section>
-
-				<!-- ===================================================== -->
-				<!-- 4. SECTION B: PODCAST PIECE                           -->
-				<!-- ===================================================== -->
-				<section id="podcast" class="mb-20 scroll-mt-24">
-					<div class="border-t-4 border-b-2 border-black py-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-3">
-						<div>
-							<span class="font-departure text-xs uppercase tracking-[0.2em] text-black/60 block mb-1">
-								Section B • Audio Broadcast & Critical Dialogue
-							</span>
-							<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black m-0">
-								The Enterprise Design Podcast
-							</h2>
-						</div>
-						<div class="font-departure text-xs text-black/80 bg-neutral-100 border border-black px-3 py-1.5 self-start md:self-auto">
-							12-EPISODE SERIES • SPOTIFY
-						</div>
-					</div>
-
-					<!-- Newspaper Audio Card -->
-					<div class="border-2 border-black bg-white p-6 md:p-10 shadow-[6px_6px_0_0_#000]">
-						<div class="grid lg:grid-cols-12 gap-8 items-center">
-							<div class="lg:col-span-6 flex flex-col justify-between">
-								<div class="border-b border-black/20 pb-4 mb-4">
-									<span class="font-departure text-xs uppercase text-black/60 tracking-wider">Special Audio Dispatch</span>
-									<h3 class="font-serif text-2xl sm:text-3xl font-bold text-black mt-1">
-										Humanizing Enterprise Software at Scale
+									<h3
+										class="font-bold text-lg text-black mb-3 uppercase"
+									>
+										Engineering Rigor
 									</h3>
+									<p
+										class="text-xs sm:text-sm text-black/75 leading-relaxed"
+									>
+										Deterministic tokens, headless component
+										primitives, and CI/CD automated
+										regression suites. Built to bridge
+										design directly with TypeScript
+										monorepos and AI-assisted code
+										generation.
+									</p>
 								</div>
 
-								<p class="font-sans text-[16px] text-black/80 leading-relaxed mb-4">
-									I co-created and hosted this 12-episode series to explore how design leaders, principal engineers, and product directors overcome organizational silos to build humane, cohesive digital products.
-								</p>
+								<!-- Pillar 2: Product Design Craft -->
+								<div>
+									<div
+										class="text-[10px] text-black/50 uppercase font-bold mb-2"
+									>
+										02 // USER EXPERIENCE
+									</div>
+									<h3
+										class="font-bold text-lg text-black mb-3 uppercase"
+									>
+										Product Design Craft
+									</h3>
+									<p
+										class="text-xs sm:text-sm text-black/75 leading-relaxed"
+									>
+										Subtle micro-interactions, deliberate
+										spatial rhythm, and cognitive friction
+										reduction. Transforming high-complexity
+										enterprise tasks into humane, intuitive
+										flows that teams rely on daily.
+									</p>
+								</div>
 
-								<p class="font-sans text-[15px] text-black/70 leading-relaxed mb-6">
-									We dive deep into the messy reality of enterprise UX—tackling design debt, cross-functional trust, and bringing engineering and design to the same table.
-								</p>
+								<!-- Pillar 3: Accessibility as a Cause -->
+								<div>
+									<div
+										class="text-[10px] text-black/50 uppercase font-bold mb-2"
+									>
+										03 // INCLUSION & EQUITY
+									</div>
+									<h3
+										class="font-bold text-lg text-black mb-3 uppercase"
+									>
+										Accessibility Cause
+									</h3>
+									<p
+										class="text-xs sm:text-sm text-black/75 leading-relaxed"
+									>
+										Accessibility is never a retroactive
+										checklist. WCAG 2.1 AA+ contrast,
+										keyboard roving focus, and screen-reader
+										semantics are architected directly into
+										tokens from day zero.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
 
-								<div class="flex flex-wrap items-center gap-4">
+				<!-- ===================================================== -->
+				<!-- PODCAST SECTION (BORDERLESS EDITORIAL MONO)           -->
+				<!-- ===================================================== -->
+				<section
+					id="podcast"
+					class="px-6 sm:px-8 md:px-12 mb-20 scroll-mt-24 font-space"
+				>
+					<div
+						class="border-b-2 border-dashed border-black/20 pb-14 mb-4"
+					>
+						<div
+							class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-3"
+						>
+							<div>
+								<span
+									class="text-xs uppercase tracking-[0.2em] text-black/60 block mb-2"
+								>
+									Audio Broadcast & Critical Dialogue
+								</span>
+								<h2
+									class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-black m-0 uppercase"
+								>
+									The Enterprise Design Podcast
+								</h2>
+							</div>
+							<div
+								class="text-xs text-black/60 self-start md:self-auto uppercase"
+							>
+								12-EPISODE SERIES • SPOTIFY
+							</div>
+						</div>
+
+						<div
+							class="grid lg:grid-cols-12 gap-8 md:gap-12 items-center"
+						>
+							<div
+								class="lg:col-span-6 flex flex-col justify-between"
+							>
+								<h3
+									class="text-xl sm:text-2xl font-bold text-black mb-4 uppercase"
+								>
+									Humanizing Enterprise Software at Scale
+								</h3>
+								<p
+									class="text-xs sm:text-sm text-black/80 leading-relaxed mb-6"
+								>
+									Exploring how design leaders, principal
+									engineers, and product directors overcome
+									organizational silos to craft humane,
+									cohesive enterprise systems.
+								</p>
+								<div class="flex items-center">
 									<a
 										href="https://open.spotify.com/show/3klvSJS3QPLVLYBEf7UDWF"
 										target="_blank"
-										class="inline-flex items-center gap-3 bg-black text-white px-6 py-3 font-departure text-xs uppercase tracking-widest hover:bg-neutral-800 transition-colors no-underline border border-black"
+										rel="noopener noreferrer"
+										id="podcast-spotify-link"
+										class="inline-flex items-center gap-2.5 text-xs uppercase tracking-wider text-[#0a66c2] hover:text-[#004182] font-bold hover:translate-x-1 transition-all no-underline"
 									>
-										<svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18" class="text-white">
-											<path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"></path>
+										<svg
+											viewBox="0 0 24 24"
+											fill="currentColor"
+											width="16"
+											height="16"
+										>
+											<path
+												d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+											></path>
 										</svg>
-										<span>Listen on Spotify</span>
+										<span>Listen on Spotify →</span>
 									</a>
-									<span class="font-departure text-xs text-black/50">Free Streaming • 12 Full Episodes</span>
+									<span
+										id="podcast-clippy-anchor"
+										class="inline-block w-8 sm:w-10 h-8 sm:h-10 ml-2.5 pointer-events-none align-middle"
+										aria-hidden="true"></span>
 								</div>
 							</div>
 
 							<div class="lg:col-span-6">
-								<div class="border-2 border-black p-2 bg-neutral-100 shadow-[4px_4px_0_0_#000]">
-									<iframe
-										style="border-radius: 0px;"
-										src="https://open.spotify.com/embed/episode/4AUNRf6VUxG6s9d0BvfBp5?utm_source=generator&theme=0"
-										width="100%"
-										height="260"
-										frameborder="0"
-										allowfullscreen=""
-										allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-										loading="lazy"
-										class="filter grayscale contrast-125"
-									></iframe>
-									<div class="font-departure text-[10px] uppercase text-black/60 pt-2 px-1 text-center">
-										Featured Episode: Enterprise Friction & Systems Alignment
-									</div>
-								</div>
+								<iframe
+									style="border-radius: 0px;"
+									src="https://open.spotify.com/embed/episode/4AUNRf6VUxG6s9d0BvfBp5?utm_source=generator&theme=0"
+									width="100%"
+									height="180"
+									frameborder="0"
+									allowfullscreen=""
+									allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+									loading="lazy"
+									class="filter grayscale contrast-125"
+								></iframe>
 							</div>
 						</div>
 					</div>
 				</section>
 
 				<!-- ===================================================== -->
-				<!-- 5. SECTION C: ABOUT ME & REVIEWS                      -->
+				<!-- LET'S CONNECT ON LINKEDIN (BORDERLESS MONO)           -->
 				<!-- ===================================================== -->
-				<section id="about" class="mb-16 scroll-mt-24">
-					<div class="border-t-4 border-b-2 border-black py-4 mb-8 flex flex-col md:flex-row md:items-end justify-between gap-3">
-						<div>
-							<span class="font-departure text-xs uppercase tracking-[0.2em] text-black/60 block mb-1">
-								Section C • Profile & Editorial Reviews
-							</span>
-							<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-black m-0">
-								Rooted in Purpose and Play
-							</h2>
+				<section
+					id="connect"
+					class="px-6 sm:px-8 md:px-12 mb-20 scroll-mt-24 text-center font-space"
+				>
+					<div class="max-w-2xl mx-auto py-8">
+						<div
+							class="text-xs uppercase tracking-[0.2em] text-black/60 mb-3 font-semibold"
+						>
+							OFFICIAL TRANSMISSION // CONNECT
 						</div>
-						<div class="font-departure text-xs text-black/80">
-							<a href="/about" class="border border-black px-3 py-1.5 bg-neutral-100 hover:bg-black hover:text-white transition-colors text-black no-underline inline-block">
-								Full Dossier & Journey →
-							</a>
-						</div>
-					</div>
-
-					<!-- Profile Feature -->
-					<div class="grid lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16 border-b-2 border-black pb-14">
-						<div class="lg:col-span-6">
-							<span class="font-departure text-xs uppercase tracking-widest text-black/60 block mb-2">
-								Personal Philosophy
-							</span>
-							<h3 class="font-serif text-3xl md:text-4xl font-bold leading-tight text-black mb-4">
-								Engineer at Heart, Product Designer by Calling.
-							</h3>
-							<p class="font-sans text-[16px] text-black/80 leading-relaxed mb-4">
-								Enterprise tools do not have to feel cold or bureaucratic. By cultivating high-trust collaborative environments, demystifying complex data systems, and treating play as a superpower, teams create software with less friction and more joy.
-							</p>
-							<p class="font-sans text-[15px] text-black/70 leading-relaxed mb-6">
-								From mentoring next-gen designers on ADPList to facilitating cross-functional workshops, my goal is always to make complexity understandable—both for the end users and for the multidisciplinary teams building them.
-							</p>
-
-							<a
-								href="/about"
-								class="inline-flex items-center gap-2 font-departure text-xs uppercase tracking-widest bg-black text-white px-6 py-3.5 hover:bg-neutral-800 transition-colors no-underline border border-black shadow-[3px_3px_0_0_#999]"
-							>
-								<span>Read Biography & Career Journey</span>
-								<span>→</span>
-							</a>
-						</div>
-
-						<div class="lg:col-span-6">
-							<figure class="border-2 border-black p-3 bg-white shadow-[6px_6px_0_0_#000]">
-								<div class="aspect-video border border-black overflow-hidden bg-black">
-									<video
-										autoplay
-										loop
-										muted
-										playsinline
-										class="w-full h-full object-cover filter grayscale contrast-125 hover:filter-none transition-all duration-500"
-									>
-										<source src="/images/speaking-video.mp4" type="video/mp4" />
-									</video>
-								</div>
-								<figcaption class="font-departure text-[11px] uppercase tracking-wider text-black/80 mt-3 pt-2 border-t border-black/30 leading-normal">
-									<strong>Fig. 2.0</strong> — Presenting our Enterprise Design Goals & Strategy at the annual team offsite.
-								</figcaption>
-							</figure>
-						</div>
-					</div>
-
-					<!-- Testimonials: Voices from the Field -->
-					<div>
-						<div class="text-center mb-8">
-							<span class="font-departure text-xs uppercase tracking-[0.25em] text-black/60 block mb-1">
-								Critical Acclaim & Endorsements
-							</span>
-							<h3 class="font-serif text-2xl sm:text-3xl font-bold text-black">
-								Voices from the Field
-							</h3>
-						</div>
-
-						<div class="grid grid-cols-1 md:grid-cols-3 border-y-2 border-black divide-y md:divide-y-0 md:divide-x divide-black bg-white">
-							<!-- Review 1 -->
-							<div class="p-6 lg:p-8 flex flex-col justify-between">
-								<div>
-									<div class="font-serif text-5xl leading-none text-black/20 font-bold mb-2">“</div>
-									<blockquote class="font-serif italic text-[16px] text-black/90 leading-relaxed mb-6">
-										Tushar brings people together. His energy and commitment led to a <strong class="not-italic font-bold font-sans">standout enterprise culture</strong>. From internal conferences to engaging podcasts, Tushar was the driving force behind many impactful initiatives.
-									</blockquote>
-								</div>
-								<div class="pt-4 border-t border-black/20 flex items-center gap-3">
-									<img
-										src="/images/testimonial-joy.jpeg"
-										alt="Joy Busse"
-										class="w-10 h-10 rounded-full object-cover border border-black filter grayscale"
-									/>
-									<div>
-										<div class="font-sans font-bold text-sm text-black">Joy Busse</div>
-										<div class="font-departure text-[10px] uppercase text-black/60">Sr. Director of UX, Cribl</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Review 2 -->
-							<div class="p-6 lg:p-8 flex flex-col justify-between">
-								<div>
-									<div class="font-serif text-5xl leading-none text-black/20 font-bold mb-2">“</div>
-									<blockquote class="font-serif italic text-[16px] text-black/90 leading-relaxed mb-6">
-										Tushar's talents extend beyond design—<strong class="not-italic font-bold font-sans">he is a problem solver</strong>. His leadership of the UI dev team allowed us to stay on course. It would be a privilege to work with him again on complex systems.
-									</blockquote>
-								</div>
-								<div class="pt-4 border-t border-black/20 flex items-center gap-3">
-									<img
-										src="/images/testimonial-razz.jpeg"
-										alt="Razz Cortes-Maceda"
-										class="w-10 h-10 rounded-full object-cover border border-black filter grayscale"
-									/>
-									<div>
-										<div class="font-sans font-bold text-sm text-black">Razz Cortes-Maceda</div>
-										<div class="font-departure text-[10px] uppercase text-black/60">VP Digital Strategy, Bellco</div>
-									</div>
-								</div>
-							</div>
-
-							<!-- Review 3 -->
-							<div class="p-6 lg:p-8 flex flex-col justify-between">
-								<div>
-									<div class="font-serif text-5xl leading-none text-black/20 font-bold mb-2">“</div>
-									<blockquote class="font-serif italic text-[16px] text-black/90 leading-relaxed mb-6">
-										The most tenacious, creative, and funny person I've worked with. His mastery in <strong class="not-italic font-bold font-sans">inclusive leadership</strong> helped me grow tremendously. He always finds solutions—even in the most complex scenarios.
-									</blockquote>
-								</div>
-								<div class="pt-4 border-t border-black/20 flex items-center gap-3">
-									<img
-										src="/images/testimonial-ashlesh.jpeg"
-										alt="Ashlesh Londhe"
-										class="w-10 h-10 rounded-full object-cover border border-black filter grayscale"
-									/>
-									<div>
-										<div class="font-sans font-bold text-sm text-black">Ashlesh Londhe</div>
-										<div class="font-departure text-[10px] uppercase text-black/60">Sr. Product Designer, Mindstix</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</section>
-
-				
-				<!-- ===================================================== -->
-				<!-- 6. SECTION D: CONNECT & CONTACT (COLOPHON)             -->
-				<!-- ===================================================== -->
-				<section id="contact" class="mb-16 border-t-4 border-b-2 border-black py-8">
-					<div class="grid md:grid-cols-2 gap-8 items-start">
-						<div>
-							<span class="font-departure text-xs uppercase tracking-widest text-black/60 block mb-1">
-								Section D • Transmission & Dispatch
-							</span>
-							<h3 class="font-serif text-3xl md:text-4xl font-bold text-black mb-3">
-								Let's Make It Happen
-							</h3>
-							<p class="font-sans text-sm text-black/80 leading-relaxed max-w-md">
-								Big ideas. Messy problems. Unclear paths. If you're navigating complex enterprise systems, AI strategy, or need an engineering-fluent design leader, let's talk.
-							</p>
-						</div>
-
-						<div class="space-y-3 font-departure text-xs">
+						<h2
+							class="text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-5 uppercase tracking-tight"
+						>
+							Let's Connect on LinkedIn
+						</h2>
+						<p
+							class="text-xs sm:text-sm text-black/75 max-w-xl mx-auto mb-8 leading-relaxed font-normal"
+						>
+							Always open to thoughtful dialogues on enterprise
+							product architecture, AI governance, design system
+							scale, or prospective collaborative opportunities.
+						</p>
+						<div class="inline-flex items-center justify-center">
 							<a
 								href="https://www.linkedin.com/in/tusharroy/"
 								target="_blank"
-								class="flex items-center justify-between border-2 border-black p-3 hover:bg-black hover:text-white transition-colors bg-white text-black no-underline"
+								rel="noopener noreferrer"
+								id="connect-linkedin-btn"
+								class="inline-flex items-center gap-2.5 bg-[#0a66c2] hover:bg-[#004182] text-white text-xs uppercase tracking-widest px-8 py-4 shadow-[0_4px_16px_rgba(10,102,194,0.3)] no-underline transition-all active:translate-y-0.5 font-space"
 							>
-								<span>LINKEDIN: /in/tusharroy</span>
-								<span>CONNECT →</span>
+								<svg
+									class="w-4 h-4 fill-current"
+									viewBox="0 0 24 24"
+									aria-hidden="true"
+								>
+									<path
+										d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.45c-.89 0-1.61.72-1.61 1.61 0 .89.72 1.61 1.61 1.61.89 0 1.61-.72 1.61-1.61 0-.89-.72-1.61-1.61-1.61Z"
+									></path>
+								</svg>
+								<span>Connect on LinkedIn →</span>
 							</a>
-
-							<a
-								href="https://adplist.org/mentors/tushar-roy"
-								target="_blank"
-								class="flex items-center justify-between border-2 border-black p-3 hover:bg-black hover:text-white transition-colors bg-white text-black no-underline"
-							>
-								<span>ADPLIST: MENTORSHIP SESSION</span>
-								<span>BOOK →</span>
-							</a>
-
-							<a
-								href="mailto:contact@tusharroy.com"
-								class="flex items-center justify-between border-2 border-black p-3 hover:bg-black hover:text-white transition-colors bg-white text-black no-underline"
-							>
-								<span>DIRECT DISPATCH: contact@tusharroy.com</span>
-								<span>SEND →</span>
-							</a>
+							<span
+								id="connect-clippy-anchor"
+								class="inline-block w-8 sm:w-10 h-8 sm:h-10 ml-3 pointer-events-none align-middle"
+								aria-hidden="true"></span>
 						</div>
 					</div>
 				</section>
 
-				<!-- End of Transmission Stamp -->
-				<div class="text-center font-departure text-xs text-black/60 uppercase tracking-widest border-t-2 border-dashed border-black/20 pt-8 pb-4">
-					<span>*** [END OF TRANSMISSION] • 35,420 CHARACTERS PRINTED • READY FOR TEAR-OFF ***</span>
+				<!-- End-of-Feed Colophon -->
+				<div
+					class="text-center text-[10px] text-black/40 uppercase pt-6 pb-2 tracking-widest font-space"
+				>
+					© 2026 Tushar Roy • Systematic <em
+						class="font-homemade font-normal normal-case text-xs text-black/60"
+						>by Design</em
+					> • Continuous Dot-Matrix Roll
 				</div>
 			</div>
 
 			<!-- Right Tractor Margin (Perforated Feed Holes) -->
-			<div class="hidden sm:block tractor-feed-right"></div>
+			<div
+				class="hidden sm:flex flex-col justify-between items-center py-12 tractor-feed-right select-none"
+			>
+				<span
+					class="[writing-mode:vertical-rl] text-[9px] text-black/40 tracking-[0.2em] sticky top-24 font-space"
+				>
+					FEED RATE: 100 CPS
+				</span>
+			</div>
 		</div>
 
-		
+		<!-- Interactive Hardware Printer Chassis at Page Bottom -->
+		<PrinterSvg />
 	</div>
-
-	<!-- ========================================================= -->
-	<!-- FIXED BOTTOM SVG DOT MATRIX PRINTER (Full Width Chassis)  -->
-	<!-- ========================================================= -->
-	<PrinterSvg />
 </Layout>
+
+<style>
+	#front-hero-content {
+		height: 60vh !important;
+		min-height: 60vh !important;
+		display: flex !important;
+		flex-direction: column !important;
+		justify-content: space-between !important;
+	}
+
+	#floating-notes-backdrop {
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.4s ease 0.1s;
+	}
+
+	#floating-notes-backdrop.is-visible {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	#continuous-paper {
+		margin-top: 0;
+		transition: margin-top 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	#continuous-paper.paper-bent {
+		margin-top: 320px;
+	}
+
+	@media (max-width: 640px) {
+		#continuous-paper.paper-bent {
+			margin-top: 500px;
+		}
+	}
+
+	/* Gentle floating idle animation on the sticky notes */
+	@keyframes gentleFloat1 {
+		0%,
+		100% {
+			transform: rotate(-3deg) translateY(0px);
+		}
+		50% {
+			transform: rotate(-2deg) translateY(-6px);
+		}
+	}
+	@keyframes gentleFloat2 {
+		0%,
+		100% {
+			transform: rotate(2deg) translateY(0px);
+		}
+		50% {
+			transform: rotate(3deg) translateY(-8px);
+		}
+	}
+
+	.floating-note-1 {
+		animation: gentleFloat1 6s ease-in-out infinite;
+	}
+	.floating-note-2 {
+		animation: gentleFloat2 7s ease-in-out infinite 0.5s;
+	}
+
+	/* ========================================================= */
+	/* CLIPPY & CASE STUDY COLOR AWAKENING STYLES               */
+	/* ========================================================= */
+	#magic-clippy {
+		transition:
+			left 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+			top 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+			opacity 0.25s ease;
+		will-change: left, top;
+	}
+
+	.clippy-idle:not(:hover) #clippy-inner {
+		animation: clippyBob 4s ease-in-out infinite;
+	}
+
+	#magic-clippy:hover #clippy-inner,
+	#clippy-inner:hover {
+		animation-play-state: paused !important;
+	}
+
+	@keyframes clippyBob {
+		0%,
+		100% {
+			transform: translateY(0px) rotate(0deg);
+		}
+		50% {
+			transform: translateY(-4px) rotate(2.5deg);
+		}
+	}
+
+	@keyframes clippyWiggle {
+		0%,
+		100% {
+			transform: scale(1) rotate(0deg);
+		}
+		20% {
+			transform: scale(1.2) rotate(15deg);
+		}
+		40% {
+			transform: scale(1.2) rotate(-12deg);
+		}
+		60% {
+			transform: scale(1.15) rotate(8deg);
+		}
+		80% {
+			transform: scale(1.05) rotate(-4deg);
+		}
+	}
+
+	.clippy-wiggling {
+		animation: clippyWiggle 0.6s cubic-bezier(0.2, 0.8, 0.4, 1) !important;
+	}
+
+	.clippy-perched #clippy-inner {
+		filter: drop-shadow(0 8px 20px rgba(10, 102, 194, 0.3));
+	}
+
+	#clippy-bubble,
+	#clippy-bubble * {
+		pointer-events: none !important;
+	}
+
+	#clippy-bubble {
+		position: absolute !important;
+		bottom: calc(100% + 10px) !important;
+		left: 50% !important;
+		transform: translateX(-50%) translateY(4px) !important;
+		width: max-content !important;
+		max-width: 270px !important;
+		min-width: 210px !important;
+		background: #ffffd9 !important;
+		border: 1.5px solid #000 !important;
+		box-shadow: 3px 3px 0 #000 !important;
+		padding: 10px 14px !important;
+		font-family: "Space Mono", monospace !important;
+		font-size: 11px !important;
+		line-height: 1.4 !important;
+		text-align: center !important;
+		color: #000 !important;
+		border-radius: 2px !important;
+		opacity: 0 !important;
+		pointer-events: none !important;
+		transition:
+			opacity 0.2s ease,
+			transform 0.2s ease !important;
+		z-index: 70 !important;
+		user-select: none !important;
+	}
+
+	#clippy-bubble.bubble-visible,
+	#magic-clippy:hover #clippy-bubble,
+	#clippy-inner:hover #clippy-bubble {
+		opacity: 1 !important;
+		transform: translateX(-50%) translateY(0) !important;
+		pointer-events: none !important;
+	}
+
+	#clippy-bubble-tail {
+		position: absolute !important;
+		bottom: -8px !important;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		width: 0 !important;
+		height: 0 !important;
+		border-left: 6px solid transparent !important;
+		border-right: 6px solid transparent !important;
+		border-top: 8px solid #000 !important;
+	}
+
+	#clippy-bubble-tail-inner {
+		position: absolute !important;
+		bottom: -6px !important;
+		left: 50% !important;
+		transform: translateX(-50%) !important;
+		width: 0 !important;
+		height: 0 !important;
+		border-left: 5px solid transparent !important;
+		border-right: 5px solid transparent !important;
+		border-top: 7px solid #ffffd9 !important;
+	}
+
+	/* Case Study Grayscale Default to Full Vibrant Color Awakening */
+	.case-study-img {
+		filter: grayscale(100%) contrast(125%);
+		transition:
+			filter 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+			transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+		will-change: filter, transform;
+	}
+
+	.case-study-img-wrapper {
+		transition:
+			box-shadow 0.6s ease,
+			transform 0.6s ease;
+	}
+
+	.case-study-card:hover .case-study-img,
+	.case-study-card:focus-visible .case-study-img,
+	.case-study-card.clippy-active .case-study-img {
+		filter: grayscale(0%) contrast(105%) saturate(120%);
+		transform: scale(1.02);
+	}
+
+	.case-study-card:hover .case-study-img-wrapper,
+	.case-study-card:focus-visible .case-study-img-wrapper,
+	.case-study-card.clippy-active .case-study-img-wrapper {
+		box-shadow:
+			0 16px 40px -6px rgba(10, 102, 194, 0.22),
+			0 6px 18px rgba(0, 0, 0, 0.12);
+	}
+
+	/* Primary Button Blue on Focus/Hover */
+	.case-study-btn {
+		border: 1px solid rgba(0, 0, 0, 0.25);
+		color: #000000;
+		background-color: transparent;
+		transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	.case-study-card:hover .case-study-btn,
+	.case-study-card:focus .case-study-btn,
+	.case-study-card:focus-visible .case-study-btn,
+	.case-study-card.clippy-active .case-study-btn {
+		background-color: #0a66c2;
+		border-color: #0a66c2;
+		color: #ffffff;
+		box-shadow: 0 4px 14px rgba(10, 102, 194, 0.3);
+	}
+
+	/* Magic Sheen across image when brought to life */
+	.case-study-sheen {
+		position: absolute;
+		inset: 0;
+		pointer-events: none;
+		background: linear-gradient(
+			105deg,
+			transparent 20%,
+			rgba(255, 255, 255, 0.45) 50%,
+			transparent 80%
+		);
+		transform: translateX(-100%);
+		opacity: 0;
+	}
+
+	.case-study-card:hover .case-study-sheen,
+	.case-study-card:focus-visible .case-study-sheen,
+	.case-study-card.clippy-active .case-study-sheen {
+		animation: sheenSweep 0.95s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	}
+
+	@keyframes sheenSweep {
+		0% {
+			transform: translateX(-100%);
+			opacity: 0.8;
+		}
+		100% {
+			transform: translateX(100%);
+			opacity: 0;
+		}
+	}
+</style>
+
+<script>
+	// Paper Roll Down to View Floating Sticky Notes
+	const continuousPaper = document.getElementById("continuous-paper");
+	const floatingNotes = document.getElementById("floating-notes-backdrop");
+
+	let isBent = false;
+
+	function togglePaperBend(e) {
+		if (e) e.stopPropagation();
+		isBent = !isBent;
+		if (continuousPaper) {
+			continuousPaper.classList.toggle("paper-bent", isBent);
+		}
+		if (floatingNotes) {
+			floatingNotes.classList.toggle("is-visible", isBent);
+		}
+		if (isBent) {
+			window.scrollTo({ top: 0, behavior: "smooth" });
+		}
+		// Update indicator on the printer button
+		const dot = document.getElementById("side-projects-dot");
+		const btn = document.getElementById("btn-side-projects");
+		if (dot && btn) {
+			if (isBent) {
+				dot.className =
+					"w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse";
+				btn.classList.add(
+					"border-amber-400/80",
+					"text-amber-300",
+					"bg-[#38332a]",
+				);
+			} else {
+				dot.className = "w-1.5 h-1.5 rounded-full bg-amber-400";
+				btn.classList.remove(
+					"border-amber-400/80",
+					"text-amber-300",
+					"bg-[#38332a]",
+				);
+			}
+		}
+	}
+
+	// Triggered from 'Side Projects' button on the printer chassis
+	window.addEventListener("toggle-paper-bend", togglePaperBend);
+
+	// =========================================================
+	// TRANSPARENT CLIPPY (CLIPPIT) JUMP & DYNAMIC PERCHING
+	// =========================================================
+	const magicClippy = document.getElementById("magic-clippy");
+	const clippyInner = document.getElementById("clippy-inner");
+	const clippyAnchor = document.getElementById("clippy-home-anchor");
+	const paperMainSheet = document.getElementById("paper-main-sheet");
+	const caseStudyCards = document.querySelectorAll(".case-study-card");
+
+	let currentActiveCard = null;
+	let currentMode = "home";
+
+	// Contextual speech messages
+	const CLIPPY_MESSAGES = {
+		home: "I am back as the first class netizen!",
+		case1: "Learn how I improved security metrics trust across partner teams at Apple.",
+		case2: "Learn how I improved developer velocity for 20,000+ engineers at Broadcom.",
+		case3: "Learn how I improved workplace IT support with AI intent classification at VMware.",
+		podcast:
+			"Tune in! Learn how design leaders scale cohesive enterprise systems.",
+		connect:
+			"Let's connect! Always excited to chat about design systems & enterprise AI.",
+	};
+
+	const bubbleEl = document.getElementById("clippy-bubble");
+	const bubbleTextEl = document.getElementById("clippy-bubble-text");
+	const podcastAnchor = document.getElementById("podcast-clippy-anchor");
+	const connectAnchor = document.getElementById("connect-clippy-anchor");
+
+	function setClippyMessage(key) {
+		if (bubbleTextEl && CLIPPY_MESSAGES[key]) {
+			bubbleTextEl.textContent = CLIPPY_MESSAGES[key];
+		}
+	}
+
+	function showBubble() {
+		if (bubbleEl) {
+			bubbleEl.classList.add("bubble-visible");
+		}
+	}
+
+	function hideBubble() {
+		if (bubbleEl) {
+			bubbleEl.classList.remove("bubble-visible");
+		}
+	}
+
+	function calculateHomeCoords() {
+		if (!clippyAnchor || !paperMainSheet) return { x: 0, y: 0 };
+		const aRect = clippyAnchor.getBoundingClientRect();
+		const pRect = paperMainSheet.getBoundingClientRect();
+		return {
+			x: aRect.left - pRect.left,
+			y: aRect.top - pRect.top + aRect.height / 2 - 40,
+			rotation: "0deg",
+			scale: "1",
+		};
+	}
+
+	function calculatePerchCoords(cardEl) {
+		const btnAnchor = cardEl.querySelector(".case-study-clippy-anchor");
+		if (!btnAnchor || !paperMainSheet) return calculateHomeCoords();
+		const aRect = btnAnchor.getBoundingClientRect();
+		const pRect = paperMainSheet.getBoundingClientRect();
+		return {
+			x: aRect.left - pRect.left,
+			y: aRect.top - pRect.top + aRect.height / 2 - 20,
+			rotation: "0deg",
+			scale: "1.02",
+		};
+	}
+
+	function calculatePodcastCoords() {
+		if (!podcastAnchor || !paperMainSheet) return calculateHomeCoords();
+		const aRect = podcastAnchor.getBoundingClientRect();
+		const pRect = paperMainSheet.getBoundingClientRect();
+		return {
+			x: aRect.left - pRect.left,
+			y: aRect.top - pRect.top + aRect.height / 2 - 20,
+			rotation: "0deg",
+			scale: "1.02",
+		};
+	}
+
+	function calculateConnectCoords() {
+		if (!connectAnchor || !paperMainSheet) return calculateHomeCoords();
+		const aRect = connectAnchor.getBoundingClientRect();
+		const pRect = paperMainSheet.getBoundingClientRect();
+		return {
+			x: aRect.left - pRect.left,
+			y: aRect.top - pRect.top + aRect.height / 2 - 20,
+			rotation: "0deg",
+			scale: "1.02",
+		};
+	}
+
+	function moveClippyTo(
+		x,
+		y,
+		isHome = false,
+		rotation = "-5deg",
+		scale = "1.06",
+	) {
+		if (!magicClippy) return;
+		magicClippy.style.left = `${Math.round(x)}px`;
+		magicClippy.style.top = `${Math.round(y)}px`;
+		magicClippy.style.opacity = "1";
+
+		if (isHome) {
+			magicClippy.classList.add("clippy-idle");
+			magicClippy.classList.remove("clippy-perched");
+			if (clippyInner) {
+				clippyInner.style.transform = "rotate(0deg) scale(1)";
+			}
+		} else {
+			magicClippy.classList.remove("clippy-idle");
+			magicClippy.classList.add("clippy-perched");
+			if (clippyInner) {
+				clippyInner.style.transform = `rotate(${rotation}) scale(${scale})`;
+			}
+		}
+	}
+
+	function jumpHome() {
+		if (currentMode === "home") return;
+		currentMode = "home";
+		if (currentActiveCard) {
+			currentActiveCard.classList.remove("clippy-active");
+			currentActiveCard = null;
+		}
+		hideBubble();
+		setClippyMessage("home");
+		const home = calculateHomeCoords();
+		moveClippyTo(home.x, home.y, true);
+	}
+
+	function jumpToCard(cardEl) {
+		const caseIndex = cardEl.getAttribute("data-case-index") || "1";
+		currentMode = "case" + caseIndex;
+		if (currentActiveCard && currentActiveCard !== cardEl) {
+			currentActiveCard.classList.remove("clippy-active");
+		}
+		currentActiveCard = cardEl;
+		cardEl.classList.add("clippy-active");
+		setClippyMessage("case" + caseIndex);
+
+		const target = calculatePerchCoords(cardEl);
+		moveClippyTo(target.x, target.y, false, target.rotation, target.scale);
+	}
+
+	function jumpToPodcast() {
+		currentMode = "podcast";
+		if (currentActiveCard) {
+			currentActiveCard.classList.remove("clippy-active");
+			currentActiveCard = null;
+		}
+		setClippyMessage("podcast");
+		const target = calculatePodcastCoords();
+		moveClippyTo(target.x, target.y, false, target.rotation, target.scale);
+	}
+
+	function jumpToConnect() {
+		currentMode = "connect";
+		if (currentActiveCard) {
+			currentActiveCard.classList.remove("clippy-active");
+			currentActiveCard = null;
+		}
+		setClippyMessage("connect");
+		const target = calculateConnectCoords();
+		moveClippyTo(target.x, target.y, false, target.rotation, target.scale);
+	}
+
+	function initClippy() {
+		setClippyMessage("home");
+		const home = calculateHomeCoords();
+		moveClippyTo(home.x, home.y, true);
+	}
+
+	function isMovingTo(e, ...selectors) {
+		const related = e.relatedTarget;
+		if (!related || !related.closest) return false;
+		return selectors.some((selector) => Boolean(related.closest(selector)));
+	}
+
+	// Case study mouse & focus event listeners
+	caseStudyCards.forEach((card) => {
+		card.addEventListener("mouseenter", () => {
+			jumpToCard(card);
+		});
+		card.addEventListener("focus", () => {
+			jumpToCard(card);
+		});
+		card.addEventListener("mouseleave", (e) => {
+			if (isMovingTo(e, "#magic-clippy", ".case-study-card")) {
+				return;
+			}
+			jumpHome();
+		});
+		card.addEventListener("blur", (e) => {
+			if (isMovingTo(e, "#magic-clippy", ".case-study-card")) {
+				return;
+			}
+			jumpHome();
+		});
+
+		// Hovering the button also displays the speech bubble
+		const btn = card.querySelector(".case-study-btn");
+		btn?.addEventListener("mouseenter", () => {
+			showBubble();
+		});
+		btn?.addEventListener("mouseleave", (e) => {
+			if (!isMovingTo(e, "#magic-clippy")) {
+				hideBubble();
+			}
+		});
+	});
+
+	// If mouse leaves work section completely
+	const workSection = document.getElementById("work");
+	workSection?.addEventListener("mouseleave", (e) => {
+		if (isMovingTo(e, "#magic-clippy")) return;
+		jumpHome();
+	});
+
+	// Podcast section hover listeners
+	const podcastSection = document.getElementById("podcast");
+	const podcastLink = document.getElementById("podcast-spotify-link");
+	podcastSection?.addEventListener("mouseenter", () => {
+		jumpToPodcast();
+	});
+	podcastLink?.addEventListener("mouseenter", () => {
+		showBubble();
+	});
+	podcastLink?.addEventListener("mouseleave", (e) => {
+		if (!isMovingTo(e, "#magic-clippy")) {
+			hideBubble();
+		}
+	});
+	podcastSection?.addEventListener("mouseleave", (e) => {
+		if (isMovingTo(e, "#magic-clippy", "#podcast")) {
+			return;
+		}
+		jumpHome();
+	});
+
+	// Connect section hover listeners
+	const connectSection = document.getElementById("connect");
+	const connectBtn = document.getElementById("connect-linkedin-btn");
+	connectSection?.addEventListener("mouseenter", () => {
+		jumpToConnect();
+	});
+	connectBtn?.addEventListener("mouseenter", () => {
+		showBubble();
+	});
+	connectBtn?.addEventListener("mouseleave", (e) => {
+		if (!isMovingTo(e, "#magic-clippy")) {
+			hideBubble();
+		}
+	});
+	connectSection?.addEventListener("mouseleave", (e) => {
+		if (isMovingTo(e, "#magic-clippy", "#connect")) {
+			return;
+		}
+		jumpHome();
+	});
+
+	// Clippy direct hover listeners for speech bubble
+	clippyInner?.addEventListener("mouseenter", () => {
+		showBubble();
+	});
+	clippyInner?.addEventListener("mouseleave", (e) => {
+		hideBubble();
+		if (currentMode.startsWith("case")) {
+			if (isMovingTo(e, ".case-study-card", "#magic-clippy")) return;
+			jumpHome();
+		} else if (currentMode === "podcast") {
+			if (isMovingTo(e, "#podcast", "#magic-clippy")) return;
+			jumpHome();
+		} else if (currentMode === "connect") {
+			if (isMovingTo(e, "#connect", "#magic-clippy")) return;
+			jumpHome();
+		}
+	});
+
+	// Hero headline anchor hover also triggers the bubble
+	clippyAnchor?.parentElement?.addEventListener("mouseenter", () => {
+		if (currentMode === "home") {
+			showBubble();
+		}
+	});
+	clippyAnchor?.parentElement?.addEventListener("mouseleave", () => {
+		if (currentMode === "home") {
+			hideBubble();
+		}
+	});
+
+	// Recalculate positions on window resize
+	window.addEventListener("resize", () => {
+		if (currentMode === "home") {
+			const home = calculateHomeCoords();
+			moveClippyTo(home.x, home.y, true);
+		} else if (currentMode.startsWith("case") && currentActiveCard) {
+			const target = calculatePerchCoords(currentActiveCard);
+			moveClippyTo(
+				target.x,
+				target.y,
+				false,
+				target.rotation,
+				target.scale,
+			);
+		} else if (currentMode === "podcast") {
+			const target = calculatePodcastCoords();
+			moveClippyTo(
+				target.x,
+				target.y,
+				false,
+				target.rotation,
+				target.scale,
+			);
+		} else if (currentMode === "connect") {
+			const target = calculateConnectCoords();
+			moveClippyTo(
+				target.x,
+				target.y,
+				false,
+				target.rotation,
+				target.scale,
+			);
+		}
+	});
+
+	// Clicking Clippy triggers playful wiggle and temporary bubble speech
+	clippyInner?.addEventListener("click", (e) => {
+		e.stopPropagation();
+		showBubble();
+		if (clippyInner) {
+			clippyInner.classList.remove("clippy-wiggling");
+			void clippyInner.offsetWidth; // force reflow
+			clippyInner.classList.add("clippy-wiggling");
+			setTimeout(() => {
+				clippyInner.classList.remove("clippy-wiggling");
+			}, 600);
+			setTimeout(() => {
+				hideBubble();
+			}, 2500);
+		}
+	});
+
+	// Initial positioning and font load safety
+	if (document.readyState === "loading") {
+		window.addEventListener("DOMContentLoaded", initClippy);
+	} else {
+		initClippy();
+	}
+
+	if (document.fonts && document.fonts.ready) {
+		document.fonts.ready.then(() => {
+			if (currentMode === "home") {
+				initClippy();
+			}
+		});
+	}
+
+	// Recheck after fonts load
+	setTimeout(initClippy, 100);
+	setTimeout(initClippy, 400);
+	setTimeout(initClippy, 1000);
+
+	if (window.ResizeObserver && clippyAnchor) {
+		const ro = new ResizeObserver(() => {
+			if (currentMode === "home") {
+				initClippy();
+			}
+		});
+		ro.observe(clippyAnchor);
+	}
+</script>
