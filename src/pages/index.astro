@@ -113,7 +113,7 @@ import PrinterSvg from "../components/PrinterSvg.astro";
 				>
 					<div
 						id="clippy-inner"
-						class="relative cursor-pointer pointer-events-auto transition-transform duration-300 w-8 sm:w-10 flex flex-col items-center justify-center"
+						class="relative cursor-pointer pointer-events-auto transition-transform duration-300 w-6 sm:w-8 md:w-10 flex flex-col items-center justify-center"
 					>
 						<!-- Retro Comic Speech Bubble (Positioned directly relative to Clippy's head) -->
 						<div
@@ -143,7 +143,7 @@ import PrinterSvg from "../components/PrinterSvg.astro";
 							src="/images/clippy.png"
 							alt="Clippy"
 							id="clippy-img"
-							class="w-8 sm:w-10 h-auto select-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)] block mx-auto"
+							class="w-6 sm:w-8 md:w-10 h-auto select-none drop-shadow-[0_4px_12px_rgba(0,0,0,0.2)] block mx-auto"
 							draggable="false"
 						/>
 					</div>
@@ -155,21 +155,29 @@ import PrinterSvg from "../components/PrinterSvg.astro";
 					class="px-6 sm:px-8 md:px-12 mb-16 font-space"
 					style="height: 60vh; min-height: 60vh; display: flex; flex-direction: column; justify-content: space-between;"
 				>
-					<!-- Top Metadata Header (Sticks up exactly how it is now) -->
+					<!-- Top Metadata Header (Dot-Matrix Dateline / Ticker) -->
 					<div
-						class="border-b-2 border-dashed border-black/20 pb-4 text-[11px] text-black/60 flex flex-wrap justify-between items-center gap-3 w-full font-space shrink-0"
+						class="border-b-2 border-dashed border-black/20 pb-3 text-[10px] sm:text-[11px] text-black/60 w-full font-space shrink-0"
 					>
-						<div class="flex items-center gap-2 uppercase">
-							<span class="font-bold text-black">PORTFOLIO</span>
-							<span>•</span>
-							<span>enterprise ux architect</span>
-							<span>•</span>
-							<span>San Fransisco bay Area</span>
-						</div>
-						<div class="hidden sm:block">
-							<span
-								>FORM LENGTH: CONTINUOUS • BUFFER: 100% OK</span
+						<div
+							class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-1.5 sm:gap-3 uppercase"
+						>
+							<div class="flex flex-wrap items-baseline gap-x-2.5 gap-y-1">
+								<span class="font-bold text-black">PORTFOLIO</span>
+								<span class="text-black/30 select-none">•</span>
+								<span class="text-black/75">Enterprise UX Architect</span>
+								<span class="hidden md:inline text-black/30 select-none">•</span>
+								<span class="hidden md:inline text-black/60">San Francisco Bay Area</span>
+							</div>
+							<div
+								class="flex items-center justify-between w-full sm:w-auto text-[9px] sm:text-[10px] text-black/45 pt-1.5 sm:pt-0 border-t border-black/5 sm:border-0"
 							>
+								<span class="md:hidden">San Francisco Bay Area</span>
+								<span class="hidden sm:inline md:hidden text-black/30 mx-2">•</span>
+								<span class="hidden sm:inline">FORM LENGTH: CONTINUOUS</span>
+								<span class="hidden sm:inline text-black/30 mx-1.5">•</span>
+								<span>BUFFER: 100% OK</span>
+							</div>
 						</div>
 					</div>
 
@@ -186,17 +194,17 @@ import PrinterSvg from "../components/PrinterSvg.astro";
 
 							<!-- Name / Headline -->
 							<h1
-								class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-normal leading-none mb-4 normal-case"
+								class="text-[1.65rem] min-[390px]:text-[1.85rem] min-[440px]:text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-normal tracking-tight text-normal leading-tight sm:leading-none mb-4 normal-case"
 							>
 								Systematic <span
-									class="inline-flex items-baseline flex-wrap sm:flex-nowrap"
+									class="inline-flex items-baseline flex-nowrap shrink-0"
 								>
 									<span
 										class="font-homemade font-normal normal-case text-[1em] text-[#0A66C2]"
 										>by design</span
 									><span
 										id="clippy-home-anchor"
-										class="inline-block w-8 sm:w-10 h-8 sm:h-10 ml-1.5 sm:ml-2.5 align-middle pointer-events-none"
+										class="inline-block w-6 sm:w-8 md:w-10 h-6 sm:h-8 md:h-10 ml-1.5 sm:ml-2.5 align-middle pointer-events-none"
 										aria-hidden="true"></span>
 								</span>
 							</h1>
@@ -1138,9 +1146,10 @@ import PrinterSvg from "../components/PrinterSvg.astro";
 		if (!clippyAnchor || !paperMainSheet) return { x: 0, y: 0 };
 		const aRect = clippyAnchor.getBoundingClientRect();
 		const pRect = paperMainSheet.getBoundingClientRect();
+		const halfHeight = clippyInner ? clippyInner.offsetHeight / 2 : 35;
 		return {
 			x: aRect.left - pRect.left,
-			y: aRect.top - pRect.top + aRect.height / 2 - 40,
+			y: aRect.top - pRect.top + aRect.height / 2 - halfHeight,
 			rotation: "0deg",
 			scale: "1",
 		};
@@ -1151,9 +1160,10 @@ import PrinterSvg from "../components/PrinterSvg.astro";
 		if (!btnAnchor || !paperMainSheet) return calculateHomeCoords();
 		const aRect = btnAnchor.getBoundingClientRect();
 		const pRect = paperMainSheet.getBoundingClientRect();
+		const halfHeight = clippyInner ? clippyInner.offsetHeight / 2 : 35;
 		return {
 			x: aRect.left - pRect.left,
-			y: aRect.top - pRect.top + aRect.height / 2 - 20,
+			y: aRect.top - pRect.top + aRect.height / 2 - halfHeight,
 			rotation: "0deg",
 			scale: "1.02",
 		};
@@ -1163,9 +1173,10 @@ import PrinterSvg from "../components/PrinterSvg.astro";
 		if (!podcastAnchor || !paperMainSheet) return calculateHomeCoords();
 		const aRect = podcastAnchor.getBoundingClientRect();
 		const pRect = paperMainSheet.getBoundingClientRect();
+		const halfHeight = clippyInner ? clippyInner.offsetHeight / 2 : 35;
 		return {
 			x: aRect.left - pRect.left,
-			y: aRect.top - pRect.top + aRect.height / 2 - 20,
+			y: aRect.top - pRect.top + aRect.height / 2 - halfHeight,
 			rotation: "0deg",
 			scale: "1.02",
 		};
@@ -1175,9 +1186,10 @@ import PrinterSvg from "../components/PrinterSvg.astro";
 		if (!connectAnchor || !paperMainSheet) return calculateHomeCoords();
 		const aRect = connectAnchor.getBoundingClientRect();
 		const pRect = paperMainSheet.getBoundingClientRect();
+		const halfHeight = clippyInner ? clippyInner.offsetHeight / 2 : 35;
 		return {
 			x: aRect.left - pRect.left,
-			y: aRect.top - pRect.top + aRect.height / 2 - 20,
+			y: aRect.top - pRect.top + aRect.height / 2 - halfHeight,
 			rotation: "0deg",
 			scale: "1.02",
 		};
