@@ -4,8 +4,8 @@
 @font-face {
     font-family: "Departure Mono";
     src: url("/fonts/DepartureMono-Regular.woff2") format("woff2"),
-         url("/fonts/DepartureMono-Regular.woff") format("woff"),
-         url("/fonts/DepartureMono-Regular.otf") format("opentype");
+        url("/fonts/DepartureMono-Regular.woff") format("woff"),
+        url("/fonts/DepartureMono-Regular.otf") format("opentype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -87,11 +87,11 @@
    * H2 - Section Heading Style
    */
     h2 {
-        @apply font-departure text-2xl md:text-3xl font-bold text-[var(--color-text-primary)] leading-tight mb-8 uppercase tracking-tight;
+        @apply font-departure text-2xl md:text-3xl font-bold text-[var(--color-text-primary)] leading-tight mb-8 tracking-tight;
     }
 
     h3 {
-        @apply font-departure font-bold text-xl text-[var(--color-text-primary)] mb-4 uppercase;
+        @apply font-departure font-bold text-xl text-[var(--color-text-primary)] mb-4;
     }
 
     h4 {
@@ -308,9 +308,9 @@
         width: 44px;
         flex-shrink: 0;
         background-color: #faf8f2;
-        background-image: 
+        background-image:
             radial-gradient(circle at 22px 16px, #1a1917 3.5px, transparent 4.5px),
-            linear-gradient(to bottom, transparent 31px, rgba(0,0,0,0.25) 31px, rgba(0,0,0,0.25) 32px, transparent 32px);
+            linear-gradient(to bottom, transparent 31px, rgba(0, 0, 0, 0.25) 31px, rgba(0, 0, 0, 0.25) 32px, transparent 32px);
         background-size: 44px 32px;
         background-repeat: repeat-y;
         border-right: 1px dashed rgba(0, 0, 0, 0.35);
@@ -321,9 +321,9 @@
         width: 44px;
         flex-shrink: 0;
         background-color: #faf8f2;
-        background-image: 
+        background-image:
             radial-gradient(circle at 22px 16px, #1a1917 3.5px, transparent 4.5px),
-            linear-gradient(to bottom, transparent 31px, rgba(0,0,0,0.25) 31px, rgba(0,0,0,0.25) 32px, transparent 32px);
+            linear-gradient(to bottom, transparent 31px, rgba(0, 0, 0, 0.25) 31px, rgba(0, 0, 0, 0.25) 32px, transparent 32px);
         background-size: 44px 32px;
         background-repeat: repeat-y;
         border-left: 1px dashed rgba(0, 0, 0, 0.35);

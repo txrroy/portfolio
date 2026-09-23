@@ -1,0 +1,1036 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Footer from "../../components/Footer.astro";
+---
+
+<Layout title="Project Vanguard — Apple InfoSec Case Study • Tushar Roy">
+	<div class="min-h-screen bg-[#faf8f2] text-[#1a1918] antialiased selection:bg-black selection:text-white">
+		<!-- Top Progress & Return Bar -->
+		<header class="sticky top-0 z-40 bg-[#faf8f2]/95 backdrop-blur-md border-b border-black/15 py-3.5 px-6">
+			<div class="max-w-5xl mx-auto flex items-center justify-between font-departure text-xs uppercase tracking-wider">
+				<a href="/" class="flex items-center gap-2 text-black hover:text-neutral-600 transition-colors no-underline">
+					<span>←</span>
+					<span>Selected Works</span>
+				</a>
+				<div class="flex items-center gap-3 text-black/60 hidden sm:flex">
+					<span>Apple InfoSec</span>
+					<span>•</span>
+					<span class="text-black font-bold">Project Vanguard</span>
+					<span>•</span>
+					<span>Staff Product Designer</span>
+				</div>
+				<a href="#section-11" class="px-3 py-1 bg-black text-white hover:bg-neutral-800 transition-colors no-underline text-[11px]">
+					Key Takeaways ↓
+				</a>
+			</div>
+		</header>
+
+		<!-- Case Study Main Container -->
+		<main class="max-w-5xl mx-auto px-6 sm:px-8 pt-12 md:pt-16 pb-28">
+
+			<!-- ===================================================== -->
+			<!-- SECTION 0: HERO & OVERVIEW                            -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Apple InfoSec · Staff Product Designer
+				</span>
+
+				<!-- Heading -->
+				<h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-[54px] font-bold text-black mb-8 leading-[1.08] tracking-tight">
+					The security metrics platform that told executives how much to trust each number
+				</h1>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						Apple InfoSec ran on a <strong>small BI team</strong> that hand-built metrics for every partner team. Coverage sat <strong>under 30%</strong>. Getting one new metric published took about <strong>two months</strong>. By the time a metric went live, it was often stale.
+					</p>
+					<p>
+						That left senior executives without a <strong>quantitative answer</strong> to the one question that mattered: how well are we keeping Apple safe? In board-level conversations they were using <strong>thumbs-up and thumbs-down emojis</strong>.
+					</p>
+					<p>
+						I replaced the static reporting site with a <strong>governed self-service intelligence platform</strong>. Every metric on it carries a <strong>visible trust level</strong>.
+					</p>
+				</div>
+
+				<!-- Project Meta Box -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-6 bg-white border border-black/15 p-6 mb-12 shadow-[3px_3px_0_0_#000] font-departure text-xs">
+					<div>
+						<span class="text-black/50 block uppercase mb-1">Role</span>
+						<strong class="font-bold text-black text-sm block">Staff Product Designer</strong>
+						<span class="text-black/70 mt-1 block">Strategy, interaction model, governance design.</span>
+					</div>
+					<div>
+						<span class="text-black/50 block uppercase mb-1">Collaborating Teams</span>
+						<strong class="font-bold text-black text-sm block">InfoSec BI & Data Eng</strong>
+						<span class="text-black/70 mt-1 block">Incident management, 30+ partner security orgs.</span>
+					</div>
+					<div>
+						<span class="text-black/50 block uppercase mb-1">Confidentiality Note</span>
+						<strong class="font-bold text-black text-sm block">Illustrative Data</strong>
+						<span class="text-black/70 mt-1 block">All numbers and screens shown here are reconstructed. No confidential Apple data is included.</span>
+					</div>
+				</div>
+
+				<!-- ARTIFACT 01: Hero Before & After Image -->
+				<div class="border-2 border-black bg-white p-4 sm:p-6 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+						<!-- Left: Old Static Dashboard -->
+						<div class="md:col-span-4 bg-[#f4f2eb] border border-black/20 p-4 flex flex-col justify-between">
+							<div>
+								<div class="flex items-center justify-between font-departure text-[10px] uppercase text-black/50 pb-2 mb-3 border-b border-black/10">
+									<span>BEFORE (2024)</span>
+									<span class="text-red-700 font-bold">28% COVERAGE</span>
+								</div>
+								<div class="font-serif font-bold text-base text-black mb-2">Internal Security Wiki Table</div>
+								<p class="font-sans text-xs text-black/70 leading-normal mb-4">
+									Static HTML tables updated manually via spreadsheets. No data lineage, stale quarterly reviews, and subjective status indicators.
+								</p>
+								<div class="space-y-2 font-mono text-[11px] bg-white p-3 border border-black/10">
+									<div class="flex justify-between items-center pb-1.5 border-b border-black/5">
+										<span class="text-black/60">MTTD Endpoint:</span>
+										<span class="font-bold">👍 Nominal</span>
+									</div>
+									<div class="flex justify-between items-center pb-1.5 border-b border-black/5">
+										<span class="text-black/60">Cloud IAM Drift:</span>
+										<span class="font-bold">👎 At Risk</span>
+									</div>
+									<div class="flex justify-between items-center">
+										<span class="text-black/60">Audit SLA:</span>
+										<span class="text-black/40 italic">Stale (Q2)</span>
+									</div>
+								</div>
+							</div>
+							<div class="mt-4 pt-3 border-t border-black/10 font-departure text-[10px] text-black/50 text-center">
+								Subjective emoji reporting • No lineage
+							</div>
+						</div>
+
+						<!-- Right: New Vanguard Platform Overview -->
+						<div class="md:col-span-8 bg-neutral-900 border border-black overflow-hidden flex flex-col justify-between">
+							<div class="relative group">
+								<img
+									src="/images/case-study/vanguard/platform-overview.png"
+									alt="Project Vanguard Platform Overview"
+									class="w-full h-auto object-cover"
+								/>
+								<div class="absolute top-3 right-3 bg-black/80 text-white font-departure text-[10px] uppercase px-2.5 py-1 rounded border border-white/20 backdrop-blur">
+									SHIPPED PLATFORM // 85%+ COVERAGE
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: Before and after. The change people notice first is the badge on every metric.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 1: THE PROBLEM                                -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					The problem
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					Executives had no defensible way to answer "are we safe?"
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						The BI team was the <strong>only path</strong> to a published metric. A request moved through four steps. Define the measure. Negotiate the formula. Chase data engineering. Publish. Average time was <strong>two months</strong>.
+					</p>
+					<p>
+						Because the queue was slow, teams stopped waiting. They <strong>built their own dashboards</strong>. Those dashboards held real metrics that never entered the central platform. So executives now had two problems instead of one. The central view was <strong>incomplete</strong>, and the numbers they heard in meetings <strong>did not match</strong> the numbers on the platform.
+					</p>
+					<p>
+						When a metric spiked, an executive had no way to check it themselves. They picked up the phone. That started a chain of <strong>formal and informal assurance calls</strong> across teams, repeated for every stakeholder who asked.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 02: Diagram -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="font-departure text-xs uppercase tracking-wider text-black/60 pb-3 mb-6 border-b border-black/15 flex justify-between items-center">
+						<span>LEGACY WORKFLOW & SHADOW DASHBOARD FRAGMENTATION</span>
+						<span class="text-red-700 font-bold">BOTTLENECK: ~2 MONTHS</span>
+					</div>
+
+					<!-- Visual Workflow Diagram -->
+					<div class="space-y-6">
+						<!-- Main 4-step linear chain -->
+						<div class="grid grid-cols-1 sm:grid-cols-4 gap-3 relative">
+							<div class="border border-black p-4 bg-[#faf8f2]">
+								<div class="font-departure text-[10px] text-black/50 mb-1">STEP 01</div>
+								<div class="font-serif font-bold text-sm text-black">Define Measure</div>
+								<div class="font-sans text-xs text-black/60 mt-1">Partner org drafts requirement</div>
+							</div>
+							<div class="border-2 border-red-700 p-4 bg-red-50/50">
+								<div class="font-departure text-[10px] text-red-700 font-bold mb-1">STEP 02 (CHOKEPOINT)</div>
+								<div class="font-serif font-bold text-sm text-black">Negotiate Formula</div>
+								<div class="font-sans text-xs text-black/60 mt-1">Multi-week committee debates</div>
+							</div>
+							<div class="border border-black p-4 bg-[#faf8f2]">
+								<div class="font-departure text-[10px] text-black/50 mb-1">STEP 03</div>
+								<div class="font-serif font-bold text-sm text-black">Chase Data Eng</div>
+								<div class="font-sans text-xs text-black/60 mt-1">Pipeline backlog prioritization</div>
+							</div>
+							<div class="border border-black p-4 bg-[#faf8f2]">
+								<div class="font-departure text-[10px] text-black/50 mb-1">STEP 04</div>
+								<div class="font-serif font-bold text-sm text-black">Publish Central</div>
+								<div class="font-sans text-xs text-black/60 mt-1">Stale on arrival (Day ~60)</div>
+							</div>
+						</div>
+
+						<!-- Branch to Shadow Dashboards -->
+						<div class="border-l-2 border-dashed border-red-600 pl-6 ml-12 sm:ml-48 py-2">
+							<div class="bg-red-50 border border-red-300 p-4 rounded-sm flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+								<div>
+									<div class="font-departure text-xs text-red-800 font-bold uppercase tracking-wider flex items-center gap-2">
+										<span>↳ Teams Peel Off:</span>
+										<span>Proliferation of Shadow Dashboards</span>
+									</div>
+									<p class="font-sans text-xs text-black/75 mt-1 m-0">
+										Unvetted spreadsheets, rogue Grafana instances, and conflicting numbers in leadership meetings.
+									</p>
+								</div>
+								<span class="font-departure text-[11px] bg-red-200/80 text-red-900 px-3 py-1 font-bold whitespace-nowrap self-start sm:self-auto">
+									CONFIDENCE = 0
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: Slow onboarding did not just delay metrics. It pushed teams to build in the dark.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 2: RESEARCH                                   -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Research
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					I went to the people who author metrics and the people who read them
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						I started with a <strong>design sprint</strong> with the BI team to map how a metric actually gets made. Then I ran interviews on both ends of the pipe. <strong>Six metric authors</strong> from partner security orgs. <strong>Two executives</strong> who consume the output.
+					</p>
+					<p>
+						The authors told me the bottleneck was <strong>negotiation</strong>, not effort. They knew their own data. They were waiting on someone else to agree on a formula.
+					</p>
+					<p>
+						The executives told me something I did not expect. Their problem was not missing data. It was <strong>not knowing which numbers were solid</strong>. They had learned to discount anything they could not trace.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 03: Research Summary Board -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="grid md:grid-cols-12 gap-8">
+						<!-- Left: Design Sprint Output -->
+						<div class="md:col-span-5 bg-[#faf8f2] border border-black/20 p-5">
+							<div class="font-departure text-xs uppercase text-black/60 font-bold mb-3 pb-2 border-b border-black/10">
+								DESIGN SPRINT MAPPING // BI TEAM
+							</div>
+							<h4 class="font-serif font-bold text-base text-black mb-2">Process Bottleneck Analysis</h4>
+							<p class="font-sans text-xs text-black/75 mb-4 leading-relaxed">
+								Mapping the 5-conversation handoff cycle revealed that 70% of BI engineering time was spent mediating disputes rather than instrumenting feeds.
+							</p>
+							<div class="space-y-2 font-departure text-xs">
+								<div class="bg-white p-2.5 border border-black/10">
+									<strong class="block text-black">6 Metric Authors</strong>
+									<span class="text-black/60 text-[11px]">Partner orgs (Cloud, Identity, Endpoint)</span>
+								</div>
+								<div class="bg-white p-2.5 border border-black/10">
+									<strong class="block text-black">2 Senior Executives</strong>
+									<span class="text-black/60 text-[11px]">C-suite & VP of InfoSec Assurance</span>
+								</div>
+							</div>
+						</div>
+
+						<!-- Right: Grouped Interview Quotes -->
+						<div class="md:col-span-7 space-y-4">
+							<div class="border border-black p-4 bg-white">
+								<div class="font-departure text-[11px] uppercase text-[#8c827a] font-bold mb-1">
+									AUTHOR PAIN: SPEED & AUTONOMY
+								</div>
+								<blockquote class="font-serif italic text-sm text-black leading-relaxed m-0 border-l-2 border-black pl-3">
+									"We know our telemetry cold. The bottleneck isn't getting the logs—it's waiting two months for a central team to approve our denominator."
+								</blockquote>
+							</div>
+
+							<div class="border border-black p-4 bg-white">
+								<div class="font-departure text-[11px] uppercase text-[#8c827a] font-bold mb-1">
+									EXECUTIVE PAIN: TRUST & TRACEABILITY
+								</div>
+								<blockquote class="font-serif italic text-sm text-black leading-relaxed m-0 border-l-2 border-black pl-3">
+									"Our problem isn't that numbers are missing. It's that we have no idea which numbers are rock solid, so we discount everything we can't trace back to source."
+								</blockquote>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: Two groups, two different problems. Speed for authors. Confidence for executives.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 3: STRATEGY                                   -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Strategy
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					The team had two plans. I argued for one.
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						When I joined, the team had already split the work into <strong>two separate tracks</strong>. Track one was to standardize and speed up metric onboarding. Track two was to build a <strong>security impact framework</strong> that answered the executive question directly.
+					</p>
+					<p>
+						I argued for a <strong>single solution: self-service</strong>.
+					</p>
+					<p>
+						My reasoning was simple. If each team can onboard its own metrics, then <strong>each team's own clarity and speed decides its coverage</strong>. The BI queue stops being the limit. And once a team has that autonomy, it has <strong>no reason to spin up a shadow dashboard</strong>.
+					</p>
+					<p>
+						There was a second win. A self-service platform <strong>generates its own usage data</strong>. That gave the BI team quantitative evidence to show their own leadership, who were also their customers.
+					</p>
+					<p>
+						I got buy-in by showing that track two was a <strong>reporting layer on top of track one</strong>. It could not exist without coverage, and coverage could not exist without speed.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 04: Strategy Diagram -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="grid md:grid-cols-12 gap-8 items-center">
+						<!-- Left: Two Competing Tracks -->
+						<div class="md:col-span-5 space-y-3">
+							<div class="font-departure text-xs uppercase text-black/50 font-bold mb-2">ORIGINAL 2-TRACK PROPOSAL</div>
+							<div class="border border-black/30 p-3 bg-neutral-50 text-xs">
+								<strong class="block font-bold">Track 01: Central Onboarding Speed</strong>
+								<span class="text-black/60 text-[11px]">Optimize the internal BI queue</span>
+							</div>
+							<div class="text-center font-departure text-xs text-red-600 font-bold">VS (COMPETING FOR ENG TIME)</div>
+							<div class="border border-black/30 p-3 bg-neutral-50 text-xs">
+								<strong class="block font-bold">Track 02: Security Impact Model</strong>
+								<span class="text-black/60 text-[11px]">Separate executive reporting layer</span>
+							</div>
+						</div>
+
+						<!-- Center Arrow -->
+						<div class="md:col-span-2 text-center font-departure text-2xl font-bold text-black hidden md:block">
+							→
+						</div>
+
+						<!-- Right: Collapsed Single Solution & 3 Effects -->
+						<div class="md:col-span-5 bg-[#faf8f2] border-2 border-black p-5 shadow-[3px_3px_0_0_#000]">
+							<div class="font-departure text-[11px] text-emerald-800 uppercase font-bold mb-2">SHIPPED ARCHITECTURE</div>
+							<h4 class="font-serif font-bold text-lg text-black mb-3">Single Self-Service Platform</h4>
+							<div class="space-y-2.5 font-departure text-xs">
+								<div class="bg-white p-2 border border-black/10 flex items-center gap-2">
+									<span class="text-emerald-700 font-bold">01</span>
+									<span>Coverage: Speed in hands of authors</span>
+								</div>
+								<div class="bg-white p-2 border border-black/10 flex items-center gap-2">
+									<span class="text-emerald-700 font-bold">02</span>
+									<span>Shadow Dashboards Eliminated</span>
+								</div>
+								<div class="bg-white p-2 border border-black/10 flex items-center gap-2">
+									<span class="text-emerald-700 font-bold">03</span>
+									<span>Auto-Generated Usage Telemetry</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: One solution fed all three goals. Two solutions would have competed for the same engineering time.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 4: THE HARD PROBLEM                           -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					The hard problem
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					Self-service creates a new risk, and the risk is trust
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						The moment anyone can publish a metric, every metric stops being equal. A metric vetted by the BI team and a metric published by a partner team on a Friday afternoon would sit on the same page, in the same card, at the same size.
+					</p>
+					<p>
+						So the executive question changed. It moved from <strong>"where is the number?"</strong> to <strong>"how much can I trust this number?"</strong>
+					</p>
+					<p>
+						That became my core design problem. Make the <strong>trust level visible</strong> on every metric, at every level of the interface.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 05: Annotated Metric Card -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="max-w-2xl mx-auto">
+						<!-- Card Preview -->
+						<div class="border-2 border-black bg-[#faf8f2] p-6 shadow-[4px_4px_0_0_#000] relative">
+							<!-- Header with Badge & Owner Callouts -->
+							<div class="flex items-start justify-between pb-4 mb-4 border-b border-black/15">
+								<div>
+									<div class="flex items-center gap-2 mb-1">
+										<span class="font-departure text-[11px] text-black/60 uppercase">SECOPS-INCIDENT-01</span>
+										<!-- CALLOUT 1: TRUST BADGE -->
+										<span class="relative inline-flex items-center gap-1 bg-black text-white px-2 py-0.5 font-departure text-[10px] font-bold uppercase rounded-sm">
+											<span>●</span>
+											<span>VETTED</span>
+										</span>
+									</div>
+									<h3 class="font-serif text-2xl font-bold text-black m-0">Mean Time to Detect (MTTD)</h3>
+								</div>
+								<!-- CALLOUT 2: FRESHNESS -->
+								<div class="text-right font-departure text-[11px] text-black/60">
+									<span class="text-emerald-700 font-bold block">● FRESH</span>
+									<span>Synced 4h ago</span>
+								</div>
+							</div>
+
+							<!-- Metric Stat & Trend -->
+							<div class="grid grid-cols-2 gap-4 my-4">
+								<div>
+									<div class="font-departure text-xs text-black/50 uppercase">Current Window</div>
+									<div class="font-serif text-4xl font-bold text-black mt-1">4.9 Hours</div>
+									<div class="font-departure text-xs text-emerald-700 font-bold mt-1">↓ -18% vs Baseline</div>
+								</div>
+								<div class="border border-black/15 bg-white p-3 font-mono text-[11px] space-y-1">
+									<div class="flex justify-between text-black/60">
+										<span>Target:</span>
+										<strong class="text-black">&lt; 6.0h</strong>
+									</div>
+									<div class="flex justify-between text-black/60">
+										<span>Control Limits:</span>
+										<span class="text-black">3.1h – 6.1h</span>
+									</div>
+								</div>
+							</div>
+
+							<!-- Footer with Lineage & Owner Callouts -->
+							<div class="pt-4 border-t border-black/15 flex flex-wrap items-center justify-between gap-3 font-departure text-xs text-black/70">
+								<!-- CALLOUT 3: OWNER -->
+								<div>
+									<span class="text-black/40 uppercase">Owner: </span>
+									<strong class="text-black">SecOps Incident Response (J. Appleseed)</strong>
+								</div>
+								<!-- CALLOUT 4: LINEAGE LINK -->
+								<div class="text-black underline font-bold">
+									Lineage: 5 Verified Hops →
+								</div>
+							</div>
+						</div>
+
+						<!-- Annotated Explanatory Legend -->
+						<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-6 font-departure text-[11px]">
+							<div class="bg-neutral-100 p-2.5 border border-black/20">
+								<strong class="text-black block mb-0.5">① Trust Badge</strong>
+								<span class="text-black/60">Clear provenance before clicking</span>
+							</div>
+							<div class="bg-neutral-100 p-2.5 border border-black/20">
+								<strong class="text-black block mb-0.5">② Freshness Stamp</strong>
+								<span class="text-black/60">Prevents stale quarterly reads</span>
+							</div>
+							<div class="bg-neutral-100 p-2.5 border border-black/20">
+								<strong class="text-black block mb-0.5">③ Accountable Owner</strong>
+								<span class="text-black/60">Eliminates cold call chains</span>
+							</div>
+							<div class="bg-neutral-100 p-2.5 border border-black/20">
+								<strong class="text-black block mb-0.5">④ Lineage Link</strong>
+								<span class="text-black/60">Inspectable audit proof</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: The trust signals live on the card itself, before anyone clicks into detail.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 5: DESIGN PILLAR ONE                          -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Design pillar one
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					Badges and lineage, so every number carries its own provenance
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						I designed a <strong>badge system</strong> attached to every metric. My first version had three badges: <strong>Self serviced</strong>, <strong>BI vetted</strong>, and <strong>BI led</strong>.
+					</p>
+					<p>
+						That version failed in review. <strong>"BI vetted" and "BI led" read as the same thing.</strong> Executives could not tell them apart, and a badge that needs explaining is a badge that does not work. I cut it down. <strong>"BI vetted" became "Vetted". "BI led" was removed entirely.</strong> Two states, clearly different.
+					</p>
+					<p>
+						Alongside the badge, I surfaced <strong>data lineage</strong> for every metric. An executive can open any number and see where it came from, who owns it, and how fresh it is. That turns a discount decision into an <strong>informed decision</strong>.
+					</p>
+					<p>
+						The badge never relies on color alone. Each state carries a <strong>distinct label and shape</strong>, so it holds up for color-blind readers and in printed board decks.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 06: Badge System Spec -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="grid md:grid-cols-12 gap-8">
+						<!-- Shipped 2-State System -->
+						<div class="md:col-span-7 bg-[#faf8f2] border-2 border-black p-5">
+							<div class="font-departure text-xs uppercase text-emerald-800 font-bold mb-4 pb-2 border-b border-black/15 flex justify-between">
+								<span>SHIPPED BADGE SPECIFICATION</span>
+								<span class="text-black font-bold">2 DISTINCT STATES</span>
+							</div>
+
+							<div class="space-y-4 font-departure text-xs">
+								<div class="bg-white p-4 border border-black/20">
+									<div class="flex items-center gap-2 mb-2">
+										<span class="inline-block px-2.5 py-1 bg-black text-white font-bold rounded-sm">● VETTED</span>
+										<span class="text-black/60 font-sans text-xs">Solid square badge</span>
+									</div>
+									<p class="font-sans text-xs text-black/80 m-0">
+										<strong>Rule:</strong> Peer-reviewed by BI governance council. Full 5-stage automated lineage verified. Permitted in board summaries.
+									</p>
+								</div>
+
+								<div class="bg-white p-4 border border-black/20">
+									<div class="flex items-center gap-2 mb-2">
+										<span class="inline-block px-2.5 py-1 bg-white text-black border border-black font-bold rounded-full">○ SELF-SERVICED</span>
+										<span class="text-black/60 font-sans text-xs">Outlined pill badge</span>
+									</div>
+									<p class="font-sans text-xs text-black/80 m-0">
+										<strong>Rule:</strong> Published autonomously by owning team. Passed in-flow authoring gates. Visible with full context on service page.
+									</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Rejected 3-Badge Version -->
+						<div class="md:col-span-5 bg-neutral-100 border border-black/30 p-5 relative opacity-70">
+							<div class="font-departure text-xs uppercase text-red-700 font-bold mb-3 pb-2 border-b border-black/20">
+								REJECTED V1 (CROSSED OUT)
+							</div>
+							<div class="space-y-2.5 font-departure text-xs line-through text-black/60">
+								<div class="bg-white/80 p-2 border border-black/10">○ SELF-SERVICED</div>
+								<div class="bg-white/80 p-2 border border-black/10">● BI VETTED</div>
+								<div class="bg-white/80 p-2 border border-black/10">◆ BI LED</div>
+							</div>
+							<p class="font-sans text-xs text-red-800 mt-4 leading-normal font-medium">
+								"BI vetted" vs "BI led" created confusion in executive testing. If you have to explain the badge, it failed.
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: Two badges survived. The third one lost because nobody could explain the difference out loud.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 6: DESIGN PILLAR TWO                          -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Design pillar two
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					I moved quality gates into the authoring path
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						The original process reviewed quality <strong>after</strong> an onboarding request was submitted. That meant the BI team spent its time sending work back.
+					</p>
+					<p>
+						I put the <strong>quality gates inside the authoring flow</strong>. An author cannot advance until the metric has a clear definition, a stated formula, a named owner, a declared source, and a freshness expectation.
+					</p>
+					<p>
+						The result is that a <strong>badly formed metric never reaches the catalog</strong>. The gate does the rejecting, and the BI team stops being the bottleneck for basic hygiene.
+					</p>
+					<p>
+						The trade-off is real. Authoring takes more effort up front. I accepted that because the alternative was <strong>cleanup work spread across the whole team</strong>, forever.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 07: Flow Comparison + Real Screenshot -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="grid md:grid-cols-12 gap-8 items-center mb-6">
+						<!-- Flow comparison diagrams -->
+						<div class="md:col-span-6 space-y-3">
+							<div class="font-departure text-xs uppercase text-red-700 font-bold">OLD: POST-SUBMISSION REVIEW</div>
+							<div class="border border-red-300 bg-red-50 p-3 text-xs font-mono space-y-1">
+								<div>Author drafts loosely → Submits queue</div>
+								<div class="text-red-700 font-bold">↳ 6 Weeks Later: BI reviews & rejects</div>
+								<div class="text-black/60 italic">Result: Infinite back-and-forth email churn</div>
+							</div>
+
+							<div class="font-departure text-xs uppercase text-emerald-800 font-bold pt-3">NEW: IN-FLOW QUALITY GATES</div>
+							<div class="border border-emerald-400 bg-emerald-50/50 p-3 text-xs font-mono space-y-1">
+								<div>Gate 1: Definition &amp; Schema Validation</div>
+								<div>Gate 2: Lineage Source Declaration</div>
+								<div>Gate 3: Freshness SLA &amp; Owner Binding</div>
+								<div class="text-emerald-800 font-bold">↳ Direct Catalog Publication</div>
+							</div>
+						</div>
+
+						<!-- Real App Screenshot from Vanguard /contribute -->
+						<div class="md:col-span-6 border-2 border-black overflow-hidden shadow-[3px_3px_0_0_#000]">
+							<img
+								src="/images/case-study/vanguard/contribute-gates.png"
+								alt="Vanguard Authoring Flow and Quality Gates"
+								class="w-full h-auto object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: The gate sits where the work happens. Review after the fact was costing the BI team its week.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 7: DESIGN PILLAR THREE                        -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Design pillar three
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					AI-assisted anomaly detection, with the human review kept visible
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						The second big cost was what happened when a metric spiked. An executive saw a jump, called the owning team, got a verbal explanation, then repeated that explanation to other stakeholders. Every spike triggered a <strong>chain of escalation calls</strong>.
+					</p>
+					<p>
+						I designed an <strong>AI-assisted anomaly detection and analysis</strong> flow to absorb that work. The system detects the anomaly, drafts an explanation, and routes it to a <strong>human reviewer</strong> on the owning team. The reviewer edits or rejects it before it publishes.
+					</p>
+					<p>
+						The design rule I held to was <strong>transparency</strong>. The executive sees the draft, the reviewer, the edits, and the final note. The <strong>iterations stay visible</strong>. A conclusion that arrives without its working is a conclusion nobody can defend in a board meeting.
+					</p>
+					<p>
+						I also chose a <strong>standardized detail view built on statistical process control</strong>. That gives every metric the same read for what counts as normal variation.
+					</p>
+					<p>
+						The trade-off: <strong>a new metric has no history</strong>, so it cannot produce meaningful control limits yet. We accepted a <strong>warm-up period</strong> where the detail view says so plainly instead of showing limits it cannot support.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 08: Anomaly Flow + Real Metric Detail Screenshot -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="space-y-6">
+						<!-- Flow Pipeline Diagram -->
+						<div class="grid grid-cols-1 sm:grid-cols-4 gap-3 font-departure text-xs text-center">
+							<div class="bg-neutral-100 p-3 border border-black/20">
+								<span class="text-black/50 block text-[10px]">01 DETECT</span>
+								<strong>SPC Control Limit Spike</strong>
+							</div>
+							<div class="bg-neutral-100 p-3 border border-black/20">
+								<span class="text-black/50 block text-[10px]">02 SYNTHESIZE</span>
+								<strong>AI Drafts Root Cause</strong>
+							</div>
+							<div class="bg-emerald-100 p-3 border border-emerald-500 font-bold text-emerald-900">
+								<span class="text-emerald-700 block text-[10px]">03 REVIEW</span>
+								<strong>Human Reviewer Edits/Signs</strong>
+							</div>
+							<div class="bg-black text-white p-3 border border-black font-bold">
+								<span class="text-white/60 block text-[10px]">04 PUBLISH</span>
+								<strong>Visible Audit Trail</strong>
+							</div>
+						</div>
+
+						<!-- Screenshot of Metric Detail Page with SPC Chart and Lineage -->
+						<div class="border-2 border-black overflow-hidden shadow-[4px_4px_0_0_#000]">
+							<img
+								src="/images/case-study/vanguard/metric-detail-full.png"
+								alt="Vanguard SPC Chart and Lineage Detail View"
+								class="w-full h-auto object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: The human checkpoint is in the flow, and the edit trail is in the executive view.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 8: DESIGN SYSTEM                              -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Design system
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					I built an AI-ready design system so the whole team could move at the same speed
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						Design execution speed was its own problem. I solve that by building the system the work runs on.
+					</p>
+					<p>
+						I authored an <strong>AI-ready markdown specification of Apple's Human Interface Guidelines</strong>. Then I authored a second one for <strong>shadcn/ui</strong>, the framework the team was already using. Both files are written so an AI tool can read them and produce <strong>on-system output</strong> on the first pass.
+					</p>
+					<p>
+						On top of those two files, I built the <strong>design system</strong> for the platform.
+					</p>
+					<p>
+						It did three jobs at once. It let me <strong>ideate and iterate fast</strong>. It let <strong>non-designers on the team produce work that stayed on-system</strong>. And it gave developers an <strong>exact token taxonomy</strong> at handoff, so the spec and the build spoke the same language.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 09: Design System Overview + Real Screenshot -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="grid md:grid-cols-12 gap-8 items-center">
+						<div class="md:col-span-5 space-y-4 font-mono text-xs">
+							<div class="bg-[#1a1918] text-[#e2e8f0] p-4 border border-black shadow-inner">
+								<div class="text-emerald-400 font-bold text-[11px] mb-2 font-departure uppercase">
+									# apple-hig-spec.md
+								</div>
+								<p class="text-neutral-400 text-[10px] m-0">
+									Token taxonomy, typographic scales, and accessibility contrast rules formatted for LLM context windows.
+								</p>
+							</div>
+							<div class="bg-[#1a1918] text-[#e2e8f0] p-4 border border-black shadow-inner">
+								<div class="text-blue-400 font-bold text-[11px] mb-2 font-departure uppercase">
+									# shadcn-ui-spec.md
+								</div>
+								<p class="text-neutral-400 text-[10px] m-0">
+									Component primitives, Radix UI bindings, and TailwindCSS utility mapping.
+								</p>
+							</div>
+						</div>
+
+						<div class="md:col-span-7 border-2 border-black overflow-hidden shadow-[4px_4px_0_0_#000]">
+							<img
+								src="/images/case-study/vanguard/design-system.png"
+								alt="Vanguard Design System Showcase"
+								class="w-full h-auto object-cover"
+							/>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: Two markdown files, one token set. Designers, non-designers, and AI tools all draw from the same source.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 9: OUTCOMES                                   -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Outcomes
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					Coverage tripled, onboarding went from months to days
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						<strong>Metric coverage moved from under 30% to over 85%.</strong>
+					</p>
+					<p>
+						<strong>Average onboarding time dropped from two months to under one week.</strong>
+					</p>
+					<p>
+						<strong>Escalation calls during incidents dropped by roughly 75%.</strong> That figure comes from the teams themselves, reported in conversations after a <strong>one-month pilot with eight teams</strong>. It is team-reported, not instrumented, and I present it that way.
+					</p>
+					<p>
+						The change that mattered most is harder to put a number on. Executives stopped reacting to metrics with <strong>emojis</strong> and started asking about <strong>lineage and badge state</strong>.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 10: Outcome Panel -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-black border border-black bg-[#faf8f2]">
+						<!-- Stat 1 -->
+						<div class="p-6">
+							<div class="font-departure text-xs uppercase text-black/50 mb-1">METRIC COVERAGE</div>
+							<div class="font-serif text-4xl sm:text-5xl font-bold text-black mb-2">&gt; 85%</div>
+							<div class="font-departure text-xs text-emerald-800 font-bold">
+								Tripled from &lt; 30%
+							</div>
+							<p class="font-sans text-xs text-black/70 mt-3 leading-relaxed">
+								Autonomous onboarding eliminated central queue dependency across 30+ service areas.
+							</p>
+						</div>
+
+						<!-- Stat 2 -->
+						<div class="p-6">
+							<div class="font-departure text-xs uppercase text-black/50 mb-1">ONBOARDING VELOCITY</div>
+							<div class="font-serif text-4xl sm:text-5xl font-bold text-black mb-2">&lt; 1 Week</div>
+							<div class="font-departure text-xs text-emerald-800 font-bold">
+								Down from 2 Months
+							</div>
+							<p class="font-sans text-xs text-black/70 mt-3 leading-relaxed">
+								In-flow quality gates replaced multi-week back-and-forth formula negotiation.
+							</p>
+						</div>
+
+						<!-- Stat 3 -->
+						<div class="p-6">
+							<div class="font-departure text-xs uppercase text-black/50 mb-1">INCIDENT ESCALATIONS</div>
+							<div class="font-serif text-4xl sm:text-5xl font-bold text-black mb-2">~75% ↓*</div>
+							<div class="font-departure text-xs text-emerald-800 font-bold">
+								Fewer Ad-Hoc Calls
+							</div>
+							<p class="font-sans text-xs text-black/70 mt-3 leading-relaxed">
+								Visible lineage and signed AI anomaly notes gave executives immediate clarity.
+							</p>
+						</div>
+					</div>
+					<!-- Footnote -->
+					<div class="mt-4 font-departure text-[11px] text-black/60">
+						* Figure is team-reported from qualitative stakeholder interviews following a 1-month pilot with 8 security orgs.
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: Three numbers. One of them is self-reported, and the case study says so.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 10: WHAT I GOT WRONG                          -->
+			<!-- ===================================================== -->
+			<article class="mb-24 md:mb-32 border-b border-black/15 pb-20">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					What I got wrong
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					The first version hid self-service metrics, and that was the wrong call
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						My first design <strong>hid all self-service metrics from the executive view</strong>. The logic seemed sound at the time. Protect executives from unvetted data.
+					</p>
+					<p>
+						It failed. Hiding the metrics <strong>recreated the original problem</strong>. Executives were back to an incomplete picture, and the teams whose metrics were hidden had no reason to use the platform.
+					</p>
+					<p>
+						I reversed it. Every metric now appears with <strong>equal visual weight</strong>, and the badge carries the difference. Let people see everything, and tell them plainly how much each thing is worth.
+					</p>
+					<p>
+						<strong>One problem is still open.</strong> When the AI drafts are usually correct, the human review turns into a click. A <strong>high approval rate is not evidence that oversight happened</strong>. I do not have a clean answer for this yet. My current thinking is to measure <strong>review time and edit rate</strong> instead of approval rate, and to sample drafts for blind re-review. That work sits with the team now.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 11: Two-State Comparison -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="grid md:grid-cols-2 gap-8">
+						<!-- V1: Hidden (Failed) -->
+						<div class="border border-red-300 bg-red-50/40 p-5">
+							<div class="font-departure text-xs uppercase text-red-700 font-bold mb-2">
+								V1 REJECTED: HIDING UNVETTED METRICS
+							</div>
+							<div class="space-y-2 text-xs font-mono">
+								<div class="bg-white p-2.5 border border-red-200">● VETTED METRICS: VISIBLE</div>
+								<div class="bg-neutral-200/60 p-2.5 border border-dashed border-red-300 text-black/40">
+									[SELF-SERVICED METRICS: HIDDEN FROM EXECUTIVE VIEW]
+								</div>
+							</div>
+							<p class="font-sans text-xs text-red-800 mt-3 leading-relaxed">
+								<strong>Failure mode:</strong> Created blind spots. Executives assumed missing numbers meant safety, while teams abandoned the platform.
+							</p>
+						</div>
+
+						<!-- V2: Shipped (Equal Weight + Badge) -->
+						<div class="border-2 border-black bg-[#faf8f2] p-5 shadow-[3px_3px_0_0_#000]">
+							<div class="font-departure text-xs uppercase text-emerald-800 font-bold mb-2">
+								V2 SHIPPED: EQUAL VISUAL WEIGHT + BADGE
+							</div>
+							<div class="space-y-2 text-xs font-mono">
+								<div class="bg-white p-2.5 border border-black/20 flex justify-between">
+									<span>INCIDENT MTTD</span>
+									<span class="font-bold bg-black text-white px-1.5 py-0.5 text-[10px]">● VETTED</span>
+								</div>
+								<div class="bg-white p-2.5 border border-black/20 flex justify-between">
+									<span>POLICY BACKLOG</span>
+									<span class="font-bold border border-black px-1.5 py-0.5 text-[10px]">○ SELF-SERVICED</span>
+								</div>
+							</div>
+							<p class="font-sans text-xs text-black/80 mt-3 leading-relaxed">
+								<strong>Success:</strong> Complete visibility across the entire threat surface, with trust communicated explicitly on the card.
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: Hiding the weak metrics brought back the problem I was hired to solve.
+				</figcaption>
+			</article>
+
+			<!-- ===================================================== -->
+			<!-- SECTION 11: CLOSING                                   -->
+			<!-- ===================================================== -->
+			<article id="section-11" class="mb-20 pb-16">
+				<!-- Kicker -->
+				<span class="font-departure text-xs uppercase tracking-[0.2em] text-[#8c827a] block mb-3 font-semibold">
+					Closing
+				</span>
+
+				<!-- Heading -->
+				<h2 class="font-serif text-3xl sm:text-4xl md:text-5xl font-bold text-black mb-6 leading-tight">
+					What this project was really about
+				</h2>
+
+				<!-- Text -->
+				<div class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-5 max-w-3xl mb-10">
+					<p>
+						I did not design a dashboard. I designed the <strong>rules that let a whole organization publish its own metrics without losing the ability to trust them</strong>.
+					</p>
+					<p>
+						The three pieces that made it work are <strong>portable</strong>. Make trust a <strong>visible property</strong> of the data. Put quality checks in the <strong>authoring path</strong>, ahead of the review. Keep the <strong>human checkpoint visible</strong> when AI does part of the thinking.
+					</p>
+					<p>
+						Those three apply to any system where AI produces output and a person has to stand behind it.
+					</p>
+				</div>
+
+				<!-- ARTIFACT 12: Summary Card -->
+				<div class="border-2 border-black bg-white p-6 sm:p-8 shadow-[5px_5px_0_0_#000] mb-3">
+					<div class="font-departure text-xs uppercase text-black/50 font-bold mb-6 pb-2 border-b border-black/15">
+						THREE TRANSFERABLE PRINCIPLES & IMPLEMENTATIONS
+					</div>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-6 font-departure text-xs">
+						<!-- Principle 1 -->
+						<div class="border border-black p-5 bg-[#faf8f2]">
+							<span class="text-emerald-700 font-bold block mb-1">PRINCIPLE 01</span>
+							<strong class="font-serif text-lg font-bold text-black block mb-2 leading-tight">
+								Make trust a visible property
+							</strong>
+							<p class="font-sans text-xs text-black/70 mb-4 leading-relaxed">
+								Data without provenance gets discounted. Attach assurance tiers and lineage directly to the primary surface.
+							</p>
+							<div class="bg-white border border-black/15 p-2 text-[11px] text-black">
+								<strong>Feature:</strong> Trust Tier Badges &amp; 5-Hop Lineage
+							</div>
+						</div>
+
+						<!-- Principle 2 -->
+						<div class="border border-black p-5 bg-[#faf8f2]">
+							<span class="text-emerald-700 font-bold block mb-1">PRINCIPLE 02</span>
+							<strong class="font-serif text-lg font-bold text-black block mb-2 leading-tight">
+								Gates in the authoring path
+							</strong>
+							<p class="font-sans text-xs text-black/70 mb-4 leading-relaxed">
+								Post-submission review burdens central teams. Enforce validation at entry so bad data cannot enter the catalog.
+							</p>
+							<div class="bg-white border border-black/15 p-2 text-[11px] text-black">
+								<strong>Feature:</strong> In-Flow Form Validation Gates
+							</div>
+						</div>
+
+						<!-- Principle 3 -->
+						<div class="border border-black p-5 bg-[#faf8f2]">
+							<span class="text-emerald-700 font-bold block mb-1">PRINCIPLE 03</span>
+							<strong class="font-serif text-lg font-bold text-black block mb-2 leading-tight">
+								Human checkpoint kept visible
+							</strong>
+							<p class="font-sans text-xs text-black/70 mb-4 leading-relaxed">
+								AI drafts must not be opaque. Preserve the draft, the human editor's diff, and the signature in the executive read.
+							</p>
+							<div class="bg-white border border-black/15 p-2 text-[11px] text-black">
+								<strong>Feature:</strong> Anomaly Synthesis Audit Trail
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Caption -->
+				<figcaption class="font-departure text-xs text-black/60 uppercase tracking-wider block">
+					Caption: Three principles, pulled out of the project so they can travel to the next one.
+				</figcaption>
+			</article>
+
+			<!-- Bottom Case Study Navigation -->
+			<div class="pt-8 border-t-2 border-black flex flex-wrap items-center justify-between gap-4 font-departure text-xs">
+				<a href="/" class="text-black font-bold hover:underline no-underline">
+					← Return to Selected Works
+				</a>
+				<div class="flex items-center gap-4">
+					<span class="text-black/50">Next Case Study:</span>
+					<a href="/case-study/devhub" class="border border-black px-3 py-1.5 bg-black text-white hover:bg-neutral-800 transition-colors no-underline">
+						DevHub →
+					</a>
+				</div>
+			</div>
+		</main>
+
+		<!-- Footer -->
+		<Footer />
+	</div>
+</Layout>
