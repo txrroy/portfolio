@@ -73,7 +73,7 @@
    * Usage: <span class="eyebrow">Title</span>
    */
     .eyebrow {
-        @apply font-departure text-sm uppercase tracking-[0.2em] font-bold text-[var(--color-text-secondary)] block mb-2;
+        @apply font-departure text-sm tracking-[0.2em] font-bold text-[var(--color-text-secondary)] block mb-2;
     }
 
     /** 
@@ -95,7 +95,7 @@
     }
 
     h4 {
-        @apply font-departure font-bold text-lg text-[var(--color-text-primary)] mb-4 uppercase;
+        @apply font-departure font-bold text-lg text-[var(--color-text-primary)] mb-4;
     }
 
     /**
@@ -120,17 +120,22 @@
     /* Emphasis / Italic - Editorial Homemade Apple */
     em,
     i {
-        font-family: var(--font-homemade), "Homemade Apple", cursive;
+        /*font-family: var(--font-homemade), "Homemade Apple", cursive;*/
     }
 
     /* Blockquote */
     blockquote {
-        @apply border-l-4 border-[var(--color-accent)] pl-6 italic text-lg font-departure text-[var(--color-text-primary)] my-8;
+        @apply border-l-2 border-dashed border-black/40 pl-6 italic text-lg font-departure text-[var(--color-text-primary)] my-8;
     }
 
     /* Lists */
     ul {
         @apply list-disc list-outside ml-5 mb-6 text-[var(--color-text-secondary)] font-departure text-base md:text-lg leading-relaxed;
+    }
+
+    /* Ordered Lists */
+    ol {
+        @apply list-decimal list-outside ml-6 mb-6 text-[var(--color-text-secondary)] font-departure text-base md:text-lg leading-relaxed;
     }
 
     li {
@@ -140,9 +145,137 @@
     li::marker {
         @apply text-[var(--color-text-secondary)];
     }
+
+    /* Figures & Media Containers */
+    /* Figures & Media Containers */
+    figure {
+        @apply my-6 border border-dashed border-black/25 p-2 sm:p-3 bg-black/[0.02] block relative;
+    }
+
+    figure>div.media-frame,
+    figure>.media-frame {
+        @apply bg-neutral-100 border border-black/15 overflow-hidden relative;
+    }
+
+    figure img {
+        @apply w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 block;
+    }
+
+    figure:hover img {
+        transform: scale(1.01);
+    }
+
+    figcaption {
+        @apply font-departure text-xs text-black/60 tracking-wider block mt-2 text-left;
+    }
+
+    /* Tables & Tabular Data */
+    table {
+        @apply w-full text-left font-sans text-sm border-collapse border border-dashed border-black/25 bg-white my-8 shadow-none;
+    }
+
+    thead {
+        @apply bg-[#faf8f2] border-b border-dashed border-black/20 font-departure text-xs text-black/70;
+    }
+
+    th {
+        @apply p-4 font-bold;
+    }
+
+    td {
+        @apply p-4 border-t border-dashed border-black/15;
+    }
+
+    tr:hover td {
+        @apply bg-neutral-50/80;
+    }
+
+    /* Horizontal Rules */
+    hr {
+        @apply border-0 border-t-2 border-dashed border-black/20 my-12 md:my-16;
+    }
+
+    /* Inline Code & Technical Terms */
+    code {
+        @apply font-departure text-xs bg-neutral-100 px-1.5 py-0.5 border border-dashed border-black/25 rounded-xs text-black font-normal;
+    }
+
+    /* Keyboard / Shortcut Keys */
+    kbd {
+        @apply font-departure text-[11px] bg-white border border-black px-1.5 py-0.5 rounded-xs shadow-[1px_1px_0_0_#000] text-black font-semibold;
+    }
+
+    /* Highlight Marker */
+    mark {
+        @apply bg-amber-100 text-black px-1 py-0.5 font-normal;
+    }
+
+    /* Citations & Sources */
+    cite {
+        @apply font-departure text-xs text-black/60 not-italic block mt-2;
+    }
+
+    /* Datetime & Timestamps */
+    time {
+        @apply font-departure text-xs text-black/60;
+    }
+
+    /* Asides & Callout Panels */
+    aside {
+        @apply bg-white border border-black/20 p-5 sm:p-6 shadow-[3px_3px_0_0_#000] my-6 block;
+    }
+
+    aside.callout-warning {
+        @apply border-2 border-black bg-[#faf8f2];
+    }
 }
 
 @layer components {
+
+    /* Editorial Case Study Framework */
+    .kicker {
+        font-family: var(--font-homemade), "Homemade Apple", cursive;
+        @apply text-base sm:text-lg text-black/75 normal-case block mb-1;
+    }
+
+    .case-section {
+        @apply mb-20 md:mb-28 border-b-2 border-dashed border-black/20 pb-16;
+    }
+
+    .case-grid {
+        @apply grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start;
+    }
+
+    .case-sidebar {
+        @apply md:col-span-3 md:sticky md:top-20;
+    }
+
+    .case-sidebar h2 {
+        @apply m-0 text-xl sm:text-2xl font-bold leading-snug tracking-tight text-black font-departure normal-case;
+    }
+
+    .case-content {
+        @apply md:col-span-9 space-y-6;
+    }
+
+    .case-prose {
+        @apply font-sans text-lg text-black/85 leading-relaxed space-y-4;
+    }
+
+    .case-prose p {
+        @apply m-0 text-lg leading-relaxed text-black/85 font-sans max-w-none;
+    }
+
+    /* Unified Card with dashed border & shadow elevation */
+    .card,
+    .scorecard-card,
+    .dialogue-box {
+        @apply bg-white border border-dashed border-black/30 p-5 sm:p-6 shadow-[3px_3px_0_0_#000];
+    }
+
+    .media-badge {
+        @apply absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] px-2 py-0.5 pointer-events-none;
+    }
 
     /* Metrics Bar */
     .metric-item {
@@ -150,11 +283,11 @@
     }
 
     .metric-value {
-        @apply font-departure text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-2 uppercase;
+        @apply font-departure text-3xl md:text-4xl font-bold text-[var(--color-text-primary)] mb-2;
     }
 
     .metric-label {
-        @apply font-departure uppercase tracking-[0.15em] text-xs font-bold text-[var(--color-text-secondary)] mb-2;
+        @apply font-departure tracking-[0.15em] text-xs font-bold text-[var(--color-text-secondary)] mb-2;
     }
 
     .metric-desc {
@@ -183,7 +316,7 @@
     }
 
     .timeline-year {
-        @apply font-departure text-xs uppercase tracking-widest text-[var(--color-text-secondary)] mb-2 block;
+        @apply font-departure text-xs tracking-widest text-[var(--color-text-secondary)] mb-2 block;
     }
 
     /* Testimonials */
@@ -206,7 +339,7 @@
 
     /* Typography Utilities */
     .heading-display {
-        @apply font-departure text-5xl md:text-6xl font-bold leading-tight tracking-tight uppercase;
+        @apply font-departure text-5xl md:text-6xl font-bold leading-tight tracking-tight;
     }
 
     .font-space,
@@ -232,7 +365,7 @@
     }
 
     .heading-medium {
-        @apply font-departure text-2xl md:text-4xl font-bold leading-tight uppercase;
+        @apply font-departure text-2xl md:text-4xl font-bold leading-tight;
     }
 
     .lead-text {
@@ -240,11 +373,11 @@
     }
 
     .case-title {
-        @apply font-departure text-2xl md:text-3xl leading-tight font-bold tracking-tight text-[var(--color-text-primary)] uppercase;
+        @apply font-departure text-2xl md:text-3xl leading-tight font-bold tracking-tight text-[var(--color-text-primary)];
     }
 
     .eyebrow-sm {
-        @apply font-departure text-xs font-bold uppercase tracking-widest text-[var(--color-text-secondary)];
+        @apply font-departure text-xs font-bold tracking-widest text-[var(--color-text-secondary)];
     }
 
     .btn-link {

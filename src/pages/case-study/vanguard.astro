@@ -3,18 +3,16 @@ import Layout from "../../layouts/Layout.astro";
 import Footer from "../../components/Footer.astro";
 ---
 
-<Layout
-	title="Vanguard  — Self-Service Business Intelligence • Apple InfoSec Case Study"
->
+<Layout title="Vanguard 3.1: Self-Service Business Intelligence • Case Study">
 	<div
-		class="min-h-screen bg-[#faf8f2] text-[#1a1918] antialiased selection:bg-black selection:text-white"
+		class="min-h-screen bg-[#faf8f2] text-[#1a1918] antialiased selection:bg-black selection:text-white font-space"
 	>
 		<!-- Sticky Top Navigation Bar -->
 		<header
 			class="sticky top-0 z-40 bg-[#faf8f2]/95 backdrop-blur-md border-b border-black/15 py-3.5 px-6"
 		>
 			<div
-				class="max-w-6xl mx-auto flex items-center justify-between font-departure text-xs uppercase tracking-wider"
+				class="max-w-6xl mx-auto flex items-center justify-between font-departure text-xs tracking-wider"
 			>
 				<a
 					href="/"
@@ -26,7 +24,7 @@ import Footer from "../../components/Footer.astro";
 				<div class="hidden sm:flex items-center gap-3 text-black/60">
 					<span>Apple InfoSec</span>
 					<span>•</span>
-					<span class="text-black font-bold">Vanguard </span>
+					<span>Vanguard 3.1</span>
 					<span>•</span>
 					<span>Lead Product Designer</span>
 				</div>
@@ -36,172 +34,106 @@ import Footer from "../../components/Footer.astro";
 		<!-- Case Study Main Container -->
 		<main class="max-w-6xl mx-auto px-6 sm:px-8 pt-12 md:pt-16 pb-28">
 			<!-- ===================================================== -->
-			<!-- SECTION 1: HERO & TITLE (PAGE 1)                      -->
+			<!-- SECTION 1: HERO & TITLE                               -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<!-- Kicker -->
+			<article class="case-section">
+				<!-- Kicker & Tag -->
 				<div
 					class="flex flex-wrap items-center justify-between gap-3 mb-4"
 				>
-					<span
-						class="font-homemade text-base sm:text-lg text-black/75 normal-case block"
-					>
-						Making Security Work Measurable
-					</span>
-					<span
-						class="font-departure text-[11px] uppercase tracking-wider px-2 py-0.5 bg-black/5 text-black/70 border border-black/10"
-					>
-						Vanguard
-					</span>
+					<span class="m-0">Project Vanguard</span>
 				</div>
 
-				<!-- Main Titles -->
-				<h1
-					class="font-departure text-4xl sm:text-5xl md:text-6xl font-normal text-black mb-3 leading-tight tracking-tight"
-				>
-					Self-Service Business Intelligence
-				</h1>
+				<!-- Main Title -->
+				<h1>Making Security Work Measurable</h1>
 
-				<!-- Executive Summary / Lead Paragraph -->
-				<div
-					class="font-sans text-lg sm:text-xl text-black/85 leading-relaxed space-y-4 max-w-4xl mb-10"
-				>
+				<!-- Lead Paragraph -->
+				<div class="case-prose max-w-4xl mb-10">
 					<p>
 						The InfoSec organization at Apple struggled to answer
 						one question: <em>"How are we keeping Apple safe?"</em>.
 					</p>
 					<p>
-						I led the Business Intelligence (BI) team to build a <strong
-							>governed self-service intelligence platform</strong
-						> that provided a clear, consistent, and defendable answer
-						using <strong>AI for speed</strong> and <strong
-							>human validation for trust</strong
-						> — helping Apple leaders make informed decisions timely,
-						and with confidence.
+						I led design for the Business Intelligence (BI) team to
+						build a <strong
+							>governed self-service intelligence platform.</strong
+						> By creating workflows that simplify metric management, and
+						by pairing AI-generated insights with human validation, I
+						enabled Apple leaders plan security efforts, investments and
+						directions with confidence.
 					</p>
 				</div>
 
-				<!-- Full Width Hero Image: [ full width vg1_homepage.png ] -->
-				<div
-					class="border-2 border-black bg-white p-2.5 sm:p-4 shadow-[5px_5px_0_0_#000] mb-4 group relative"
-				>
-					<div
-						class="relative overflow-hidden bg-neutral-900 border border-black/15"
-					>
+				<!-- Hero Visual -->
+				<figure class="m-0 mb-4">
+					<div class="media-frame">
 						<img
 							src="/images-vanguard/vg1_homepage.png"
-							alt="Vanguard  Homepage Interface - Executive Security Health Overview"
-							class="w-full h-auto object-cover block cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+							alt="Vanguard Homepage Interface - Executive Security Health Overview"
 							loading="eager"
 						/>
-						<div
-							class="absolute bottom-3 right-3 bg-black/85 text-white font-departure text-[10px] tracking-wider uppercase px-2.5 py-1 backdrop-blur-sm border border-white/20 flex items-center gap-1.5 pointer-events-none"
-						>
-							<svg
-								class="w-3 h-3 text-white"
-								fill="none"
-								stroke="currentColor"
-								viewBox="0 0 24 24"
-								><path
-									stroke-linecap="round"
-									stroke-linejoin="round"
-									stroke-width="2"
-									d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"
-								></path></svg
-							>
-							<span>Click to expand</span>
-						</div>
+						<span class="media-badge">Executive Surface</span>
 					</div>
-				</div>
-				<figcaption
-					class="font-departure text-xs text-black/60 tracking-wider block mb-12"
-				>
-					Vanguard : Central executive dashboard displaying governed
-					security metrics with live trust tiers and anomaly alerts.
-				</figcaption>
+					<figcaption>
+						Vanguard: Central executive dashboard displaying
+						governed security metrics with live trust tiers and
+						anomaly alerts.
+					</figcaption>
+				</figure>
 
 				<!-- Metadata Matrix Box: Role and Timeline Panel -->
-				<div
-					class="grid grid-cols-1 md:grid-cols-3 gap-6 bg-white border border-black/15 p-6 shadow-[3px_3px_0_0_#000] font-departure text-xs"
-				>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
 					<div>
-						<span
-							class="text-black/50 block uppercase tracking-wider mb-1.5 font-semibold"
-							>Role & Timeline</span
-						>
+						<span class="kicker">role</span>
 						<strong class="font-bold text-black text-sm block mb-1"
 							>Lead Product Designer</strong
 						>
-						<span class="text-black/75 block leading-relaxed">
-							Strategy, interaction model, governance design.
-						</span>
+						<span class="text-black/75 block leading-relaxed"
+							>Strategy, interaction model, governance design.</span
+						>
 						<span class="text-black/50 block mt-1"
-							>2025 Q3 — 2026 Q2</span
+							><time>2025 Q3</time> - <time>2026 Q2</time></span
 						>
 					</div>
 					<div>
-						<span
-							class="text-black/50 block uppercase tracking-wider mb-1.5 font-semibold"
-							>Team</span
-						>
+						<span class="kicker">team</span>
 						<strong class="font-bold text-black text-sm block mb-1"
-							>Core & Partner Teams</strong
+							>Core &amp; Partner Teams</strong
 						>
-						<span class="text-black/75 block leading-relaxed">
-							1 Designer (me), 4 Developers, 2 Data engineers, 1
-							PM, 1 SME, partner security orgs.
-						</span>
+						<span class="text-black/75 block leading-relaxed"
+							>1 Designer (me), 4 Developers, 2 Data engineers, 1
+							PM, 1 SME, partner security orgs.</span
+						>
 					</div>
 					<div>
-						<span
-							class="text-black/50 block uppercase tracking-wider mb-1.5 font-semibold"
-							>Outcome</span
-						>
+						<span class="kicker">outcome</span>
 						<div
 							class="text-emerald-700 font-bold text-sm block mb-1"
 						>
 							BI Coverage: 30% → 75%
 						</div>
-						<span class="text-black/75 block leading-relaxed">
-							Escalation calls during incidents cut by more than
-							half. Onboarding dropped from 2 months → 5 days.
-						</span>
+						<span class="text-black/75 block leading-relaxed"
+							>Escalation calls during incidents cut by more than
+							half. Onboarding dropped from 2 months → 5 days.</span
+						>
 					</div>
 				</div>
 			</article>
 
 			<!-- ===================================================== -->
-			<!-- TWO-COLUMN LAYOUT BEGINS HERE (AFTER PANEL)           -->
-			<!-- Left Column: 25% (Kicker in handwritten + Title)      -->
-			<!-- Right Column: 75% (Body text and images)              -->
-			<!-- ===================================================== -->
-
-			<!-- ===================================================== -->
 			<!-- SECTION 2: CONTEXT                                    -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							Context & Charter
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
-							Vanguard Business Intelligence (BI)
-						</h2>
+			<article class="case-section">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">context</span>
+						<h2>Vanguard Business Intelligence (BI)</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+					<!-- Right 75% Column -->
+					<div class="case-content">
+						<div class="case-prose">
 							<p>
 								The BI team's charter was to publish performance
 								metrics for senior leadership and partner teams
@@ -210,72 +142,51 @@ import Footer from "../../components/Footer.astro";
 							</p>
 							<p>
 								They closely worked with each partner team to
-								hand-build metrics — defining the measure,
+								hand-build metrics - defining the measure,
 								negotiating the formula, working with multiple
 								data engineering teams, publishing, and handling
 								ongoing maintenance.
 							</p>
-							<p class="font-medium text-black">
-								Metrics published in Vanguard were the single
-								source of trusted truth for Apple leadership.
+							<p>
+								<strong
+									>Metrics published in Vanguard were the
+									single source of trusted truth for Apple
+									leadership.</strong
+								>
 							</p>
 						</div>
 
-						<!-- Images: [vg2_mttd_metric.png] [vg2_programs.png] -->
+						<!-- Images: Side by Side -->
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg2_mttd_metric.png"
 										alt="Mean Time to Detect (MTTD) Metric View"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										MTTD Detail
-									</div>
+									<span class="media-badge">MTTD Detail</span>
 								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Single Metric Detail View (MTTD)</span
-									>
-								</div>
-							</div>
+								<figcaption>
+									Single Metric Detail View (MTTD)
+								</figcaption>
+							</figure>
 
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg2_programs.png"
 										alt="Vanguard Security Programs Inventory"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Programs Catalog
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Vanguard Security Programs Catalog</span
+									<span class="media-badge"
+										>Programs Catalog</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									Vanguard Security Programs Catalog
+								</figcaption>
+							</figure>
 						</div>
-						<figcaption
-							class="font-departure text-xs text-black/60 tracking-wider block"
-						>
+						<figcaption class="text-left mt-2">
 							Early Vanguard metrics and program structures were
 							manually maintained by a central BI squad.
 						</figcaption>
@@ -286,30 +197,20 @@ import Footer from "../../components/Footer.astro";
 			<!-- ===================================================== -->
 			<!-- SECTION 3: THE PROBLEM                                -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							The Problem
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
+			<article class="case-section">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">problem</span>
+						<h2>
 							Executives had no defensible way to answer ‘How are
 							we keeping Apple safe?’
 						</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+					<!-- Right 75% Column -->
+					<div class="case-content">
+						<div class="case-prose">
 							<p>
 								The small BI team could only cover <strong
 									>~30% of the security teams</strong
@@ -320,17 +221,15 @@ import Footer from "../../components/Footer.astro";
 							</p>
 						</div>
 
-						<!-- Design Goals Box -->
-						<div
-							class="bg-white border border-black/20 p-5 sm:p-6 shadow-[3px_3px_0_0_#000]"
-						>
+						<!-- Design Goals Aside -->
+						<aside>
 							<span
-								class="font-departure text-xs font-bold uppercase tracking-wider text-black block mb-3"
+								class="font-departure text-xs font-bold tracking-wider text-black block mb-3"
 							>
 								My Design Goals:
 							</span>
 							<ul
-								class="space-y-3 font-sans text-base text-black/85 list-none pl-0"
+								class="space-y-3 font-sans text-base text-black/85 list-none pl-0 m-0"
 							>
 								<li class="flex items-start gap-3">
 									<span
@@ -338,7 +237,7 @@ import Footer from "../../components/Footer.astro";
 										>01.</span
 									>
 									<span
-										><strong>Increase BI coverage</strong> — through
+										><strong>Increase BI coverage</strong> - through
 										simplified or faster onboarding.</span
 									>
 								</li>
@@ -351,7 +250,7 @@ import Footer from "../../components/Footer.astro";
 										><strong
 											>Design and implement a holistic
 											view for leadership</strong
-										> — using a top-down results map.</span
+										> - using a top-down results map.</span
 									>
 								</li>
 								<li class="flex items-start gap-3">
@@ -362,99 +261,69 @@ import Footer from "../../components/Footer.astro";
 									<span
 										><strong
 											>Improve the platform interface</strong
-										> — to better the dashboards of non-BI teams.</span
+										> - to better the dashboards of non-BI teams.</span
 									>
 								</li>
 							</ul>
-						</div>
+						</aside>
 
-						<!-- Images: [vg3_results_map.png] [vg3_impact_metrics.png] [vg3_incident_management.png] -->
+						<!-- Images: Results Map & Incident Management -->
 						<div
 							class="grid grid-cols-1 sm:grid-cols-12 gap-5 pt-2"
 						>
-							<!-- Results Map (Left, Larger) -->
-							<div
-								class="sm:col-span-7 border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
+							<div class="sm:col-span-7">
+								<figure
+									class="m-0 h-full flex flex-col justify-between"
 								>
-									<img
-										src="/images-vanguard/vg3_results_map.png"
-										alt="Top-down Results Map for Leadership"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
-									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Top-Down Results Map
+									<div class="media-frame">
+										<img
+											src="/images-vanguard/vg3_results_map.png"
+											alt="Top-down Results Map for Leadership"
+										/>
+										<span class="media-badge"
+											>Top-Down Results Map</span
+										>
 									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Holistic leadership view: mapping
-										strategic goals to measures</span
-									>
-								</div>
+									<figcaption>
+										Holistic leadership view: mapping
+										strategic goals to measures
+									</figcaption>
+								</figure>
 							</div>
 
-							<!-- Impact Metrics & Incident Management (Right, Stacked) -->
 							<div class="sm:col-span-5 flex flex-col gap-5">
-								<div
-									class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex-1"
-								>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-									>
+								<figure class="m-0 flex-1">
+									<div class="media-frame">
 										<img
 											src="/images-vanguard/vg3_impact_metrics.png"
 											alt="Impact Metrics Breakdown"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 										/>
-										<div
-											class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-										>
-											Impact Metrics
-										</div>
-									</div>
-									<div class="mt-2 text-center">
-										<span
-											class="font-departure text-[11px] text-black/60"
-											>High-level security impact metrics</span
+										<span class="media-badge"
+											>Impact Metrics</span
 										>
 									</div>
-								</div>
+									<figcaption>
+										High-level security impact metrics
+									</figcaption>
+								</figure>
 
-								<div
-									class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex-1"
-								>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-									>
+								<figure class="m-0 flex-1">
+									<div class="media-frame">
 										<img
 											src="/images-vanguard/vg3_incident_management.png"
 											alt="Incident Management Dashboard"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 										/>
-										<div
-											class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-										>
-											Incident Management
-										</div>
-									</div>
-									<div class="mt-2 text-center">
-										<span
-											class="font-departure text-[11px] text-black/60"
-											>Non-BI team dashboard integration</span
+										<span class="media-badge"
+											>Incident Management</span
 										>
 									</div>
-								</div>
+									<figcaption>
+										Non-BI team dashboard integration
+									</figcaption>
+								</figure>
 							</div>
 						</div>
-						<figcaption
-							class="font-departure text-xs text-black/60 tracking-wider block"
-						>
+						<figcaption class="text-left mt-2">
 							Connecting top-level strategic security objectives
 							to team-level operational metrics.
 						</figcaption>
@@ -465,29 +334,17 @@ import Footer from "../../components/Footer.astro";
 			<!-- ===================================================== -->
 			<!-- SECTION 4: RESEARCH                                   -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							Field Research
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
-							Metrics went stale, and anomalies unexplained
-						</h2>
+			<article class="case-section">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">research</span>
+						<h2>Metrics went stale, and anomalies unexplained</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+					<!-- Right 75% Column -->
+					<div class="case-content">
+						<div class="case-prose">
 							<p>
 								I started with a <strong>design sprint</strong> with
 								the BI team to align on goals and map how a metric
@@ -499,7 +356,7 @@ import Footer from "../../components/Footer.astro";
 									>average 2 months</strong
 								>) primarily due to iteration between the two
 								teams. Also, different teams had a variety of
-								dashboards — using varied metrics across the
+								dashboards - using varied metrics across the
 								board.
 							</p>
 							<p>
@@ -510,16 +367,12 @@ import Footer from "../../components/Footer.astro";
 
 						<!-- Two Core Challenges Cards -->
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-							<div
-								class="bg-white border-2 border-black p-5 sm:p-6 shadow-[3px_3px_0_0_#000]"
-							>
-								<div class="flex items-center gap-2 mb-3">
-									<h3
-										class="font-departure text-sm font-bold text-black m-0"
-									>
-										1. Published metrics went stale soon
-									</h3>
-								</div>
+							<aside class="m-0">
+								<h3
+									class="font-departure text-sm font-bold text-black m-0 mb-2"
+								>
+									1. Published metrics went stale soon
+								</h3>
 								<p
 									class="font-sans text-sm text-black/75 leading-relaxed m-0"
 								>
@@ -528,19 +381,15 @@ import Footer from "../../components/Footer.astro";
 									maintain their metrics, and back-and-forth
 									caused more friction than help.
 								</p>
-							</div>
+							</aside>
 
-							<div
-								class="bg-white border-2 border-black p-5 sm:p-6 shadow-[3px_3px_0_0_#000]"
-							>
-								<div class="flex items-center gap-2 mb-3">
-									<h3
-										class="font-departure text-sm font-bold text-black m-0"
-									>
-										2. Anomalies were displayed, but not
-										explained
-									</h3>
-								</div>
+							<aside class="m-0">
+								<h3
+									class="font-departure text-sm font-bold text-black m-0 mb-2"
+								>
+									2. Anomalies were displayed, but not
+									explained
+								</h3>
 								<p
 									class="font-sans text-sm text-black/75 leading-relaxed m-0"
 								>
@@ -549,66 +398,44 @@ import Footer from "../../components/Footer.astro";
 									leadership wanted to understand the full
 									picture.
 								</p>
-							</div>
+							</aside>
 						</div>
 
-						<!-- Images: [vg5.png] [vg6.png] -->
+						<!-- Images: Research Discovery & Latency -->
 						<div class="space-y-5 pt-2">
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg5.png"
 										alt="Research Findings: Onboarding Friction and Maintenance Choke Points"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Research Discovery Map
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Mapping the metric authoring lifecycle
-										and identifying failure points</span
+									<span class="media-badge"
+										>Research Discovery Map</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									Mapping the metric authoring lifecycle and
+									identifying failure points
+								</figcaption>
+							</figure>
 
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg6.png"
 										alt="Metric Workflow and Back-and-Forth Handoff Friction"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Process Latency Analysis
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>The 2-month handoff bottleneck between
-										partner teams and central BI</span
+									<span class="media-badge"
+										>Process Latency Analysis</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									The 2-month handoff bottleneck between
+									partner teams and central BI
+								</figcaption>
+							</figure>
 						</div>
-						<figcaption
-							class="font-departure text-xs text-black/60 tracking-wider block"
-						>
+						<figcaption class="text-left mt-2">
 							Visualizing the iterative bottlenecks that made
 							central metrics lag operational realities.
 						</figcaption>
@@ -619,41 +446,27 @@ import Footer from "../../components/Footer.astro";
 			<!-- ===================================================== -->
 			<!-- SECTION 5: STRATEGY & REFRAMING                       -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							Core Strategy
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
-							The team had two plans. I argued for one.
-						</h2>
+			<article class="case-section">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">strategy</span>
+						<h2>The team had two plans. I argued for one.</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
+					<!-- Right 75% Column -->
+					<div class="case-content">
 						<!-- Design Sprint Dialogue Box -->
-						<div
-							class="bg-white border-2 border-black p-6 sm:p-8 shadow-[4px_4px_0_0_#000] font-sans"
-						>
+						<div class="card">
 							<div
-								class="font-departure text-xs uppercase tracking-wider text-black/50 pb-3 mb-4 border-b border-black/15 font-semibold"
+								class="font-departure text-xs tracking-wider text-black/50 pb-3 mb-4 border-b border-black/15 font-semibold"
 							>
-								Design Sprint Debate Transcript
+								Main points from the Design Sprint Debate
 							</div>
 							<div class="space-y-4 text-base">
-								<div
-									class="p-3 bg-[#faf8f2] border-l-4 border-black/40"
-								>
+								<div class="p-3 border-l-2">
 									<strong
-										class="font-departure text-xs uppercase block text-black/60 mb-1"
+										class="font-departure text-xs block text-black/60 mb-1"
 										>Director</strong
 									>
 									<p class="m-0 text-black/90">
@@ -662,11 +475,9 @@ import Footer from "../../components/Footer.astro";
 										looking for autonomy and control."
 									</p>
 								</div>
-								<div
-									class="p-3 bg-emerald-50 border-l-4 border-emerald-600"
-								>
+								<div class="p-3 border-l-2">
 									<strong
-										class="font-departure text-xs uppercase block text-emerald-800 mb-1"
+										class="font-departure text-xs block text-emerald-800 mb-1"
 										>Me, Director, Dev Lead</strong
 									>
 									<p class="m-0 text-black/90 font-medium">
@@ -674,14 +485,12 @@ import Footer from "../../components/Footer.astro";
 										platform!"
 									</p>
 								</div>
-								<div
-									class="p-3 bg-amber-50 border-l-4 border-amber-600"
-								>
+								<div class="p-3 border-l-2">
 									<strong
-										class="font-departure text-xs uppercase block text-amber-800 mb-1"
+										class="font-departure text-xs block text-amber-800 mb-1"
 										>Product Manager</strong
 									>
-									<p class="m-0 text-black/90 italic">
+									<p class="m-0 text-black/90">
 										"That will dilute the trust factor we
 										gained over years."
 									</p>
@@ -690,12 +499,12 @@ import Footer from "../../components/Footer.astro";
 
 							<div class="mt-6 pt-5 border-t border-black/15">
 								<span
-									class="font-departure text-xs uppercase tracking-wider text-red-700 font-bold block mb-1"
+									class="font-departure text-xs tracking-wider text-red-700 font-bold block mb-1"
 								>
 									The Fundamental Question:
 								</span>
 								<p
-									class="font-serif text-lg italic text-black/90 m-0"
+									class="italic text-lg italic text-black/90 m-0"
 								>
 									"If anyone can publish, why would an
 									executive believe anything?"
@@ -703,23 +512,22 @@ import Footer from "../../components/Footer.astro";
 							</div>
 						</div>
 
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+						<div class="c">
 							<p>
 								We also collectively agreed to bring in <strong
 									>AI-powered anomaly detection and analysis</strong
 								>.
 							</p>
 							<div
-								class="border-l-4 border-black pl-5 py-3 bg-white border border-black/10 p-4"
+								class="border-l-2 border-dashed border-black/40 pl-5 py-3 bg-white border border-black/10 p-4"
 							>
 								<span
-									class="font-departure text-xs uppercase tracking-wider text-black/60 block mb-1 font-semibold"
-									>Reframed Design Challenge:</span
+									class="font-departure text-xs tracking-wider text-black/60 block mb-1 font-semibold"
 								>
+									Reframed Design Challenge:
+								</span>
 								<p
-									class="font-serif text-xl sm:text-2xl text-black font-semibold m-0"
+									class="text-xl sm:text-2xl text-black font-semibold m-0"
 								>
 									"How might we make governance and trust
 									signals visible in a scalable business
@@ -728,63 +536,41 @@ import Footer from "../../components/Footer.astro";
 							</div>
 						</div>
 
-						<!-- Images: [vg61.png][vg62.png] -->
+						<!-- Images: Strategic Architecture & Trust Signals -->
 						<div class="space-y-5 pt-2">
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg61.png"
 										alt="Strategic Architecture: Governance and Trust Model"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Strategic Architecture
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Architectural framework for
-										self-service with embedded governance</span
+									<span class="media-badge"
+										>Strategic Architecture</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									Architectural framework for self-service
+									with embedded governance
+								</figcaption>
+							</figure>
 
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg62.png"
 										alt="Governing Trust Signals in a Scalable BI Platform"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Trust Signal Mapping
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Detailed interaction model mapping
-										trust tiers directly into user workflows</span
+									<span class="media-badge"
+										>Trust Signal Mapping</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									Detailed interaction model mapping trust
+									tiers directly into user workflows
+								</figcaption>
+							</figure>
 						</div>
-						<figcaption
-							class="font-departure text-xs text-black/60 tracking-wider block"
-						>
+						<figcaption class="text-left mt-2">
 							Strategy: Moving from gatekeeper reviews to visible,
 							embedded provenance signals.
 						</figcaption>
@@ -795,29 +581,17 @@ import Footer from "../../components/Footer.astro";
 			<!-- ===================================================== -->
 			<!-- SECTION 6: DESIGN 1/4 - QUALITY GATES                 -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							Design
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
-							1. Quality gates built into the onboarding flow
-						</h2>
+			<article class="case-section">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">design</span>
+						<h2>1. Quality gates built into the onboarding flow</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+					<!-- Right 75% Column -->
+					<div class="case-content">
+						<div class="case-prose">
 							<p>
 								Rather than reviewing quality after submission,
 								I baked checks directly into the authoring path.
@@ -826,10 +600,9 @@ import Footer from "../../components/Footer.astro";
 							</p>
 						</div>
 
+						<!-- 3 Checks Cards -->
 						<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-							<div
-								class="bg-white border border-black/20 p-4 shadow-[2px_2px_0_0_#000]"
-							>
+							<aside class="m-0 p-4">
 								<span
 									class="font-departure text-xs text-black/50 block mb-1"
 									>CHECK 01</span
@@ -844,10 +617,8 @@ import Footer from "../../components/Footer.astro";
 									Is there an explicit, unambiguous formula
 									for this measure?
 								</p>
-							</div>
-							<div
-								class="bg-white border border-black/20 p-4 shadow-[2px_2px_0_0_#000]"
-							>
+							</aside>
+							<aside class="m-0 p-4">
 								<span
 									class="font-departure text-xs text-black/50 block mb-1"
 									>CHECK 02</span
@@ -861,10 +632,8 @@ import Footer from "../../components/Footer.astro";
 								>
 									Are all contributing data sources declared?
 								</p>
-							</div>
-							<div
-								class="bg-white border border-black/20 p-4 shadow-[2px_2px_0_0_#000]"
-							>
+							</aside>
+							<aside class="m-0 p-4">
 								<span
 									class="font-departure text-xs text-black/50 block mb-1"
 									>CHECK 03</span
@@ -879,17 +648,14 @@ import Footer from "../../components/Footer.astro";
 									What does "good" look like, and against what
 									baseline?
 								</p>
-							</div>
+							</aside>
 						</div>
 
 						<!-- Six Onboarding Steps: Side-by-Side Grid -->
 						<div
 							class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2"
 						>
-							<!-- Step 1 -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
+							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
 										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
@@ -898,191 +664,160 @@ import Footer from "../../components/Footer.astro";
 											>01. Measure</span
 										>
 										<span class="text-black/50"
-											>Metadata</span
+											>Formulas</span
 										>
 									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
+									<div class="media-frame mb-2">
 										<img
 											src="/images-vanguard/vg_contribute_1.png"
-											alt="Self-service Authoring Step 1: Define Measure & Metadata"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+											alt="Step 1: Formula definition and verification"
 										/>
 									</div>
 								</div>
 								<p
 									class="font-sans text-xs text-black/75 m-0 leading-normal"
 								>
-									Step 1: Define measure name, purpose, and
-									ownership metadata.
+									Partner teams define measures with clear
+									formulas and data sources.
 								</p>
-							</div>
+							</figure>
 
-							<!-- Step 2 -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
+							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
 										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
 									>
 										<span class="font-bold text-black"
-											>02. Formula</span
+											>02. Thresholds</span
 										>
-										<span class="text-black/50">Logic</span>
+										<span class="text-black/50"
+											>Baselining</span
+										>
 									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
+									<div class="media-frame mb-2">
 										<img
 											src="/images-vanguard/vg_contribute_2.png"
-											alt="Self-service Authoring Step 2: Formula & Business Logic Builder"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+											alt="Step 2: Baseline targets and anomaly limits"
 										/>
 									</div>
 								</div>
 								<p
 									class="font-sans text-xs text-black/75 m-0 leading-normal"
 								>
-									Step 2: Explicit, unambiguous calculation
-									formula and rules.
+									Baseline calibration sets statistical
+									control limits and alert bands.
 								</p>
-							</div>
+							</figure>
 
-							<!-- Step 3 -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
+							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
 										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
 									>
 										<span class="font-bold text-black"
-											>03. Sources</span
+											>03. Ownership</span
+										>
+										<span class="text-black/50"
+											>DRI Assignment</span
+										>
+									</div>
+									<div class="media-frame mb-2">
+										<img
+											src="/images-vanguard/vg_contribute_3.png"
+											alt="Step 3: Direct Responsible Individual (DRI) assignment"
+										/>
+									</div>
+								</div>
+								<p
+									class="font-sans text-xs text-black/75 m-0 leading-normal"
+								>
+									Every metric requires a named DRI
+									responsible for investigations.
+								</p>
+							</figure>
+
+							<figure class="m-0 flex flex-col justify-between">
+								<div>
+									<div
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+									>
+										<span class="font-bold text-black"
+											>04. Automation</span
+										>
+										<span class="text-black/50"
+											>Pipelines</span
+										>
+									</div>
+									<div class="media-frame mb-2">
+										<img
+											src="/images-vanguard/vg_contribute_4.png"
+											alt="Step 4: Continuous data pipeline validation"
+										/>
+									</div>
+								</div>
+								<p
+									class="font-sans text-xs text-black/75 m-0 leading-normal"
+								>
+									Continuous queries poll endpoints to ensure
+									zero data drift.
+								</p>
+							</figure>
+
+							<figure class="m-0 flex flex-col justify-between">
+								<div>
+									<div
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+									>
+										<span class="font-bold text-black"
+											>05. Audit Trail</span
 										>
 										<span class="text-black/50"
 											>Lineage</span
 										>
 									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
-										<img
-											src="/images-vanguard/vg_contribute_3.png"
-											alt="Self-service Authoring Step 3: Contributing Data Sources & Lineage"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Step 3: Connect and declare contributing
-									telemetry data sources.
-								</p>
-							</div>
-
-							<!-- Step 4 -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-black"
-											>04. Baseline</span
-										>
-										<span class="text-black/50"
-											>Targets</span
-										>
-									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
-										<img
-											src="/images-vanguard/vg_contribute_4.png"
-											alt="Self-service Authoring Step 4: Establish Baselines & Control Limits"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Step 4: Establish statistical baselines and
-									define "good".
-								</p>
-							</div>
-
-							<!-- Step 5 -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-black"
-											>05. Governance</span
-										>
-										<span class="text-black/50"
-											>DRI & Tier</span
-										>
-									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
+									<div class="media-frame mb-2">
 										<img
 											src="/images-vanguard/vg_contribute_5.png"
-											alt="Self-service Authoring Step 5: Governance, DRI & Tier Selection"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+											alt="Step 5: Change history and version logging"
 										/>
 									</div>
 								</div>
 								<p
 									class="font-sans text-xs text-black/75 m-0 leading-normal"
 								>
-									Step 5: Assign DRI, governance path, and
-									review workflow.
+									Formula revisions and pipeline edits are
+									immutably versioned.
 								</p>
-							</div>
+							</figure>
 
-							<!-- Step 6 -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
+							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
 										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
 									>
-										<span class="font-bold text-emerald-700"
-											>06. Publish</span
+										<span class="font-bold text-black"
+											>06. Certification</span
 										>
-										<span class="text-black/50">Live</span>
+										<span class="text-black/50"
+											>Publication</span
+										>
 									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
+									<div class="media-frame mb-2">
 										<img
 											src="/images-vanguard/vg_contribute_6.png"
-											alt="Self-service Authoring Step 6: Live Publish & Validation"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+											alt="Step 6: Metric sign-off and publication"
 										/>
 									</div>
 								</div>
 								<p
 									class="font-sans text-xs text-black/75 m-0 leading-normal"
 								>
-									Step 6: Live publication to Vanguard with
-									active trust tier.
+									Automated verification qualifies the metric
+									for live executive surfaces.
 								</p>
-							</div>
+							</figure>
 						</div>
-						<figcaption
-							class="font-departure text-xs text-black/60 tracking-wider block"
-						>
+						<figcaption class="text-left mt-2">
 							Caption: Steps 1 through 6 of the governed
 							onboarding flow. Checks happen automatically as
 							authors configure each metric.
@@ -1094,34 +829,22 @@ import Footer from "../../components/Footer.astro";
 			<!-- ===================================================== -->
 			<!-- SECTION 7: DESIGN 2/4 - TRUST TIERS & LINEAGE         -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							Design
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
-							2. Always-attached trust tiers and data lineage
-						</h2>
+			<article class="case-section">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">design</span>
+						<h2>2. Always-attached trust tiers and data lineage</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+					<!-- Right 75% Column -->
+					<div class="case-content">
+						<div class="case-prose">
 							<p>
 								We started with Gold / Silver / Bronze states,
 								but initial tests revealed <strong
 									>attitudinal biases</strong
-								> — lower tiers felt like something to hide, as opposed
+								> - lower tiers felt like something to hide, as opposed
 								to a step to climb.
 							</p>
 							<p>
@@ -1133,170 +856,84 @@ import Footer from "../../components/Footer.astro";
 						</div>
 
 						<!-- Provenance Trust Tiers Matrix Table -->
-						<div
-							class="border-2 border-black bg-white overflow-hidden shadow-[4px_4px_0_0_#000]"
-						>
-							<div
-								class="bg-neutral-100 border-b border-black px-4 py-2.5 flex items-center justify-between font-departure text-xs uppercase font-bold"
-							>
-								<span>Provenance Trust Architecture</span>
-								<span class="text-black/50 text-[10px]"
-									>Replaced Gold/Silver/Bronze</span
-								>
-							</div>
-							<div class="overflow-x-auto">
-								<table
-									class="w-full text-left font-sans text-sm border-collapse"
-								>
-									<thead>
-										<tr
-											class="border-b border-black/20 bg-[#faf8f2] font-departure text-xs uppercase text-black/70"
-										>
-											<th class="p-4 w-1/3">Tier</th>
-											<th class="p-4"
-												>Meaning & Governance Level</th
-											>
-										</tr>
-									</thead>
-									<tbody class="divide-y divide-black/10">
-										<tr
-											class="hover:bg-neutral-50 transition-colors"
-										>
-											<td class="p-4">
-												<span
-													class="inline-flex items-center gap-2 px-3 py-1 bg-blue-50 border border-blue-300 text-blue-900 font-departure text-xs font-bold uppercase rounded-xs"
-												>
-													<span
-														class="w-2 h-2 rounded-full bg-blue-600"
-													></span>
-													BI Led
-												</span>
-											</td>
-											<td class="p-4 text-black/85">
-												<strong
-													>Defined and built by the
-													central BI team.</strong
-												> Full multi-source verification and
-												enterprise SLA guarantee.
-											</td>
-										</tr>
-										<tr
-											class="hover:bg-neutral-50 transition-colors"
-										>
-											<td class="p-4">
-												<span
-													class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-50 border border-emerald-300 text-emerald-900 font-departure text-xs font-bold uppercase rounded-xs"
-												>
-													<span
-														class="w-2 h-2 rounded-full bg-emerald-600"
-													></span>
-													BI Approved
-												</span>
-											</td>
-											<td class="p-4 text-black/85">
-												<strong
-													>Built by the owning team,
-													reviewed and signed off by
-													BI.</strong
-												> Governed telemetry adhering to platform
-												standards.
-											</td>
-										</tr>
-										<tr
-											class="hover:bg-neutral-50 transition-colors"
-										>
-											<td class="p-4">
-												<span
-													class="inline-flex items-center gap-2 px-3 py-1 bg-amber-50 border border-amber-300 text-amber-900 font-departure text-xs font-bold uppercase rounded-xs"
-												>
-													<span
-														class="w-2 h-2 rounded-full bg-amber-600"
-													></span>
-													Self-Service
-												</span>
-											</td>
-											<td class="p-4 text-black/85">
-												<strong
-													>Built and published by the
-													owning team.</strong
-												> Immediate autonomy without centralized
-												bottleneck; clearly labeled for transparency.
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
+						<table class="m-0">
+							<thead>
+								<tr>
+									<th>Tier</th>
+									<th>Governance Meaning</th>
+									<th>Author</th>
+									<th>SLA</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><strong>BI Led</strong></td>
+									<td
+										>Defined, built, and maintained by the
+										central BI team. Meets full enterprise
+										standards.</td
+									>
+									<td>Central BI Squad</td>
+									<td><code>99.9%</code></td>
+								</tr>
+								<tr>
+									<td><strong>BI Approved</strong></td>
+									<td
+										>Built by owning team, reviewed and
+										signed off by BI. Quality gates
+										verified.</td
+									>
+									<td>Partner Team + BI Review</td>
+									<td><code>99.5%</code></td>
+								</tr>
+								<tr>
+									<td><strong>Self-Service</strong></td>
+									<td
+										>Built and published autonomously by
+										owning team. Clear lineage badge
+										attached.</td
+									>
+									<td>Partner Team Autonomous</td>
+									<td><code>Best Effort</code></td>
+								</tr>
+							</tbody>
+						</table>
 
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
-							<p>
-								Each metric also had its <strong
-									>data lineage always visible</strong
-								>, so a viewer can determine how much they
-								should trust a measure and trace raw ingestion
-								pipelines directly.
-							</p>
-						</div>
-
-						<!-- Images: [vg8_trust_tiers.png] [vg8_mttd_anomaly_data_lineage.png] -->
+						<!-- Images: Trust Tiers & Anomaly Data Lineage -->
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg8_trust_tiers.png"
-										alt="Trust Tiers Interface Elements"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+										alt="Trust Tiers Interface showing BI-Led, BI-Approved, and Self-Service Badges"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Trust Tiers in UI
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Trust tier badges as constant
-										contextual properties</span
+									<span class="media-badge"
+										>Trust Tiers Interface</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									Trust tier badges displayed contextually
+									across dashboards
+								</figcaption>
+							</figure>
 
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg8_mttd_anomaly_data_lineage.png"
-										alt="Data Lineage Drawer on Metric View"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+										alt="MTTD Anomaly Data Lineage Explorer"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Live Lineage Drawer
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Always-available lineage drawer
-										revealing pipeline origins</span
+									<span class="media-badge"
+										>Lineage Explorer</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									Interactive data lineage explorer tracing
+									raw telemetry sources
+								</figcaption>
+							</figure>
 						</div>
-						<figcaption
-							class="font-departure text-xs text-black/60 tracking-wider block"
-						>
+						<figcaption class="text-left mt-2">
 							Provenance, not status. Viewers evaluate confidence
 							based on concrete data lineage rather than
 							subjective rating.
@@ -1308,29 +945,17 @@ import Footer from "../../components/Footer.astro";
 			<!-- ===================================================== -->
 			<!-- SECTION 8: DESIGN 3/4 - HUMAN-IN-THE-LOOP AI          -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							Design
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
-							3. Human-in-the-loop anomaly analysis
-						</h2>
+			<article class="case-section">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">design</span>
+						<h2>3. Human-in-the-loop anomaly analysis</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+					<!-- Right 75% Column -->
+					<div class="case-content">
+						<div class="case-prose">
 							<p>
 								When a measure broke its control limits, an
 								automated analysis was drafted by an agent and a
@@ -1342,11 +967,9 @@ import Footer from "../../components/Footer.astro";
 						</div>
 
 						<!-- Trade-off Box -->
-						<div
-							class="bg-[#faf8f2] border-2 border-black p-5 sm:p-6 shadow-[3px_3px_0_0_#000]"
-						>
+						<aside class="callout-warning">
 							<div
-								class="font-departure text-xs uppercase tracking-wider text-black font-bold mb-2 flex items-center gap-2"
+								class="font-departure text-xs tracking-wider text-black font-bold mb-2 flex items-center gap-2"
 							>
 								<span
 									class="w-2.5 h-2.5 bg-black rounded-full inline-block"
@@ -1373,17 +996,14 @@ import Footer from "../../components/Footer.astro";
 								very clear visibly when somebody was looking at automated
 								analysis.
 							</p>
-						</div>
+						</aside>
 
-						<!-- Images: [ All 3 vg9….png, side by side ] -->
+						<!-- Images: 3 side by side -->
 						<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-							<!-- 1: Anomaly Detected -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
+							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px] uppercase"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
 									>
 										<span class="font-bold text-red-700"
 											>01. Trigger</span
@@ -1391,13 +1011,10 @@ import Footer from "../../components/Footer.astro";
 										<span class="text-black/50">Limits</span
 										>
 									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
+									<div class="media-frame mb-2">
 										<img
 											src="/images-vanguard/vg9_mttd_anomaly.png"
 											alt="MTTD Anomaly Detection Trigger"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 										/>
 									</div>
 								</div>
@@ -1407,15 +1024,12 @@ import Footer from "../../components/Footer.astro";
 									Metric breaks control limits. System flags
 									anomaly immediately.
 								</p>
-							</div>
+							</figure>
 
-							<!-- 2: AI Investigation -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
+							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px] uppercase"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
 									>
 										<span class="font-bold text-amber-700"
 											>02. Agent</span
@@ -1424,13 +1038,10 @@ import Footer from "../../components/Footer.astro";
 											>Confidence</span
 										>
 									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
+									<div class="media-frame mb-2">
 										<img
 											src="/images-vanguard/vg9_mttd_anomaly_investigate.png"
 											alt="AI Anomaly Investigation and Confidence Score"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 										/>
 									</div>
 								</div>
@@ -1440,47 +1051,38 @@ import Footer from "../../components/Footer.astro";
 									AI drafts narrative with explicit reasoning
 									and confidence score.
 								</p>
-							</div>
+							</figure>
 
-							<!-- 3: Human Sign-off -->
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group flex flex-col justify-between"
-							>
+							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px] uppercase"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
 									>
 										<span class="font-bold text-emerald-700"
-											>03. Sign-Off</span
+											>03. Sign-off</span
 										>
 										<span class="text-black/50"
-											>Verified</span
+											>DRI Approval</span
 										>
 									</div>
-									<div
-										class="bg-neutral-100 border border-black/15 overflow-hidden relative mb-2"
-									>
+									<div class="media-frame mb-2">
 										<img
 											src="/images-vanguard/vg9_mttd_anomaly_sign.png"
-											alt="DRI Human Sign-off on Anomaly Analysis"
-											class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+											alt="DRI Sign-Off and Executive Note Publication"
 										/>
 									</div>
 								</div>
 								<p
 									class="font-sans text-xs text-black/75 m-0 leading-normal"
 								>
-									DRI validates, edits, and signs off. Both
-									views transparent.
+									DRI validates hypothesis and signs off
+									before publishing.
 								</p>
-							</div>
+							</figure>
 						</div>
-						<figcaption
-							class="font-departure text-xs text-black/60 tracking-wider block"
-						>
-							The 3-stage anomaly flow: Automatic statistical
-							detection → AI synthesis with confidence score → DRI
-							human sign-off.
+						<figcaption class="text-left mt-2">
+							Human-in-the-loop lifecycle: Autonomous detection →
+							Transparent AI analysis → DRI human sign-off.
 						</figcaption>
 					</div>
 				</div>
@@ -1489,29 +1091,17 @@ import Footer from "../../components/Footer.astro";
 			<!-- ===================================================== -->
 			<!-- SECTION 9: DESIGN 4/4 - THE EXECUTIVE SURFACE         -->
 			<!-- ===================================================== -->
-			<article class="mb-20 md:mb-28 border-b border-black/15 pb-16">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							Design
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
-							4. The executive surface
-						</h2>
+			<article class="case-section">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">design</span>
+						<h2>4. The executive surface</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+					<!-- Right 75% Column -->
+					<div class="case-content">
+						<div class="case-prose">
 							<p>
 								The strategy was to have a single yardstick for
 								every measure. We used a <strong
@@ -1529,61 +1119,39 @@ import Footer from "../../components/Footer.astro";
 
 						<!-- Images: [vg1_homepage.png] [vg7_homepage_critical_services.png] -->
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg1_homepage.png"
-										alt="Vanguard  Executive Surface Overview"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
+										alt="Vanguard Executive Surface Overview"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Executive Surface
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Primary executive portal with
-										standardized yardstick metrics</span
+									<span class="media-badge"
+										>Executive Surface</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									Primary executive portal with standardized
+									yardstick metrics
+								</figcaption>
+							</figure>
 
-							<div
-								class="border-2 border-black bg-white p-3 shadow-[4px_4px_0_0_#000] group"
-							>
-								<div
-									class="bg-neutral-100 border border-black/15 overflow-hidden relative"
-								>
+							<figure class="m-0">
+								<div class="media-frame">
 									<img
 										src="/images-vanguard/vg7_homepage_critical_services.png"
 										alt="Critical Services View on Executive Homepage"
-										class="w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 group-hover:scale-[1.01]"
 									/>
-									<div
-										class="absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] uppercase px-2 py-0.5 pointer-events-none"
-									>
-										Critical Services
-									</div>
-								</div>
-								<div class="mt-2 text-center">
-									<span
-										class="font-departure text-[11px] text-black/60"
-										>Critical services roll-up utilizing
-										statistical process control</span
+									<span class="media-badge"
+										>Critical Services</span
 									>
 								</div>
-							</div>
+								<figcaption>
+									Critical services roll-up utilizing
+									statistical process control
+								</figcaption>
+							</figure>
 						</div>
-						<figcaption
-							class="font-departure text-xs text-black/60 tracking-wider block"
-						>
+						<figcaption class="text-left mt-2">
 							Standardized SPC visual language distinguishing
 							routine telemetry noise from true operational
 							emergencies.
@@ -1593,31 +1161,19 @@ import Footer from "../../components/Footer.astro";
 			</article>
 
 			<!-- ===================================================== -->
-			<!-- SECTION 10: OUTCOME (PAGE 5)                          -->
+			<!-- SECTION 10: OUTCOME                                   -->
 			<!-- ===================================================== -->
-			<article id="outcome" class="mb-20 md:mb-28">
-				<div
-					class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start"
-				>
-					<!-- Left Column: 25% -->
-					<div class="md:col-span-3 md:sticky md:top-20">
-						<span
-							class="font-homemade text-base sm:text-lg text-black/75 normal-case block mb-1"
-						>
-							Outcome
-						</span>
-						<h2
-							class="font-departure text-xl sm:text-2xl font-bold text-black normal-case leading-snug tracking-tight m-0"
-						>
-							The IKEA effect
-						</h2>
+			<article id="outcome" class="case-section border-b-0 pb-0">
+				<div class="case-grid">
+					<!-- Left 25% Column -->
+					<div class="case-sidebar">
+						<span class="kicker">outcome</span>
+						<h2>The IKEA effect</h2>
 					</div>
 
-					<!-- Right Column: 75% -->
-					<div class="md:col-span-9 space-y-6">
-						<div
-							class="font-sans text-lg text-black/85 leading-relaxed space-y-4"
-						>
+					<!-- Right 75% Column -->
+					<div class="case-content">
+						<div class="case-prose">
 							<p>
 								During the pilot, I noticed team leads were
 								excited with their new-found autonomy. They were
@@ -1633,11 +1189,9 @@ import Footer from "../../components/Footer.astro";
 
 						<!-- Impact Scorecard Grid -->
 						<div class="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
-							<div
-								class="border-2 border-black bg-white p-5 sm:p-6 shadow-[4px_4px_0_0_#000]"
-							>
+							<div class="card">
 								<span
-									class="font-departure text-xs text-black/50 uppercase block mb-1"
+									class="font-departure text-xs text-black/50 block mb-1"
 									>BI Coverage</span
 								>
 								<div
@@ -1645,17 +1199,15 @@ import Footer from "../../components/Footer.astro";
 								>
 									30% → 75%
 								</div>
-								<span class="font-sans text-xs text-black/70">
-									Achieved in 3 months across partner security
-									teams.
-								</span>
+								<span class="font-sans text-xs text-black/70"
+									>Achieved in 3 months across partner
+									security teams.</span
+								>
 							</div>
 
-							<div
-								class="border-2 border-black bg-white p-5 sm:p-6 shadow-[4px_4px_0_0_#000]"
-							>
+							<div class="card">
 								<span
-									class="font-departure text-xs text-black/50 uppercase block mb-1"
+									class="font-departure text-xs text-black/50 block mb-1"
 									>Onboarding</span
 								>
 								<div
@@ -1663,17 +1215,15 @@ import Footer from "../../components/Footer.astro";
 								>
 									2 mo → 5 days
 								</div>
-								<span class="font-sans text-xs text-black/70">
-									Average onboarding time reduced via
-									self-service authoring.
-								</span>
+								<span class="font-sans text-xs text-black/70"
+									>Average onboarding time reduced via
+									self-service authoring.</span
+								>
 							</div>
 
-							<div
-								class="border-2 border-black bg-white p-5 sm:p-6 shadow-[4px_4px_0_0_#000]"
-							>
+							<div class="card">
 								<span
-									class="font-departure text-xs text-black/50 uppercase block mb-1"
+									class="font-departure text-xs text-black/50 block mb-1"
 									>Escalations</span
 								>
 								<div
@@ -1681,39 +1231,34 @@ import Footer from "../../components/Footer.astro";
 								>
 									Cut by &gt;50%
 								</div>
-								<span class="font-sans text-xs text-black/70">
-									Escalation calls during anomalies cut in
-									half (Survey June 2026).
-								</span>
+								<span class="font-sans text-xs text-black/70"
+									>Escalation calls during anomalies cut in
+									half (Survey June 2026).</span
+								>
 							</div>
 						</div>
 
 						<!-- PM Closing Quote -->
-						<div
-							class="bg-white border-2 border-black p-6 sm:p-8 shadow-[5px_5px_0_0_#000] relative mt-4"
+						<blockquote
+							class="bg-white border border-dashed border-black/30 p-6 sm:p-8 shadow-[3px_3px_0_0_#000] relative mt-4 m-0 font-sans"
 						>
-							<div
-								class="font-departure text-4xl text-black/20 absolute top-4 left-4 select-none"
-							>
-								“
-							</div>
-							<blockquote
-								class="font-serif text-xl sm:text-2xl text-black italic leading-snug pl-6 border-l-2 border-black mb-5"
+							<p
+								class="font-serif text-xl sm:text-2xl text-black italic leading-snug pl-6 border-l-2 border-dashed border-black/40 mb-4"
 							>
 								"Trust doesn't scale through review capacity. It
 								scales when it becomes a visible property of the
 								artifact."
-							</blockquote>
-							<div
-								class="pl-6 font-departure text-xs uppercase tracking-wider text-black/60 font-semibold"
+							</p>
+							<cite
+								class="pl-6 font-departure text-xs tracking-wider text-black/60 font-semibold not-italic block"
 							>
-								— Product Manager, Apple InfoSec BI Team
-							</div>
-						</div>
+								- Product Manager, Apple InfoSec BI Team
+							</cite>
+						</blockquote>
 
-						<!-- Navigation Footer / Bottom Link -->
+						<!-- Navigation Footer -->
 						<div
-							class="mt-12 pt-6 border-t border-black/15 flex flex-wrap items-center justify-between gap-4 font-departure text-xs uppercase"
+							class="mt-12 pt-6 border-t border-black/15 flex flex-wrap items-center justify-between gap-4 font-departure text-xs"
 						>
 							<a
 								href="/"
@@ -1722,14 +1267,12 @@ import Footer from "../../components/Footer.astro";
 								<span>←</span>
 								<span>Back to Selected Works</span>
 							</a>
-							<div class="flex items-center gap-4">
-								<a
-									href="#top"
-									class="px-3 py-1 bg-black/5 hover:bg-black/10 border border-black/20 text-black transition-colors no-underline"
-								>
-									Top ↑
-								</a>
-							</div>
+							<a
+								href="#top"
+								class="px-3 py-1 bg-black/5 hover:bg-black/10 border border-black/20 text-black transition-colors no-underline"
+							>
+								Top ↑
+							</a>
 						</div>
 					</div>
 				</div>
@@ -1748,47 +1291,32 @@ import Footer from "../../components/Footer.astro";
 		>
 			<!-- Top Bar with Close Button -->
 			<div
-				class="w-full max-w-6xl flex items-center justify-between text-white/80 pb-3 mb-2 font-departure text-xs tracking-wider border-b border-white/10"
+				class="w-full max-w-6xl flex items-center justify-between text-white font-departure text-xs mb-3 px-2"
 			>
-				<span id="zoom-title" class="truncate max-w-xl text-white/90"
-					>Preview</span
+				<span id="zoom-title" class="truncate max-w-md text-white/80">
+					Visual Inspection
+				</span>
+				<button
+					id="image-zoom-close"
+					class="px-3 py-1 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-xs transition-colors flex items-center gap-1.5 cursor-pointer"
 				>
-				<div class="flex items-center gap-3">
-					<span class="text-white/40 hidden sm:inline text-[11px]"
-						>[ESC to close]</span
+					<span>Close</span>
+					<kbd
+						class="text-[10px] bg-white/20 border-white/40 text-white px-1 shadow-none"
+						>ESC</kbd
 					>
-					<button
-						id="image-zoom-close"
-						class="text-white hover:text-amber-400 focus:outline-none transition-colors p-1 cursor-pointer"
-						aria-label="Close zoom"
-					>
-						<svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-						>
-							<line x1="18" y1="6" x2="6" y2="18"></line>
-							<line x1="6" y1="6" x2="18" y2="18"></line>
-						</svg>
-					</button>
-				</div>
+				</button>
 			</div>
 
-			<!-- Image Container -->
+			<!-- Image Modal Viewport -->
 			<div
-				class="relative flex-1 w-full max-w-6xl flex items-center justify-center overflow-hidden"
+				class="relative max-w-6xl max-h-[85vh] w-full flex items-center justify-center overflow-hidden"
 			>
 				<img
 					id="image-zoom-img"
 					src=""
-					alt="Zoomed view"
-					class="max-w-full max-h-[82vh] object-contain shadow-2xl rounded-xs select-none transition-transform duration-200"
+					alt="Full size view"
+					class="max-w-full max-h-[85vh] object-contain shadow-2xl border border-white/20"
 				/>
 			</div>
 		</div>
@@ -1799,7 +1327,7 @@ import Footer from "../../components/Footer.astro";
 
 <script>
 	// -------------------------------------------------------------
-	// 1. Image Overlay / Lightbox Logic
+	// Image Overlay / Lightbox Logic
 	// -------------------------------------------------------------
 	const overlay = document.getElementById("image-zoom-overlay");
 	const zoomImg = document.getElementById(
@@ -1861,93 +1389,4 @@ import Footer from "../../components/Footer.astro";
 			closeZoom();
 		}
 	});
-
-	// -------------------------------------------------------------
-	// 2. Authoring Onboarding Carousel (Fade-in Auto Carousel)
-	// -------------------------------------------------------------
-	const slides = document.querySelectorAll<HTMLElement>(".carousel-slide");
-	const indicator = document.getElementById("carousel-indicator");
-	const stepTitle = document.getElementById("carousel-step-title");
-	const pills = document.querySelectorAll<HTMLButtonElement>(".step-pill");
-	const prevBtn = document.getElementById("carousel-prev");
-	const nextBtn = document.getElementById("carousel-next");
-	const carouselContainer = document.getElementById("authoring-carousel");
-
-	let currentStep = 0;
-	let carouselInterval: ReturnType<typeof setInterval> | null = null;
-	const totalSlides = slides.length;
-
-	function showStep(index: number) {
-		if (totalSlides === 0) return;
-		currentStep = (index + totalSlides) % totalSlides;
-
-		slides.forEach((slide, i) => {
-			if (i === currentStep) {
-				slide.classList.remove("opacity-0", "pointer-events-none");
-				slide.classList.add("opacity-100", "active");
-			} else {
-				slide.classList.add("opacity-0", "pointer-events-none");
-				slide.classList.remove("opacity-100", "active");
-			}
-		});
-
-		const activeSlide = slides[currentStep];
-		const title =
-			activeSlide.getAttribute("data-title") || `Step ${currentStep + 1}`;
-		if (indicator)
-			indicator.textContent = `Step ${currentStep + 1} of ${totalSlides}`;
-		if (stepTitle) stepTitle.textContent = title;
-
-		pills.forEach((pill, i) => {
-			if (i === currentStep) {
-				pill.classList.remove(
-					"bg-white",
-					"text-black",
-					"border-black/30",
-				);
-				pill.classList.add("bg-black", "text-white", "border-black");
-			} else {
-				pill.classList.add("bg-white", "text-black", "border-black/30");
-				pill.classList.remove("bg-black", "text-white", "border-black");
-			}
-		});
-	}
-
-	function startAutoCarousel() {
-		stopAutoCarousel();
-		carouselInterval = setInterval(() => {
-			showStep(currentStep + 1);
-		}, 4200);
-	}
-
-	function stopAutoCarousel() {
-		if (carouselInterval) {
-			clearInterval(carouselInterval);
-			carouselInterval = null;
-		}
-	}
-
-	prevBtn?.addEventListener("click", () => {
-		showStep(currentStep - 1);
-		startAutoCarousel();
-	});
-
-	nextBtn?.addEventListener("click", () => {
-		showStep(currentStep + 1);
-		startAutoCarousel();
-	});
-
-	pills.forEach((pill, i) => {
-		pill.addEventListener("click", () => {
-			showStep(i);
-			startAutoCarousel();
-		});
-	});
-
-	// Pause auto rotation on mouse hover so user can read or click to zoom
-	carouselContainer?.addEventListener("mouseenter", stopAutoCarousel);
-	carouselContainer?.addEventListener("mouseleave", startAutoCarousel);
-
-	// Start auto-advance initially
-	startAutoCarousel();
 </script>
