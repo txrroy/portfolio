@@ -1,0 +1,344 @@
+---
+import Layout from "./Layout.astro";
+import Header from "./Header.astro";
+---
+
+<Layout title="Tushar Roy – Systematic by Design">
+  <Header />
+
+  <!-- Hero Section -->
+  <main class="max-w-6xl mx-auto px-6 pt-36 md:pt-40 pb-28 md:pb-16">
+    <header class="grid md:grid-cols-3 gap-[clamp(0px,8vw,100px)] items-center min-h-[65vh]">
+      <div class="text-content md:col-span-2 text-center md:text-left">
+        <span class="eyebrow block">Product Strategy • Inclusive UX</span>
+        <h1 class="heading-display mt-2 mb-16">Systematic by Design</h1>
+        <p class="lead-text mb-8">
+          AI-savvy Product Designer
+          <br class="hidden lg:block" />
+          crafting Enterprise Systems at Apple.
+          <br class="hidden lg:block" />
+          <span class="text-xl font-serif italic font-light block mt-2">
+            Frequently interrupted by a golden retriever!
+          </span>
+        </p>
+        <a href="#work" class="hidden md:inline-flex btn-primary">
+          See My Work
+          <svg class="btn-link-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+            <path d="M8 1V15M1 8L8 15M15 8L8 15" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Arch Shape Image Wrapper -->
+      <div class="relative mx-auto w-full max-w-[160px] md:max-w-[260px] aspect-[3/4] mt-8 md:mt-0">
+        <!-- Decorative Border (Straight) -->
+        <div class="absolute top-5 -left-5 w-full h-full rounded-t-[200px] border border-[#E0BA9B] z-0"></div>
+        <!-- Image Container (Rotated) -->
+        <div class="relative w-full h-full bg-gray-200 rounded-t-[200px] overflow-hidden shadow-[0_24px_48px_-12px_rgba(45,42,38,0.18)] rotate-2 z-10">
+          <img src="/images/rex.jpg" alt="Tushar and Rex" class="object-cover w-full h-full" />
+        </div>
+      </div>
+    </header>
+  </main>
+
+  <!-- Career Timeline Section -->
+  <section class="w-full dark py-8 md:py-12 pb-8 md:pb-14 relative">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex flex-col-reverse md:grid md:grid-cols-4 md:gap-4 relative">
+        <!-- Connecting Line (Desktop Only) -->
+        <div class="hidden md:block absolute top-[12px] left-0 w-full h-px bg-gradient-to-r from-white/10 via-white/40 to-[#E0BA9B] z-0"></div>
+
+        <!-- Block 1: IBM (Dim) -->
+        <div class="relative pt-0 md:pt-8 pb-6 md:pb-0 opacity-40 hover:opacity-100 transition-opacity duration-300 group">
+          <div class="hidden md:block absolute top-[3px] left-0 w-3 h-3 rounded-full bg-[#5A534C] group-hover:bg-[#E0BA9B] transition-colors z-10 box-content border-4 border-[#2d2a26]"></div>
+          <div class="md:hidden absolute top-2 left-[10px] w-px h-full bg-white/10"></div>
+          <div class="md:hidden absolute top-[2px] left-1 w-3 h-3 rounded-full bg-[#5A534C]"></div>
+          <div class="pl-8 md:pl-2 relative">
+            <div class="absolute right-0 top-0 w-12 h-12 opacity-30 group-hover:opacity-100 transition-opacity">
+              <img src="/images/logo-ibm.png" class="w-full h-full object-contain brightness-0 invert" alt="IBM Logo" />
+            </div>
+            <div class="font-sans text-xs font-bold tracking-widest mb-0 md:mb-3 pr-12">
+              IBM • 2007–12
+            </div>
+            <div class="hidden md:block font-serif text-lg md:text-xl leading-snug pr-0">
+              UX Engineering <br />& Prototyping
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 2: VMware -->
+        <div class="relative pt-0 md:pt-8 pb-6 md:pb-0 opacity-60 hover:opacity-100 transition-opacity duration-300 group">
+          <div class="hidden md:block absolute top-[3px] left-0 w-3 h-3 rounded-full bg-[#6D5F52] group-hover:bg-[#E0BA9B] transition-colors z-10 box-content border-4 border-[#2d2a26]"></div>
+          <div class="md:hidden absolute top-2 left-[10px] w-px h-full bg-white/10"></div>
+          <div class="md:hidden absolute top-[2px] left-1 w-3 h-3 rounded-full bg-[#6D5F52]"></div>
+          <div class="pl-8 md:pl-2 relative">
+            <div class="absolute right-0 top-0 w-16 h-8 opacity-40 group-hover:opacity-100 transition-opacity mt-2">
+              <img src="/images/logo-vmware.png" class="w-full h-full object-contain brightness-0 invert" alt="VMware Logo" />
+            </div>
+            <div class="font-sans text-xs font-bold tracking-widest mb-0 md:mb-3 pr-16">
+              VMWARE • 2013–22
+            </div>
+            <div class="hidden md:block font-serif text-lg md:text-xl leading-snug">
+              E2E Design, <br />Management, Ops
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 3: Broadcom -->
+        <div class="relative pt-0 md:pt-8 pb-6 md:pb-0 opacity-80 hover:opacity-100 transition-opacity duration-300 group">
+          <div class="hidden md:block absolute top-[3px] left-0 w-3 h-3 rounded-full bg-[#A89F91] group-hover:bg-[#E0BA9B] transition-colors z-10 box-content border-4 border-[#2d2a26]"></div>
+          <div class="md:hidden absolute top-2 left-[10px] w-px h-full bg-white/10"></div>
+          <div class="md:hidden absolute top-[2px] left-1 w-3 h-3 rounded-full bg-[#A89F91]"></div>
+          <div class="pl-8 md:pl-2 relative">
+            <div class="absolute right-0 top-0 w-12 h-12 opacity-50 group-hover:opacity-100 transition-opacity">
+              <img src="/images/logo-broadcom.png" class="w-full h-full object-contain brightness-0 invert" alt="Broadcom Logo" />
+            </div>
+            <div class="font-sans text-xs font-bold tracking-widest mb-0 md:mb-3 pr-12">
+              BROADCOM • 2023–24
+            </div>
+            <div class="hidden md:block font-serif text-lg md:text-xl leading-snug">
+              Data & Security <br />UX Integrations
+            </div>
+          </div>
+        </div>
+
+        <!-- Block 4: Apple (Current) -->
+        <div class="relative pt-0 md:pt-8 pb-6 md:pb-0 opacity-100 group">
+          <div class="hidden md:block absolute top-[3px] left-0 w-3 h-3 rounded-full bg-[#E0BA9B] z-10 box-content border-4 border-[#2d2a26] shadow-[0_0_15px_rgba(224,186,155,0.6)]"></div>
+          <div class="md:hidden absolute top-2 left-[10px] w-px h-full bg-white/10"></div>
+          <div class="md:hidden absolute top-[2px] left-1 w-3 h-3 rounded-full bg-[#E0BA9B] shadow-[0_0_15px_rgba(224,186,155,0.6)]"></div>
+          <div class="pl-8 md:pl-2 relative">
+            <div class="absolute right-0 top-0 w-10 h-10 opacity-80">
+              <img src="/images/logo-apple.png" class="w-full h-full object-contain brightness-0 invert" alt="Apple Logo" />
+            </div>
+            <div class="font-sans text-xs font-bold tracking-widest mb-0 md:mb-3 text-[var(--color-accent)] pr-10">
+              APPLE • PRESENT
+            </div>
+            <div class="hidden md:block font-serif text-lg md:text-xl leading-snug">
+              Enterprise <br /> UX-AI Strategy
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Work Section -->
+  <main class="max-w-6xl mx-auto px-6 py-24">
+    <section id="work">
+      <div class="flex flex-col gap-8 w-full">
+        <span class="eyebrow block text-center md:text-left md:sticky top-8">
+          Work Samples
+        </span>
+
+        <!-- Case Study 01: Vanguard -->
+        <article class="bg-[#faf8f2] mb-8 rounded-2xl overflow-hidden group grid md:grid-cols-[1.5fr_1fr] md:sticky top-16 z-10 border border-black/10 shadow-[0_4px_24px_rgba(45,42,38,0.05),0_8px_40px_rgba(45,42,38,0.03)]">
+          <div class="p-8 md:p-16 flex flex-col justify-center">
+            <div class="mb-6">
+              <div class="eyebrow-sm mb-2">Apple InfoSec • Lead Product Designer</div>
+              <h2 class="case-title">Making Security Work Measurable</h2>
+            </div>
+            <div class="mb-2">
+              <div class="eyebrow-sm mb-3">Impact</div>
+              <div class="grid grid-cols-1 gap-y-2">
+                <div class="text-[18px]"><strong>30% → 75%</strong> BI coverage across partner teams</div>
+                <div class="text-[18px]"><strong>2 mo → 5 days</strong> onboarding time via self-service</div>
+                <div class="text-[18px]"><strong>&gt;50%</strong> cut in escalation calls</div>
+              </div>
+            </div>
+            <blockquote class="text-[22px] font-light font-serif italic text-[var(--color-text-secondary)] border-l-[3px] border-[var(--color-accent)] pl-6 py-0 mb-10">
+              "We now measure risk in days, not quarters."
+            </blockquote>
+            <a href="/case-study/vanguard" class="btn-link self-start">
+              Explore Story
+              <svg class="btn-link-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="relative order-first md:order-none h-[75px] md:h-full min-h-[60px] md:min-h-[400px] bg-[#2d2a26] md:bg-transparent flex items-center justify-center p-6">
+            <img src="/images/logo-apple.png" alt="Apple Vanguard Case Study" class="h-24 w-24 object-contain opacity-80" />
+          </div>
+        </article>
+
+        <!-- Case Study 02: HelpNow+ -->
+        <article class="bg-[#F2EBE3] mb-8 rounded-2xl overflow-hidden group grid md:grid-cols-[1.5fr_1fr] md:sticky top-20 z-20 border border-[rgba(255,255,255,0.4)] shadow-[0_4px_24px_rgba(45,42,38,0.05),0_8px_40px_rgba(45,42,38,0.03)]">
+          <div class="p-8 md:p-16 flex flex-col justify-center">
+            <div class="mb-6">
+              <div class="eyebrow-sm mb-2">Case Study 02 • HelpNow+</div>
+              <h2 class="case-title">Workplace Support, Humanized</h2>
+            </div>
+            <div class="mb-2">
+              <div class="eyebrow-sm mb-3">Impact</div>
+              <div class="grid grid-cols-1 gap-y-2">
+                <div class="text-[18px]"><strong>$36M+</strong> annual savings</div>
+                <div class="text-[18px]"><strong>2x</strong> fulfillment productivity</div>
+                <div class="text-[18px]"><strong>94%</strong> employee satisfaction</div>
+              </div>
+            </div>
+            <blockquote class="text-[22px] font-light font-serif italic text-[var(--color-text-secondary)] border-l-[3px] border-[var(--color-accent)] pl-6 py-0 mb-10">
+              "Finally, I truly feel supported by VMware, no matter where I am"
+            </blockquote>
+            <a href="/case-study/helpnow" class="btn-link self-start">
+              Explore Story
+              <svg class="btn-link-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="relative order-first md:order-none h-[75px] md:h-full min-h-[60px] md:min-h-[400px] bg-[#2d2a26] md:bg-transparent">
+            <img src="/images/case-study-helpnow3.png" alt="HelpNow Case Study" class="h-full object-cover w-full object-left scale-[1] opacity-80 md:scale-100 md:opacity-100" />
+          </div>
+        </article>
+
+        <!-- Case Study 03: DevHub -->
+        <article class="bg-[#E8EFF5] mb-4 rounded-2xl overflow-hidden group grid md:grid-cols-[1.5fr_1fr] md:sticky top-24 z-30 border border-[rgba(255,255,255,0.4)] shadow-[0_4px_24px_rgba(45,42,38,0.05),0_8px_40px_rgba(45,42,38,0.03)]">
+          <div class="p-8 md:p-16 flex flex-col justify-center">
+            <div class="mb-6">
+              <div class="eyebrow-sm mb-2">Case Study 03 • DevHub</div>
+              <h2 class="case-title">Developer Ecosystem, Unified</h2>
+            </div>
+            <div class="mb-2">
+              <div class="eyebrow-sm mb-3">Impact</div>
+              <div class="grid grid-cols-1 gap-y-2">
+                <div class="text-[18px]"><strong>20k+</strong> devs impacted</div>
+                <div class="text-[18px]"><strong>Unified</strong> fragmented ecosystem</div>
+                <div class="text-[18px]"><strong>Streamlined</strong> workflows</div>
+              </div>
+            </div>
+            <blockquote class="text-[22px] font-light font-serif italic text-[var(--color-text-secondary)] border-l-[3px] border-[var(--color-accent)] pl-6 mb-10">
+              "This platform transformed how we build and ship products."
+            </blockquote>
+            <a href="/case-study/devhub" class="btn-link self-start">
+              Explore Story
+              <svg class="btn-link-icon" width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor">
+                <path d="M3 8h10M9 4l4 4-4 4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+              </svg>
+            </a>
+          </div>
+          <div class="relative order-first md:order-none h-[75px] md:h-full min-h-[75px] md:min-h-[400px] bg-[#2d2a26] md:bg-transparent">
+            <img src="/images/case-study-devhub3.png" alt="DevHub Case Study" class="h-full object-cover w-full object-left scale-[1] opacity-80 md:scale-100 md:opacity-100" />
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- About Me Section -->
+  <section class="w-full bg-[#fcfaf8] py-24 mb-0" id="about">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="eyebrow block">About Me</span>
+      <div class="grid md:grid-cols-2 gap-12 items-center mb-32">
+        <div>
+          <h1 class="mb-8">Rooted in Purpose and Play</h1>
+          <p class="text-xl text-[var(--color-text-secondary)] mb-10 leading-relaxed max-w-lg">
+            Learn how I’ve led inclusive, collaborative design at scale and why play is my secret superpower.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="rounded-2xl overflow-hidden shadow-xl aspect-video relative">
+            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+              <source src="/images/speaking-video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <p class="text-sm text-[var(--color-text-secondary)] mt-4 text-center opacity-80 italic">
+            Sharing our FY24 Design Goals at a team offsite.
+          </p>
+        </div>
+      </div>
+
+      <!-- Testimonials -->
+      <div>
+        <h3 class="mb-12">What Others Say</h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Joy -->
+          <div class="testimonial-card">
+            <blockquote class="testimonial-quote border-0 pl-0 my-0">
+              "Tushar brings people together. His energy and commitment led to a <b>standout enterprise culture</b>. From internal conferences to engaging podcasts, Tushar was the driving force behind many impactful initiatives."
+            </blockquote>
+            <div class="testimonial-author mt-6">
+              <img src="/images/testimonial-joy.jpeg" alt="Joy Busse" class="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <div class="font-bold text-sm">Joy Busse</div>
+                <div class="text-xs text-[var(--color-text-secondary)]">Sr. Director of UX, Cribl</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Razz -->
+          <div class="testimonial-card">
+            <blockquote class="testimonial-quote border-0 pl-0 my-0">
+              "Tushar's talents extend beyond design - <b>he is a problem solver</b>. His leadership of the UI dev team allowed us to stay on course. It would be a privilege to work with him again."
+            </blockquote>
+            <div class="testimonial-author mt-6">
+              <img src="/images/testimonial-razz.jpeg" alt="Razz Cortes-Maceda" class="w-12 h-12 rounded-full object-cover" />
+              <div>
+                <div class="font-bold text-sm">Razz Cortes-Maceda</div>
+                <div class="text-xs text-[var(--color-text-secondary)]">VP Digital Strategy, Bellco Credit Union</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Podcast Section -->
+  <section id="podcast" class="w-full bg-white py-24 mb-0">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="eyebrow block">Thought Leadership</span>
+      <h1 class="mb-16">Beyond the Product</h1>
+      <div class="podcast-card">
+        <div>
+          <h2 class="mb-2 text-white!">The Enterprise Design Podcast</h2>
+          <p class="text-gray-400 mb-6 font-sans">
+            I co-created and hosted this 12-episode series to explore how we can humanize software at scale.
+          </p>
+          <p class="text-gray-300 leading-relaxed mb-8 font-sans">
+            We dive deep into the messy reality of Enterprise UX, bringing Engineers, PMs, and Designers to the same table.
+          </p>
+          <a href="https://open.spotify.com/show/3klvSJS3QPLVLYBEf7UDWF" target="_blank" class="inline-flex items-center gap-3 bg-[#1DB954] text-black px-6 py-3 rounded-full font-bold hover:bg-[#1ed760] transition-colors no-underline">
+            Listen on Spotify
+          </a>
+        </div>
+        <div class="hidden md:block">
+          <iframe style="border-radius:12px" src="https://open.spotify.com/embed/episode/4AUNRf6VUxG6s9d0BvfBp5?utm_source=generator&theme=0" width="100%" height="352" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full dark py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 md:gap-24 items-start mb-24">
+        <div>
+          <span class="eyebrow-sm text-[var(--color-accent)] mb-6 block">Connect</span>
+          <h2 class="heading-medium">Let’s Make <br class="hidden md:block" />It Happen</h2>
+        </div>
+        <div class="flex flex-col gap-12 pt-2">
+          <div>
+            <h4 class="mb-6 font-serif text-2xl font-normal text-[#e0ba9b]">Big ideas. Messy problems. Unclear paths.</h4>
+            <p class="text-lg text-[var(--color-text-secondary)] leading-relaxed font-sans">
+              If you’re navigating any of that, or just need a sounding board for a complex enterprise challenge, let’s talk.
+            </p>
+          </div>
+          <div class="flex flex-col border-t border-white/10">
+            <a href="https://www.linkedin.com/in/tusharroy/" target="_blank" class="group flex items-center justify-between py-6 border-b border-white/10 hover:text-[var(--color-accent)] transition-colors no-underline">
+              <span class="font-medium text-lg text-white/90">Message me on LinkedIn</span>
+              <span class="group-hover:translate-x-1 transition-transform text-xl">→</span>
+            </a>
+            <a href="https://adplist.org/mentors/tushar-roy" target="_blank" class="group flex items-center justify-between py-6 border-b border-white/10 hover:text-[var(--color-accent)] transition-colors no-underline">
+              <span class="font-medium text-lg text-white/90">Book a mentorship session</span>
+              <span class="group-hover:translate-x-1 transition-transform text-xl">→</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center opacity-40 text-sm font-sans">
+        <div class="mb-4 md:mb-0">&copy; 2026 Tushar Roy</div>
+        <div>End of the page. Beginning of a conversation. ☕</div>
+      </div>
+    </div>
+  </footer>
+</Layout>

@@ -273,10 +273,6 @@
         @apply bg-white border border-dashed border-black/30 p-5 sm:p-6 shadow-[3px_3px_0_0_#000];
     }
 
-    .media-badge {
-        @apply absolute bottom-2 right-2 bg-black/80 text-white font-departure text-[9px] px-2 py-0.5 pointer-events-none;
-    }
-
     /* Metrics Bar */
     .metric-item {
         @apply flex flex-col;

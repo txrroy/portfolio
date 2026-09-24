@@ -1,0 +1,329 @@
+---
+interface Props {
+  backUrl?: string;
+  backLabel?: string;
+  breadcrumbs?: string[];
+}
+
+const {
+  backUrl = "/",
+  backLabel = "Selected Works",
+  breadcrumbs = [],
+} = Astro.props;
+---
+
+<nav
+  id="navbar"
+  class="fixed top-5 left-1/2 -translate-x-1/2 z-50 bg-[#faf8f2]/92 backdrop-blur-xl border border-black/12 transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)] overflow-hidden w-auto rounded-[24px] shadow-[0_8px_30px_rgba(27,25,23,0.06),0_1px_2px_rgba(0,0,0,0.04)]"
+  data-state="closed"
+>
+  <!-- Header: Logo, Identity, Live Telemetry, Actions -->
+  <div
+    id="nav-inner"
+    class="flex items-center justify-between gap-3 sm:gap-6 px-4 py-2 w-full min-w-[320px] sm:min-w-[460px] md:min-w-[620px] transition-all duration-500"
+  >
+    <!-- Left: Identity / Back Link -->
+    <a
+      href={breadcrumbs.length > 0 ? backUrl : "/"}
+      id="brand-link"
+      class="flex items-center gap-2.5 text-[var(--color-text-primary)] hover:opacity-80 transition-opacity whitespace-nowrap no-underline group/brand"
+    >
+      <div
+        class="relative w-7 h-7 rounded-full overflow-hidden p-0.5 flex items-center justify-center bg-black/5 border border-black/10"
+      >
+        <!-- Favicon -->
+        <img
+          id="icon-logo"
+          src="/images/favicon.png"
+          alt="Logo"
+          class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100"
+        />
+
+        <!-- Arrow Up Icon (On Scroll) -->
+        <svg
+          id="icon-arrow"
+          class="absolute inset-0 m-auto translate-y-8 opacity-0 transition-all duration-300"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="var(--color-text-primary)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 19V5"></path>
+          <path d="M5 12l7-7 7 7"></path>
+        </svg>
+      </div>
+
+      <span
+        class="nav-text font-heading text-base sm:text-lg font-light tracking-tight overflow-hidden transition-all duration-500 text-[var(--color-text-primary)]"
+      >
+        {breadcrumbs.length > 0 ? (breadcrumbs[1] || "Tushar Roy") : "Tushar Roy"}
+      </span>
+    </a>
+
+    <!-- Center / Status Indicator (Only on Subpages / Case Studies) -->
+    {breadcrumbs.length > 0 && (
+      <div
+        class="nav-status hidden md:flex items-center gap-2 text-xs font-mono text-[var(--color-text-secondary)] overflow-hidden transition-all duration-500"
+      >
+        <span class="text-black/60 truncate max-w-[200px]">
+          {breadcrumbs[0]} • {breadcrumbs[2]}
+        </span>
+      </div>
+    )}
+
+    <!-- Right: Quick Navigation (Desktop) & Menu Toggle -->
+    <div class="flex items-center gap-3">
+      {breadcrumbs.length === 0 && (
+        <div class="hidden sm:flex items-center gap-4 text-xs font-mono tracking-wider">
+          <a href="#work" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
+            <span class="text-black/40 mr-1">01.</span>WORK
+          </a>
+          <a href="#about" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
+            <span class="text-black/40 mr-1">02.</span>ABOUT
+          </a>
+          <a href="#podcast" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
+            <span class="text-black/40 mr-1">03.</span>PODCAST
+          </a>
+        </div>
+      )}
+
+      <!-- Divider -->
+      <div class="nav-divider w-px h-5 bg-black/15 transition-all duration-500"></div>
+
+      <!-- Hamburger Button -->
+      <button
+        id="hamburger"
+        class="nav-hamburger flex flex-col justify-center gap-[4.5px] w-8 h-8 group p-1.5 hover:bg-black/5 rounded-full transition-colors relative cursor-pointer overflow-hidden duration-500"
+        aria-label="Toggle Menu"
+      >
+        <span
+          class="w-4.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 origin-center group-[.active]:rotate-45 group-[.active]:translate-y-[6.5px]"
+        ></span>
+        <span
+          class="w-4.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 group-[.active]:opacity-0"
+        ></span>
+        <span
+          class="w-4.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 origin-center group-[.active]:-rotate-45 group-[.active]:-translate-y-[6.5px]"
+        ></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Expanded Drawer: System Menu & Telemetry -->
+  <div
+    id="nav-wrapper"
+    class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
+  >
+    <div class="overflow-hidden">
+      <div
+        id="nav-content"
+        class="px-6 pb-6 pt-2 flex flex-col gap-5 opacity-0 transition-opacity duration-300 delay-100"
+      >
+        <div class="h-px bg-black/10 my-1"></div>
+
+        <!-- Telemetry Metadata Bar -->
+        <div class="flex items-center justify-between font-mono text-[11px] text-[var(--color-text-secondary)] pb-2 border-b border-dashed border-black/15">
+          <span class="flex items-center gap-1.5 uppercase font-bold tracking-wider text-[var(--color-text-primary)]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"></span>
+            CASE STUDIES
+          </span>
+          <span class="text-black/50">FREMONT, CA // AI & DESIGN SYSTEMS</span>
+        </div>
+
+        <!-- Main Links: 3 Case Studies + 1 Podcast -->
+        <nav class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
+          <!-- Case Study 01: Project Vanguard -->
+          <a
+            href="/case-study/vanguard"
+            class="menu-link p-3.5 rounded-xl bg-black/[0.03] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] border border-black/10 transition-colors no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>01 // APPLE INFOSEC</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Project Vanguard</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Security Metrics & BI Platform</span>
+          </a>
+
+          <!-- Case Study 02: HelpNow+ -->
+          <a
+            href="/case-study/helpnow"
+            class="menu-link p-3.5 rounded-xl bg-black/[0.03] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] border border-black/10 transition-colors no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>02 // VMWARE</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">HelpNow+</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Omnichannel Support PWA</span>
+          </a>
+
+          <!-- Case Study 03: DevHub -->
+          <a
+            href="/case-study/devhub"
+            class="menu-link p-3.5 rounded-xl bg-black/[0.03] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] border border-black/10 transition-colors no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>03 // VMWARE</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">DevHub</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Developer Tooling Ecosystem</span>
+          </a>
+
+          <!-- Feature 04: Enterprise Design Podcast -->
+          <a
+            href="/#podcast"
+            class="menu-link p-3.5 rounded-xl bg-black/[0.03] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] border border-black/10 transition-colors no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>04 // PODCAST</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Enterprise Design</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">12-Episode Candid Series</span>
+          </a>
+        </nav>
+
+        <!-- Connect Links -->
+        <div class="flex items-center justify-between pt-2 border-t border-black/10 text-xs font-mono">
+          <a
+            href="https://www.linkedin.com/in/tusharroy"
+            target="_blank"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors no-underline flex items-center gap-1.5"
+          >
+            <span>↗</span>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://adplist.org/mentors/tushar-roy"
+            target="_blank"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors no-underline flex items-center gap-1.5"
+          >
+            <span>↗</span>
+            <span>Mentorship (ADPList)</span>
+          </a>
+          <a
+            href="mailto:contact@tusharroy.com"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors no-underline flex items-center gap-1.5"
+          >
+            <span>✉</span>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Backdrop -->
+<div
+  id="backdrop"
+  class="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"
+>
+</div>
+
+<script>
+  function setupNav() {
+    const navbar = document.getElementById("navbar");
+    const hamburger = document.getElementById("hamburger");
+    const backdrop = document.getElementById("backdrop");
+    const navWrapper = document.getElementById("nav-wrapper");
+    const navContent = document.getElementById("nav-content");
+    const menuLinks = document.querySelectorAll(".menu-link");
+    const iconLogo = document.getElementById("icon-logo");
+    const iconArrow = document.getElementById("icon-arrow");
+    const brandLink = document.getElementById("brand-link");
+    const navStatus = document.querySelector(".nav-status") as HTMLElement | null;
+    const navBadge = document.querySelector(".nav-badge") as HTMLElement | null;
+    const navText = document.querySelector(".nav-text") as HTMLElement | null;
+
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      if (!navbar || !navWrapper || !hamburger || !backdrop || !navContent) return;
+
+      if (isMenuOpen) {
+        navbar.setAttribute("data-state", "open");
+        navbar.setAttribute("data-scrolled", "false");
+        navWrapper.classList.remove("grid-rows-[0fr]");
+        navWrapper.classList.add("grid-rows-[1fr]");
+        hamburger.classList.add("active");
+        backdrop.classList.remove("hidden");
+
+        if (iconLogo) iconLogo.style.opacity = "1";
+        if (iconArrow) {
+          iconArrow.classList.add("translate-y-8", "opacity-0");
+          iconArrow.style.opacity = "0";
+        }
+
+        setTimeout(() => backdrop.classList.remove("opacity-0"), 10);
+        setTimeout(() => navContent.classList.remove("opacity-0"), 150);
+      } else {
+        navbar.setAttribute("data-state", "closed");
+        navWrapper.classList.remove("grid-rows-[1fr]");
+        navWrapper.classList.add("grid-rows-[0fr]");
+        hamburger.classList.remove("active");
+        backdrop.classList.add("opacity-0");
+        setTimeout(() => backdrop.classList.add("hidden"), 300);
+        navContent.classList.add("opacity-0");
+        handleScroll();
+      }
+    }
+
+    hamburger?.addEventListener("click", toggleMenu);
+    backdrop?.addEventListener("click", toggleMenu);
+    menuLinks.forEach((link) => link.addEventListener("click", toggleMenu));
+
+    function handleScroll() {
+      if (isMenuOpen || !navbar) return;
+      const scrollPosition = window.scrollY;
+      const threshold = window.innerHeight * 0.18;
+
+      if (scrollPosition > threshold) {
+        navbar.setAttribute("data-scrolled", "true");
+        if (iconLogo) iconLogo.style.opacity = "0";
+        if (iconArrow) {
+          iconArrow.classList.remove("translate-y-8", "opacity-0");
+          iconArrow.style.opacity = "1";
+          iconArrow.style.transform = "translateY(0)";
+        }
+        if (navStatus) navStatus.style.display = "none";
+        if (navBadge) navBadge.style.display = "none";
+
+        if (brandLink) {
+          brandLink.setAttribute("href", "#");
+          brandLink.onclick = (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          };
+        }
+      } else {
+        navbar.setAttribute("data-scrolled", "false");
+        if (iconLogo) iconLogo.style.opacity = "1";
+        if (iconArrow) {
+          iconArrow.classList.add("translate-y-8", "opacity-0");
+          iconArrow.style.opacity = "0";
+        }
+        if (navStatus) navStatus.style.display = "";
+        if (navBadge) navBadge.style.display = "";
+
+        if (brandLink) {
+          brandLink.setAttribute("href", "/");
+          brandLink.onclick = null;
+        }
+      }
+    }
+
+    window.addEventListener("scroll", () => requestAnimationFrame(handleScroll));
+    handleScroll();
+  }
+
+  setupNav();
+  document.addEventListener("astro:page-load", setupNav);
+</script>

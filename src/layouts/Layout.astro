@@ -1,56 +1,14 @@
 ---
-import "../styles/global.css";
+import ThemeLayout from "@theme/Layout.astro";
 
 interface Props {
   title?: string;
   description?: string;
 }
 
-const {
-  title = "Tushar Roy - Product Designer",
-  description = "Engineering-fluent product designer crafting AI-powered enterprise systems.",
-} = Astro.props;
+const props = Astro.props;
 ---
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.tusharroy.com" />
-    <meta
-      property="og:image"
-      content="https://www.tusharroy.com/images/logo-tr-banner.jpg"
-    />
-
-    <!-- Preload Departure Mono -->
-    <link
-      rel="preload"
-      href="/fonts/DepartureMono-Regular.woff2"
-      as="font"
-      type="font/woff2"
-      crossorigin
-    />
-
-    <!-- Google Fonts: Homemade Apple, Space Mono, Instrument Serif, DM Sans, Fraunces -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Homemade+Apple&family=Instrument+Serif:ital@0;1&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300..900&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>{title}</title>
-  </head>
-  <body class="font-space">
-    <slot />
-  </body>
-</html>
+<ThemeLayout {...props}>
+  <slot />
+</ThemeLayout>

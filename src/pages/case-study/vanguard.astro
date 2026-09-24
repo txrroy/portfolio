@@ -1,38 +1,11 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 ---
 
-<Layout title="Vanguard 3.1: Self-Service Business Intelligence • Case Study">
-	<div
-		class="min-h-screen bg-[#faf8f2] text-[#1a1918] antialiased selection:bg-black selection:text-white font-space"
-	>
-		<!-- Sticky Top Navigation Bar -->
-		<header
-			class="sticky top-0 z-40 bg-[#faf8f2]/95 backdrop-blur-md border-b border-black/15 py-3.5 px-6"
-		>
-			<div
-				class="max-w-6xl mx-auto flex items-center justify-between font-departure text-xs tracking-wider"
-			>
-				<a
-					href="/"
-					class="flex items-center gap-2 text-black hover:text-neutral-600 transition-colors no-underline"
-				>
-					<span>←</span>
-					<span>Selected Works</span>
-				</a>
-				<div class="hidden sm:flex items-center gap-3 text-black/60">
-					<span>Apple InfoSec</span>
-					<span>•</span>
-					<span>Vanguard 3.1</span>
-					<span>•</span>
-					<span>Lead Product Designer</span>
-				</div>
-			</div>
-		</header>
-
-		<!-- Case Study Main Container -->
-		<main class="max-w-6xl mx-auto px-6 sm:px-8 pt-12 md:pt-16 pb-28">
+<CaseStudyLayout
+	title="Vanguard 3.1: Self-Service Business Intelligence • Case Study"
+	breadcrumbs={["Apple InfoSec", "Vanguard 3.1", "Lead Product Designer"]}
+>
 			<!-- ===================================================== -->
 			<!-- SECTION 1: HERO & TITLE                               -->
 			<!-- ===================================================== -->
@@ -72,7 +45,6 @@ import Footer from "../../components/Footer.astro";
 							alt="Vanguard Homepage Interface - Executive Security Health Overview"
 							loading="eager"
 						/>
-						<span class="media-badge">Executive Surface</span>
 					</div>
 					<figcaption>
 						Vanguard: Central executive dashboard displaying
@@ -164,7 +136,6 @@ import Footer from "../../components/Footer.astro";
 										src="/images-vanguard/vg2_mttd_metric.png"
 										alt="Mean Time to Detect (MTTD) Metric View"
 									/>
-									<span class="media-badge">MTTD Detail</span>
 								</div>
 								<figcaption>
 									Single Metric Detail View (MTTD)
@@ -177,31 +148,6 @@ import Footer from "../../components/Footer.astro";
 										src="/images-vanguard/vg2_programs.png"
 										alt="Vanguard Security Programs Inventory"
 									/>
-									<span class="media-badge"
-										>Programs Catalog</span
-									>
-								</div>
-								<figcaption>
-									Vanguard Security Programs Catalog
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Early Vanguard metrics and program structures were
-							manually maintained by a central BI squad.
-						</figcaption>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 3: THE PROBLEM                                -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">problem</span>
 						<h2>
 							Executives had no defensible way to answer ‘How are
 							we keeping Apple safe?’
@@ -224,16 +170,16 @@ import Footer from "../../components/Footer.astro";
 						<!-- Design Goals Aside -->
 						<aside>
 							<span
-								class="font-departure text-xs font-bold tracking-wider text-black block mb-3"
+								class="font-heading text-xs font-bold tracking-wider text-black block mb-3"
 							>
 								My Design Goals:
 							</span>
 							<ul
-								class="space-y-3 font-sans text-base text-black/85 list-none pl-0 m-0"
+								class="space-y-3 font-prose text-base text-black/85 list-none pl-0 m-0"
 							>
 								<li class="flex items-start gap-3">
 									<span
-										class="font-departure text-black font-bold"
+										class="font-heading text-black font-bold"
 										>01.</span
 									>
 									<span
@@ -243,7 +189,7 @@ import Footer from "../../components/Footer.astro";
 								</li>
 								<li class="flex items-start gap-3">
 									<span
-										class="font-departure text-black font-bold"
+										class="font-heading text-black font-bold"
 										>02.</span
 									>
 									<span
@@ -255,7 +201,7 @@ import Footer from "../../components/Footer.astro";
 								</li>
 								<li class="flex items-start gap-3">
 									<span
-										class="font-departure text-black font-bold"
+										class="font-heading text-black font-bold"
 										>03.</span
 									>
 									<span
@@ -280,65 +226,6 @@ import Footer from "../../components/Footer.astro";
 											src="/images-vanguard/vg3_results_map.png"
 											alt="Top-down Results Map for Leadership"
 										/>
-										<span class="media-badge"
-											>Top-Down Results Map</span
-										>
-									</div>
-									<figcaption>
-										Holistic leadership view: mapping
-										strategic goals to measures
-									</figcaption>
-								</figure>
-							</div>
-
-							<div class="sm:col-span-5 flex flex-col gap-5">
-								<figure class="m-0 flex-1">
-									<div class="media-frame">
-										<img
-											src="/images-vanguard/vg3_impact_metrics.png"
-											alt="Impact Metrics Breakdown"
-										/>
-										<span class="media-badge"
-											>Impact Metrics</span
-										>
-									</div>
-									<figcaption>
-										High-level security impact metrics
-									</figcaption>
-								</figure>
-
-								<figure class="m-0 flex-1">
-									<div class="media-frame">
-										<img
-											src="/images-vanguard/vg3_incident_management.png"
-											alt="Incident Management Dashboard"
-										/>
-										<span class="media-badge"
-											>Incident Management</span
-										>
-									</div>
-									<figcaption>
-										Non-BI team dashboard integration
-									</figcaption>
-								</figure>
-							</div>
-						</div>
-						<figcaption class="text-left mt-2">
-							Connecting top-level strategic security objectives
-							to team-level operational metrics.
-						</figcaption>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 4: RESEARCH                                   -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">research</span>
 						<h2>Metrics went stale, and anomalies unexplained</h2>
 					</div>
 
@@ -369,12 +256,12 @@ import Footer from "../../components/Footer.astro";
 						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
 							<aside class="m-0">
 								<h3
-									class="font-departure text-sm font-bold text-black m-0 mb-2"
+									class="font-heading text-sm font-bold text-black m-0 mb-2"
 								>
 									1. Published metrics went stale soon
 								</h3>
 								<p
-									class="font-sans text-sm text-black/75 leading-relaxed m-0"
+									class="font-prose text-sm text-black/75 leading-relaxed m-0"
 								>
 									Teams had to spend a lot of time
 									continuously working with the BI team to
@@ -385,13 +272,13 @@ import Footer from "../../components/Footer.astro";
 
 							<aside class="m-0">
 								<h3
-									class="font-departure text-sm font-bold text-black m-0 mb-2"
+									class="font-heading text-sm font-bold text-black m-0 mb-2"
 								>
 									2. Anomalies were displayed, but not
 									explained
 								</h3>
 								<p
-									class="font-sans text-sm text-black/75 leading-relaxed m-0"
+									class="font-prose text-sm text-black/75 leading-relaxed m-0"
 								>
 									When a metric spiked, there was a flurry of
 									questions, check-ins, and chaos as
@@ -409,48 +296,6 @@ import Footer from "../../components/Footer.astro";
 										src="/images-vanguard/vg5.png"
 										alt="Research Findings: Onboarding Friction and Maintenance Choke Points"
 									/>
-									<span class="media-badge"
-										>Research Discovery Map</span
-									>
-								</div>
-								<figcaption>
-									Mapping the metric authoring lifecycle and
-									identifying failure points
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg6.png"
-										alt="Metric Workflow and Back-and-Forth Handoff Friction"
-									/>
-									<span class="media-badge"
-										>Process Latency Analysis</span
-									>
-								</div>
-								<figcaption>
-									The 2-month handoff bottleneck between
-									partner teams and central BI
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Visualizing the iterative bottlenecks that made
-							central metrics lag operational realities.
-						</figcaption>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 5: STRATEGY & REFRAMING                       -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">strategy</span>
 						<h2>The team had two plans. I argued for one.</h2>
 					</div>
 
@@ -459,14 +304,14 @@ import Footer from "../../components/Footer.astro";
 						<!-- Design Sprint Dialogue Box -->
 						<div class="card">
 							<div
-								class="font-departure text-xs tracking-wider text-black/50 pb-3 mb-4 border-b border-black/15 font-semibold"
+								class="font-heading text-xs tracking-wider text-black/50 pb-3 mb-4 border-b border-black/15 font-semibold"
 							>
 								Main points from the Design Sprint Debate
 							</div>
 							<div class="space-y-4 text-base">
 								<div class="p-3 border-l-2">
 									<strong
-										class="font-departure text-xs block text-black/60 mb-1"
+										class="font-heading text-xs block text-black/60 mb-1"
 										>Director</strong
 									>
 									<p class="m-0 text-black/90">
@@ -477,7 +322,7 @@ import Footer from "../../components/Footer.astro";
 								</div>
 								<div class="p-3 border-l-2">
 									<strong
-										class="font-departure text-xs block text-emerald-800 mb-1"
+										class="font-heading text-xs block text-emerald-800 mb-1"
 										>Me, Director, Dev Lead</strong
 									>
 									<p class="m-0 text-black/90 font-medium">
@@ -487,7 +332,7 @@ import Footer from "../../components/Footer.astro";
 								</div>
 								<div class="p-3 border-l-2">
 									<strong
-										class="font-departure text-xs block text-amber-800 mb-1"
+										class="font-heading text-xs block text-amber-800 mb-1"
 										>Product Manager</strong
 									>
 									<p class="m-0 text-black/90">
@@ -499,7 +344,7 @@ import Footer from "../../components/Footer.astro";
 
 							<div class="mt-6 pt-5 border-t border-black/15">
 								<span
-									class="font-departure text-xs tracking-wider text-red-700 font-bold block mb-1"
+									class="font-heading text-xs tracking-wider text-red-700 font-bold block mb-1"
 								>
 									The Fundamental Question:
 								</span>
@@ -522,7 +367,7 @@ import Footer from "../../components/Footer.astro";
 								class="border-l-2 border-dashed border-black/40 pl-5 py-3 bg-white border border-black/10 p-4"
 							>
 								<span
-									class="font-departure text-xs tracking-wider text-black/60 block mb-1 font-semibold"
+									class="font-heading text-xs tracking-wider text-black/60 block mb-1 font-semibold"
 								>
 									Reframed Design Challenge:
 								</span>
@@ -544,48 +389,6 @@ import Footer from "../../components/Footer.astro";
 										src="/images-vanguard/vg61.png"
 										alt="Strategic Architecture: Governance and Trust Model"
 									/>
-									<span class="media-badge"
-										>Strategic Architecture</span
-									>
-								</div>
-								<figcaption>
-									Architectural framework for self-service
-									with embedded governance
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg62.png"
-										alt="Governing Trust Signals in a Scalable BI Platform"
-									/>
-									<span class="media-badge"
-										>Trust Signal Mapping</span
-									>
-								</div>
-								<figcaption>
-									Detailed interaction model mapping trust
-									tiers directly into user workflows
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Strategy: Moving from gatekeeper reviews to visible,
-							embedded provenance signals.
-						</figcaption>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 6: DESIGN 1/4 - QUALITY GATES                 -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">design</span>
 						<h2>1. Quality gates built into the onboarding flow</h2>
 					</div>
 
@@ -604,15 +407,15 @@ import Footer from "../../components/Footer.astro";
 						<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
 							<aside class="m-0 p-4">
 								<span
-									class="font-departure text-xs text-black/50 block mb-1"
+									class="font-heading text-xs text-black/50 block mb-1"
 									>CHECK 01</span
 								>
 								<strong
-									class="font-sans text-sm text-black block"
+									class="font-prose text-sm text-black block"
 									>Formula Clarity</strong
 								>
 								<p
-									class="font-sans text-xs text-black/70 mt-1 m-0"
+									class="font-prose text-xs text-black/70 mt-1 m-0"
 								>
 									Is there an explicit, unambiguous formula
 									for this measure?
@@ -620,30 +423,30 @@ import Footer from "../../components/Footer.astro";
 							</aside>
 							<aside class="m-0 p-4">
 								<span
-									class="font-departure text-xs text-black/50 block mb-1"
+									class="font-heading text-xs text-black/50 block mb-1"
 									>CHECK 02</span
 								>
 								<strong
-									class="font-sans text-sm text-black block"
+									class="font-prose text-sm text-black block"
 									>Data Provenance</strong
 								>
 								<p
-									class="font-sans text-xs text-black/70 mt-1 m-0"
+									class="font-prose text-xs text-black/70 mt-1 m-0"
 								>
 									Are all contributing data sources declared?
 								</p>
 							</aside>
 							<aside class="m-0 p-4">
 								<span
-									class="font-departure text-xs text-black/50 block mb-1"
+									class="font-heading text-xs text-black/50 block mb-1"
 									>CHECK 03</span
 								>
 								<strong
-									class="font-sans text-sm text-black block"
+									class="font-prose text-sm text-black block"
 									>Baseline Calibration</strong
 								>
 								<p
-									class="font-sans text-xs text-black/70 mt-1 m-0"
+									class="font-prose text-xs text-black/70 mt-1 m-0"
 								>
 									What does "good" look like, and against what
 									baseline?
@@ -658,7 +461,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-black"
 											>01. Measure</span
@@ -675,7 +478,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									Partner teams define measures with clear
 									formulas and data sources.
@@ -685,7 +488,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-black"
 											>02. Thresholds</span
@@ -702,7 +505,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									Baseline calibration sets statistical
 									control limits and alert bands.
@@ -712,7 +515,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-black"
 											>03. Ownership</span
@@ -729,7 +532,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									Every metric requires a named DRI
 									responsible for investigations.
@@ -739,7 +542,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-black"
 											>04. Automation</span
@@ -756,7 +559,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									Continuous queries poll endpoints to ensure
 									zero data drift.
@@ -766,7 +569,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-black"
 											>05. Audit Trail</span
@@ -783,7 +586,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									Formula revisions and pipeline edits are
 									immutably versioned.
@@ -793,7 +596,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-black"
 											>06. Certification</span
@@ -810,7 +613,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									Automated verification qualifies the metric
 									for live executive surfaces.
@@ -907,49 +710,6 @@ import Footer from "../../components/Footer.astro";
 										src="/images-vanguard/vg8_trust_tiers.png"
 										alt="Trust Tiers Interface showing BI-Led, BI-Approved, and Self-Service Badges"
 									/>
-									<span class="media-badge"
-										>Trust Tiers Interface</span
-									>
-								</div>
-								<figcaption>
-									Trust tier badges displayed contextually
-									across dashboards
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg8_mttd_anomaly_data_lineage.png"
-										alt="MTTD Anomaly Data Lineage Explorer"
-									/>
-									<span class="media-badge"
-										>Lineage Explorer</span
-									>
-								</div>
-								<figcaption>
-									Interactive data lineage explorer tracing
-									raw telemetry sources
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Provenance, not status. Viewers evaluate confidence
-							based on concrete data lineage rather than
-							subjective rating.
-						</figcaption>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 8: DESIGN 3/4 - HUMAN-IN-THE-LOOP AI          -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">design</span>
 						<h2>3. Human-in-the-loop anomaly analysis</h2>
 					</div>
 
@@ -969,7 +729,7 @@ import Footer from "../../components/Footer.astro";
 						<!-- Trade-off Box -->
 						<aside class="callout-warning">
 							<div
-								class="font-departure text-xs tracking-wider text-black font-bold mb-2 flex items-center gap-2"
+								class="font-heading text-xs tracking-wider text-black font-bold mb-2 flex items-center gap-2"
 							>
 								<span
 									class="w-2.5 h-2.5 bg-black rounded-full inline-block"
@@ -980,7 +740,7 @@ import Footer from "../../components/Footer.astro";
 								>
 							</div>
 							<p
-								class="font-sans text-sm text-black/80 leading-relaxed mb-2"
+								class="font-prose text-sm text-black/80 leading-relaxed mb-2"
 							>
 								Initially, the team wanted to hide automated
 								analysis unless verified by a human. But the
@@ -989,7 +749,7 @@ import Footer from "../../components/Footer.astro";
 								well.
 							</p>
 							<p
-								class="font-sans text-sm text-black/90 font-medium leading-relaxed m-0"
+								class="font-prose text-sm text-black/90 font-medium leading-relaxed m-0"
 							>
 								<strong>Solution:</strong> We added a confidence score
 								along with reasoning. Most importantly, I made it
@@ -1003,7 +763,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-red-700"
 											>01. Trigger</span
@@ -1019,7 +779,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									Metric breaks control limits. System flags
 									anomaly immediately.
@@ -1029,7 +789,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-amber-700"
 											>02. Agent</span
@@ -1046,7 +806,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									AI drafts narrative with explicit reasoning
 									and confidence score.
@@ -1056,7 +816,7 @@ import Footer from "../../components/Footer.astro";
 							<figure class="m-0 flex flex-col justify-between">
 								<div>
 									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
+										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-heading text-[10px]"
 									>
 										<span class="font-bold text-emerald-700"
 											>03. Sign-off</span
@@ -1073,7 +833,7 @@ import Footer from "../../components/Footer.astro";
 									</div>
 								</div>
 								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
+									class="font-prose text-xs text-black/75 m-0 leading-normal"
 								>
 									DRI validates hypothesis and signs off
 									before publishing.
@@ -1125,49 +885,6 @@ import Footer from "../../components/Footer.astro";
 										src="/images-vanguard/vg1_homepage.png"
 										alt="Vanguard Executive Surface Overview"
 									/>
-									<span class="media-badge"
-										>Executive Surface</span
-									>
-								</div>
-								<figcaption>
-									Primary executive portal with standardized
-									yardstick metrics
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg7_homepage_critical_services.png"
-										alt="Critical Services View on Executive Homepage"
-									/>
-									<span class="media-badge"
-										>Critical Services</span
-									>
-								</div>
-								<figcaption>
-									Critical services roll-up utilizing
-									statistical process control
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Standardized SPC visual language distinguishing
-							routine telemetry noise from true operational
-							emergencies.
-						</figcaption>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 10: OUTCOME                                   -->
-			<!-- ===================================================== -->
-			<article id="outcome" class="case-section border-b-0 pb-0">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">outcome</span>
 						<h2>The IKEA effect</h2>
 					</div>
 
@@ -1191,15 +908,15 @@ import Footer from "../../components/Footer.astro";
 						<div class="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
 							<div class="card">
 								<span
-									class="font-departure text-xs text-black/50 block mb-1"
+									class="font-heading text-xs text-black/50 block mb-1"
 									>BI Coverage</span
 								>
 								<div
-									class="font-departure text-3xl font-bold text-black mb-1"
+									class="font-heading text-3xl font-bold text-black mb-1"
 								>
 									30% → 75%
 								</div>
-								<span class="font-sans text-xs text-black/70"
+								<span class="font-prose text-xs text-black/70"
 									>Achieved in 3 months across partner
 									security teams.</span
 								>
@@ -1207,15 +924,15 @@ import Footer from "../../components/Footer.astro";
 
 							<div class="card">
 								<span
-									class="font-departure text-xs text-black/50 block mb-1"
+									class="font-heading text-xs text-black/50 block mb-1"
 									>Onboarding</span
 								>
 								<div
-									class="font-departure text-3xl font-bold text-black mb-1"
+									class="font-heading text-3xl font-bold text-black mb-1"
 								>
 									2 mo → 5 days
 								</div>
-								<span class="font-sans text-xs text-black/70"
+								<span class="font-prose text-xs text-black/70"
 									>Average onboarding time reduced via
 									self-service authoring.</span
 								>
@@ -1223,15 +940,15 @@ import Footer from "../../components/Footer.astro";
 
 							<div class="card">
 								<span
-									class="font-departure text-xs text-black/50 block mb-1"
+									class="font-heading text-xs text-black/50 block mb-1"
 									>Escalations</span
 								>
 								<div
-									class="font-departure text-3xl font-bold text-emerald-700 mb-1"
+									class="font-heading text-3xl font-bold text-emerald-700 mb-1"
 								>
 									Cut by &gt;50%
 								</div>
-								<span class="font-sans text-xs text-black/70"
+								<span class="font-prose text-xs text-black/70"
 									>Escalation calls during anomalies cut in
 									half (Survey June 2026).</span
 								>
@@ -1240,7 +957,7 @@ import Footer from "../../components/Footer.astro";
 
 						<!-- PM Closing Quote -->
 						<blockquote
-							class="bg-white border border-dashed border-black/30 p-6 sm:p-8 shadow-[3px_3px_0_0_#000] relative mt-4 m-0 font-sans"
+							class="bg-white border border-dashed border-black/30 p-6 sm:p-8 shadow-[3px_3px_0_0_#000] relative mt-4 m-0 font-prose"
 						>
 							<p
 								class="font-serif text-xl sm:text-2xl text-black italic leading-snug pl-6 border-l-2 border-dashed border-black/40 mb-4"
@@ -1250,7 +967,7 @@ import Footer from "../../components/Footer.astro";
 								artifact."
 							</p>
 							<cite
-								class="pl-6 font-departure text-xs tracking-wider text-black/60 font-semibold not-italic block"
+								class="pl-6 font-heading text-xs tracking-wider text-black/60 font-semibold not-italic block"
 							>
 								- Product Manager, Apple InfoSec BI Team
 							</cite>
@@ -1258,7 +975,7 @@ import Footer from "../../components/Footer.astro";
 
 						<!-- Navigation Footer -->
 						<div
-							class="mt-12 pt-6 border-t border-black/15 flex flex-wrap items-center justify-between gap-4 font-departure text-xs"
+							class="mt-12 pt-6 border-t border-black/15 flex flex-wrap items-center justify-between gap-4 font-heading text-xs"
 						>
 							<a
 								href="/"
@@ -1277,116 +994,4 @@ import Footer from "../../components/Footer.astro";
 					</div>
 				</div>
 			</article>
-		</main>
-
-		<!-- ===================================================== -->
-		<!-- IMAGE ZOOM OVERLAY LIGHTBOX                           -->
-		<!-- ===================================================== -->
-		<div
-			id="image-zoom-overlay"
-			class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center p-4 sm:p-8"
-			role="dialog"
-			aria-modal="true"
-			aria-label="Image Preview"
-		>
-			<!-- Top Bar with Close Button -->
-			<div
-				class="w-full max-w-6xl flex items-center justify-between text-white font-departure text-xs mb-3 px-2"
-			>
-				<span id="zoom-title" class="truncate max-w-md text-white/80">
-					Visual Inspection
-				</span>
-				<button
-					id="image-zoom-close"
-					class="px-3 py-1 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-xs transition-colors flex items-center gap-1.5 cursor-pointer"
-				>
-					<span>Close</span>
-					<kbd
-						class="text-[10px] bg-white/20 border-white/40 text-white px-1 shadow-none"
-						>ESC</kbd
-					>
-				</button>
-			</div>
-
-			<!-- Image Modal Viewport -->
-			<div
-				class="relative max-w-6xl max-h-[85vh] w-full flex items-center justify-center overflow-hidden"
-			>
-				<img
-					id="image-zoom-img"
-					src=""
-					alt="Full size view"
-					class="max-w-full max-h-[85vh] object-contain shadow-2xl border border-white/20"
-				/>
-			</div>
-		</div>
-
-		<Footer />
-	</div>
-</Layout>
-
-<script>
-	// -------------------------------------------------------------
-	// Image Overlay / Lightbox Logic
-	// -------------------------------------------------------------
-	const overlay = document.getElementById("image-zoom-overlay");
-	const zoomImg = document.getElementById(
-		"image-zoom-img",
-	) as HTMLImageElement;
-	const zoomTitle = document.getElementById("zoom-title");
-	const closeBtn = document.getElementById("image-zoom-close");
-	let isZoomOpen = false;
-
-	function openZoom(src: string, alt: string) {
-		if (!overlay || !zoomImg) return;
-		zoomImg.src = src;
-		zoomImg.alt = alt || "Case Study Visual";
-		if (zoomTitle) {
-			zoomTitle.textContent = alt || "Visual Inspection";
-		}
-		overlay.classList.remove("hidden");
-		requestAnimationFrame(() => {
-			overlay.classList.remove("opacity-0");
-		});
-		document.body.style.overflow = "hidden";
-		isZoomOpen = true;
-	}
-
-	function closeZoom() {
-		if (!overlay) return;
-		overlay.classList.add("opacity-0");
-		setTimeout(() => {
-			overlay.classList.add("hidden");
-			if (zoomImg) zoomImg.src = "";
-		}, 300);
-		document.body.style.overflow = "";
-		isZoomOpen = false;
-	}
-
-	// Register all clickable images in main
-	const allImages = document.querySelectorAll("main img");
-	allImages.forEach((img) => {
-		(img as HTMLElement).style.cursor = "zoom-in";
-		img.addEventListener("click", (e) => {
-			const target = e.currentTarget as HTMLImageElement;
-			openZoom(target.src, target.alt);
-		});
-	});
-
-	// Close actions
-	closeBtn?.addEventListener("click", closeZoom);
-	overlay?.addEventListener("click", (e) => {
-		if (
-			e.target === overlay ||
-			(e.target as HTMLElement).id === "zoom-title"
-		) {
-			closeZoom();
-		}
-	});
-
-	document.addEventListener("keydown", (e) => {
-		if (e.key === "Escape" && isZoomOpen) {
-			closeZoom();
-		}
-	});
-</script>
+</CaseStudyLayout>

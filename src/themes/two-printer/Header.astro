@@ -1,0 +1,39 @@
+---
+interface Props {
+  backUrl?: string;
+  backLabel?: string;
+  breadcrumbs?: string[];
+}
+
+const {
+  backUrl = "/",
+  backLabel = "Selected Works",
+  breadcrumbs = ["Apple InfoSec", "Vanguard 3.1", "Lead Product Designer"],
+} = Astro.props;
+---
+
+<header
+  class="sticky top-0 z-40 bg-canvas/95 backdrop-blur-md border-b border-border-subtle py-3.5 px-6"
+>
+  <div
+    class="max-w-6xl mx-auto flex items-center justify-between font-heading text-xs tracking-wider"
+  >
+    <a
+      href={backUrl}
+      class="flex items-center gap-2 text-primary hover:text-secondary transition-colors no-underline"
+    >
+      <span>←</span>
+      <span>{backLabel}</span>
+    </a>
+    {breadcrumbs && breadcrumbs.length > 0 && (
+      <div class="hidden sm:flex items-center gap-3 text-secondary">
+        {breadcrumbs.map((crumb, idx) => (
+          <>
+            {idx > 0 && <span>•</span>}
+            <span>{crumb}</span>
+          </>
+        ))}
+      </div>
+    )}
+  </div>
+</header>

@@ -1,0 +1,129 @@
+---
+import Layout from "@theme/Layout.astro";
+import Header from "@theme/Header.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  backUrl?: string;
+  backLabel?: string;
+  breadcrumbs?: string[];
+}
+
+const {
+  title = "Case Study • Tushar Roy",
+  description,
+  backUrl = "/",
+  backLabel = "Selected Works",
+  breadcrumbs = ["Apple InfoSec", "Vanguard 3.1", "Lead Product Designer"],
+} = Astro.props;
+---
+
+<Layout title={title} description={description}>
+  <div class="min-h-screen bg-canvas text-primary antialiased font-body selection:bg-black selection:text-white">
+    <Header backUrl={backUrl} backLabel={backLabel} breadcrumbs={breadcrumbs} />
+    <main class="max-w-6xl mx-auto px-6 sm:px-8 pt-12 md:pt-16 pb-28">
+      <slot />
+    </main>
+  </div>
+
+  <!-- Image Zoom Lightbox Overlay -->
+  <div
+    id="image-zoom-overlay"
+    class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center p-4 sm:p-8"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Image Preview"
+  >
+    <!-- Top Bar with Close Button -->
+    <div
+      class="w-full max-w-6xl flex items-center justify-between text-white font-mono text-xs mb-3 px-2"
+    >
+      <span id="zoom-title" class="truncate max-w-md text-white/80">
+        Visual Inspection
+      </span>
+      <button
+        id="image-zoom-close"
+        class="px-3 py-1 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-xs transition-colors flex items-center gap-1.5 cursor-pointer"
+      >
+        <span>Close</span>
+        <kbd
+          class="text-[10px] bg-white/20 border-white/40 text-white px-1 shadow-none"
+        >ESC</kbd>
+      </button>
+    </div>
+
+    <!-- Image Modal Viewport -->
+    <div
+      class="relative max-w-6xl max-h-[85vh] w-full flex items-center justify-center overflow-hidden"
+    >
+      <img
+        id="image-zoom-img"
+        src=""
+        alt="Full size view"
+        class="max-w-full max-h-[85vh] object-contain shadow-2xl border border-white/20"
+      />
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById("image-zoom-overlay");
+    const zoomImg = document.getElementById("image-zoom-img") as HTMLImageElement | null;
+    const zoomTitle = document.getElementById("zoom-title");
+    const closeBtn = document.getElementById("image-zoom-close");
+    let isZoomOpen = false;
+
+    function openZoom(src: string, alt: string) {
+      if (!overlay || !zoomImg) return;
+      zoomImg.src = src;
+      zoomImg.alt = alt || "Case Study Visual";
+      if (zoomTitle) {
+        zoomTitle.textContent = alt || "Visual Inspection";
+      }
+      overlay.classList.remove("hidden");
+      requestAnimationFrame(() => {
+        overlay.classList.remove("opacity-0");
+      });
+      document.body.style.overflow = "hidden";
+      isZoomOpen = true;
+    }
+
+    function closeZoom() {
+      if (!overlay) return;
+      overlay.classList.add("opacity-0");
+      setTimeout(() => {
+        overlay.classList.add("hidden");
+        if (zoomImg) zoomImg.src = "";
+      }, 300);
+      document.body.style.overflow = "";
+      isZoomOpen = false;
+    }
+
+    // Register all clickable images in main
+    const allImages = document.querySelectorAll("main img");
+    allImages.forEach((img) => {
+      (img as HTMLElement).style.cursor = "zoom-in";
+      img.addEventListener("click", (e) => {
+        const target = e.currentTarget as HTMLImageElement;
+        openZoom(target.src, target.alt);
+      });
+    });
+
+    // Close actions
+    closeBtn?.addEventListener("click", closeZoom);
+    overlay?.addEventListener("click", (e) => {
+      if (
+        e.target === overlay ||
+        (e.target as HTMLElement).id === "zoom-title"
+      ) {
+        closeZoom();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && isZoomOpen) {
+        closeZoom();
+      }
+    });
+  </script>
+</Layout>

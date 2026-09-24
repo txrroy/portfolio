@@ -1,0 +1,380 @@
+@import "tailwindcss";
+
+@theme {
+    /* -------------------------------------------------- */
+    /* Fonts by Job: Editorial Serif + Clean Sans + Mono   */
+    /* -------------------------------------------------- */
+    --font-heading: "Fraunces", serif;
+    --font-body: "DM Sans", sans-serif;
+    --font-prose: "DM Sans", sans-serif;
+    --font-mono: "Space Mono", monospace;
+    --font-handwriting: "Homemade Apple", cursive;
+
+    /* Legacy Aliases */
+    --font-serif: "Fraunces", serif;
+    --font-sans: "DM Sans", sans-serif;
+    --font-space: var(--font-mono);
+    --font-departure: var(--font-mono);
+    --font-pixel: var(--font-mono);
+
+    /* -------------------------------------------------- */
+    /* Named Color Tokens: Warm Ivory + Deep Graphite     */
+    /* -------------------------------------------------- */
+    --color-canvas: #faf8f2;
+    --color-desk: #181716;
+    --color-surface: #ffffff;
+    --color-surface-subtle: #f5f0e8;
+
+    --color-text-primary: #1b1917;
+    --color-text-secondary: #5c544d;
+    --color-text-muted: rgba(27, 25, 23, 0.45);
+
+    --color-border-subtle: rgba(27, 25, 23, 0.12);
+    --color-border-default: rgba(27, 25, 23, 0.22);
+    --color-border-dashed: rgba(27, 25, 23, 0.32);
+
+    --color-accent: #c25e2e;
+    --color-accent-hover: #9e441c;
+    --color-accent-subtle: rgba(194, 94, 46, 0.12);
+
+    /* System Telemetry Colors */
+    --color-sys-green: #10b981;
+    --color-sys-amber: #f59e0b;
+    --color-sys-cyan: #06b6d4;
+
+    /* Legacy Color Aliases */
+    --color-bg-primary: #faf8f2;
+}
+
+@layer base {
+    /* Dark Mode Scope (for specific embedded system/telemetry modules) */
+    .dark {
+        --color-bg-primary: #1c1a18;
+        --color-text-primary: #faf7f2;
+        --color-text-secondary: rgba(250, 247, 242, 0.72);
+        --color-accent: #e0ba9b;
+        --color-accent-hover: #e0ba9b;
+
+        background-color: var(--color-bg-primary);
+        color: var(--color-text-primary);
+    }
+
+    html {
+        scroll-behavior: smooth;
+        background-color: var(--color-canvas);
+        color: var(--color-text-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: var(--font-body), sans-serif;
+    }
+
+    body {
+        font-family: var(--font-body), sans-serif;
+        background-color: var(--color-canvas);
+    }
+
+    /* Eyebrow Style with Monospace Precision */
+    .eyebrow {
+        @apply font-mono text-xs uppercase tracking-[0.2em] font-bold text-[var(--color-text-secondary)] block mb-3;
+    }
+
+    h1 {
+        @apply font-heading text-5xl md:text-6xl lg:text-7xl font-light text-[var(--color-text-primary)] leading-[1.05] mb-6 tracking-tight;
+    }
+
+    h2 {
+        @apply font-heading text-3xl md:text-4xl lg:text-5xl font-light text-[var(--color-text-primary)] leading-tight mb-8 tracking-tight;
+    }
+
+    h3 {
+        @apply font-heading text-xl md:text-2xl font-normal text-[var(--color-text-primary)] mb-4;
+    }
+
+    h4 {
+        @apply font-mono text-xs uppercase tracking-wider font-bold text-[var(--color-text-secondary)] mb-3;
+    }
+
+    p {
+        @apply font-body text-lg md:text-xl text-[var(--color-text-secondary)] leading-relaxed max-w-[65ch] mb-6;
+    }
+
+    a {
+        @apply text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors duration-200;
+    }
+
+    strong, b {
+        @apply font-semibold text-[var(--color-text-primary)];
+    }
+
+    blockquote {
+        @apply my-8 border-l-3 border-[var(--color-accent)] pl-6 font-heading text-2xl text-[var(--color-text-primary)] italic leading-snug;
+    }
+
+    ul {
+        @apply list-disc list-outside ml-5 mb-6 text-[var(--color-text-secondary)] font-body text-lg md:text-xl leading-relaxed;
+    }
+
+    ol {
+        @apply list-decimal list-outside ml-6 mb-6 text-[var(--color-text-secondary)] font-body text-lg md:text-xl leading-relaxed;
+    }
+
+    li {
+        @apply pl-1 mb-2;
+    }
+
+    li::marker {
+        @apply text-[var(--color-accent)];
+    }
+
+    /* Figures & Media Containers */
+    figure {
+        @apply my-8 p-3 bg-white/70 block relative rounded-2xl border border-black/10 shadow-[0_2px_12px_rgba(0,0,0,0.04)];
+    }
+
+    figure>div.media-frame,
+    figure>.media-frame {
+        @apply bg-[#f4eee6] overflow-hidden relative rounded-xl border border-black/10;
+    }
+
+    figure img {
+        @apply w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 block rounded-xl;
+    }
+
+    figure:hover img {
+        transform: scale(1.008);
+    }
+
+    figcaption {
+        @apply font-mono text-xs text-black/60 tracking-wider block mt-2.5 text-left flex items-center justify-between;
+    }
+
+    /* Tables & Tabular Data with Schematics */
+    table {
+        @apply w-full text-left font-sans text-sm border-collapse border border-black/10 bg-white my-8 shadow-[0_4px_20px_rgba(0,0,0,0.03)] rounded-xl overflow-hidden;
+    }
+
+    thead {
+        @apply bg-[#f5f0e8] border-b border-black/10 font-mono text-xs text-black/75 tracking-wider;
+    }
+
+    th {
+        @apply p-4 font-bold;
+    }
+
+    td {
+        @apply p-4 border-t border-black/10 font-sans;
+    }
+
+    /* Technical Inline Elements */
+    code {
+        @apply font-mono text-xs bg-black/5 px-2 py-0.5 rounded border border-black/10 text-[var(--color-text-primary)];
+    }
+
+    kbd {
+        @apply font-mono text-[11px] bg-white border border-black/20 px-1.5 py-0.5 rounded shadow-[1px_1px_0_0_rgba(0,0,0,0.2)] text-black font-semibold;
+    }
+
+    /* Callout Panels with Blueprint Accent */
+    aside {
+        @apply bg-white/90 border border-black/10 p-6 sm:p-7 shadow-[0_4px_24px_rgba(0,0,0,0.03)] my-8 block rounded-2xl relative overflow-hidden;
+    }
+
+    aside.callout-warning {
+        @apply border-l-4 border-l-[var(--color-accent)] border-black/10 bg-[#fdfbf7];
+    }
+}
+
+@layer components {
+    /* Editorial Case Study Framework */
+    .kicker {
+        font-family: var(--font-handwriting);
+        @apply text-base sm:text-lg text-[var(--color-accent)] block mb-1;
+    }
+
+    .case-section {
+        @apply mb-20 md:mb-28 border-b border-dashed border-black/15 pb-16 relative;
+    }
+
+    .case-grid {
+        @apply grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start;
+    }
+
+    .case-sidebar {
+        @apply md:col-span-3 md:sticky md:top-24;
+    }
+
+    .case-sidebar h2 {
+        @apply m-0 text-2xl sm:text-3xl font-light leading-snug tracking-tight text-[var(--color-text-primary)] font-heading;
+    }
+
+    .case-content {
+        @apply md:col-span-9 space-y-6;
+    }
+
+    .case-prose {
+        @apply font-prose text-lg text-black/85 leading-relaxed space-y-4;
+    }
+
+    .case-prose p {
+        @apply m-0 text-lg leading-relaxed text-black/85 font-prose max-w-none;
+    }
+
+    /* Hybrid Cards: Soft shadows + Technical corner registration marks */
+    .card,
+    .scorecard-card,
+    .dialogue-box {
+        @apply bg-white border border-black/10 p-6 sm:p-8 rounded-2xl shadow-[0_4px_24px_rgba(45,42,38,0.05),0_8px_40px_rgba(45,42,38,0.03)] relative transition-all duration-300;
+    }
+
+    /* Systems Badges & Schematics */
+    .sys-badge {
+        @apply inline-flex items-center gap-1.5 font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/5 text-[var(--color-text-secondary)] border border-black/10 font-bold;
+    }
+
+    .sys-badge-accent {
+        @apply inline-flex items-center gap-1.5 font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md bg-[var(--color-accent-subtle)] text-[var(--color-accent)] border border-[var(--color-accent)]/20 font-bold;
+    }
+
+    .telemetry-dot {
+        @apply w-1.5 h-1.5 rounded-full animate-pulse;
+    }
+
+    /* Metric Display */
+    .metric-item {
+        @apply flex flex-col p-4 rounded-xl bg-black/[0.02] border border-black/5;
+    }
+
+    .metric-value {
+        @apply font-heading text-3xl md:text-4xl font-normal text-[var(--color-text-primary)] mb-1;
+    }
+
+    .metric-label {
+        @apply font-mono tracking-[0.15em] text-[11px] font-bold text-[var(--color-text-secondary)] mb-1.5 uppercase;
+    }
+
+    .metric-desc {
+        @apply font-sans text-xs sm:text-sm text-[var(--color-text-secondary)] leading-normal;
+    }
+
+    /* Interactive Timeline */
+    .timeline {
+        @apply relative border-l border-dashed border-[var(--color-border-dashed)] ml-4 md:ml-8 pl-8 md:pl-12 space-y-12;
+    }
+
+    .timeline-item {
+        @apply relative;
+    }
+
+    .timeline-marker {
+        @apply absolute -left-[37px] md:-left-[53px] top-6 w-3 h-3 bg-white border-2 border-[var(--color-accent)] rounded-full z-10;
+    }
+
+    .timeline-item.current .timeline-marker {
+        @apply bg-[var(--color-accent)] shadow-[0_0_8px_rgba(194,94,46,0.6)];
+    }
+
+    .timeline-card {
+        @apply bg-white/70 p-6 md:p-8 rounded-2xl border border-black/10 transition-all duration-300 hover:border-[var(--color-accent)] shadow-sm;
+    }
+
+    .timeline-year {
+        @apply font-mono text-xs tracking-widest text-[var(--color-text-secondary)] mb-2 uppercase block;
+    }
+
+    /* Testimonials */
+    .testimonial-card {
+        @apply bg-white p-8 rounded-2xl border border-black/10 shadow-[0_4px_24px_rgba(0,0,0,0.03)] relative;
+    }
+
+    .testimonial-quote {
+        @apply font-body text-lg md:text-xl text-[var(--color-text-primary)] mb-6 not-italic leading-relaxed;
+    }
+
+    .testimonial-author {
+        @apply flex items-center gap-4;
+    }
+
+    /* Podcast Card */
+    .podcast-card {
+        @apply bg-[#1c1a18] text-white p-8 md:p-12 rounded-3xl grid md:grid-cols-2 gap-8 items-center border border-white/10 shadow-2xl;
+    }
+
+    /* Typography Classes */
+    .font-heading {
+        font-family: var(--font-heading), serif;
+    }
+
+    .font-body {
+        font-family: var(--font-body), sans-serif;
+    }
+
+    .font-prose {
+        font-family: var(--font-prose), sans-serif;
+    }
+
+    .font-mono {
+        font-family: var(--font-mono), monospace;
+    }
+
+    .font-handwriting {
+        font-family: var(--font-handwriting), cursive;
+    }
+
+    .heading-display {
+        @apply font-heading text-5xl sm:text-6xl md:text-7xl font-light leading-[1.02] tracking-tight;
+    }
+
+    .heading-medium {
+        @apply font-heading text-3xl md:text-5xl leading-tight font-light;
+    }
+
+    .lead-text {
+        @apply font-body text-xl md:text-2xl leading-relaxed text-[var(--color-text-secondary)];
+    }
+
+    .case-title {
+        @apply font-heading text-3xl md:text-4xl lg:text-[42px] leading-tight font-light tracking-tight text-[var(--color-text-primary)];
+    }
+
+    .eyebrow-sm {
+        @apply font-mono text-xs font-bold tracking-widest text-[var(--color-text-secondary)] uppercase;
+    }
+
+    .btn-link {
+        @apply inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider font-bold text-[var(--color-text-primary)] border-b border-black/20 hover:text-[var(--color-accent)] hover:border-[var(--color-accent)] transition-all pb-1 no-underline;
+    }
+
+    .btn-link-icon {
+        @apply transition-transform duration-200;
+    }
+
+    .btn-link:hover .btn-link-icon {
+        @apply translate-x-1;
+    }
+
+    .btn-primary {
+        @apply inline-flex items-center gap-2 bg-[var(--color-text-primary)] text-white px-5 py-2.5 rounded-full font-sans font-medium text-sm hover:bg-[var(--color-accent)] transition-all no-underline shadow-xs hover:-translate-y-0.5 duration-200;
+    }
+
+    /* Architectural Grid Backdrop */
+    .system-grid-bg {
+        background-image: radial-gradient(rgba(27, 25, 23, 0.08) 1px, transparent 1px);
+        background-size: 24px 24px;
+    }
+
+    /* Perforated Spec Ticket Detail */
+    .spec-ticket {
+        @apply bg-[#fdfcf9] border border-black/15 shadow-[0_8px_28px_rgba(0,0,0,0.06)] relative;
+    }
+
+    .spec-ticket::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        height: 10px;
+        background-image: radial-gradient(circle, transparent, transparent 50%, #fdfcf9 50%, #fdfcf9 100%);
+        background-size: 10px 10px;
+    }
+}

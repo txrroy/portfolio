@@ -1,0 +1,781 @@
+---
+import Layout from "./Layout.astro";
+import Header from "./Header.astro";
+---
+
+<Layout title="Tushar Roy – Systematic by Design • Product & AI Systems">
+  <Header />
+
+  <!-- Subtle Architectural Grid Backdrop -->
+  <div class="fixed inset-0 system-grid-bg opacity-40 pointer-events-none z-0">
+  </div>
+
+  <!-- ===================================================== -->
+  <!-- HERO SECTION                                          -->
+  <!-- ===================================================== -->
+  <section
+    class="relative z-10 max-w-6xl mx-auto px-6 pt-32 sm:pt-40 md:pt-44 pb-20 md:pb-28"
+  >
+    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[70vh]">
+      <!-- Left Narrative Rail (7 Cols) -->
+      <div class="lg:col-span-7 flex flex-col text-left">
+        <!-- Eyebrow & System Coordinate -->
+        <div class="flex items-center gap-3 mb-6">
+          <span
+            class="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-accent)]"
+          >
+            PRODUCT UX // DESIGN SYSTEMS ARCHITECT
+          </span>
+        </div>
+
+        <!-- Main Display Headline -->
+        <h1 class="heading-display mb-8">
+          Systematic <br class="hidden sm:block" />by Design.
+        </h1>
+
+        <!-- Lead Narrative -->
+        <p class="lead-text mb-8 max-w-2xl font-body">
+          <span class="font-handwriting">Making sense of</span> AI-powered enterprise
+          systems, human workflows, and intelligence at scale.
+        </p>
+
+        <!-- CTA & Quick Metadata -->
+        <div class="flex flex-wrap items-center gap-6 pt-2">
+          <a href="#work" class="btn-primary px-7 py-3.5 text-base">
+            <span>See what I built</span>
+            <svg
+              class="btn-link-icon"
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              stroke="currentColor"
+            >
+              <path
+                d="M8 1V15M1 8L8 15M15 8L8 15"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"></path>
+            </svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Visual & Engineering Spec Tag (5 Cols) -->
+      <div
+        class="lg:col-span-5 flex flex-col items-center justify-center relative"
+      >
+        <div class="relative w-full max-w-[280px] sm:max-w-[320px]">
+          <!-- Arch Shape Portrait -->
+          <div class="relative aspect-[3/4] w-full">
+            <!-- Decorative Architectural Offset Border -->
+            <div
+              class="absolute top-4 -left-4 w-full h-full rounded-t-[220px] border border-black/20 z-0"
+            >
+            </div>
+
+            <!-- Rex & Tushar Image Container -->
+            <div
+              class="relative w-full h-full bg-[#eee7dd] rounded-t-[220px] overflow-hidden shadow-[0_24px_48px_-12px_rgba(27,25,23,0.18)] rotate-1 hover:rotate-0 transition-transform duration-500 z-10 border border-black/10"
+            >
+              <img
+                src="/images/rex.jpg"
+                alt="Tushar and Rex the golden retriever"
+                class="object-cover w-full h-full grayscale-[15%] hover:grayscale-0 transition-all duration-700"
+              />
+            </div>
+          </div>
+
+          <!-- ===================================================== -->
+          <!-- UNEXPECTED GRAPHIC DEVICE: Engineering Telemetry Tag  -->
+          <!-- Deliberate imperfection: Tilted spec ticket with tape -->
+          <!-- Docked below the portrait to keep photo 100% clear    -->
+          <!-- ===================================================== -->
+          <div
+            id="telemetry-ticket"
+            class="spec-ticket relative mt-5 w-full p-3 sm:p-3.5 rounded-lg border border-black/15 shadow-[0_8px_20px_rgba(0,0,0,0.06)] z-20 transform -rotate-1 hover:rotate-0 transition-all duration-300 cursor-pointer select-none"
+          >
+            <!-- Translucent Frosted Tape Detail at Top -->
+            <div
+              class="w-12 h-3 bg-white/80 backdrop-blur-xs absolute -top-2 left-1/2 -translate-x-1/2 shadow-xs -rotate-1 border border-black/5 pointer-events-none"
+            >
+            </div>
+
+            <div
+              class="flex items-center justify-between font-mono text-[9px] uppercase tracking-widest text-black/50 pb-1.5 border-b border-black/10"
+            >
+              <span>FIELD NOTES // 01</span>
+              <span>CAL: PASS</span>
+            </div>
+
+            <div class="pt-2 pb-1 space-y-1 font-mono text-[11px]">
+              <div class="flex items-center justify-between text-black/75">
+                <span class="text-[9px] text-black/45">ROLE:</span>
+                <span class="font-bold">Staff Product Designer</span>
+              </div>
+              <div class="flex items-center justify-between text-black/75">
+                <span class="text-[9px] text-black/45">LOCATION:</span>
+                <span>Fremont, CA</span>
+              </div>
+              <div class="flex items-center justify-between text-black/75">
+                <span class="text-[9px] text-black/45">CO-PILOT:</span>
+                <span class="text-[var(--color-accent)] font-bold"
+                  >Rex [Golden Retriever]</span
+                >
+              </div>
+            </div>
+
+            <!-- Interactive Micro-Interaction for Rex -->
+            <div
+              class="mt-2 pt-1.5 border-t border-dashed border-black/15 font-mono text-[9px] flex items-center justify-between text-black/60 group"
+            >
+              <span id="rex-status-text" class="truncate">
+                ● STATUS: ALL SYSTEMS NOMINAL
+              </span>
+              <span
+                class="text-[9px] text-[var(--color-accent)] opacity-60 group-hover:opacity-100 transition-opacity"
+              >
+                [TAP]
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- SELECTED WORK / ENTERPRISE CASE STUDIES               -->
+  <!-- ===================================================== -->
+  <main class="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-32">
+    <section id="work">
+      <!-- Section Header -->
+      <div
+        class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 pb-6 border-b border-black/15"
+      >
+        <div>
+          <span
+            class="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-accent)] block mb-3"
+            >SYSTEMS & ARCHITECTURE</span
+          >
+          <h2
+            class="m-0 font-heading text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-text-primary)]"
+          >
+            Selected Works
+          </h2>
+        </div>
+        <div class="font-mono text-xs text-black/50 text-right">
+          <span>03 PRODUCTION SYSTEMS</span><br />
+          <span class="text-black/30">BUILT FOR SCALE</span>
+        </div>
+      </div>
+
+      <!-- Case Study Cards Stack -->
+      <div class="flex flex-col gap-10 w-full">
+        <!-- Case Study 01: Vanguard (Apple InfoSec) -->
+        <article
+          class="card p-8 md:p-14 md:sticky top-20 z-10 border border-black/15 shadow-[0_8px_32px_rgba(27,25,23,0.06)] bg-[#faf8f2]"
+        >
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 flex flex-col">
+              <!-- Systems Meta Badge -->
+              <div
+                class="flex items-center gap-3 font-mono text-xs text-black/50 mb-4"
+              >
+                <span
+                  class="font-mono text-xs font-bold tracking-wider text-[var(--color-accent)]"
+                  >SYS // 01</span
+                >
+                <span>APPLE INFOSEC</span>
+                <span>•</span>
+                <span>BI GOVERNANCE</span>
+              </div>
+
+              <!-- Main Title -->
+              <h3
+                class="font-heading text-3xl md:text-4xl font-light text-[var(--color-text-primary)] mb-4 leading-tight"
+              >
+                Making Security Work Measurable
+              </h3>
+
+              <p
+                class="font-body text-base md:text-lg text-[var(--color-text-secondary)] leading-relaxed mb-8"
+              >
+                Designed a self-service analytics platform that answered the
+                fundamental question:
+                <em>"How are we keeping Apple safe?"</em> through automated metric
+                coverage, DRI lineage, and AI commentary.
+              </p>
+
+              <!-- Impact Metrics Bar -->
+              <div
+                class="grid grid-cols-3 gap-4 p-4 rounded-xl bg-black/[0.03] border border-black/5 mb-8"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >Coverage</span
+                  >
+                  <span
+                    class="font-heading text-2xl font-bold text-[var(--color-text-primary)]"
+                    >30% → 75%</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >Onboarding</span
+                  >
+                  <span
+                    class="font-heading text-2xl font-bold text-[var(--color-text-primary)]"
+                    >2 mo → 5 days</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >Escalations</span
+                  >
+                  <span class="font-heading text-2xl font-bold text-emerald-700"
+                    >&gt;50% Cut</span
+                  >
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <a href="/case-study/vanguard" class="btn-link self-start">
+                <span>View System Architecture</span>
+                <span class="btn-link-icon">→</span>
+              </a>
+            </div>
+
+            <!-- Right Visual Graphic Box -->
+            <div
+              class="md:col-span-4 flex flex-col items-center justify-center p-8 rounded-2xl bg-white border border-black/10 shadow-xs"
+            >
+              <div
+                class="w-16 h-16 rounded-2xl bg-black/5 flex items-center justify-center p-3 mb-4"
+              >
+                <img
+                  src="/images/logo-apple.png"
+                  alt="Apple"
+                  class="w-full h-full object-contain"
+                />
+              </div>
+              <span
+                class="font-mono text-xs text-black/60 font-bold uppercase tracking-wider text-center"
+              >
+                Vanguard 3.1
+              </span>
+              <span
+                class="font-mono text-[11px] text-black/40 text-center mt-1"
+              >
+                Self-Service BI Core
+              </span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 02: HelpNow+ -->
+        <article
+          class="card p-8 md:p-14 md:sticky top-24 z-20 border border-black/15 shadow-[0_8px_32px_rgba(27,25,23,0.06)] bg-[#f7f3ed]"
+        >
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 flex flex-col">
+              <div
+                class="flex items-center gap-3 font-mono text-xs text-black/50 mb-4"
+              >
+                <span
+                  class="font-mono text-xs font-bold tracking-wider text-[var(--color-accent)]"
+                  >SYS // 02</span
+                >
+                <span>VMWARE</span>
+                <span>•</span>
+                <span>SERVICE INFRASTRUCTURE</span>
+              </div>
+
+              <h3
+                class="font-heading text-3xl md:text-4xl font-light text-[var(--color-text-primary)] mb-4 leading-tight"
+              >
+                Workplace Support, Humanized
+              </h3>
+
+              <p
+                class="font-body text-base md:text-lg text-[var(--color-text-secondary)] leading-relaxed mb-8"
+              >
+                Transformed fragmented internal service portals into an
+                omnichannel PWA. Reduced expensive support escalations while
+                dramatically elevating employee satisfaction.
+              </p>
+
+              <div
+                class="grid grid-cols-3 gap-4 p-4 rounded-xl bg-black/[0.03] border border-black/5 mb-8"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >Savings</span
+                  >
+                  <span
+                    class="font-heading text-2xl font-bold text-[var(--color-text-primary)]"
+                    >$36M+</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >Productivity</span
+                  >
+                  <span
+                    class="font-heading text-2xl font-bold text-[var(--color-text-primary)]"
+                    >2x Boost</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >CSAT</span
+                  >
+                  <span class="font-heading text-2xl font-bold text-emerald-700"
+                    >94%</span
+                  >
+                </div>
+              </div>
+
+              <a href="/case-study/helpnow" class="btn-link self-start">
+                <span>View System Architecture</span>
+                <span class="btn-link-icon">→</span>
+              </a>
+            </div>
+
+            <div
+              class="md:col-span-4 rounded-2xl overflow-hidden border border-black/10 shadow-xs aspect-[4/3]"
+            >
+              <img
+                src="/images/case-study-helpnow3.png"
+                alt="HelpNow"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 03: DevHub -->
+        <article
+          class="card p-8 md:p-14 md:sticky top-28 z-30 border border-black/15 shadow-[0_8px_32px_rgba(27,25,23,0.06)] bg-[#f3f0ea]"
+        >
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 flex flex-col">
+              <div
+                class="flex items-center gap-3 font-mono text-xs text-black/50 mb-4"
+              >
+                <span
+                  class="font-mono text-xs font-bold tracking-wider text-[var(--color-accent)]"
+                  >SYS // 03</span
+                >
+                <span>VMWARE</span>
+                <span>•</span>
+                <span>DEVELOPER EXPERIENCE</span>
+              </div>
+
+              <h3
+                class="font-heading text-3xl md:text-4xl font-light text-[var(--color-text-primary)] mb-4 leading-tight"
+              >
+                Developer Ecosystem, Unified
+              </h3>
+
+              <p
+                class="font-body text-base md:text-lg text-[var(--color-text-secondary)] leading-relaxed mb-8"
+              >
+                Consolidated 14 disparate developer tools, SDK docs, and runtime
+                environments into a single coherent portal for 20,000+
+                engineers.
+              </p>
+
+              <div
+                class="grid grid-cols-3 gap-4 p-4 rounded-xl bg-black/[0.03] border border-black/5 mb-8"
+              >
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >Scale</span
+                  >
+                  <span
+                    class="font-heading text-2xl font-bold text-[var(--color-text-primary)]"
+                    >20k+ Devs</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >Friction</span
+                  >
+                  <span
+                    class="font-heading text-2xl font-bold text-[var(--color-text-primary)]"
+                    >-65%</span
+                  >
+                </div>
+                <div class="flex flex-col">
+                  <span
+                    class="font-mono text-[10px] text-black/45 uppercase font-bold"
+                    >Unified</span
+                  >
+                  <span class="font-heading text-2xl font-bold text-emerald-700"
+                    >14 Tools</span
+                  >
+                </div>
+              </div>
+
+              <a href="/case-study/devhub" class="btn-link self-start">
+                <span>View System Architecture</span>
+                <span class="btn-link-icon">→</span>
+              </a>
+            </div>
+
+            <div
+              class="md:col-span-4 rounded-2xl overflow-hidden border border-black/10 shadow-xs aspect-[4/3]"
+            >
+              <img
+                src="/images/case-study-devhub3.png"
+                alt="DevHub"
+                class="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===================================================== -->
+  <!-- ABOUT SECTION: PURPOSE & PLAY                         -->
+  <!-- ===================================================== -->
+  <section
+    id="about"
+    class="relative z-10 w-full py-24 md:py-32 bg-white/70 border-t border-black/10"
+  >
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-12 items-center mb-24">
+        <!-- Text Column -->
+        <div class="lg:col-span-6 flex flex-col">
+          <span
+            class="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-accent)] block mb-3"
+            >PROFILE // PHILOSOPHY</span
+          >
+          <h2
+            class="font-heading text-4xl sm:text-5xl font-light text-[var(--color-text-primary)] mb-6"
+          >
+            Rooted in Purpose <br class="hidden sm:block" />and Play.
+          </h2>
+          <p
+            class="font-body text-lg md:text-xl text-[var(--color-text-secondary)] leading-relaxed mb-6"
+          >
+            Enterprise software doesn't have to feel like bureaucratic
+            punishment. I lead inclusive, high-trust teams that tackle complex
+            plumbing with curiosity, humor, and relentless craft.
+          </p>
+
+          <!-- Hand-Annotated Marginal Note (Deliberate Imperfection) -->
+          <div
+            class="p-4 rounded-xl bg-[#faf5ec] border border-dashed border-[var(--color-accent)]/40 relative mb-6 transform -rotate-1"
+          >
+            <span
+              class="font-handwriting text-base text-[var(--color-accent)] block"
+            >
+              "Why messy enterprise plumbing? Because that's where the leverage
+              is."
+            </span>
+          </div>
+
+          <div class="flex items-center gap-4">
+            <a
+              href="https://www.linkedin.com/in/tusharroy"
+              target="_blank"
+              class="btn-primary"
+            >
+              <span>Connect on LinkedIn</span>
+              <span class="btn-link-icon">↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Video Frame -->
+        <div class="lg:col-span-6 relative">
+          <div
+            class="rounded-3xl overflow-hidden shadow-2xl border border-black/10 aspect-video relative bg-[#1c1a18]"
+          >
+            <video
+              autoplay
+              loop
+              muted
+              playsinline
+              class="w-full h-full object-cover"
+            >
+              <source src="/images/speaking-video.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div
+            class="flex items-center justify-between font-mono text-[11px] text-black/50 mt-3 px-2"
+          >
+            <span>KEYNOTE // DESIGN OFF-SITE</span>
+            <span>SHARING FY24 DESIGN VISION</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="pt-12 border-t border-dashed border-black/15">
+        <div
+          class="flex items-center justify-between mb-10 font-mono text-xs text-black/50"
+        >
+          <span class="uppercase tracking-widest font-bold"
+            >PEER TELEMETRY // TESTIMONIALS</span
+          >
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Joy Busse -->
+          <div class="testimonial-card">
+            <blockquote class="testimonial-quote border-0 pl-0 my-0">
+              "Tushar brings people together. His energy and commitment led to a <b
+                >standout enterprise culture</b
+              >. From internal conferences to engaging podcasts, Tushar was the
+              driving force behind many impactful initiatives."
+            </blockquote>
+            <div class="testimonial-author mt-6 pt-4 border-t border-black/5">
+              <img
+                src="/images/testimonial-joy.jpeg"
+                alt="Joy Busse"
+                class="w-12 h-12 rounded-full object-cover border border-black/10"
+              />
+              <div>
+                <div class="font-bold text-sm text-[var(--color-text-primary)]">
+                  Joy Busse
+                </div>
+                <div
+                  class="font-mono text-xs text-[var(--color-text-secondary)]"
+                >
+                  Sr. Director of UX, Cribl
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Razz Cortes-Maceda -->
+          <div class="testimonial-card">
+            <blockquote class="testimonial-quote border-0 pl-0 my-0">
+              "Tushar's talents extend beyond design — <b
+                >he is a problem solver</b
+              >. His leadership of the UI dev team allowed us to stay on course.
+              It would be a privilege to work with him again."
+            </blockquote>
+            <div class="testimonial-author mt-6 pt-4 border-t border-black/5">
+              <img
+                src="/images/testimonial-razz.jpeg"
+                alt="Razz Cortes-Maceda"
+                class="w-12 h-12 rounded-full object-cover border border-black/10"
+              />
+              <div>
+                <div class="font-bold text-sm text-[var(--color-text-primary)]">
+                  Razz Cortes-Maceda
+                </div>
+                <div
+                  class="font-mono text-xs text-[var(--color-text-secondary)]"
+                >
+                  VP Digital Strategy, Bellco
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- PODCAST SECTION: THOUGHT LEADERSHIP                   -->
+  <!-- ===================================================== -->
+  <section
+    id="podcast"
+    class="relative z-10 w-full py-24 md:py-32 bg-[var(--color-canvas)]"
+  >
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex items-center gap-3 mb-6">
+        <span
+          class="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-accent)]"
+          >THOUGHT LEADERSHIP</span
+        >
+        <span class="font-mono text-xs text-black/40">• 12-EPISODE SERIES</span>
+      </div>
+
+      <h2
+        class="font-heading text-4xl sm:text-5xl font-light text-[var(--color-text-primary)] mb-14"
+      >
+        Beyond the Product.
+      </h2>
+
+      <div class="podcast-card p-8 md:p-12">
+        <div>
+          <span
+            class="font-mono text-xs text-[var(--color-accent)] font-bold tracking-widest uppercase block mb-3"
+          >
+            HOST & PRODUCER
+          </span>
+          <h3 class="font-heading text-3xl font-light text-white mb-4">
+            The Enterprise Design Podcast
+          </h3>
+          <p class="font-body text-base text-white/80 leading-relaxed mb-8">
+            Co-created and hosted this series to explore how we can humanize
+            enterprise software at scale, bringing Engineers, PMs, and Designers
+            to the same candid table.
+          </p>
+          <a
+            href="https://open.spotify.com/show/3klvSJS3QPLVLYBEf7UDWF"
+            target="_blank"
+            class="inline-flex items-center gap-2.5 bg-[#1DB954] hover:bg-[#1ed760] text-black px-5 py-2.5 rounded-full font-sans font-medium text-xs sm:text-sm transition-colors no-underline shadow-xs"
+          >
+            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+              <path
+                d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"
+              ></path>
+            </svg>
+            <span>Listen on Spotify</span>
+          </a>
+        </div>
+
+        <div class="hidden md:block">
+          <iframe
+            style="border-radius:16px"
+            src="https://open.spotify.com/embed/episode/4AUNRf6VUxG6s9d0BvfBp5?utm_source=generator&theme=0"
+            width="100%"
+            height="352"
+            frameborder="0"
+            allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+            loading="lazy"></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== -->
+  <!-- CONNECT FOOTER                                        -->
+  <!-- ===================================================== -->
+  <footer
+    class="relative z-10 w-full bg-[#181716] text-[#faf7f2] py-24 border-t border-white/10"
+  >
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-12 gap-12 mb-20 items-start">
+        <!-- Left: Headline -->
+        <div class="md:col-span-6">
+          <span
+            class="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-accent)] block mb-4"
+            >INITIALIZE DIALOGUE</span
+          >
+          <h2
+            class="font-heading text-4xl sm:text-5xl font-light text-white mb-6 leading-tight"
+          >
+            Let's Make <br class="hidden sm:block" />It Happen.
+          </h2>
+          <p class="font-body text-lg text-white/70 max-w-md leading-relaxed">
+            Big ideas. Messy problems. Unclear paths. If you’re navigating any
+            of that, or need a sounding board for complex systems, let's talk.
+          </p>
+        </div>
+
+        <!-- Right: Actions -->
+        <div class="md:col-span-6 flex flex-col gap-3 pt-2 font-mono text-sm">
+          <a
+            href="https://www.linkedin.com/in/tusharroy"
+            target="_blank"
+            class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors no-underline flex items-center justify-between text-white group"
+          >
+            <div class="flex items-center gap-3">
+              <span class="text-white/40 font-bold text-xs">01 //</span>
+              <span class="font-sans font-medium text-sm sm:text-base"
+                >Message me on LinkedIn</span
+              >
+            </div>
+            <span
+              class="group-hover:translate-x-1 transition-transform text-white/60"
+              >→</span
+            >
+          </a>
+
+          <a
+            href="https://adplist.org/mentors/tushar-roy"
+            target="_blank"
+            class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors no-underline flex items-center justify-between text-white group"
+          >
+            <div class="flex items-center gap-3">
+              <span class="text-white/40 font-bold text-xs">02 //</span>
+              <span class="font-sans font-medium text-sm sm:text-base"
+                >Book a mentorship session</span
+              >
+            </div>
+            <span
+              class="group-hover:translate-x-1 transition-transform text-white/60"
+              >→</span
+            >
+          </a>
+
+          <a
+            href="mailto:contact@tusharroy.com"
+            target="_blank"
+            class="px-5 py-3.5 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 transition-colors no-underline flex items-center justify-between text-white group"
+          >
+            <div class="flex items-center gap-3">
+              <span class="text-white/40 font-bold text-xs">03 //</span>
+              <span class="font-sans font-medium text-sm sm:text-base"
+                >Direct email inquiry</span
+              >
+            </div>
+            <span
+              class="group-hover:translate-x-1 transition-transform text-white/60"
+              >→</span
+            >
+          </a>
+        </div>
+      </div>
+
+      <!-- Bottom Status & Copyright -->
+      <div
+        class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 font-mono text-xs text-white/40"
+      >
+        <div>&copy; 2026 Tushar Roy • Systematic by Design</div>
+        <div class="flex items-center gap-2">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+          <span>SYSTEM RUNTIME: V3-HYBRID</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Micro-Interaction Script for Telemetry Ticket -->
+  <script>
+    function setupTelemetryTicket() {
+      const ticket = document.getElementById("telemetry-ticket");
+      const statusText = document.getElementById("rex-status-text");
+      if (!ticket || !statusText) return;
+
+      const statuses = [
+        "● STATUS: ALL SYSTEMS NOMINAL",
+        "● REX_STATUS: ASKING FOR A WALK 🐾",
+        "● REX_STATUS: CHIEF MORALE OFFICER 🐕",
+        "● PIPELINE: ZERO DATA DRIFT ⚡",
+        "● FOCUS: ENTERPRISE AI LEVERAGE",
+      ];
+      let currentIndex = 0;
+
+      ticket.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % statuses.length;
+        statusText.textContent = statuses[currentIndex];
+        ticket.classList.add("scale-[1.02]");
+        setTimeout(() => ticket.classList.remove("scale-[1.02]"), 180);
+      });
+    }
+
+    setupTelemetryTicket();
+    document.addEventListener("astro:page-load", setupTelemetryTicket);
+  </script>
+</Layout>

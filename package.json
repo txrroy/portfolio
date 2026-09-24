@@ -4,7 +4,13 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
+    "dev:one": "THEME=one-dog astro dev",
+    "dev:two": "THEME=two-printer astro dev",
+    "dev:three": "THEME=three-hybrid astro dev",
     "build": "astro build",
+    "build:one": "THEME=one-dog astro build",
+    "build:two": "THEME=two-printer astro build",
+    "build:three": "THEME=three-hybrid astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
