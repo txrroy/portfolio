@@ -29,7 +29,7 @@ const {
       class="flex items-center gap-2.5 text-[var(--color-text-primary)] hover:opacity-80 transition-opacity whitespace-nowrap no-underline group/brand"
     >
       <div
-        class="relative w-7 h-7 rounded-full overflow-hidden p-0.5 flex items-center justify-center bg-black/5 border border-black/10"
+        class="relative w-7 h-7 rounded-full overflow-hidden flex items-center justify-center"
       >
         <!-- Favicon -->
         <img
@@ -125,25 +125,16 @@ const {
       >
         <div class="h-px bg-black/10 my-1"></div>
 
-        <!-- Telemetry Metadata Bar -->
-        <div class="flex items-center justify-between font-mono text-[11px] text-[var(--color-text-secondary)] pb-2 border-b border-dashed border-black/15">
-          <span class="flex items-center gap-1.5 uppercase font-bold tracking-wider text-[var(--color-text-primary)]">
-            <span class="w-1.5 h-1.5 rounded-full bg-[var(--color-accent)]"></span>
-            CASE STUDIES
-          </span>
-          <span class="text-black/50">FREMONT, CA // AI & DESIGN SYSTEMS</span>
-        </div>
-
-        <!-- Main Links: 3 Case Studies + 1 Podcast -->
-        <nav class="grid grid-cols-1 sm:grid-cols-2 gap-3 font-mono text-xs">
+        <!-- Main Links: 3 Case Studies + 1 Podcast (Clean Editorial Index) -->
+        <nav class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs pt-1">
           <!-- Case Study 01: Project Vanguard -->
           <a
             href="/case-study/vanguard"
-            class="menu-link p-3.5 rounded-xl bg-black/[0.03] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] border border-black/10 transition-colors no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
               <span>01 // APPLE INFOSEC</span>
-              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Project Vanguard</span>
             <span class="font-sans text-xs text-black/55 leading-tight">Security Metrics & BI Platform</span>
@@ -152,11 +143,11 @@ const {
           <!-- Case Study 02: HelpNow+ -->
           <a
             href="/case-study/helpnow"
-            class="menu-link p-3.5 rounded-xl bg-black/[0.03] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] border border-black/10 transition-colors no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
               <span>02 // VMWARE</span>
-              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">HelpNow+</span>
             <span class="font-sans text-xs text-black/55 leading-tight">Omnichannel Support PWA</span>
@@ -165,11 +156,11 @@ const {
           <!-- Case Study 03: DevHub -->
           <a
             href="/case-study/devhub"
-            class="menu-link p-3.5 rounded-xl bg-black/[0.03] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] border border-black/10 transition-colors no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
               <span>03 // VMWARE</span>
-              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">DevHub</span>
             <span class="font-sans text-xs text-black/55 leading-tight">Developer Tooling Ecosystem</span>
@@ -178,11 +169,11 @@ const {
           <!-- Feature 04: Enterprise Design Podcast -->
           <a
             href="/#podcast"
-            class="menu-link p-3.5 rounded-xl bg-black/[0.03] hover:bg-[var(--color-accent)]/10 hover:text-[var(--color-accent)] border border-black/10 transition-colors no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
               <span>04 // PODCAST</span>
-              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 transition-opacity">↗</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Enterprise Design</span>
             <span class="font-sans text-xs text-black/55 leading-tight">12-Episode Candid Series</span>
