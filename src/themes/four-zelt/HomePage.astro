@@ -26,9 +26,7 @@ import Header from "./Header.astro";
         <!-- Left Narrative Rail (7 Cols) -->
         <div class="lg:col-span-7 flex flex-col text-left">
           <!-- Eyebrow -->
-          <small class="eyebrow">
-            PRODUCT UX // SYSTEMS ARCHITECT
-          </small>
+          <small class="eyebrow"> PRODUCT UX // SYSTEMS ARCHITECT </small>
 
           <!-- Main Display Headline -->
           <h1>
@@ -103,193 +101,262 @@ import Header from "./Header.astro";
   >
     <section id="work" class="max-w-6xl mx-auto px-6">
       <!-- Section Header -->
-      <div
-        class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 pb-6 border-b border-black/10"
-      >
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
         <div>
           <small class="eyebrow">SYSTEMS & ARCHITECTURE</small>
           <h2>Selected Works</h2>
-        </div>
-        <div>
-          <small class="eyebrow sm:text-right">03 PRODUCTION SYSTEMS • BUILT FOR SCALE</small>
         </div>
       </div>
 
       <!-- Case Study Cards Stack -->
       <div class="flex flex-col gap-10 w-full">
         <!-- Case Study 01: Vanguard (Apple InfoSec) -->
-        <article
-          class="card p-8 md:p-12 md:sticky top-20 z-10 shadow-lg"
-        >
-          <div class="grid md:grid-cols-12 gap-8 items-center">
-            <div class="md:col-span-8 flex flex-col">
+        <article class="card p-0 md:sticky top-20 z-10 shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <!-- Left 1/4: Image filling 1/4 of the card -->
+          <a
+            href="/case-study/vanguard"
+            class="block w-full md:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] md:min-h-full self-stretch"
+            title="View Vanguard Case Study"
+          >
+            <img
+              src="/images/case-study-vanguard-selected.png"
+              alt="Vanguard Case Study"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+            />
+          </a>
+
+          <!-- Right 3/4: Content -->
+          <div class="w-full md:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between">
+            <div>
               <!-- Systems Meta Badge -->
-              <small class="eyebrow">
-                SYS // 01 • APPLE INFOSEC • BI GOVERNANCE
+              <small class="eyebrow mb-2">
+                SYS // 01 • UNDISCLOSED • PRODUCT UX
               </small>
 
               <!-- Main Title -->
-              <h3>Making Security Work Measurable</h3>
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                Making Security Work Measurable
+              </h3>
 
-              <p>
-                Designed a self-service analytics platform that answered the
-                fundamental question:
-                <em>"How are we keeping Apple safe?"</em> through automated metric
-                coverage, DRI lineage, and AI commentary.
+              <p class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl">
+                Designed a self-service analytics platform that answered a
+                fundamental question for a large organization, through automated
+                metric coverage, data lineage, and AI commentary.
               </p>
 
-              <!-- Impact Metrics Bar -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-                <div class="card p-4">
-                  <small class="eyebrow">Coverage</small>
-                  <h4>30% → 75%</h4>
+              <!-- Impact Metrics: Compact with thin line between each, no card borders -->
+              <div class="flex flex-wrap sm:flex-nowrap items-start divide-y sm:divide-y-0 sm:divide-x divide-black/10 my-4 py-1">
+                <div class="pr-6 sm:pr-8 py-1">
+                  <small class="eyebrow mb-1">Coverage</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">30% → 75%</h4>
                 </div>
-                <div class="card p-4">
-                  <small class="eyebrow">Onboarding</small>
-                  <h4>2 mo → 5 days</h4>
+                <div class="px-0 sm:px-8 py-1">
+                  <small class="eyebrow mb-1">Onboarding</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">2 mo → 5 days</h4>
                 </div>
-                <div class="card p-4">
-                  <small class="eyebrow">Escalations</small>
-                  <h4>&gt;50% Cut</h4>
+                <div class="px-0 sm:pl-8 py-1">
+                  <small class="eyebrow mb-1">Escalations</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">&gt;50% Cut</h4>
                 </div>
-              </div>
-
-              <!-- CTA -->
-              <div>
-                <a href="/case-study/vanguard" class="btn-secondary">
-                  <span>View Case Study</span>
-                  <span>→</span>
-                </a>
               </div>
             </div>
 
-            <!-- Right Visual Graphic Box -->
-            <div class="md:col-span-4">
-              <figure class="m-0">
-                <div class="media-frame p-6 flex flex-col items-center justify-center bg-white">
-                  <img
-                    src="/images/logo-apple.png"
-                    alt="Apple InfoSec"
-                    class="w-16 h-16 object-contain mb-3"
-                  />
-                  <small class="eyebrow m-0">VANGUARD 3.1</small>
-                  <figcaption class="m-0 text-center">Self-Service BI Core</figcaption>
-                </div>
-              </figure>
+            <!-- CTA with primary color from case study image -->
+            <div class="pt-4">
+              <a
+                href="/case-study/vanguard"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white transition-all duration-200 shadow-xs hover:shadow-md hover:brightness-110 active:scale-[0.98] no-underline"
+                style="background-color: #1d4ed8;"
+              >
+                <span>View case study</span>
+                <span>→</span>
+              </a>
             </div>
           </div>
         </article>
 
         <!-- Case Study 02: HelpNow+ -->
-        <article
-          class="card p-8 md:p-12 md:sticky top-24 z-20 shadow-lg"
-        >
-          <div class="grid md:grid-cols-12 gap-8 items-center">
-            <div class="md:col-span-8 flex flex-col">
-              <small class="eyebrow">
+        <article class="card p-0 md:sticky top-24 z-20 shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <!-- Left 1/4: Image filling 1/4 of the card -->
+          <a
+            href="/case-study/helpnow"
+            class="block w-full md:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] md:min-h-full self-stretch"
+            title="View HelpNow+ Case Study"
+          >
+            <img
+              src="/images/case-study-helpnow-selected.png"
+              alt="HelpNow+ Case Study"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+            />
+          </a>
+
+          <!-- Right 3/4: Content -->
+          <div class="w-full md:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between">
+            <div>
+              <small class="eyebrow mb-2">
                 SYS // 02 • VMWARE • SERVICE INFRASTRUCTURE
               </small>
 
-              <h3>Workplace Support, Humanized</h3>
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                Workplace Support, Humanized
+              </h3>
 
-              <p>
+              <p class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl">
                 Transformed fragmented internal service portals into an
                 omnichannel PWA. Reduced expensive support escalations while
                 dramatically elevating employee satisfaction.
               </p>
 
-              <!-- Impact Metrics Bar -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-                <div class="card p-4">
-                  <small class="eyebrow">Savings</small>
-                  <h4>$36M+</h4>
+              <!-- Impact Metrics: Compact with thin line between each, no card borders -->
+              <div class="flex flex-wrap sm:flex-nowrap items-start divide-y sm:divide-y-0 sm:divide-x divide-black/10 my-4 py-1">
+                <div class="pr-6 sm:pr-8 py-1">
+                  <small class="eyebrow mb-1">Savings</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">$36M+</h4>
                 </div>
-                <div class="card p-4">
-                  <small class="eyebrow">Productivity</small>
-                  <h4>2x Boost</h4>
+                <div class="px-0 sm:px-8 py-1">
+                  <small class="eyebrow mb-1">Productivity</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">2x Boost</h4>
                 </div>
-                <div class="card p-4">
-                  <small class="eyebrow">CSAT</small>
-                  <h4>94%</h4>
+                <div class="px-0 sm:pl-8 py-1">
+                  <small class="eyebrow mb-1">CSAT</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">94%</h4>
                 </div>
-              </div>
-
-              <div>
-                <a href="/case-study/helpnow" class="btn-secondary">
-                  <span>View Case Study</span>
-                  <span>→</span>
-                </a>
               </div>
             </div>
 
-            <div class="md:col-span-4">
-              <figure class="m-0">
-                <div class="media-frame aspect-[4/3]">
-                  <img
-                    src="/images/case-study-helpnow3.png"
-                    alt="HelpNow+ Mobile PWA Interface"
-                    class="w-full h-full object-cover"
-                  />
-                </div>
-                <figcaption>HelpNow+ Mobile Experience</figcaption>
-              </figure>
+            <div class="pt-4">
+              <a
+                href="/case-study/helpnow"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white transition-all duration-200 shadow-xs hover:shadow-md hover:brightness-110 active:scale-[0.98] no-underline"
+                style="background-color: #c25400;"
+              >
+                <span>View case study</span>
+                <span>→</span>
+              </a>
             </div>
           </div>
         </article>
 
         <!-- Case Study 03: DevHub -->
-        <article
-          class="card p-8 md:p-12 md:sticky top-28 z-30 shadow-lg"
-        >
-          <div class="grid md:grid-cols-12 gap-8 items-center">
-            <div class="md:col-span-8 flex flex-col">
-              <small class="eyebrow">
+        <article class="card p-0 md:sticky top-28 z-30 shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <!-- Left 1/4: Image filling 1/4 of the card -->
+          <a
+            href="/case-study/devhub"
+            class="block w-full md:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] md:min-h-full self-stretch"
+            title="View DevHub Case Study"
+          >
+            <img
+              src="/images/case-study-devhub-selected.png"
+              alt="DevHub Case Study"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+            />
+          </a>
+
+          <!-- Right 3/4: Content -->
+          <div class="w-full md:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between">
+            <div>
+              <small class="eyebrow mb-2">
                 SYS // 03 • VMWARE • DEVELOPER EXPERIENCE
               </small>
 
-              <h3>Developer Ecosystem, Unified</h3>
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                Developer Ecosystem, Unified
+              </h3>
 
-              <p>
+              <p class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl">
                 Consolidated 14 disparate developer tools, SDK docs, and runtime
                 environments into a single coherent portal for 20,000+
                 engineers.
               </p>
 
-              <!-- Impact Metrics Bar -->
-              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
-                <div class="card p-4">
-                  <small class="eyebrow">Scale</small>
-                  <h4>20k+ Devs</h4>
+              <!-- Impact Metrics: Compact with thin line between each, no card borders -->
+              <div class="flex flex-wrap sm:flex-nowrap items-start divide-y sm:divide-y-0 sm:divide-x divide-black/10 my-4 py-1">
+                <div class="pr-6 sm:pr-8 py-1">
+                  <small class="eyebrow mb-1">Scale</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">20k+ Devs</h4>
                 </div>
-                <div class="card p-4">
-                  <small class="eyebrow">Friction</small>
-                  <h4>-65%</h4>
+                <div class="px-0 sm:px-8 py-1">
+                  <small class="eyebrow mb-1">Friction</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">-65%</h4>
                 </div>
-                <div class="card p-4">
-                  <small class="eyebrow">Unified</small>
-                  <h4>14 Tools</h4>
+                <div class="px-0 sm:pl-8 py-1">
+                  <small class="eyebrow mb-1">Unified</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">14 Tools</h4>
                 </div>
-              </div>
-
-              <div>
-                <a href="/case-study/devhub" class="btn-secondary">
-                  <span>View Case Study</span>
-                  <span>→</span>
-                </a>
               </div>
             </div>
 
-            <div class="md:col-span-4">
-              <figure class="m-0">
-                <div class="media-frame aspect-[4/3]">
-                  <img
-                    src="/images/case-study-devhub3.png"
-                    alt="DevHub Developer Portal"
-                    class="w-full h-full object-cover"
-                  />
+            <div class="pt-4">
+              <a
+                href="/case-study/devhub"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white transition-all duration-200 shadow-xs hover:shadow-md hover:brightness-110 active:scale-[0.98] no-underline"
+                style="background-color: #0079b8;"
+              >
+                <span>View case study</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 04: VLP (VMware Learning Platform) -->
+        <article class="card p-0 md:sticky top-32 z-40 shadow-lg overflow-hidden flex flex-col md:flex-row">
+          <!-- Left 1/4: Image filling 1/4 of the card -->
+          <a
+            href="/case-study/vlp"
+            class="block w-full md:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] md:min-h-full self-stretch"
+            title="View VMware Learning Platform Case Study"
+          >
+            <img
+              src="/images/case-study-vlp-selected.png"
+              alt="VMware Learning Platform Case Study"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+            />
+          </a>
+
+          <!-- Right 3/4: Content -->
+          <div class="w-full md:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between">
+            <div>
+              <small class="eyebrow mb-2">
+                SYS // 04 • VMWARE • SAAS TRANSFORMATION
+              </small>
+
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+                From Internal Tool to $1M+ SaaS
+              </h3>
+
+              <p class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl">
+                Led the product design transformation that reshaped an aging
+                internal infrastructure tool into a commercial cloud training
+                platform, earning engineering trust and generating $1M+ ARR.
+              </p>
+
+              <!-- Impact Metrics: Compact with thin line between each, no card borders -->
+              <div class="flex flex-wrap sm:flex-nowrap items-start divide-y sm:divide-y-0 sm:divide-x divide-black/10 my-4 py-1">
+                <div class="pr-6 sm:pr-8 py-1">
+                  <small class="eyebrow mb-1">Revenue</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">$1M+ ARR</h4>
                 </div>
-                <figcaption>DevHub Portal Experience</figcaption>
-              </figure>
+                <div class="px-0 sm:px-8 py-1">
+                  <small class="eyebrow mb-1">Scale</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">100k+ Labs</h4>
+                </div>
+                <div class="px-0 sm:pl-8 py-1">
+                  <small class="eyebrow mb-1">Commercial</small>
+                  <h4 class="text-xl sm:text-2xl font-bold mb-0">15+ Partners</h4>
+                </div>
+              </div>
+            </div>
+
+            <div class="pt-4">
+              <a
+                href="/case-study/vlp"
+                class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium text-sm text-white transition-all duration-200 shadow-xs hover:shadow-md hover:brightness-110 active:scale-[0.98] no-underline"
+                style="background-color: #4f46e5;"
+              >
+                <span>View case study</span>
+                <span>→</span>
+              </a>
             </div>
           </div>
         </article>
@@ -532,18 +599,14 @@ import Header from "./Header.astro";
           <a
             href="https://www.linkedin.com/in/tusharroy"
             target="_blank"
-            class="text-xs font-mono"
-            >LinkedIn</a
+            class="text-xs font-mono">LinkedIn</a
           >
           <a
             href="https://adplist.org/mentors/tushar-roy"
             target="_blank"
-            class="text-xs font-mono"
-            >ADPList</a
+            class="text-xs font-mono">ADPList</a
           >
-          <a
-            href="mailto:contact@tusharroy.com"
-            class="text-xs font-mono"
+          <a href="mailto:contact@tusharroy.com" class="text-xs font-mono"
             >Email</a
           >
         </div>

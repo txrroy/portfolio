@@ -1,655 +1,823 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
-import ImageZoom from "../../components/ImageZoom.astro";
-import PasswordGate from "../../components/PasswordGate.astro";
-
-const projectMetadata = {
-    title: "VMware Learning Platform",
-    role: "Lead Product Designer → Design Manager",
-    timeline: "2020 - 2023 (3 Years)",
-    team: "1 Designer, 14 Engineers, 1 PM, 2 Architects",
-    platform: "Cloud-based Lab Environment",
-    responsibilities: [
-        "Market Research",
-        "User Research",
-        "Product Transformation",
-        "Cross-functional Leadership",
-    ],
-};
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 ---
 
-<Layout title="VLP - From Internal Tool to $1M+ SaaS Product">
-    <PasswordGate />
-    <main class="max-w-4xl mx-auto px-6 pt-32 pb-24">
-        <button
-            onclick="history.back()"
-            class="btn-link opacity-60 hover:opacity-100 mb-12 block cursor-pointer"
-            >← BACK</button
-        >
-        <!-- SECTION: HERO -->
-        <header class="mb-12 md:mb-16">
-            <span class="eyebrow">Case Study: VMware Learning Platform</span>
-            <h1 class="heading-display mb-8">
-                From Internal Tool to $1M+ SaaS Product
-            </h1>
-            <p class="lead-text font-bold max-w-2xl">
-                VMware Learning Platform (VLP) was a powerful but aging internal
-                tool. It lacked a cohesive UX, modern architecture, and
-                commercial positioning.
-            </p><p class="lead-text max-w-2xl">
-                This is the story of how I helped <em
-                    >reshape it into a SaaS offering</em
-                > - by earning trust, embedding design, and transforming the experience,
-                one module at a time.
-            </p>
-        </header>
+<CaseStudyLayout
+	title="VMware Learning Platform: From Internal Tool to $1M+ SaaS • Case Study"
+	breadcrumbs={["VMware", "VLP", "Lead Product Designer → Design Manager"]}
+>
+	<!-- ===================================================== -->
+	<!-- SECTION 1: HERO & TITLE                               -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<!-- Eyebrow -->
+		<div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+			<small class="eyebrow">Tushar Roy // Case Study // VMware Learning Platform</small>
+		</div>
 
-        <figure class="mb-24">
-            <img
-                src="/images/case-study/vlp/enrollment.png"
-                alt="VLP platform interface showing cloud-based lab environment and training management"
-                class="border-1 rounded-lg shadow-lg"
-            />
-            <figcaption class="sr-only">
-                VMware Learning Platform: browser-based labs that scale from
-                demos to enterprise training
-            </figcaption>
-        </figure>
+		<!-- Main Title -->
+		<h1>From Internal Tool to $1M+ SaaS Product</h1>
 
-        <!-- SECTION: OVERVIEW -->
-        <section class="mb-24">
-            <span class="eyebrow">OVERVIEW</span>
+		<!-- Lead Paragraph -->
+		<div class="max-w-4xl mb-10">
+			<p>
+				VMware Learning Platform (VLP) was a powerful but aging internal
+				tool built over two decades. It lacked a cohesive UX, modern
+				architecture, and commercial market positioning.
+			</p>
+			<p>
+				I led the product design transformation that reshaped it into a
+				commercial SaaS offering—earning engineering trust, establishing
+				a dedicated design team, and driving <strong>$1M+ in new ARR</strong>
+				within the first year of commercial launch.
+			</p>
+		</div>
 
-            <!-- Metadata Grid -->
-            <div
-                class="grid grid-cols-2 md:grid-cols-2 gap-12 border-y border-[var(--color-text-primary)]/10 py-12 mb-12"
-            >
-                <div class="metric-item">
-                    <span class="metric-label">My Role</span>
-                    <span class="font-sans text-lg">{projectMetadata.role}</span
-                    >
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Timeline</span>
-                    <span class="font-sans text-lg"
-                        >{projectMetadata.timeline}</span
-                    >
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Team</span>
-                    <ul class="font-sans text-lg list-none ml-0 pl-0">
-                        <li>Me → hired 1 Designer</li>
-                        <li>14 Engineers, 1 PM</li>
-                        <li>2 Solution Architects</li>
-                    </ul>
-                </div>
-                <!-- Updated: Key Responsibilities -->
-                <div class="metric-item">
-                    <span class="metric-label">Key Responsibilities</span>
-                    <ul class="font-sans text-lg list-disc ml-4 space-y-1">
-                        {
-                            projectMetadata.responsibilities.map((item) => (
-                                <li>{item}</li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            </div>
+		<!-- Hero Visual -->
+		<figure class="m-0 mb-4">
+			<div class="media-frame">
+				<img
+					src="/images-vlp/enrollment.png"
+					alt="VMware Learning Platform interface showing cloud-based lab environment and training management"
+					loading="eager"
+				/>
+			</div>
+			<figcaption>
+				VMware Learning Platform: browser-based hands-on cloud labs that
+				scale from sales demos to enterprise certification training.
+			</figcaption>
+		</figure>
 
-            <!-- TLDR / Product Overview Grid -->
-            <div
-                class="bg-[#fcfaf8] p-8 md:p-12 rounded-2xl border border-[#e0ba9b]/30 mb-12 relative overflow-hidden"
-            >
-                <span
-                    class="font-serif italic text-3xl text-[#e0ba9b] absolute top-8 right-8 opacity-30 md:opacity-100"
-                    >TL;DR</span
-                >
+		<!-- Metadata Matrix Box: Role and Timeline Panel -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+			<div>
+				<small class="kicker">role</small>
+				<h4>Lead Designer → Design Manager</h4>
+				<p>
+					Market &amp; user research, product transformation, team
+					leadership.
+				</p>
+				<small class="eyebrow"
+					><time>2020</time> - <time>2023</time></small
+				>
+			</div>
+			<div>
+				<small class="kicker">team &amp; scale</small>
+				<h4>Cross-Functional SaaS Squad</h4>
+				<p>
+					1 Designer (me) → hired 1 designer, 14 Engineers, 1 PM, 2
+					Solution Architects.
+				</p>
+			</div>
+			<div>
+				<small class="kicker">outcome</small>
+				<h4>$1M+ ARR // 30+ Clients</h4>
+				<p>
+					Scaled from internal utility to 30+ Fortune 500 customers and
+					100K+ lab demos completed.
+				</p>
+			</div>
+		</div>
+	</article>
 
-                <!-- Row 1: Overview -->
-                <div class="mb-12">
-                    <h3>Product Overview</h3>
-                    <p class="max-w-prose">
-                        VMware Learning Platform (VLP) is a <strong
-                            >cloud-based lab environment</strong
-                        > that delivers in-browser hands-on IT training, demos, and
-                        sandbox experiences.
-                    </p>
-                </div>
+	<!-- ===================================================== -->
+	<!-- SECTION 2: CONTEXT & THE CHALLENGE                    -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">context</small>
+				<h2>An engineering-first team with a 20-year legacy tool</h2>
+			</div>
 
-                <!-- Row 2: Challenge & Constraints -->
-                <div class="grid md:grid-cols-2 gap-12 mb-12">
-                    <div>
-                        <h3>Challenge</h3>
-                        <p>
-                            <strong
-                                >Transform a 20-year-old internal tool</strong
-                            >
-                            into a commercial SaaS product while maintaining the trust
-                            of an engineering-first team skeptical of design changes.
-                        </p>
-                    </div>
-                    <div>
-                        <h3>Constraints</h3>
-                        <p>
-                            Engineering-led culture, no existing design
-                            processes, and established user workflows that
-                            couldn't be disrupted.
-                        </p>
-                    </div>
-                </div>
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					In 2020, VMware had a battle-tested internal lab platform
+					that had served the company well for two decades. Built
+					entirely by engineers for engineers, the platform handled
+					complex virtual machine orchestration with ease.
+				</p>
+				<p>
+					However, leadership saw immense commercial potential in the
+					cloud training space and mandated transforming it into a
+					commercial SaaS product. The challenge was a brilliant
+					engineering team naturally skeptical of design changes
+					disrupting their proven workflows, paired with 20 years of
+					accumulated technical debt.
+				</p>
 
-                <!-- Row 3: Metrics & Impact -->
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3>Success Metrics</h3>
-                        <ul class="space-y-2">
-                            <li>$1M+ ARR achievement</li>
-                            <li>30+ enterprise customers</li>
-                            <li>Design team establishment</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Design Impact</h3>
-                        <ul class="space-y-2">
-                            <li>
-                                <strong>Complete</strong> platform redesign and modernization
-                            </li>
-                            <li>
-                                <strong>Unified</strong> user experience across all
-                                modules
-                            </li>
-                            <li>
-                                Established design culture in engineering-first
-                                team
-                            </li>
-                            <li>
-                                Created scalable design system and processes
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+				<!-- Challenge Pillars Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 my-8">
+					<div class="card">
+						<small class="eyebrow">CULTURE</small>
+						<h4>Trust Deficit</h4>
+						<p>
+							As the first designer on the team, I needed to prove
+							immediate value without slowing down established
+							engineering momentum.
+						</p>
+					</div>
 
-        <!-- SECTION: CHALLENGE -->
-        <section class="mb-24">
-            <span class="eyebrow" id="challenge">The Challenge</span>
-            <h2>An Engineering-First Team with a 20-Year-Old Internal Tool</h2>
-            <div class="grid md:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p>
-                        In 2020, VMware had a powerful but aging internal lab
-                        platform that had served the company well for two
-                        decades. However, leadership saw commercial potential
-                        and wanted to transform it into a SaaS offering. The
-                        challenge? A brilliant engineering team that had built
-                        everything themselves and was naturally skeptical of
-                        external design input disrupting their proven workflows.
-                    </p>
-                    <ul class="space-y-2 mb-8">
-                        <li>
-                            <strong>Trust Deficit:</strong> As the first designer
-                            on the team, I needed to prove value without disrupting
-                            established engineering momentum.
-                        </li>
-                        <li>
-                            <strong>No Design Culture:</strong> Twenty years of engineering-led
-                            decisions had created inconsistent UX patterns across
-                            the platform.
-                        </li>
-                        <li>
-                            <strong>Commercial Pressure:</strong> Leadership expected
-                            rapid transformation to capture market opportunity in
-                            the cloud training space.
-                        </li>
-                        <li>
-                            <strong>Legacy Constraints:</strong> Deep technical debt
-                            and established user workflows that couldn't be changed
-                            overnight.
-                        </li>
-                    </ul>
-                </div>
-                <figure>
-                    <img
-                        src="/images/case-study/vlp/trfolio-vlp-2.png"
-                        alt="Original VLP interface showing inconsistent design patterns"
-                        class="rounded-xl shadow-lg w-full mb-2 p-4"
-                    />
-                    <figcaption
-                        class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-                    >
-                        The original platform: powerful but inconsistent, built
-                        for internal users
-                    </figcaption>
-                </figure>
-            </div>
-        </section>
+					<div class="card">
+						<small class="eyebrow">PRODUCT</small>
+						<h4>Commercial Pressure</h4>
+						<p>
+							Leadership expected rapid modernization to capture
+							enterprise IT training demand against nimble SaaS
+							competitors.
+						</p>
+					</div>
+				</div>
 
-        <!-- SECTION: APPROACH -->
-        <section class="mb-24">
-            <div class="grid md:grid-cols-2 gap-12 mb-24">
-                <div>
-                    <span class="eyebrow" id="approach">My Approach</span>
-                    <h2>Building Trust First</h2>
-                    <p>
-                        Considering the lack of trust in design, I focused on
-                        <strong>understanding the system</strong> and market while
-                        offering design input <strong
-                            >without disrupting velocity</strong
-                        >.
-                    </p>
-                </div>
-                <figure>
-                    <img
-                        src="/images/case-study/vlp/trfolio-vlp-13.png"
-                        alt="Collaborative sessions with engineering team and stakeholder mapping"
-                        class="w-full mb-2"
-                    />
-                    <figcaption
-                        class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-                    >
-                        VLP Information Architecture
-                    </figcaption>
-                </figure>
-            </div>
+				<!-- Side by Side: Legacy Before & Architecture Mapping -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-2.png"
+								alt="Original VLP interface showing inconsistent legacy design patterns"
+							/>
+						</div>
+						<figcaption>
+							The original internal platform: technically
+							powerful but dense, inconsistent, and intimidating
+							for commercial buyers.
+						</figcaption>
+					</figure>
 
-            <div class="grid md:grid-cols-2 gap-12">
-                <div>
-                    <span class="eyebrow" id="research">Research</span>
-                    <h2>Understanding the Ecosystem</h2>
-                    <p>
-                        I conducted comprehensive research across three key
-                        areas to understand the opportunity and constraints:
-                    </p>
-                    <ul class="space-y-2 mb-8">
-                        <li>
-                            <strong>User Research:</strong> 1:1 interviews with Solution
-                            Architects, instructors, and sales teams
-                        </li>
-                        <li>
-                            <strong>Technical Discovery:</strong> Deep dive into platform
-                            architecture and engineering processes
-                        </li>
-                        <li>
-                            <strong>Market Analysis:</strong> Competitive landscape
-                            and positioning opportunities
-                        </li>
-                    </ul>
-                    <p>
-                        This research revealed that while the platform was
-                        technically robust, the user experience was fragmented
-                        and intimidating for potential commercial customers.
-                    </p>
-                </div>
-                <div class="space-y-12">
-                    <figure>
-                        <img
-                            src="/images/case-study/vlp/trfolio-vlp-3.png"
-                            alt="User flow"
-                            class="rounded-xl shadow-lg w-full mb-2"
-                        />
-                        <figcaption
-                            class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-                        >
-                            VLP User Flow for Creating a Lab Environment
-                        </figcaption>
-                    </figure>
-                    <figure>
-                        <img
-                            src="/images/case-study/vlp/trfolio-vlp-6.png"
-                            alt="User research synthesis and market analysis outputs"
-                            class="rounded-xl shadow-lg w-full mb-2"
-                        />
-                        <figcaption
-                            class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-                        >
-                            Understanding market positioning opportunities
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-13.png"
+								alt="Information architecture and system mapping of legacy modules"
+							/>
+						</div>
+						<figcaption>
+							Information Architecture: untangling 20 years of
+							nested features into a structured, modular hierarchy.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Bridging deep virtual machine complexity with consumer-grade
+					SaaS usability.
+				</figcaption>
+			</div>
+		</div>
+	</article>
 
-        <!-- SECTION: DISCOVERY -->
-        <section class="mb-24">
-            <span class="eyebrow" id="discovery">Early Wins</span>
-            <h2>Showing Value Without Friction</h2>
-            <p class="mb-12">
-                Instead of pushing big redesigns, I suggested <strong
-                    >small design tweaks</strong
-                > per sprint - improving consistency, usability, and legibility across
-                modules, <strong>earning engineering trust</strong>.
-            </p>
-            <figure class="mb-24">
-                <img
-                    src="/images/case-study/vlp/trfolio-vlp-4.png"
-                    alt="Early wins"
-                    class="w-full mb-2 p-4 rounded-xl shadow-lg"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-                >
-                    Iterative improvement suggestions
-                </figcaption>
-            </figure>
-        </section>
+	<!-- ===================================================== -->
+	<!-- SECTION 3: RESEARCH & ECOSYSTEM DISCOVERY             -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">research</small>
+				<h2>Understanding the ecosystem: instructors, architects, and sales</h2>
+			</div>
 
-        <section class="mb-24">
-            <span class="eyebrow" id="spark">Spark Moment</span>
-            <h2>POC: Design-led Innovation</h2>
-            <p class="mb-12">
-                I was invited to design a brand-new <strong
-                    >“Classroom Experience”</strong
-                >
-                module from scratch. Rather than designing it in isolation, I showed
-                how it could fit into a <strong
-                    >more holistic, intuitive experience</strong
-                > across the app.
-            </p>
-            <figure class="mb-24">
-                <img
-                    src="/images/case-study/vlp/trfolio-vlp-11.png"
-                    alt="User Journey of VLP Instructors"
-                    class="w-full mb-2 p-4 rounded-xl shadow-lg"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-                >
-                    User Journey of VLP Instructors
-                </figcaption>
-            </figure>
-        </section>
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					I initiated qualitative research across three critical
+					stakeholder groups, supplemented by technical deep dives and
+					competitive SaaS market positioning:
+				</p>
 
-        <!-- SECTION: SOLUTIONS -->
-        <section class="mb-24">
-            <span class="eyebrow" id="solutions">Solution</span>
-            <h2>VLP Lite: Designing for Commercial Success</h2>
-            <p class="mb-12">
-                To address the commercial opportunity, I designed <strong
-                    >"VLP Lite"</strong
-                >—a simplified version that maintained all the platform's power
-                while being <strong
-                    >approachable for new enterprise customers</strong
-                >.
-            </p>
+				<!-- 3 Stakeholder Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+					<div class="card">
+						<small class="eyebrow">ARCHITECTS</small>
+						<h4>Environment Setup</h4>
+						<p>
+							Needed flexible multi-VM templates and rapid provisioning
+							without command-line troubleshooting.
+						</p>
+					</div>
 
-            <div class="grid md:grid-cols-2 gap-12 mb-24">
-                <div>
-                    <h3>Key Design Principles</h3>
-                    <ul class="space-y-2">
-                        <li>
-                            <strong>Progressive Disclosure:</strong> Advanced features
-                            available but not overwhelming
-                        </li>
-                        <li>
-                            <strong>Simplified Language:</strong> Technical jargon
-                            replaced with business-friendly terms
-                        </li>
-                        <li>
-                            <strong>Clear Information Architecture:</strong> Logical
-                            flows for different user types
-                        </li>
-                        <li>
-                            <strong>Professional Polish:</strong> Customer-ready interface
-                            that builds confidence
-                        </li>
-                    </ul>
-                </div>
-                <figure>
-                    <img
-                        src="/images/case-study/vlp/trfolio-vlp-19.png"
-                        alt="VLP Lite interface showing simplified onboarding"
-                        class="rounded-xl shadow-lg w-full mb-2"
-                    />
-                    <figcaption
-                        class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-                    >
-                        VLP Lite: enterprise-ready design that tested
-                        successfully at VMworld
-                    </figcaption>
-                </figure>
-            </div>
+					<div class="card">
+						<small class="eyebrow">INSTRUCTORS</small>
+						<h4>Live Classroom Control</h4>
+						<p>
+							Required real-time student screen monitoring,
+							breakout assistance, and progress tracking.
+						</p>
+					</div>
 
-            <h3>Platform Highlights</h3>
-            <div class="grid md:grid-cols-3 gap-8 mb-24">
-                <div class="card">
-                    <figure class="mb-4">
-                        <img
-                            src="/images/case-study/vlp/vlp-12-browser.webp"
-                            alt="HTML5 browser access"
-                            class="rounded-lg shadow w-full mb-2"
-                        />
-                        <figcaption
-                            class="text-xs text-[var(--color-text-secondary)] italic"
-                        >
-                            Browser-based access requiring no installations
-                        </figcaption>
-                    </figure>
-                    <h4>Universal Access</h4>
-                    <p class="text-sm">
-                        Any HTML5 browser, any device—no plugins or complex
-                        installations required.
-                    </p>
-                </div>
-                <div class="card">
-                    <figure class="mb-4">
-                        <img
-                            src="/images/case-study/vlp/vlp-13-modular.webp"
-                            alt="Modular UI components"
-                            class="rounded-lg shadow w-full mb-2"
-                        />
-                        <figcaption
-                            class="text-xs text-[var(--color-text-secondary)] italic"
-                        >
-                            Flexible UI components that embed seamlessly
-                        </figcaption>
-                    </figure>
-                    <h4>Modular Architecture</h4>
-                    <p class="text-sm">
-                        Flexible interface components that adapt to different
-                        training scenarios and use cases.
-                    </p>
-                </div>
-                <div class="card">
-                    <figure class="mb-4">
-                        <img
-                            src="/images/case-study/vlp/vlp-14-console.webp"
-                            alt="Advanced console access"
-                            class="rounded-lg shadow w-full mb-2"
-                        />
-                        <figcaption
-                            class="text-xs text-[var(--color-text-secondary)] italic"
-                        >
-                            Full VM console control for advanced scenarios
-                        </figcaption>
-                    </figure>
-                    <h4>Enterprise-Grade Control</h4>
-                    <p class="text-sm">
-                        Complete virtual machine control for complex enterprise
-                        training and certification scenarios.
-                    </p>
-                </div>
-            </div>
+					<div class="card">
+						<small class="eyebrow">SALES TEAMS</small>
+						<h4>Frictionless Demos</h4>
+						<p>
+							Needed 1-click customer access that worked in any
+							HTML5 browser without VPNs or plugins.
+						</p>
+					</div>
+				</div>
 
-            <div
-                class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30 mb-24"
-            >
-                <h3>Scaling the Design Team</h3>
-                <p class="mb-6">
-                    As the platform gained commercial traction, I transitioned
-                    into a management role and hired a dedicated designer for
-                    VLP. Together, we delivered comprehensive redesigns of core
-                    modules:
-                </p>
-                <ul class="grid md:grid-cols-2 gap-4">
-                    <li>
-                        <strong>LabBuilder:</strong> Environment creation and management
-                    </li>
-                    <li>
-                        <strong>Event Management:</strong> Training session coordination
-                    </li>
-                    <li>
-                        <strong>Instructor Dashboard:</strong> Real-time session monitoring
-                    </li>
-                    <li>
-                        <strong>Analytics Platform:</strong> Usage insights and reporting
-                    </li>
-                </ul>
-            </div>
-        </section>
+				<!-- Side by Side: User Flow & Market Analysis -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-3.png"
+								alt="User flow for creating a lab environment"
+							/>
+						</div>
+						<figcaption>
+							Lab Creation Flow: mapping the multi-step journey of
+							configuring virtual environments.
+						</figcaption>
+					</figure>
 
-        <!-- SECTION: IMPACT -->
-        <section class="mb-24">
-            <span class="eyebrow" id="impact">Impact</span>
-            <h2>From Internal Tool to Commercial Success</h2>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-6.png"
+								alt="Market positioning analysis and commercial SaaS opportunities"
+							/>
+						</div>
+						<figcaption>
+							Commercial Opportunity: identifying enterprise
+							buyer expectations for hands-on IT sandboxes.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Research confirmed that enterprise customers wanted
+					accessible browser sandboxes without the administrative
+					overhead of traditional VM setups.
+				</figcaption>
 
-            <div class="grid md:grid-cols-2 gap-12 items-center mb-12">
-                <div>
-                    <p class="mb-8">
-                        The transformation of VLP exceeded all expectations.
-                        What started as a skeptical engineering team became
-                        enthusiastic advocates for design thinking, and what
-                        began as an internal tool became a significant revenue
-                        driver for VMware.
-                    </p>
-                </div>
-                <figure>
-                    <img
-                        src="/images/case-study/vlp/trfolio-vlp-18.png"
-                        alt="Success metrics showing revenue growth and customer adoption"
-                        class="rounded-xl shadow-lg w-full mb-2"
-                    />
-                    <figcaption
-                        class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-                    >
-                        Usability test results for VLP Lite
-                    </figcaption>
-                </figure>
-            </div>
+				<!-- 3 Stakeholder Archetype Visuals -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/vlp-2-developers.svg"
+								alt="Developers and student personas in VLP"
+							/>
+						</div>
+						<figcaption>
+							01. Learners &amp; Developers — Hands-on sandbox
+							learners requiring instant console feedback.
+						</figcaption>
+					</figure>
 
-            <div
-                class="bg-[var(--color-text-primary)] text-white p-12 rounded-2xl mb-24"
-            >
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                    <div class="border-l border-white/20 pl-6">
-                        <div
-                            class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
-                        >
-                            $1M+
-                        </div>
-                        <div
-                            class="text-sm opacity-80 uppercase tracking-widest"
-                        >
-                            ARR
-                        </div>
-                        <div class="text-xs opacity-60 mt-1">
-                            Within first year of commercial launch
-                        </div>
-                    </div>
-                    <div class="border-l border-white/20 pl-6">
-                        <div
-                            class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
-                        >
-                            30+
-                        </div>
-                        <div
-                            class="text-sm opacity-80 uppercase tracking-widest"
-                        >
-                            Enterprise Customers
-                        </div>
-                        <div class="text-xs opacity-60 mt-1">
-                            Fortune 500 companies onboarded
-                        </div>
-                    </div>
-                    <div class="border-l border-white/20 pl-6">
-                        <div
-                            class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
-                        >
-                            12K+
-                        </div>
-                        <div
-                            class="text-sm opacity-80 uppercase tracking-widest"
-                        >
-                            Training Sessions
-                        </div>
-                        <div class="text-xs opacity-60 mt-1">
-                            Live enterprise trainings delivered
-                        </div>
-                    </div>
-                    <div class="border-l border-white/20 pl-6">
-                        <div
-                            class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
-                        >
-                            100K+
-                        </div>
-                        <div
-                            class="text-sm opacity-80 uppercase tracking-widest"
-                        >
-                            Product Demos
-                        </div>
-                        <div class="text-xs opacity-60 mt-1">
-                            Hands-on experiences completed
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/vlp-3-architects.svg"
+								alt="Solution architects persona in VLP"
+							/>
+						</div>
+						<figcaption>
+							02. Lab Architects — Power users defining complex
+							multi-tier network topologies.
+						</figcaption>
+					</figure>
 
-        <!-- SECTION: LEARNINGS -->
-        <section class="mb-24">
-            <span class="eyebrow" id="learnings">Learnings</span>
-            <h2>What This Transformation Taught Me</h2>
-            <ul class="grid md:grid-cols-3 gap-8 list-none ml-0 pl-0">
-                <li
-                    class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30"
-                >
-                    <h4>Trust Is the Foundation</h4>
-                    <p class="text-sm text-[var(--color-text-secondary)]">
-                        In engineering-dominated environments, proving your
-                        technical understanding and respecting existing
-                        processes is essential before introducing design
-                        thinking.
-                    </p>
-                </li>
-                <li
-                    class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30"
-                >
-                    <h4>Small Wins Build Big Momentum</h4>
-                    <p class="text-sm text-[var(--color-text-secondary)]">
-                        Incremental improvements that show clear value are more
-                        effective than large redesigns that disrupt established
-                        workflows.
-                    </p>
-                </li>
-                <li
-                    class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30"
-                >
-                    <h4>Commercial Success Validates Everything</h4>
-                    <p class="text-sm text-[var(--color-text-secondary)]">
-                        When design contributes to clear business outcomes, it
-                        becomes an undisputed part of the product development
-                        process.
-                    </p>
-                </li>
-            </ul>
-        </section>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/vlp-4-sales.svg"
+								alt="Enterprise sales and field engineers persona in VLP"
+							/>
+						</div>
+						<figcaption>
+							03. Field Sales &amp; SEs — High-urgency users
+							executing live customer demonstrations.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Architecting for diverse user archetypes across educational,
+					technical, and commercial contexts.
+				</figcaption>
+			</div>
+		</div>
+	</article>
 
-        <!-- SECTION: NAV -->
-        <div
-            class="mt-24 pt-12 border-t border-black/10 flex justify-between items-center"
-        >
-            <a
-                href="/case-study/devhub"
-                class="btn-link opacity-60 hover:opacity-100"
-                >← Previous Case Study</a
-            >
-            <a href="/case-study/helpnow" class="btn-primary">
-                Next Case Study (HelpNow)
-                <span class="btn-link-icon">→</span>
-            </a>
-        </div>
-    </main>
-    <Footer />
-    <ImageZoom />
-</Layout>
+	<!-- ===================================================== -->
+	<!-- SECTION 4: STRATEGY & EARNING TRUST                   -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">strategy</small>
+				<h2>Building trust through incremental sprint wins</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					In an engineering-led culture, suggesting a massive "ground-up
+					redesign" is the fastest way to hit a wall. Instead of
+					pushing disruptive redesigns, I proposed <strong
+						>small, high-impact design refinements</strong
+					> sprint-by-sprint.
+				</p>
+				<p>
+					By addressing legibility, alignment, and usability in
+					features engineers were actively building, I proved that
+					design accelerated their velocity rather than impeding it.
+				</p>
+
+				<!-- Strategy Callout Box -->
+				<div class="card my-8">
+					<small class="eyebrow mb-2">EARNING TECHNICAL TRUST</small>
+					<h4>Incremental Polish over Big-Bang Overhauls</h4>
+					<p>
+						Engineers embraced design when they saw that component
+						reusability made front-end development faster. Trust was
+						built commit by commit, proving that good UX reduced QA
+						re-work.
+					</p>
+				</div>
+
+				<!-- Side by Side: Sprint Tweaks & Team Alignment -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-4.png"
+								alt="Iterative UI improvements and sprint-by-sprint design polish"
+							/>
+						</div>
+						<figcaption>
+							Sprint-by-Sprint Polish: micro-improvements to table
+							densities, status badges, and action toolbars.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/vlp-5-trust.avif"
+								alt="Engineering collaboration and design integration milestone"
+							/>
+						</div>
+						<figcaption>
+							Engineering Collaboration: establishing shared design
+							tokens and UI component libraries with dev leads.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Demonstrating immediate, friction-free value earned the team's
+					unanimous backing for larger strategic transformations.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 5: THE TURNING POINT - CLASSROOM POC          -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">innovation</small>
+				<h2>The Classroom Experience: design-led breakthrough</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					The pivotal moment occurred when I was invited to design a
+					brand-new <strong>Classroom Experience</strong> module from
+					scratch. Rather than designing it as an isolated feature, I
+					used it as a showcase for what the modern SaaS version of
+					VLP could be.
+				</p>
+				<p>
+					I mapped the complete instructor-student journey, combining
+					real-time VM telemetry with intuitive moderation controls:
+				</p>
+
+				<!-- Full Width Journey Map -->
+				<figure class="m-0 pt-2">
+					<div class="media-frame">
+						<img
+							src="/images-vlp/trfolio-vlp-11.png"
+							alt="End-to-end user journey of VLP instructors and students"
+						/>
+					</div>
+					<figcaption>
+						End-to-end User Journey: mapping session initialization,
+						student lab onboarding, live interventions, and post-class
+						evaluations.
+					</figcaption>
+				</figure>
+
+				<!-- Side by Side: Instructor View & Student View -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-6">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-12.png"
+								alt="Instructor classroom management interface"
+							/>
+						</div>
+						<figcaption>
+							Instructor Cockpit: live bird's-eye view of all
+							active student VMs with instant intervention triggers.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-10.png"
+								alt="Student interactive lab sandbox environment"
+							/>
+						</div>
+						<figcaption>
+							Student Sandbox: dual-pane interface pairing lab
+							manual instructions with live HTML5 terminal access.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					The Classroom POC proved that enterprise virtual labs could
+					feel as smooth and responsive as modern consumer web apps.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 6: SOLUTION - VLP LITE & COMMERCIAL LAUNCH    -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">solution</small>
+				<h2>Designing VLP Lite for commercial enterprise customers</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					To address the commercial market opportunity, I designed <strong
+						>VLP Lite</strong
+					>—a streamlined, self-service offering tailored for rapid
+					enterprise onboarding while preserving full hypervisor power.
+				</p>
+
+				<!-- 4 Principles Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 my-8">
+					<div class="card">
+						<small class="eyebrow">DISCLOSURE</small>
+						<h4>Progressive Complexity</h4>
+						<p>
+							Advanced networking settings tucked behind clean
+							defaults, allowing non-technical admins to launch
+							labs in minutes.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">LANGUAGE</small>
+						<h4>Simplified Terminology</h4>
+						<p>
+							Replaced internal engineering jargon with
+							standardized enterprise training terms.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">ACCESSIBILITY</small>
+						<h4>Universal HTML5 Access</h4>
+						<p>
+							Any browser, any device—zero plugins, VPNs, or client
+							software installations required.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">CONFIDENCE</small>
+						<h4>Commercial Polish</h4>
+						<p>
+							A premium, modern visual language that built
+							immediate trust with Fortune 500 decision makers.
+						</p>
+					</div>
+				</div>
+
+				<!-- 3 Highlights Grid -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/vlp-12-browser.webp"
+								alt="HTML5 in-browser lab access"
+							/>
+						</div>
+						<figcaption>
+							01. Universal Web Access — High-performance HTML5
+							rendering accessible across laptops and tablets.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/vlp-13-modular.webp"
+								alt="Modular UI architecture"
+							/>
+						</div>
+						<figcaption>
+							02. Modular Architecture — Resilient components
+							adapting to self-paced learning and live seminars.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/vlp-14-console.webp"
+								alt="Advanced virtual machine console controls"
+							/>
+						</div>
+						<figcaption>
+							03. Enterprise Control — Low-latency virtual console
+							control with multi-monitor support.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Three foundational pillars of VLP Lite: universal access,
+					modular components, and deep virtual machine control.
+				</figcaption>
+
+				<!-- VLP Lite Interface Visual -->
+				<figure class="m-0 pt-6">
+					<div class="media-frame">
+						<img
+							src="/images-vlp/trfolio-vlp-19.png"
+							alt="VLP Lite enterprise-ready interface"
+						/>
+					</div>
+					<figcaption>
+						VLP Lite: enterprise-ready design unveiled and tested
+						successfully at VMworld with Fortune 500 customers.
+					</figcaption>
+				</figure>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 7: SCALING THE PLATFORM & TEAM                -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">system</small>
+				<h2>Transforming core modules and scaling the design team</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					Following the commercial traction of VLP Lite, I
+					transitioned into a <strong>Design Management role</strong>,
+					hired a dedicated product designer, and led the end-to-end
+					redesign of every major platform module:
+				</p>
+
+				<!-- 6-Grid of Platform Modules -->
+				<div
+					class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-4"
+				>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-20.png"
+								alt="LabBuilder multi-VM topology designer"
+							/>
+						</div>
+						<figcaption>
+							01. LabBuilder — Visual canvas for configuring
+							complex multi-VM network topologies.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-16.png"
+								alt="Global event management and scheduling dashboard"
+							/>
+						</div>
+						<figcaption>
+							02. Event Management — Scheduling multi-regional
+							training sessions and capacity allocation.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/Dashboard_1.png"
+								alt="Executive and operational lab metrics dashboard"
+							/>
+						</div>
+						<figcaption>
+							03. Dashboard — Real-time analytics tracking active
+							labs, seat utilization, and host health.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/Mockup-2.png"
+								alt="Multi-device lab mockup on modern hardware"
+							/>
+						</div>
+						<figcaption>
+							04. Cross-Device — Responsive design enabling lab
+							oversight from tablets and desktops.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-1.png"
+								alt="Enterprise lab catalog and enrollment portal"
+							/>
+						</div>
+						<figcaption>
+							05. Lab Catalog — Frictionless course discovery and
+							one-click sandbox enrollment.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vlp/trfolio-vlp-17.png"
+								alt="Student progress tracking and analytics"
+							/>
+						</div>
+						<figcaption>
+							06. Student Analytics — Real-time milestone
+							completion rates and comprehension metrics.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					A complete enterprise SaaS suite: spanning topology
+					authoring, global event operations, and granular learner
+					analytics.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 8: RESULTS & OUTCOME                          -->
+	<!-- ===================================================== -->
+	<article id="outcome" class="case-section border-b-0 pb-0">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">outcome</small>
+				<h2>Results</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					The transformation of VMware Learning Platform proved that
+					thoughtful product design can unlock massive commercial
+					value from legacy engineering assets.
+				</p>
+				<p>
+					What began as an internal utility with skeptical stakeholders
+					became an official VMware commercial product driving
+					significant recurring revenue and delighting Fortune 500
+					enterprises worldwide.
+				</p>
+
+				<!-- Impact Scorecard Grid: 4 Metric Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+					<div class="card">
+						<small class="eyebrow">REVENUE</small>
+						<h4>$1M+ ARR</h4>
+						<p>Generated in year 1 of commercial launch.</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">CUSTOMERS</small>
+						<h4>30+ Clients</h4>
+						<p>Fortune 500 enterprises onboarded.</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">SESSIONS</small>
+						<h4>12K+ Delivered</h4>
+						<p>Live global enterprise training sessions.</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">SCALE</small>
+						<h4>100K+ Labs</h4>
+						<p>Hands-on sandbox demo environments run.</p>
+					</div>
+				</div>
+
+				<!-- Usability and Market Adoption Visual -->
+				<figure class="m-0 mb-8">
+					<div class="media-frame">
+						<img
+							src="/images-vlp/trfolio-vlp-18.png"
+							alt="Usability test results and commercial adoption curve"
+						/>
+					</div>
+					<figcaption>
+						Commercial adoption and usability validation: confirming
+						95%+ task completion rates among non-technical enterprise
+						administrators.
+					</figcaption>
+				</figure>
+
+				<!-- Key Learnings Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
+					<div class="card">
+						<small class="eyebrow">LEARNING 01</small>
+						<h4>Trust First</h4>
+						<p>
+							Respecting existing engineering workflows and
+							technical complexity is prerequisite to influencing
+							product architecture.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">LEARNING 02</small>
+						<h4>Small Wins Momentum</h4>
+						<p>
+							Sprint-by-sprint polish builds technical trust far
+							more effectively than disruptive, unprompted overhauls.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">LEARNING 03</small>
+						<h4>Commercial Alignment</h4>
+						<p>
+							When design ties directly to ARR and enterprise
+							client acquisition, it secures an undisputed seat at
+							the leadership table.
+						</p>
+					</div>
+				</div>
+
+				<!-- Closing Quote -->
+				<blockquote>
+					<p>
+						"Trust doesn't scale by enforcing process. It scales by demonstrating tangible value in every sprint until design becomes indispensable to product success."
+					</p>
+					<small class="eyebrow">— Product Design Leadership, VMware</small>
+				</blockquote>
+			</div>
+		</div>
+	</article>
+
+	<!-- Page Footer Navigation -->
+	<footer
+		class="mt-16 pt-8 border-t border-black/15 flex flex-wrap items-center justify-between gap-4"
+	>
+		<a href="/" class="btn-secondary flex items-center gap-2">
+			<span>←</span>
+			<span>Back to homepage</span>
+		</a>
+		<a
+			href="#top"
+			onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });"
+			class="btn-secondary flex items-center gap-1.5 cursor-pointer"
+			title="Scroll to top"
+		>
+			<span>Top</span>
+			<span>↑</span>
+		</a>
+		<a
+			href="/case-study/vanguard"
+			class="btn-primary flex items-center gap-2"
+			title="Next Case Study: Project Vanguard"
+		>
+			<span>Next case study</span>
+			<span>→</span>
+		</a>
+	</footer>
+</CaseStudyLayout>

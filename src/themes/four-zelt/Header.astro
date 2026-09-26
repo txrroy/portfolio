@@ -27,14 +27,14 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
   data-case-study={isCaseStudyPage ? "true" : "false"}
   data-scrolled="false"
 >
-  <!-- 1. Default View: Content-Hugging Identity & Navigation -->
+  <!-- 1. Default View: Matches Homepage Header Everywhere Before Scroll -->
   <div
     id="nav-default-view"
     class="flex items-center gap-2.5 sm:gap-3.5 px-3 py-1.5 w-auto whitespace-nowrap transition-all duration-300"
   >
-    <!-- Left: Identity / Back Link -->
+    <!-- Left: Identity / Home Link -->
     <a
-      href={breadcrumbs.length > 0 ? backUrl : "/"}
+      href="/"
       id="brand-link"
       class="flex items-center gap-2 text-[var(--color-text-primary)] hover:opacity-80 transition-opacity whitespace-nowrap no-underline group/brand"
     >
@@ -70,41 +70,32 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
       <span
         class="nav-text font-heading text-sm sm:text-base font-bold tracking-tight overflow-hidden transition-all duration-500 text-[var(--color-text-primary)]"
       >
-        {breadcrumbs.length > 0 ? (breadcrumbs[1] || "Tushar Roy") : "Tushar Roy"}
+        Tushar Roy
       </span>
     </a>
 
-    <!-- Center / Status Indicator (Only on Subpages / Case Studies) -->
-    {breadcrumbs.length > 0 && (
-      <>
-        <div class="nav-divider hidden md:block w-px h-3.5 bg-black/15"></div>
-        <div
-          class="nav-status hidden md:flex items-center text-xs font-mono text-[var(--color-text-secondary)] overflow-hidden transition-all duration-500"
-        >
-          <span class="text-black/60 truncate">
-            {breadcrumbs[0]} • {breadcrumbs[2]}
-          </span>
-        </div>
-      </>
-    )}
-
-    <!-- Right: Quick Navigation (Desktop for Homepage) -->
-    {breadcrumbs.length === 0 && (
-      <>
-        <div class="nav-divider hidden sm:block w-px h-3.5 bg-black/15"></div>
-        <div class="hidden sm:flex items-center gap-3 text-xs font-mono tracking-wider">
-          <a href="#work" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
-            <span class="text-black/40 mr-0.5">01.</span>WORK
-          </a>
-          <a href="#about" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
-            <span class="text-black/40 mr-0.5">02.</span>ABOUT
-          </a>
-          <a href="#podcast" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
-            <span class="text-black/40 mr-0.5">03.</span>PODCAST
-          </a>
-        </div>
-      </>
-    )}
+    <!-- Right: Quick Navigation (Shown by default on all pages) -->
+    <div class="nav-divider hidden sm:block w-px h-3.5 bg-black/15"></div>
+    <div class="hidden sm:flex items-center gap-3 text-xs font-mono tracking-wider">
+      <a
+        href={isCaseStudyPage ? "/#work" : "#work"}
+        class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
+      >
+        <span class="text-black/40 mr-0.5">01.</span>WORK
+      </a>
+      <a
+        href="/about"
+        class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
+      >
+        <span class="text-black/40 mr-0.5">02.</span>ABOUT
+      </a>
+      <a
+        href={isCaseStudyPage ? "/#podcast" : "#podcast"}
+        class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
+      >
+        <span class="text-black/40 mr-0.5">03.</span>PODCAST
+      </a>
+    </div>
 
     <!-- Divider before Hamburger -->
     <div class="nav-divider w-px h-3.5 bg-black/15"></div>
@@ -127,7 +118,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
     </button>
   </div>
 
-  <!-- 2. Compact Scrolled Case Study View (3 Icons with Hover Text Reveals) -->
+  <!-- 2. Compact Scrolled Case Study View (Icons with Hover Text Reveals) -->
   {isCaseStudyPage && (
     <div
       id="nav-scrolled-casestudy"
@@ -187,8 +178,8 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
       <a
         href={nextUrl}
         class="group/item flex items-center gap-1.5 p-1 rounded-full hover:bg-black/6 transition-all duration-300 no-underline text-[var(--color-text-primary)]"
-        title="next case study"
-        aria-label="next case study"
+        title={nextLabel ? `next: ${nextLabel}` : "next case study"}
+        aria-label={nextLabel ? `next: ${nextLabel}` : "next case study"}
       >
         <span class="w-6 h-6 rounded-full flex items-center justify-center shrink-0">
           <svg
@@ -205,9 +196,29 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
           </svg>
         </span>
         <span class="max-w-0 opacity-0 group-hover/item:max-w-[140px] group-hover/item:opacity-100 group-hover/item:pr-2 transition-all duration-300 ease-out overflow-hidden text-xs font-mono font-medium text-[var(--color-text-secondary)] whitespace-nowrap">
-          next case study
+          {nextLabel || "next case study"}
         </span>
       </a>
+
+      <!-- Divider -->
+      <div class="w-px h-3.5 bg-black/15 shrink-0"></div>
+
+      <!-- 4. Compact Hamburger Button -->
+      <button
+        id="hamburger-compact"
+        class="nav-hamburger flex flex-col justify-center gap-[4px] w-7 h-7 group p-1 hover:bg-black/5 rounded-full transition-colors relative cursor-pointer overflow-hidden duration-500 shrink-0"
+        aria-label="Toggle Menu"
+      >
+        <span
+          class="w-3.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 origin-center group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"
+        ></span>
+        <span
+          class="w-3.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 group-[.active]:opacity-0"
+        ></span>
+        <span
+          class="w-3.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 origin-center group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"
+        ></span>
+      </button>
     </div>
   )}
 
@@ -223,7 +234,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
       >
         <div class="h-px bg-black/10 my-1"></div>
 
-        <!-- Main Links: 3 Case Studies + 1 Podcast (Clean Editorial Index) -->
+        <!-- Main Links: 4 Case Studies + 1 Podcast + About -->
         <nav class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs pt-1">
           <!-- Case Study 01: Project Vanguard -->
           <a
@@ -235,7 +246,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
               <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Project Vanguard</span>
-            <span class="font-sans text-xs text-black/55 leading-tight">Security Metrics & BI Platform</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Security Metrics &amp; BI Platform</span>
           </a>
 
           <!-- Case Study 02: HelpNow+ -->
@@ -248,7 +259,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
               <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">HelpNow+</span>
-            <span class="font-sans text-xs text-black/55 leading-tight">Omnichannel Support PWA</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Employee Support Portal</span>
           </a>
 
           <!-- Case Study 03: DevHub -->
@@ -264,17 +275,43 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
             <span class="font-sans text-xs text-black/55 leading-tight">Developer Tooling Ecosystem</span>
           </a>
 
-          <!-- Feature 04: Enterprise Design Podcast -->
+          <!-- Case Study 04: VLP -->
+          <a
+            href="/case-study/vlp"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>04 // VMWARE</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Learning Platform</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">From Internal Tool to $1M+ SaaS</span>
+          </a>
+
+          <!-- Feature 05: Enterprise Design Podcast -->
           <a
             href="/#podcast"
             class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
-              <span>04 // PODCAST</span>
+              <span>05 // PODCAST</span>
               <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Enterprise Design</span>
             <span class="font-sans text-xs text-black/55 leading-tight">12-Episode Candid Series</span>
+          </a>
+
+          <!-- Feature 06: About Me -->
+          <a
+            href="/about"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>06 // PROFILE</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">About Tushar</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Background, Principles &amp; Journey</span>
           </a>
         </nav>
 
@@ -343,7 +380,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
     width: min(92vw, 560px) !important;
   }
 
-  /* When scrolled on case study and drawer is closed: dock to left edge and hug 3 icons */
+  /* When scrolled on case study and drawer is closed: dock to left edge and hug icons */
   #navbar[data-case-study="true"][data-scrolled="true"]:not([data-state="open"]) {
     left: 1rem;
     transform: translateX(0);
@@ -378,6 +415,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
   function setupNav() {
     const navbar = document.getElementById("navbar");
     const hamburger = document.getElementById("hamburger");
+    const hamburgerCompact = document.getElementById("hamburger-compact");
     const backdrop = document.getElementById("backdrop");
     const navWrapper = document.getElementById("nav-wrapper");
     const navContent = document.getElementById("nav-content");
@@ -386,8 +424,6 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
     const iconArrow = document.getElementById("icon-arrow");
     const brandLink = document.getElementById("brand-link");
     const btnScrollTop = document.getElementById("btn-scroll-top");
-    const navStatus = document.querySelector(".nav-status") as HTMLElement | null;
-    const navBadge = document.querySelector(".nav-badge") as HTMLElement | null;
 
     const isCaseStudy = navbar?.getAttribute("data-case-study") === "true";
     let isMenuOpen = false;
@@ -401,6 +437,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
         navWrapper.classList.remove("grid-rows-[0fr]");
         navWrapper.classList.add("grid-rows-[1fr]");
         hamburger?.classList.add("active");
+        hamburgerCompact?.classList.add("active");
         backdrop.classList.remove("hidden");
 
         if (iconLogo) iconLogo.style.opacity = "1";
@@ -415,6 +452,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
         navWrapper.classList.remove("grid-rows-[1fr]");
         navWrapper.classList.add("grid-rows-[0fr]");
         hamburger?.classList.remove("active");
+        hamburgerCompact?.classList.remove("active");
         backdrop.classList.add("opacity-0");
         navContent.classList.add("opacity-0");
         setTimeout(() => {
@@ -426,6 +464,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
     }
 
     hamburger?.addEventListener("click", toggleMenu);
+    hamburgerCompact?.addEventListener("click", toggleMenu);
     backdrop?.addEventListener("click", toggleMenu);
     menuLinks.forEach((link) => link.addEventListener("click", toggleMenu));
 
@@ -458,8 +497,6 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
             iconArrow.style.opacity = "1";
             iconArrow.style.transform = "translateY(0)";
           }
-          if (navStatus) navStatus.style.display = "none";
-          if (navBadge) navBadge.style.display = "none";
 
           if (brandLink) {
             brandLink.setAttribute("href", "#");
@@ -477,8 +514,6 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
             iconArrow.classList.add("translate-y-8", "opacity-0");
             iconArrow.style.opacity = "0";
           }
-          if (navStatus) navStatus.style.display = "";
-          if (navBadge) navBadge.style.display = "";
 
           if (brandLink) {
             brandLink.setAttribute("href", "/");

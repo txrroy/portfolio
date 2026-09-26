@@ -1,707 +1,932 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import Footer from "../../components/Footer.astro";
-import ImageZoom from "../../components/ImageZoom.astro";
-import PasswordGate from "../../components/PasswordGate.astro";
-
-const projectMetadata = {
-    title: "DevHub",
-    role: "Lead Designer",
-    timeline: "2022 - 2023 (4 Quarters)",
-    team: "3 Designers, 8 Developers, 1 PM",
-    platform: "Web Portal",
-    responsibilities: [
-        "User Research & IA",
-        "UI/UX Design",
-        "Design System Contribution",
-        "Prototyping",
-    ],
-};
+import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 ---
 
-<Layout title="DevHub - Maximizing Developer Productivity">
-    <PasswordGate />
-    <main class="max-w-4xl mx-auto px-6 pt-32 pb-24">
-        <button
-            onclick="history.back()"
-            class="btn-link opacity-60 hover:opacity-100 mb-12 block cursor-pointer"
-            >← BACK</button
-        >
-        <!-- SECTION: HERO -->
-        <header class="mb-12 md:mb-16">
-            <span class="eyebrow">Case Study: DevHub</span>
-            <h1 class="heading-display mb-8">
-                Maximizing Developer Productivity
-            </h1>
-            <p class="lead-text font-bold max-w-2xl">
-                At a company where developers shape the future, their own
-                day-to-day experience was fractured. Too many tools. Too little
-                clarity. No single place to start.
-            </p>
-            <p class="lead-text max-w-2xl">
-                This is the story of how we turned fragmentation into focus,
-                that finally gave 20,000+ developers a better way to work.
-            </p>
-        </header>
+<CaseStudyLayout
+	title="DevHub: Maximizing Developer Productivity • Case Study"
+	breadcrumbs={["VMware", "DevHub", "Lead Designer"]}
+>
+	<!-- ===================================================== -->
+	<!-- SECTION 1: HERO & TITLE                               -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<!-- Eyebrow -->
+		<div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+			<small class="eyebrow">Tushar Roy // Case Study // DevHub</small>
+		</div>
 
-        <figure class="mb-24 image-full-width">
-            <img
-                src="/images/case-study/devhub/devhub-before-after.png"
-                alt="DevHub Dashboard"
-            />
-            <figcaption class="sr-only">DevHub Dashboard Interface</figcaption>
-        </figure>
+		<!-- Main Title -->
+		<h1>Turning Fragmentation into Focus</h1>
 
-        <!-- SECTION: OVERVIEW -->
-        <section class="mb-24">
-            <span class="eyebrow">OVERVIEW</span>
+		<!-- Lead Paragraph -->
+		<div class="max-w-4xl mb-10">
+			<p>
+				At a company where developers shape the future, their own
+				day-to-day experience was fractured. Too many tools, too little
+				clarity, and no single place to start.
+			</p>
+			<p>
+				I led the design of <strong>DevHub</strong>, a centralized
+				developer command center that gave 20,000+ VMware engineers
+				unified access to role-aware tools, automated workflows, and
+				curated resources—cutting developer onboarding from weeks to
+				days.
+			</p>
+		</div>
 
-            <!-- Metadata Grid -->
-            <div
-                class="grid grid-cols-2 md:grid-cols-2 gap-12 border-y border-[var(--color-text-primary)]/10 py-12 mb-12"
-            >
-                <div class="metric-item">
-                    <span class="metric-label">Role</span>
-                    <span class="font-sans text-lg">{projectMetadata.role}</span
-                    >
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Timeline</span>
-                    <span class="font-sans text-lg"
-                        >{projectMetadata.timeline}</span
-                    >
-                </div>
-                <div class="metric-item">
-                    <span class="metric-label">Team</span>
-                    <span class="font-sans text-lg">{projectMetadata.team}</span
-                    >
-                </div>
-                <!-- Updated: Key Responsibilities -->
-                <div class="metric-item">
-                    <span class="metric-label">Key Responsibilities</span>
-                    <ul class="font-sans text-lg list-disc ml-4 space-y-1">
-                        {
-                            projectMetadata.responsibilities.map((item) => (
-                                <li>{item}</li>
-                            ))
-                        }
-                    </ul>
-                </div>
-            </div>
+		<!-- Hero Visual -->
+		<figure class="m-0 mb-4">
+			<div class="media-frame">
+				<img
+					src="/images-devhub/devhub-before-after.png"
+					alt="DevHub Before and After Transformation: from fractured tools to unified command center"
+					loading="eager"
+				/>
+			</div>
+			<figcaption>
+				DevHub Command Center: transforming a landscape of 20+
+				disconnected developer tools into a single role-aware portal.
+			</figcaption>
+		</figure>
 
-            <!-- TLDR / Product Overview Grid -->
-            <div
-                class="bg-[#fcfaf8] p-8 md:p-12 rounded-2xl border border-[#e0ba9b]/30 mb-12 relative overflow-hidden"
-            >
-                <span
-                    class="font-serif italic text-3xl text-[#e0ba9b] absolute top-8 right-8 opacity-30 md:opacity-100"
-                    >TL;DR</span
-                >
+		<!-- Metadata Matrix Box: Role and Timeline Panel -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+			<div>
+				<small class="kicker">role</small>
+				<h4>Lead Designer</h4>
+				<p>
+					User research, IA, UI/UX, design system, and prototyping.
+				</p>
+				<small class="eyebrow"
+					><time>2022 Q1</time> - <time>2023 Q1</time></small
+				>
+			</div>
+			<div>
+				<small class="kicker">team &amp; scale</small>
+				<h4>Core Squad &amp; Scale</h4>
+				<p>
+					3 Designers, 8 Developers, 1 PM supporting 20,000+
+					developers across global engineering teams.
+				</p>
+			</div>
+			<div>
+				<small class="kicker">outcome</small>
+				<h4>80% Faster Onboarding</h4>
+				<p>
+					Onboarding reduced from 3 weeks to under 5 days; +40% tool
+					engagement; 25% drop in service duplication.
+				</p>
+			</div>
+		</div>
+	</article>
 
-                <!-- Row 1: Overview -->
-                <div class="mb-12">
-                    <h3>Product Overview</h3>
-                    <p class="max-w-prose">
-                        DevHub is a centralized platform that gives VMware
-                        developers unified access to tools, workflows, and
-                        resources - tailored to their roles. It's the "command
-                        center" for building software at scale.
-                    </p>
-                </div>
+	<!-- ===================================================== -->
+	<!-- SECTION 2: CONTEXT & THE CHALLENGE                    -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">context</small>
+				<h2>
+					Disjointed workflows, low visibility, and effort duplication
+				</h2>
+			</div>
 
-                <!-- Row 2: Challenge & Constraints -->
-                <div class="grid md:grid-cols-2 gap-12 mb-12">
-                    <div>
-                        <h3>Challenge</h3>
-                        <p>
-                            To transform fragmented developer workflows into a
-                            role-aware, personalized platform that boosts
-                            productivity and cuts onboarding time.
-                        </p>
-                    </div>
-                    <div>
-                        <h3>Constraints</h3>
-                        <p>
-                            Inherited complexity from siloed platforms and no
-                            central UX before this initiative.
-                        </p>
-                    </div>
-                </div>
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					Over years of rapid expansion, VMware's internal tooling had
+					fractured into departmental silos. Engineers wasted hours
+					every week hunting down documentation, asking on Slack for
+					approved tools, and wading through outdated wikis.
+				</p>
+				<p>
+					Without a central catalog, teams frequently rebuilt tools
+					that already existed elsewhere in the organization, creating
+					redundant maintenance costs and severe cognitive drag.
+				</p>
 
-                <!-- Row 3: Metrics & Impact -->
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3>Success Metrics</h3>
-                        <ul class="space-y-2">
-                            <li>80% reduction in onboarding time</li>
-                            <li>40% increase in tool engagement</li>
-                            <li>15% faster project turnaround</li>
-                            <li>25% reduction in service duplication</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h3>Design Impact</h3>
-                        <ul class="space-y-2">
-                            <li>
-                                <strong>Unified</strong> 20+ disparate tools into
-                                one portal
-                            </li>
-                            <li>
-                                <strong>Reduced onboarding time</strong> by 80%
-                            </li>
-                            <li>
-                                <strong>Scalable</strong> component library for future
-                                growth
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+				<!-- 3 User Cohort Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+					<div class="card">
+						<small class="eyebrow">DEVELOPERS</small>
+						<h4>Finding vs. Coding</h4>
+						<p>
+							Spent more time navigating tribal knowledge and
+							80-page onboarding docs than writing code.
+						</p>
+					</div>
 
-        <!-- SECTION: USERS -->
-        <span class="eyebrow">The Challenge</span>
-        <h2>Disjointed Workflows, Low Visibility, and Effort Duplication</h2>
-        <p class="mb-12">
-            We identified three key user groups with distinct needs and pain
-            points in the developer workflow ecosystem.
-        </p>
+					<div class="card">
+						<small class="eyebrow">MANAGERS</small>
+						<h4>Blind Spots</h4>
+						<p>
+							Lacked visibility into team tool adoption, sprint
+							velocity, and onboarding health without
+							micromanaging.
+						</p>
+					</div>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-24">
-            <div class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
-                <h3>VMware Developers</h3>
-                <p class="mb-4 text-sm">
-                    Needed easy access to tools and services, without searching
-                    Slack or Confluence every time.
-                </p>
+					<div class="card">
+						<small class="eyebrow">SERVICE OWNERS</small>
+						<h4>Rampant Duplication</h4>
+						<p>
+							Internal APIs and tools were continually duplicated
+							because no discovery mechanism existed across orgs.
+						</p>
+					</div>
+				</div>
 
-                <h4 class="eyebrow-sm mb-2 mt-4">Pain Points</h4>
-                <ul
-                    class="text-sm space-y-2 text-[var(--color-text-secondary)]"
-                >
-                    <li>Spending more time looking for things than building</li>
-                    <li>Relying on tribal knowledge and bookmarks</li>
-                    <li>Overwhelmed by 80-page onboarding docs</li>
-                </ul>
-            </div>
-            <div class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
-                <h3>Engineering Managers</h3>
-                <p class="mb-4 text-sm">
-                    Wanted visibility into team tooling, workflows, and
-                    developer onboarding without micromanaging.
-                </p>
+				<!-- Side by Side: Legacy Before & Pain Point Taxonomy -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/01%20before.png"
+								alt="Legacy developer portal before DevHub"
+							/>
+						</div>
+						<figcaption>
+							Legacy internal toolscape: disorganized link dumps
+							and siloed utility pages.
+						</figcaption>
+					</figure>
 
-                <h4 class="eyebrow-sm mb-2 mt-4">Pain Points</h4>
-                <ul
-                    class="text-sm space-y-2 text-[var(--color-text-secondary)]"
-                >
-                    <li>Lack of visibility into team tooling</li>
-                    <li>Time spent handholding new developers</li>
-                    <li>No centralized view of team workflows</li>
-                </ul>
-            </div>
-            <div class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
-                <h3>Platform Service Owners</h3>
-                <p class="mb-4 text-sm">
-                    Aimed to reduce duplicated effort and streamline the
-                    onboarding and maintenance of internal services.
-                </p>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/53%20pain%20points.png"
+								alt="Developer pain point taxonomy and friction synthesis"
+							/>
+						</div>
+						<figcaption>
+							Pain point taxonomy: cognitive overload, discovery
+							friction, and knowledge fragmentation.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Disjointed systems forced developers to rely on Slack lore
+					and private browser bookmarks just to perform routine tasks.
+				</figcaption>
+			</div>
+		</div>
+	</article>
 
-                <h4 class="eyebrow-sm mb-2 mt-4">Pain Points</h4>
-                <ul
-                    class="text-sm space-y-2 text-[var(--color-text-secondary)]"
-                >
-                    <li>
-                        Rampant service duplication due to lack of visibility
-                    </li>
-                    <li>Fragmented service discovery</li>
-                    <li>Inefficient resource allocation</li>
-                </ul>
-            </div>
-        </div>
+	<!-- ===================================================== -->
+	<!-- SECTION 3: RESEARCH & HEURISTIC AUDIT                 -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">research</small>
+				<h2>Surfacing friction through heuristic audits and interviews</h2>
+			</div>
 
-        <!-- SECTION: PROCESS -->
-        <span class="eyebrow">Discovery</span>
-        <h2>Finding the Friction</h2>
-        <p class="mb-12">
-            I kicked off with alignment sessions mapping the stakeholders, pains
-            and goals across the developer ecosystem.
-        </p>
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					I initiated the discovery phase with <strong>12+ in-depth interviews</strong>
+					spanning engineers, architects, and managers across business units.
+					Concurrently, I executed rigorous heuristic audits across the existing
+					internal portal suite.
+				</p>
 
-        <h3>Workshops & Ecosystem Mapping</h3>
-        <p class="mb-8">
-            I conducted comprehensive workshops to understand the developer
-            ecosystem and identify key stakeholders, pain points, and goals.
-        </p>
+				<!-- Developer Quote Callout -->
+				<blockquote>
+					<p>
+						"I spend more time <em>looking</em> for things than <em>building</em> things."
+					</p>
+					<small class="eyebrow">— MTS Developer, Cloud Infrastructure Team</small>
+				</blockquote>
 
-        <figure class="mb-24">
-            <img
-                src="/images/case-study/devhub/dh-5-workshops.avif"
-                alt="DevHub Ecosystem Map showing stakeholders and relationships"
-                class="w-full mb-2"
-            />
-            <figcaption
-                class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-            >
-                DevHub Ecosystem Map showing the complex relationships between
-                different developer roles and tools
-            </figcaption>
-        </figure>
+				<!-- Heuristic Audits Multi-Image Grid -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/21%20heuristics.png"
+								alt="Heuristic audit on navigation clarity and mental models"
+							/>
+						</div>
+						<figcaption>
+							Audit 01. IA Breakdown — Unpredictable navigation
+							structures across tools.
+						</figcaption>
+					</figure>
 
-        <h3>User Research Insights</h3>
-        <p class="mb-4">
-            We conducted 12+ user interviews across roles, levels, and teams.
-            Common themes emerged:
-        </p>
-        <ul class="mb-8 space-y-2">
-            <li>
-                <strong>Tribal knowledge ruled:</strong> devs used bookmarks, Slack,
-                and old wikis
-            </li>
-            <li>
-                <strong>Service duplication was rampant</strong> due to lack of visibility
-            </li>
-            <li>
-                <strong>New hires were overwhelmed</strong> by an 80-page onboarding
-                doc
-            </li>
-        </ul>
-        <blockquote
-            class="mb-12 border-l-4 border-[var(--color-accent)] pl-6 italic text-xl"
-        >
-            "I spend more time <em>looking</em> for things than <em>building</em
-            > things."
-            <br />
-            <span class="text-sm not-italic font-bold mt-2 block"
-                >— MTS Engineer</span
-            >
-        </blockquote>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/22%20heuristics.png"
+								alt="Heuristic audit on cognitive friction and search"
+							/>
+						</div>
+						<figcaption>
+							Audit 02. Search Void — Zero unified indexing or
+							contextual suggestions.
+						</figcaption>
+					</figure>
 
-        <h3>Problems with exisitng portals</h3>
-        <p class="mb-8">
-            A heuristic review of existing portals revealed low usability,
-            overwhelming options, and broken mental models. We needed clarity
-            and cohesion.
-        </p>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/23%20heuristics.png"
+								alt="Heuristic audit on visual hierarchy and action triggers"
+							/>
+						</div>
+						<figcaption>
+							Audit 03. Visual Noise — Cluttered layouts obscuring
+							high-frequency actions.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Systematic heuristic evaluation surfaced severe violations of
+					recognition vs. recall, consistency, and error prevention.
+				</figcaption>
 
-        <div class="space-y-12 mb-24">
-            <figure>
-                <img
-                    src="/images/case-study/devhub/23 heuristics.png"
-                    alt="Heuristic audit findings showing usability issues"
-                    class="rounded-xl shadow-lg w-full mb-2"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] italic"
-                >
-                    Heuristic audit results highlighting critical usability
-                    barriers in existing developer portals
-                </figcaption>
-            </figure>
-            <figure>
-                <img
-                    src="/images/case-study/devhub/22 heuristics.png"
-                    alt="Heuristic audit findings showing usability issues"
-                    class="rounded-xl shadow-lg w-full mb-2"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] italic"
-                >
-                    Heuristic audit results highlighting critical usability
-                    barriers in existing developer portals
-                </figcaption>
-            </figure>
-        </div>
+				<!-- Personas and Research Highlights Grid -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-6">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/40%20personas.png"
+								alt="Developer personas: junior, senior, and lead workflows"
+							/>
+						</div>
+						<figcaption>
+							Developer Personas: archetypes from newly hired devs
+							to senior architects and tech leads.
+						</figcaption>
+					</figure>
 
-        <figure class="mb-24">
-            <img
-                src="/images/case-study/devhub/40 personas.png"
-                alt="DevHub User Personas"
-                class="rounded-xl shadow-lg w-full mb-2"
-            />
-            <figcaption
-                class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-            >
-                DevHub User Personas
-            </figcaption>
-        </figure>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/51%20research%20findings.png"
+								alt="Synthesized research findings and interview insights"
+							/>
+						</div>
+						<figcaption>
+							Research Synthesis: quantifying daily hours lost to
+							broken documentation and tooling discovery.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Grounded in verified user insights: understanding the exact
+					divergence between new hires and veteran developers.
+				</figcaption>
+			</div>
+		</div>
+	</article>
 
-        <figure class="mb-24">
-            <img
-                src="/images/case-study/devhub/51 research findings.png"
-                alt="Research Highlights"
-                class="rounded-xl shadow-lg w-full mb-2"
-            />
-            <figcaption
-                class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-            >
-                Research Highlights
-            </figcaption>
-        </figure>
+	<!-- ===================================================== -->
+	<!-- SECTION 4: STRATEGY & ALIGNMENT                       -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">strategy</small>
+				<h2>Co-creating the solution and staying ahead of sprints</h2>
+			</div>
 
-        <!-- SECTION: STRATEGY -->
-        <span class="eyebrow">Design Strategy</span>
-        <h2>Co-Creating the Solution</h2>
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					To align cross-functional partners, I led collaborative
+					discovery workshops that produced a shared <strong
+						>Experience Canvas</strong
+					> and an <strong>Ecosystem Map</strong>. Rather than designing in
+					isolation, we co-created a prioritized backlog that ensured design
+					remained <strong>two full sprints ahead of engineering</strong>.
+				</p>
+				<p>
+					We structured the information architecture around developer
+					intent rather than organizational hierarchy:
+				</p>
 
-        <p class="mb-8">
-            We co-created a <strong>prioritized backlog</strong> with product and
-            engineering, aligning on way forward. This helped us seamlessly plan to
-            <strong>stay ahead of dev by 2 sprints</strong>.
-        </p>
+				<!-- Intent Pillars -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-8">
+					<div class="card">
+						<small class="eyebrow">INTENT 01</small>
+						<h4>"Start a Project"</h4>
+						<p>
+							Curated scaffolding toolchains, Git repositories,
+							and CI/CD pipelines created in one click.
+						</p>
+					</div>
 
-        <figure class="mb-24">
-            <img
-                src="/images/case-study/devhub/dh-8-strategy.avif"
-                alt="Provisional backlog showing prioritized features"
-                class="w-full mb-2"
-            />
-            <figcaption
-                class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-            >
-                Provisional backlog showing prioritized features and development
-                roadmap
-            </figcaption>
-        </figure>
+					<div class="card">
+						<small class="eyebrow">INTENT 02</small>
+						<h4>"Find a Service"</h4>
+						<p>
+							Enterprise service portfolio with live health
+							status, owners, and documentation.
+						</p>
+					</div>
 
-        <h3>Designing for Developer Intent</h3>
-        <p class="mb-4">
-            Instead of launching into "design mode," we <strong
-                >prototyped around user intent</strong
-            >:
-        </p>
-        <ul class="mb-8 space-y-2">
-            <li>"I want to start a project."</li>
-            <li>"I need a toolkit for a service."</li>
-            <li>"I want to know what tools I should be using."</li>
-        </ul>
+					<div class="card">
+						<small class="eyebrow">INTENT 03</small>
+						<h4>"Adopt Best Practices"</h4>
+						<p>
+							Role-aware tool recommendations, golden paths, and
+							compliance checklists.
+						</p>
+					</div>
+				</div>
 
-        <figure class="mb-24">
-            <img
-                src="/images/case-study/devhub/81 proposed user journey.png"
-                alt="Developer journey mapping showing user flows"
-                class="w-full mb-2 rounded-xl shadow-lg"
-            />
-            <figcaption
-                class="text-center text-sm text-[var(--color-text-secondary)] mt-4 italic"
-            >
-                Developer journey mapping showing key user flows and decision
-                points
-            </figcaption>
-        </figure>
+				<!-- Full Width Ecosystem Map -->
+				<figure class="m-0 pt-2">
+					<div class="media-frame">
+						<img
+							src="/images-devhub/dh-5-workshops.avif"
+							alt="DevHub developer ecosystem map connecting roles, tools, and services"
+						/>
+					</div>
+					<figcaption>
+						Developer Ecosystem Map: mapping relational dependencies
+						between developer personas, internal microservices, and
+						cloud infrastructure.
+					</figcaption>
+				</figure>
 
-        <!-- SECTION: FEATURES -->
-        <span class="eyebrow">Key Design Features</span>
-        <h2>Building the Developer Command Center</h2>
-        <p class="mb-12">
-            We designed five core features that transformed the developer
-            experience from fragmented to unified.
-        </p>
+				<!-- Side by Side: Experience Canvas & Strategy Backlog -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-6">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/11%20alignment%20-%20experience%20canvas.png"
+								alt="Experience canvas created during stakeholder alignment"
+							/>
+						</div>
+						<figcaption>
+							Experience Canvas: defining core user goals, success
+							metrics, and architectural constraints.
+						</figcaption>
+					</figure>
 
-        <div class="space-y-12 mb-24">
-            <figure>
-                <img
-                    src="/images/case-study/devhub/82 proposed user journey.png"
-                    alt="Developer journey mapping showing user flows"
-                    class="rounded-xl shadow-lg w-full mb-2"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] italic"
-                >
-                    Developer journey mapping showing key user flows and
-                    decision points
-                </figcaption>
-            </figure>
-            <figure>
-                <img
-                    src="/images/case-study/devhub/83 proposed user journey.png"
-                    alt="Developer journey mapping showing user flows"
-                    class="rounded-xl shadow-lg w-full mb-2"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] italic"
-                >
-                    Developer journey mapping showing key user flows and
-                    decision points
-                </figcaption>
-            </figure>
-        </div>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/dh-8-strategy.avif"
+								alt="Prioritized product backlog and engineering release roadmap"
+							/>
+						</div>
+						<figcaption>
+							Roadmap Strategy: establishing a phased rollout that
+							kept design two sprints ahead of engineering.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Translating high-level strategic alignment directly into
+					actionable, sprint-ready product requirements.
+				</figcaption>
+			</div>
+		</div>
+	</article>
 
-        <h3>Modular and Adaptive UI Concepts</h3>
-        <p class="mb-8">
-            Initial concept exploration through rapid sketching to explore
-            different approaches to the developer experience.
-        </p>
-        <div class="grid grid-cols-2 gap-4 md:gap-8 mb-24">
-            <figure>
-                <img
-                    src="/images/case-study/devhub/91 sketch.jpg"
-                    alt="Configuring Widgets"
-                    class="rounded-lg shadow-md w-full mb-2"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] italic"
-                >
-                    Configuring Widgets
-                </figcaption>
-            </figure>
-            <figure>
-                <img
-                    src="/images/case-study/devhub/92 sketch.jpg"
-                    alt="Adding Widgets"
-                    class="rounded-lg shadow-md w-full mb-2"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] italic"
-                >
-                    Adding Widgets
-                </figcaption>
-            </figure>
-            <figure>
-                <img
-                    src="/images/case-study/devhub/93 sketch.jpg"
-                    alt="Dashboard Layout"
-                    class="rounded-lg shadow-md w-full mb-2"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] italic"
-                >
-                    Dashboard Layout
-                </figcaption>
-            </figure>
-            <figure>
-                <img
-                    src="/images/case-study/devhub/94 sketch.jpg"
-                    alt="Project Detail Drilldown"
-                    class="rounded-lg shadow-md w-full mb-2"
-                />
-                <figcaption
-                    class="text-center text-sm text-[var(--color-text-secondary)] italic"
-                >
-                    Project Detail Drilldown
-                </figcaption>
-            </figure>
-        </div>
+	<!-- ===================================================== -->
+	<!-- SECTION 5: IDEATION & TACTILE PROTOTYPING             -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">iteration</small>
+				<h2>Rapid paper sketching and tactile prototyping</h2>
+			</div>
 
-        <div class="grid md:grid-cols-2 gap-12 mb-24">
-            <div>
-                <h3>Role Based UI</h3>
-                <p class="mb-8">
-                    <strong>Streamlined dashboards</strong> per user type, showing
-                    only <strong>relevant tools and workflows</strong> for each developer's
-                    role and responsibilities.
-                </p>
-                <figure>
-                    <img
-                        src="/images/case-study/devhub/dashboard.png"
-                        alt="Role-based dashboard interface"
-                        class="rounded-xl shadow-lg w-full"
-                    />
-                    <figcaption class="sr-only">
-                        Role-based dashboard interface
-                    </figcaption>
-                </figure>
-            </div>
-            <div>
-                <h3>Quick Actions</h3>
-                <p class="mb-8">
-                    <strong>Common workflows in 1-click reach</strong> - Git repo
-                    creation, CI pipeline setup, and other frequent developer tasks
-                    surfaced smartly.
-                </p>
-                <figure>
-                    <img
-                        src="/images/case-study/devhub/dh-11-quickactions.avif"
-                        alt="Quick actions interface"
-                        class="rounded-xl shadow-lg w-full"
-                    />
-                    <figcaption class="sr-only">
-                        Quick actions interface
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					To quickly evaluate competing layouts without anchoring
+					prematurely on high-fidelity aesthetics, I conducted rapid
+					paper sketching workshops with developers. We explored
+					modular dashboard widgets, quick-action drawers, and project
+					drilldown models.
+				</p>
 
-        <div class="grid md:grid-cols-2 gap-12 mb-24">
-            <div>
-                <h3>Personalization</h3>
-                <p class="mb-8">
-                    Let developers <strong>pin what they use most</strong>,
-                    creating a personalized workspace that <strong
-                        >adapts to individual workflows</strong
-                    >
-                    and preferences.
-                </p>
-                <figure>
-                    <img
-                        src="/images/case-study/devhub/dh-13-recommendations.avif"
-                        alt="Personalization features"
-                        class="rounded-xl shadow-lg w-full"
-                    />
-                    <figcaption class="sr-only">
-                        Personalization features
-                    </figcaption>
-                </figure>
-            </div>
-            <div>
-                <h3>Smart Onboarding</h3>
-                <p class="mb-8">
-                    <strong>Pre-packaged toolchains</strong> to cut ramp-up time,
-                    providing new developers with <strong
-                        >everything they need to get started quickly</strong
-                    >.
-                </p>
-                <figure>
-                    <img
-                        src="/images/case-study/devhub/dh-12-onboarding.avif"
-                        alt="Smart onboarding interface"
-                        class="rounded-xl shadow-lg w-full"
-                    />
-                    <figcaption class="sr-only">
-                        Smart onboarding interface
-                    </figcaption>
-                </figure>
-            </div>
-        </div>
+				<!-- 4-Grid of Sketches -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/91%20sketch.jpg"
+								alt="Paper sketch: configuring modular widgets"
+							/>
+						</div>
+						<figcaption>
+							01. Widget Configuration — Rapid exploration of
+							customizable developer cards.
+						</figcaption>
+					</figure>
 
-        <!-- SECTION: IMPACT -->
-        <span class="eyebrow">Impact</span>
-        <h2>Transforming Developer Productivity at Scale</h2>
-        <p class="mb-12">
-            DevHub exceeded all expectations, delivering <strong
-                >transformative results</strong
-            >
-            that proved the power of <strong
-                >unified developer experience design</strong
-            >.
-        </p>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/92%20sketch.jpg"
+								alt="Paper sketch: widget catalog selection"
+							/>
+						</div>
+						<figcaption>
+							02. Widget Discovery — Evaluating how developers
+							browse and pin new workspace modules.
+						</figcaption>
+					</figure>
 
-        <div
-            class="bg-[var(--color-text-primary)] text-white p-12 rounded-2xl mb-24"
-        >
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="border-l border-white/20 pl-6">
-                    <div
-                        class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
-                    >
-                        80%
-                    </div>
-                    <div class="text-sm opacity-80 uppercase tracking-widest">
-                        Reduction in onboarding time
-                    </div>
-                    <div class="text-xs opacity-60 mt-1">
-                        From 3 weeks to under 5 days
-                    </div>
-                </div>
-                <div class="border-l border-white/20 pl-6">
-                    <div
-                        class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
-                    >
-                        +40%
-                    </div>
-                    <div class="text-sm opacity-80 uppercase tracking-widest">
-                        Tool engagement increase
-                    </div>
-                    <div class="text-xs opacity-60 mt-1">In first 3 months</div>
-                </div>
-                <div class="border-l border-white/20 pl-6">
-                    <div
-                        class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
-                    >
-                        15%
-                    </div>
-                    <div class="text-sm opacity-80 uppercase tracking-widest">
-                        Faster project turnaround
-                    </div>
-                    <div class="text-xs opacity-60 mt-1">
-                        Reduced development cycles
-                    </div>
-                </div>
-                <div class="border-l border-white/20 pl-6">
-                    <div
-                        class="text-4xl md:text-5xl font-serif font-bold text-[#e0ba9b] mb-2"
-                    >
-                        25%
-                    </div>
-                    <div class="text-sm opacity-80 uppercase tracking-widest">
-                        Reduction in duplicated services
-                    </div>
-                    <div class="text-xs opacity-60 mt-1">
-                        Improved resource efficiency
-                    </div>
-                </div>
-            </div>
-        </div>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/93%20sketch.jpg"
+								alt="Paper sketch: responsive dashboard grid layout"
+							/>
+						</div>
+						<figcaption>
+							03. Dashboard Matrix — Testing flexible column
+							densities for complex telemetry.
+						</figcaption>
+					</figure>
 
-        <div class="grid md:grid-cols-3 gap-8 mb-24">
-            <blockquote class="italic text-lg">
-                "Having all my tools in one place makes my workday so much
-                simpler."
-                <span class="text-sm not-italic font-bold mt-2 block"
-                    >— MTS III Engineer</span
-                >
-            </blockquote>
-            <blockquote class="italic text-lg">
-                "DevHub revolutionizes our workflow—it's like having a personal
-                assistant for development."
-                <span class="text-sm not-italic font-bold mt-2 block"
-                    >— Lead Engineer</span
-                >
-            </blockquote>
-            <blockquote class="italic text-lg">
-                "DevHub isn't just a portal. It's how I start my day."
-                <span class="text-sm not-italic font-bold mt-2 block"
-                    >— Staff Developer</span
-                >
-            </blockquote>
-        </div>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/94%20sketch.jpg"
+								alt="Paper sketch: project detail drilldown"
+							/>
+						</div>
+						<figcaption>
+							04. Project Deep Dive — Transitioning from global
+							overview into granular repository telemetry.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Tactile paper ideation enabled real-time validation of
+					interaction ergonomics with practicing software engineers.
+				</figcaption>
 
-        <!-- SECTION: LEARNINGS -->
-        <span class="eyebrow">Learnings</span>
-        <h2>What This Taught Me</h2>
-        <ul class="grid md:grid-cols-2 gap-8 mb-24 list-none ml-0 pl-0">
-            <li class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
-                <h4>Iterate Early & Often</h4>
-                <p class="text-sm text-[var(--color-text-secondary)]">
-                    Engaging users early led to a 30% boost in usability.
-                </p>
-            </li>
-            <li class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
-                <h4>Prioritize Personalization</h4>
-                <p class="text-sm text-[var(--color-text-secondary)]">
-                    Tailoring interfaces to user roles maximizes relevance and
-                    efficiency.
-                </p>
-            </li>
-            <li class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
-                <h4>Data-Driven Decisions</h4>
-                <p class="text-sm text-[var(--color-text-secondary)]">
-                    Leveraging metrics validated our design choices.
-                </p>
-            </li>
-            <li class="bg-[#fcfaf8] p-8 rounded-xl border border-[#e0ba9b]/30">
-                <h4>Foster Co-Design</h4>
-                <p class="text-sm text-[var(--color-text-secondary)]">
-                    Cross-functional collaboration ensured comprehensive
-                    solutions.
-                </p>
-            </li>
-        </ul>
+				<!-- Low-Fi Wireframing & Usability Testing -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-6">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/102%20low%20fi.png"
+								alt="Low-fidelity wireframe testing of command center layout"
+							/>
+						</div>
+						<figcaption>
+							Low-Fi Wireframing: validating the information
+							hierarchy and spatial rhythm of widget containers.
+						</figcaption>
+					</figure>
 
-        <!-- SECTION: NEXT -->
-        <div
-            class="mt-24 pt-12 border-t border-black/10 flex justify-between items-center"
-        >
-            <a
-                href="/case-study/helpnow"
-                class="btn-link opacity-60 hover:opacity-100"
-                >← Previous Case Study</a
-            >
-            <a href="/case-study/vlp" class="btn-primary">
-                Next Case Study (VLP)
-                <span class="btn-link-icon">→</span>
-            </a>
-        </div>
-    </main>
-    <Footer />
-    <ImageZoom />
-</Layout>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/112%20testing.png"
+								alt="Usability testing observations and task completion logging"
+							/>
+						</div>
+						<figcaption>
+							Usability Testing: timing engineer task completion
+							across prototype iterations.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Iterative testing revealed that engineers strongly favored
+					role-tailored presets over blank, completely unconfigured
+					canvases.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 6: DESIGN - THE COMMAND CENTER                -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">design</small>
+				<h2>The developer command center</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					The final DevHub architecture centers on four core
+					interactive capabilities designed to accelerate engineering
+					flow states:
+				</p>
+
+				<!-- 4 Core Capabilities Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 my-8">
+					<div class="card">
+						<small class="eyebrow">EFFICIENCY</small>
+						<h4>Role-Based Personalization</h4>
+						<p>
+							Dynamic UI adapts to the engineer's team and domain,
+							surfacing relevant CI builds, PR reviews, and tools.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">VELOCITY</small>
+						<h4>1-Click Quick Actions</h4>
+						<p>
+							Common workflows—spawning cloud sandboxes, repo
+							creation, and pipeline setup—accessible instantly.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">ONBOARDING</small>
+						<h4>Smart Toolchain Bundles</h4>
+						<p>
+							Pre-configured development stacks that get new
+							engineers committed to production within days.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">CUSTOMIZATION</small>
+						<h4>Modular Widgets</h4>
+						<p>
+							Engineers can pin, rearrange, and configure custom
+							telemetry widgets for their active projects.
+						</p>
+					</div>
+				</div>
+
+				<!-- Full Dashboard Hero Visual -->
+				<figure class="m-0 pt-2">
+					<div class="media-frame">
+						<img
+							src="/images-devhub/dashboard.png"
+							alt="DevHub unified command center dashboard interface"
+						/>
+					</div>
+					<figcaption>
+						The Unified Command Center: aggregating role-based
+						tooling, recent commits, CI status, and quick actions
+						into one focused view.
+					</figcaption>
+				</figure>
+
+				<!-- 4-Grid of Specific UI Innovations -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-6">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/dh-11-quickactions.avif"
+								alt="1-Click quick actions menu interface"
+							/>
+						</div>
+						<figcaption>
+							Quick Actions: high-frequency administrative tasks
+							executable without page navigations.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/dh-12-onboarding.avif"
+								alt="Smart onboarding toolchain interface"
+							/>
+						</div>
+						<figcaption>
+							Smart Onboarding: structured guided checklists
+							replacing obsolete 80-page onboarding manuals.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/dh-13-recommendations.avif"
+								alt="Role-based recommendations and pinned resources"
+							/>
+						</div>
+						<figcaption>
+							Personalized Recommendations: intelligent tool
+							suggestions based on project assignments.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/131%20vd%20dashboard%20widgets.png"
+								alt="Modular widget component library"
+							/>
+						</div>
+						<figcaption>
+							Widget Architecture: a scalable design system
+							enabling internal teams to author custom widgets.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					A modular, extensible platform combining speed, role-aware
+					customization, and enterprise consistency.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 7: SERVICE DISCOVERY & JOURNEYS               -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">system</small>
+				<h2>A living service portfolio and guided journeys</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					To combat rampant service duplication, DevHub introduced a
+					centralized <strong>Service Portfolio</strong>. Teams
+					register their internal APIs, libraries, and microservices
+					with live health metrics, DRI contact info, and usage
+					documentation.
+				</p>
+				<p>
+					Now, before embarking on building a new service, engineers
+					can search, inspect, and reuse existing internal tools with
+					zero friction.
+				</p>
+
+				<!-- 3-Step Service Portfolio Exploration -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/Day%201%20-%20Service%20Portfolio%20Home.png"
+								alt="Service portfolio home catalog"
+							/>
+						</div>
+						<figcaption>
+							01. Portfolio Catalog — Searchable directory of
+							internal microservices with status tags.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/Day%201%20-%20Service%201.1.png"
+								alt="Service detail page showing health, documentation, and dependencies"
+							/>
+						</div>
+						<figcaption>
+							02. Service Deep Dive — Real-time telemetry, API
+							endpoints, and maintainer contacts.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/Day%201%20-%20Service%20Details%201.1.png"
+								alt="Service configuration and integration details"
+							/>
+						</div>
+						<figcaption>
+							03. Integration Specs — Instant code snippets and
+							client libraries for immediate adoption.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Eliminating duplicate work: moving from siloed repositories
+					to an organization-wide discoverable service catalog.
+				</figcaption>
+
+				<!-- Proposed User Journey Mapping Visual -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-6">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/81%20proposed%20user%20journey.png"
+								alt="Proposed developer onboarding user journey"
+							/>
+						</div>
+						<figcaption>
+							Journey Map 01: The onboarding pathway from Day 1 to
+							first production commit.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/82%20proposed%20user%20journey.png"
+								alt="Proposed continuous development user journey"
+							/>
+						</div>
+						<figcaption>
+							Journey Map 02: Daily flow state mapping routine
+							triage, builds, and peer reviews.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					End-to-end journey maps ensuring every touchpoint reinforces
+					developer velocity and minimizes context switches.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 8: ACCESSIBILITY & DESIGN GOVERNANCE          -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">governance</small>
+				<h2>Design system handoff and accessibility governance</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					Building a tool for 20,000+ engineers demanded rigorous
+					adherence to inclusive design standards. I authored
+					comprehensive accessibility specifications covering keyboard
+					navigation, screen reader focus order, and semantic
+					hierarchies.
+				</p>
+
+				<!-- Handoff Specs Multi-Grid -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/141%20-%20dev%20handoff%20-%20ally%20buttons.png"
+								alt="Accessibility specifications for button components"
+							/>
+						</div>
+						<figcaption>
+							A11y Specs 01 — Target dimensions, minimum contrast
+							ratios, and interactive active states.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/141%20-%20dev%20handoff%20-%20ally%20focus%20order.png"
+								alt="Keyboard navigation and focus order specification"
+							/>
+						</div>
+						<figcaption>
+							A11y Specs 02 — Unbroken logical tab sequences for
+							keyboard-only power navigators.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-devhub/141%20-%20dev%20handoff%20-%20ally%20headings.png"
+								alt="Heading hierarchy and semantic landmark mapping"
+							/>
+						</div>
+						<figcaption>
+							A11y Specs 03 — Strict semantic landmark hierarchies
+							ensuring screen reader parity.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Ensuring enterprise-level accessibility compliance (WCAG
+					2.1 AA) directly integrated into component library tokens.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 9: RESULTS & OUTCOME                          -->
+	<!-- ===================================================== -->
+	<article id="outcome" class="case-section border-b-0 pb-0">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">outcome</small>
+				<h2>Results</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					DevHub transformed internal engineering productivity at
+					VMware. By unifying 20+ fragmented tools into a single
+					role-aware surface, onboarding friction plummeted and tool
+					engagement reached all-time highs.
+				</p>
+
+				<!-- Impact Scorecard Grid: 4 Metric Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-8">
+					<div class="card">
+						<small class="eyebrow">ONBOARDING</small>
+						<h4>80% Faster</h4>
+						<p>Reduced from 3 weeks to under 5 days for new hires.</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">ENGAGEMENT</small>
+						<h4>+40% Lift</h4>
+						<p>Surge in internal tool usage within 3 months.</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">TURNAROUND</small>
+						<h4>15% Faster</h4>
+						<p>Accelerated project release cycles across teams.</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">EFFICIENCY</small>
+						<h4>-25% Dupes</h4>
+						<p>Significant reduction in duplicated services.</p>
+					</div>
+				</div>
+
+				<!-- Impact Visual -->
+				<figure class="m-0 mb-8">
+					<div class="media-frame">
+						<img
+							src="/images-devhub/120%20final%20design.png"
+							alt="DevHub final high-fidelity design overview"
+						/>
+					</div>
+					<figcaption>
+						Transformative impact: turning a fractured internal
+						landscape into an integrated, role-tailored developer
+						command center.
+					</figcaption>
+				</figure>
+
+				<!-- Closing Quotes Grid -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 mb-8">
+					<blockquote>
+						<p>
+							"Having all my tools in one place makes my workday so much simpler. It's like having a personal assistant for engineering."
+						</p>
+						<small class="eyebrow">— MTS III Engineer, VMware</small>
+					</blockquote>
+
+					<blockquote>
+						<p>
+							"DevHub isn't just a portal. It's how I start my day and how our new hires get productive in days instead of weeks."
+						</p>
+						<small class="eyebrow">— Staff Software Architect, Core Engineering</small>
+					</blockquote>
+				</div>
+			</div>
+		</div>
+	</article>
+
+	<!-- Page Footer Navigation -->
+	<footer
+		class="mt-16 pt-8 border-t border-black/15 flex flex-wrap items-center justify-between gap-4"
+	>
+		<a href="/" class="btn-secondary flex items-center gap-2">
+			<span>←</span>
+			<span>Back to homepage</span>
+		</a>
+		<a
+			href="#top"
+			onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });"
+			class="btn-secondary flex items-center gap-1.5 cursor-pointer"
+			title="Scroll to top"
+		>
+			<span>Top</span>
+			<span>↑</span>
+		</a>
+		<a
+			href="/case-study/vlp"
+			class="btn-primary flex items-center gap-2"
+			title="Next Case Study: VMware Learning Platform"
+		>
+			<span>Next case study</span>
+			<span>→</span>
+		</a>
+	</footer>
+</CaseStudyLayout>
