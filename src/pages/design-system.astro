@@ -1,736 +1,259 @@
 ---
-import Layout from "../layouts/Layout.astro";
-import Footer from "../components/Footer.astro";
+import Layout from "@theme/Layout.astro";
+import Header from "@theme/Header.astro";
 ---
 
-<Layout title="Design System Reference • Developer Spec">
-	<div class="min-h-screen bg-[#faf8f2] text-[#1a1918] antialiased selection:bg-black selection:text-white font-space">
-		
-		<!-- Minimal Header -->
-		<header class="sticky top-0 z-40 bg-[#faf8f2]/95 backdrop-blur-md border-b border-black/15 py-3 px-6">
-			<div class="max-w-7xl mx-auto flex items-center justify-between font-departure text-xs">
-				<a href="/" class="flex items-center gap-2 text-black hover:text-neutral-600 transition-colors no-underline">
-					<span>←</span>
-					<span>Portfolio</span>
-				</a>
-				<div class="flex items-center gap-2 font-bold">
-					<span class="px-2 py-0.5 bg-black text-white text-[10px]">PRIVATE</span>
-					<span>Internal Design System & HTML Tag Reference</span>
-				</div>
-				<a
-					href="/case-study/vanguard"
-					class="text-black/70 hover:text-black transition-colors no-underline text-[11px]"
-				>
-					Vanguard Live →
-				</a>
-			</div>
-		</header>
+<Layout title="Design System • Tushar Roy">
+  <Header backUrl="/" backLabel="Back to Home" breadcrumbs={["System", "Design System"]} />
 
-		<!-- Main 2-Column Layout -->
-		<main class="max-w-7xl mx-auto px-6 sm:px-8 py-10 md:py-14">
-			<div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-start">
-				
-				<!-- ========================================================= -->
-				<!-- LEFT COLUMN (25%): STICKY NAVIGATION RAIL                -->
-				<!-- ========================================================= -->
-				<nav class="md:col-span-3 md:sticky md:top-16 self-start h-[calc(100vh-4.5rem)] overflow-y-auto pr-4 space-y-6 text-xs font-departure border-0 border-r border-black/15 shadow-none bg-transparent p-0 m-0">
-					
-					<!-- Foundations Nav -->
-					<div>
-						<span class="text-black/40 block font-bold tracking-wider mb-2">FOUNDATIONS</span>
-						<div class="space-y-1">
-							<a href="#a11y" class="block py-1 px-2 text-black/80 hover:bg-black/5 hover:text-black rounded-xs no-underline">Accessibility</a>
-							<a href="#colors" class="block py-1 px-2 text-black/80 hover:bg-black/5 hover:text-black rounded-xs no-underline">Colors</a>
-							<a href="#grids" class="block py-1 px-2 text-black/80 hover:bg-black/5 hover:text-black rounded-xs no-underline">Grids &amp; Layout</a>
-							<a href="#icons" class="block py-1 px-2 text-black/80 hover:bg-black/5 hover:text-black rounded-xs no-underline">Icons &amp; Badges</a>
-							<a href="#spacing" class="block py-1 px-2 text-black/80 hover:bg-black/5 hover:text-black rounded-xs no-underline">Spacing</a>
-							<a href="#typography" class="block py-1 px-2 text-black/80 hover:bg-black/5 hover:text-black rounded-xs no-underline">Typography</a>
-						</div>
-					</div>
+  <style>
+    body {
+      background-color: #ffffff !important;
+    }
+    table td > * {
+      margin-top: 0 !important;
+      margin-bottom: 0 !important;
+    }
+  </style>
 
-					<!-- Elements & Components Nav (Numbered) -->
-					<div>
-						<span class="text-black/40 block font-bold tracking-wider mb-2">HTML TAGS &amp; COMPONENTS</span>
-						<div class="space-y-0.5 text-[11px]">
-							<a href="#item-01" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">01.</span> &lt;article&gt;</a>
-							<a href="#item-02" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">02.</span> &lt;h1&gt;</a>
-							<a href="#item-03" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">03.</span> &lt;h2&gt;</a>
-							<a href="#item-04" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">04.</span> &lt;h3&gt;</a>
-							<a href="#item-05" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">05.</span> &lt;h4&gt;</a>
-							<a href="#item-06" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">06.</span> &lt;p&gt;</a>
-							<a href="#item-07" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">07.</span> &lt;em&gt; &amp; &lt;i&gt;</a>
-							<a href="#item-08" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">08.</span> &lt;strong&gt; &amp; &lt;b&gt;</a>
-							<a href="#item-09" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">09.</span> &lt;blockquote&gt; + &lt;cite&gt;</a>
-							<a href="#item-10" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">10.</span> &lt;aside&gt;</a>
-							<a href="#item-11" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">11.</span> &lt;figure&gt; + &lt;figcaption&gt;</a>
-							<a href="#item-12" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">12.</span> &lt;table&gt; (Data Matrix)</a>
-							<a href="#item-13" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">13.</span> &lt;ul&gt;</a>
-							<a href="#item-14" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">14.</span> &lt;ol&gt;</a>
-							<a href="#item-15" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">15.</span> &lt;code&gt;</a>
-							<a href="#item-16" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">16.</span> &lt;kbd&gt;</a>
-							<a href="#item-17" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">17.</span> &lt;mark&gt;</a>
-							<a href="#item-18" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">18.</span> &lt;time&gt;</a>
-							<a href="#item-19" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">19.</span> &lt;hr&gt;</a>
-							<a href="#item-21" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">21.</span> .card</a>
-							<a href="#item-22" class="block py-0.5 px-2 text-black/70 hover:bg-black/5 hover:text-black no-underline"><span class="font-mono text-black/40">22.</span> #image-lightbox</a>
-						</div>
-					</div>
+  <main class="max-w-6xl mx-auto px-6 sm:px-8 pt-32 sm:pt-36 md:pt-40 pb-28 text-black">
+    <!-- Header -->
+    <header class="border-b border-black pb-4 mb-12">
+      <h1 class="font-heading text-3xl sm:text-4xl font-bold tracking-tight text-black m-0">
+        Design System
+      </h1>
+    </header>
 
-					<div class="pt-4 border-t border-black/10 text-[10px] text-black/50">
-						Built with semantic HTML5 &amp; global.css. No inline Tailwind utility chains.
-					</div>
-				</nav>
+    <!-- Colors -->
+    <section id="colors" class="mb-16">
+      <h2 class="font-heading text-xl font-bold text-black pb-3 mb-6 border-b border-black">
+        Colors
+      </h2>
 
-				<!-- ========================================================= -->
-				<!-- RIGHT COLUMN (75%): FOUNDATIONS & NUMBERED SPECIMENS      -->
-				<!-- ========================================================= -->
-				<div class="md:col-span-9 space-y-16">
-					
-					<!-- Header Intro -->
-					<div class="border-b border-black/15 pb-6">
-						<span class="kicker">reference</span>
-						<h1 class="text-3xl sm:text-4xl font-departure font-bold text-black mb-2">
-							Site Design System &amp; Elements
-						</h1>
-						<p class="font-sans text-base text-black/70 max-w-2xl m-0">
-							Private design guide mapping visual patterns directly to semantic HTML elements and global CSS tokens.
-						</p>
-					</div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        <!-- Color 1: canvas -->
+        <div class="p-4 border border-black bg-white flex flex-col justify-between">
+          <div>
+            <div class="w-full h-20 border border-neutral-300 mb-3" style="background-color: #f8f6f0;"></div>
+            <div class="font-mono text-xs font-bold text-black mb-1"><code>canvas</code></div>
+            <div class="font-bold text-sm text-black mb-1">Warm Cream</div>
+            <div class="font-mono text-xs text-neutral-500 mb-3">#f8f6f0</div>
+          </div>
+          <div class="pt-2 border-t border-neutral-200">
+            <span class="font-mono text-[10px] uppercase font-bold text-neutral-400 block">Role</span>
+            <span class="text-xs text-neutral-700">Primary Page Canvas</span>
+          </div>
+        </div>
 
-					<!-- ===================================================== -->
-					<!-- FOUNDATIONS 1: ACCESSIBILITY                          -->
-					<!-- ===================================================== -->
-					<section id="a11y" class="border-b border-black/15 pb-12">
-						<span class="kicker">foundations</span>
-						<h2 class="text-2xl font-bold font-departure text-black mb-4">Accessibility (A11y) Standards</h2>
-						<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-sans">
-							<div class="border border-black/15 p-4 bg-white">
-								<strong class="font-departure block mb-1 font-bold text-black">1. Contrast Ratio ≥ 12:1</strong>
-								<p class="m-0 text-black/75">Body text uses #1a1918 (or black/85) on #faf8f2, achieving 13.8:1 contrast (exceeds WCAG AAA requirement of 7:1).</p>
-							</div>
-							<div class="border border-black/15 p-4 bg-white">
-								<strong class="font-departure block mb-1 font-bold text-black">2. Strict Heading Hierarchy</strong>
-								<p class="m-0 text-black/75">Exactly one &lt;h1&gt; per page. Major sections use &lt;h2&gt;. Sub-items use &lt;h3&gt; and &lt;h4&gt;. No levels skipped.</p>
-							</div>
-							<div class="border border-black/15 p-4 bg-white">
-								<strong class="font-departure block mb-1 font-bold text-black">3. Zero Forced Uppercase</strong>
-								<p class="m-0 text-black/75">Never apply CSS <code>text-transform: uppercase</code>. Screen readers and users read natural sentence casing cleanly.</p>
-							</div>
-							<div class="border border-black/15 p-4 bg-white">
-								<strong class="font-departure block mb-1 font-bold text-black">4. Keyboard &amp; Zoom Access</strong>
-								<p class="m-0 text-black/75">All interactive modals support <kbd>ESC</kbd> to close. Interactive elements have focus outlines.</p>
-							</div>
-						</div>
-					</section>
+        <!-- Color 2: surface -->
+        <div class="p-4 border border-black bg-white flex flex-col justify-between">
+          <div>
+            <div class="w-full h-20 border border-neutral-300 mb-3" style="background-color: #ffffff;"></div>
+            <div class="font-mono text-xs font-bold text-black mb-1"><code>surface</code></div>
+            <div class="font-bold text-sm text-black mb-1">Pure White</div>
+            <div class="font-mono text-xs text-neutral-500 mb-3">#ffffff</div>
+          </div>
+          <div class="pt-2 border-t border-neutral-200">
+            <span class="font-mono text-[10px] uppercase font-bold text-neutral-400 block">Role</span>
+            <span class="text-xs text-neutral-700">Cards & Raised Surfaces</span>
+          </div>
+        </div>
 
-					<!-- ===================================================== -->
-					<!-- FOUNDATIONS 2: COLORS                                 -->
-					<!-- ===================================================== -->
-					<section id="colors" class="border-b border-black/15 pb-12">
-						<span class="kicker">foundations</span>
-						<h2 class="text-2xl font-bold font-departure text-black mb-4">Color Palette &amp; Tokens</h2>
-						<div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs font-departure">
-							<div class="border border-black/15 p-3 bg-white">
-								<div class="h-10 border border-black/10 bg-[#faf8f2] mb-2"></div>
-								<strong class="block text-black">Background Warm</strong>
-								<span class="text-black/60 font-mono text-[10px]">#faf8f2</span>
-								<span class="block text-[10px] text-black/40 mt-1">Page Canvas</span>
-							</div>
-							<div class="border border-black/15 p-3 bg-white">
-								<div class="h-10 border border-black/10 bg-[#1a1918] mb-2"></div>
-								<strong class="block text-black">Text Primary</strong>
-								<span class="text-black/60 font-mono text-[10px]">#1a1918</span>
-								<span class="block text-[10px] text-black/40 mt-1">Headings &amp; Deep Prose</span>
-							</div>
-							<div class="border border-black/15 p-3 bg-white">
-								<div class="h-10 border border-black/10 bg-black/75 mb-2"></div>
-								<strong class="block text-black">Text Secondary</strong>
-								<span class="text-black/60 font-mono text-[10px]">rgba(0,0,0,0.75)</span>
-								<span class="block text-[10px] text-black/40 mt-1">Body Text &amp; Subheads</span>
-							</div>
-							<div class="border border-black/15 p-3 bg-white">
-								<div class="h-10 border border-black/10 bg-black/15 mb-2"></div>
-								<strong class="block text-black">Border Rule</strong>
-								<span class="text-black/60 font-mono text-[10px]">rgba(0,0,0,0.15)</span>
-								<span class="block text-[10px] text-black/40 mt-1">Section Dividers</span>
-							</div>
-							<div class="border border-black/15 p-3 bg-white">
-								<div class="h-10 border border-dashed border-black/25 bg-black/[0.02] mb-2"></div>
-								<strong class="block text-black">Dashed Border</strong>
-								<span class="text-black/60 font-mono text-[10px]">rgba(0,0,0,0.25)</span>
-								<span class="block text-[10px] text-black/40 mt-1">Image &amp; Media Containers</span>
-							</div>
-							<div class="border border-black/15 p-3 bg-white">
-								<div class="h-10 border border-black/10 bg-amber-100 mb-2"></div>
-								<strong class="block text-black">Accent Highlight</strong>
-								<span class="text-black/60 font-mono text-[10px]">#fef3c7 (amber-100)</span>
-								<span class="block text-[10px] text-black/40 mt-1">&lt;mark&gt; High-impact Metrics</span>
-							</div>
-						</div>
-					</section>
+        <!-- Color 3: primary -->
+        <div class="p-4 border border-black bg-white flex flex-col justify-between">
+          <div>
+            <div class="w-full h-20 border border-neutral-300 mb-3" style="background-color: #18181b;"></div>
+            <div class="font-mono text-xs font-bold text-black mb-1"><code>primary</code></div>
+            <div class="font-bold text-sm text-black mb-1">Deep Slate</div>
+            <div class="font-mono text-xs text-neutral-500 mb-3">#18181b</div>
+          </div>
+          <div class="pt-2 border-t border-neutral-200">
+            <span class="font-mono text-[10px] uppercase font-bold text-neutral-400 block">Role</span>
+            <span class="text-xs text-neutral-700">Display Headings & Text</span>
+          </div>
+        </div>
 
-					<!-- ===================================================== -->
-					<!-- FOUNDATIONS 3: GRIDS & LAYOUT                         -->
-					<!-- ===================================================== -->
-					<section id="grids" class="border-b border-black/15 pb-12">
-						<span class="kicker">foundations</span>
-						<h2 class="text-2xl font-bold font-departure text-black mb-4">Grids &amp; Layout Framework</h2>
-						<div class="space-y-4 text-xs font-sans">
-							<div class="border border-black/15 p-4 bg-white">
-								<div class="flex items-center justify-between font-departure font-bold text-xs mb-2">
-									<span>Two-Column Editorial Split (25% / 75%)</span>
-									<code>.case-grid = grid md:grid-cols-12</code>
-								</div>
-								<div class="grid grid-cols-12 gap-2 text-center font-departure text-[11px] py-3 bg-[#faf8f2] border border-black/10">
-									<div class="col-span-3 bg-black/10 p-3 border border-black/20">
-										<strong>25% Left Rail</strong><br/>
-										<span class="text-black/60">Sticky kicker + H2</span>
-									</div>
-									<div class="col-span-9 bg-black/5 p-3 border border-black/15">
-										<strong>75% Right Content</strong><br/>
-										<span class="text-black/60">Prose, Figures, Callouts, Data Tables</span>
-									</div>
-								</div>
-							</div>
+        <!-- Color 4: secondary -->
+        <div class="p-4 border border-black bg-white flex flex-col justify-between">
+          <div>
+            <div class="w-full h-20 border border-neutral-300 mb-3" style="background-color: #52525b;"></div>
+            <div class="font-mono text-xs font-bold text-black mb-1"><code>secondary</code></div>
+            <div class="font-bold text-sm text-black mb-1">Muted Slate</div>
+            <div class="font-mono text-xs text-neutral-500 mb-3">#52525b</div>
+          </div>
+          <div class="pt-2 border-t border-neutral-200">
+            <span class="font-mono text-[10px] uppercase font-bold text-neutral-400 block">Role</span>
+            <span class="text-xs text-neutral-700">Body Prose & Meta Copy</span>
+          </div>
+        </div>
 
-							<div class="border border-black/15 p-4 bg-white">
-								<div class="flex items-center justify-between font-departure font-bold text-xs mb-2">
-									<span>Three-Column Scorecard Grid</span>
-									<code>grid grid-cols-1 sm:grid-cols-3 gap-6</code>
-								</div>
-								<div class="grid grid-cols-3 gap-2 text-center font-departure text-[11px] py-2 bg-[#faf8f2] border border-black/10">
-									<div class="bg-white p-2 border border-black/20">Col 1: Role / Metric</div>
-									<div class="bg-white p-2 border border-black/20">Col 2: Timeline / Impact</div>
-									<div class="bg-white p-2 border border-black/20">Col 3: Org / Results</div>
-								</div>
-							</div>
-						</div>
-					</section>
+        <!-- Color 5: accent -->
+        <div class="p-4 border border-black bg-white flex flex-col justify-between">
+          <div>
+            <div class="w-full h-20 border border-neutral-300 mb-3" style="background-color: #f6c867;"></div>
+            <div class="font-mono text-xs font-bold text-black mb-1"><code>accent</code></div>
+            <div class="font-bold text-sm text-black mb-1">Saffron Amber</div>
+            <div class="font-mono text-xs text-neutral-500 mb-3">#f6c867 / #c98c1c</div>
+          </div>
+          <div class="pt-2 border-t border-neutral-200">
+            <span class="font-mono text-[10px] uppercase font-bold text-neutral-400 block">Role</span>
+            <span class="text-xs text-neutral-700">Actions, Highlights, Kickers</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
-					<!-- ===================================================== -->
-					<!-- FOUNDATIONS 4: ICONS & BADGES                         -->
-					<!-- ===================================================== -->
-					<section id="icons" class="border-b border-black/15 pb-12">
-						<span class="kicker">foundations</span>
-						<h2 class="text-2xl font-bold font-departure text-black mb-4">Icons, Tokens &amp; Badges</h2>
-						<div class="flex flex-wrap gap-4 items-center p-4 bg-white border border-black/15">
-							<span class="font-departure text-[11px] tracking-wider px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">
-								Vanguard
-							</span>
-							<span class="font-departure text-[10px] bg-black text-white px-2 py-0.5">
-								BI Led
-							</span>
-							<span class="font-departure text-[10px] bg-neutral-200 text-black px-2 py-0.5 border border-black/20">
-								99.9% SLA
-							</span>
-							<kbd>ESC</kbd>
-							<span class="font-departure text-xs font-bold">← Previous</span>
-							<span class="font-departure text-xs font-bold">Next →</span>
-						</div>
-					</section>
+    <!-- Tags -->
+    <section id="tags">
+      <h2 class="font-heading text-xl font-bold text-black pb-3 mb-6 border-b border-black">
+        Tags
+      </h2>
 
-					<!-- ===================================================== -->
-					<!-- FOUNDATIONS 5: SPACING                                -->
-					<!-- ===================================================== -->
-					<section id="spacing" class="border-b border-black/15 pb-12">
-						<span class="kicker">foundations</span>
-						<h2 class="text-2xl font-bold font-departure text-black mb-4">Spacing Scale</h2>
-						<div class="grid grid-cols-2 sm:grid-cols-4 gap-3 text-xs font-departure">
-							<div class="border border-black/15 p-3 bg-white">
-								<strong class="block text-black">Section Divider</strong>
-								<span class="font-mono text-black/60">mb-20 md:mb-28</span>
-								<span class="block text-[10px] text-black/40 mt-1">80px – 112px bottom</span>
-							</div>
-							<div class="border border-black/15 p-3 bg-white">
-								<strong class="block text-black">Grid Gutter</strong>
-								<span class="font-mono text-black/60">gap-8 md:gap-12</span>
-								<span class="block text-[10px] text-black/40 mt-1">32px – 48px horizontal</span>
-							</div>
-							<div class="border border-black/15 p-3 bg-white">
-								<strong class="block text-black">Card Padding</strong>
-								<span class="font-mono text-black/60">p-5 sm:p-6</span>
-								<span class="block text-[10px] text-black/40 mt-1">20px – 24px inner</span>
-							</div>
-							<div class="border border-black/15 p-3 bg-white">
-								<strong class="block text-black">Reading Measure</strong>
-								<span class="font-mono text-black/60">max-w-[65ch]</span>
-								<span class="block text-[10px] text-black/40 mt-1">Optimal prose line length</span>
-							</div>
-						</div>
-					</section>
-
-					<!-- ===================================================== -->
-					<!-- FOUNDATIONS 6: TYPOGRAPHY                             -->
-					<!-- ===================================================== -->
-					<section id="typography" class="border-b border-black/15 pb-12">
-						<span class="kicker">foundations</span>
-						<h2 class="text-2xl font-bold font-departure text-black mb-4">Typography &amp; Fonts</h2>
-						<div class="space-y-4 font-sans text-xs">
-							<div class="border border-black/15 p-4 bg-white">
-								<span class="font-departure text-[11px] text-black/50 block mb-1">01. Monospace Headings &amp; UI</span>
-								<strong class="text-base font-departure text-black block mb-1">Departure Mono / Space Mono</strong>
-								<p class="m-0 text-black/75">Used for all headings (&lt;h1&gt;–&lt;h4&gt;), metadata badges, code, tables, and UI controls.</p>
-							</div>
-							<div class="border border-black/15 p-4 bg-white">
-								<span class="font-departure text-[11px] text-black/50 block mb-1">02. Editorial Handwritten Script</span>
-								<strong class="text-base font-homemade text-black block mb-1">Homemade Apple</strong>
-								<p class="m-0 text-black/75">Used for section category kickers and inline editorial emphasis (&lt;em&gt;, &lt;i&gt;).</p>
-							</div>
-							<div class="border border-black/15 p-4 bg-white">
-								<span class="font-departure text-[11px] text-black/50 block mb-1">03. Body Prose</span>
-								<strong class="text-base font-sans text-black block mb-1">DM Sans / System Sans</strong>
-								<p class="m-0 text-black/75">Used for comfortable, high-legibility case study body paragraphs at 18px with relaxed line-height.</p>
-							</div>
-						</div>
-					</section>
-
-					<!-- ===================================================== -->
-					<!-- NUMBERED HTML TAGS & COMPONENTS CATALOG               -->
-					<!-- ===================================================== -->
-					<div class="pt-4">
-						<span class="kicker">catalog</span>
-						<h2 class="text-2xl sm:text-3xl font-bold font-departure text-black mb-2">
-							Numbered Elements &amp; Components
-						</h2>
-						<p class="font-sans text-sm text-black/70 mb-8">
-							Live rendered specimens, exact usage locations in the codebase, and clean semantic syntax.
-						</p>
-
-						<div class="space-y-12">
-							
-							<!-- ITEM 01: <article> -->
-							<div id="item-01" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">01</span>
-										<strong class="text-black text-sm">&lt;article&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro (all section roots)</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<article class="case-section m-0 pb-4 border-b border-black/15">
-										<p class="m-0 text-xs font-departure text-black/60">Semantic container demarcating an independent major chapter/section of the case study.</p>
-									</article>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;article class="case-section"&gt;
-  &lt;!-- Left rail + right content --&gt;
-&lt;/article&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 02: <h1> -->
-							<div id="item-02" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">02</span>
-										<strong class="text-black text-sm">&lt;h1&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L60</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<h1 class="m-0 text-2xl sm:text-3xl md:text-4xl font-normal leading-tight font-departure">
-										Vanguard 3.1: Self-Service Business Intelligence
-									</h1>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;h1&gt;Vanguard 3.1: Self-Service Business Intelligence&lt;/h1&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 03: <h2> -->
-							<div id="item-03" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">03</span>
-										<strong class="text-black text-sm">&lt;h2&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L196, L812</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<h2 class="m-0 text-xl sm:text-2xl font-bold leading-snug font-departure">
-										Quality gates built into the onboarding flow
-									</h2>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;h2&gt;Quality gates built into the onboarding flow&lt;/h2&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 04: <h3> -->
-							<div id="item-04" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">04</span>
-										<strong class="text-black text-sm">&lt;h3&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L328, index.astro:L43</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<h3 class="m-0 text-lg font-bold font-departure">
-										Published metrics went stale soon
-									</h3>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;h3&gt;Published metrics went stale soon&lt;/h3&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 05: <h4> -->
-							<div id="item-05" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">05</span>
-										<strong class="text-black text-sm">&lt;h4&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L517, L834</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<h4 class="m-0 text-base font-bold font-departure">
-										Step 1: Formula Verification
-									</h4>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;h4&gt;Step 1: Formula Verification&lt;/h4&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 06: <p> -->
-							<div id="item-06" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">06</span>
-										<strong class="text-black text-sm">&lt;p&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro (all body prose)</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<p class="m-0 font-sans text-base text-black/85 leading-relaxed">
-										Rather than reviewing quality after submission, I baked checks directly into the authoring path. The self-serve flow asks the same questions the BI team used to ask in review meetings.
-									</p>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;p&gt;Rather than reviewing quality after submission, I baked checks directly into the authoring path.&lt;/p&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 07: <em> & <i> -->
-							<div id="item-07" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">07</span>
-										<strong class="text-black text-sm">&lt;em&gt; &amp; &lt;i&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L1525, L1625</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<p class="m-0 font-sans text-base text-black/85 leading-relaxed">
-										Executives avoided reacting to false alarms like <em>"we are off our average this week"</em>, leaning on <i>human verification for trust</i>.
-									</p>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;p&gt;Executives avoided reacting to false alarms like &lt;em&gt;"we are off our average this week"&lt;/em&gt;.&lt;/p&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 08: <strong> & <b> -->
-							<div id="item-08" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">08</span>
-										<strong class="text-black text-sm">&lt;strong&gt; &amp; &lt;b&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L220, L1518</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<p class="m-0 font-sans text-base text-black/85">
-										Metrics published in Vanguard were the <strong>single source of trusted truth</strong> for Apple leadership.
-									</p>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;strong&gt;single source of trusted truth&lt;/strong&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 09: <blockquote> + <cite> -->
-							<div id="item-09" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">09</span>
-										<strong class="text-black text-sm">&lt;blockquote&gt; + &lt;cite&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L1693</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<blockquote class="m-0 border-l-2 border-dashed border-black/40 pl-5 py-2 font-sans italic text-base text-black/90">
-										"Giving teams ownership of their metrics didn't lower our quality bar. It made them care about it more than we did."
-										<cite class="block font-departure text-xs text-black/60 not-italic mt-2">— Lead Product Manager, Security Business Intelligence</cite>
-									</blockquote>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;blockquote&gt;
-  "Giving teams ownership of their metrics didn't lower our quality bar."
-  &lt;cite&gt;— Lead Product Manager, Security BI&lt;/cite&gt;
-&lt;/blockquote&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 10: <aside> -->
-							<div id="item-10" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">10</span>
-										<strong class="text-black text-sm">&lt;aside&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L325, L1346</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<aside class="callout-warning m-0">
-										<strong class="font-departure text-xs text-black block mb-1">Deliberate Trade-Off: AI Draft + Human Sign-off</strong>
-										<p class="m-0 font-sans text-xs text-black/80">We traded speed for accuracy. No note was published automatically without the DRI's written sign-off.</p>
-									</aside>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;aside class="callout-warning"&gt;
-  &lt;strong&gt;Deliberate Trade-Off: AI Draft + Human Sign-off&lt;/strong&gt;
-  &lt;p&gt;We traded speed for accuracy.&lt;/p&gt;
-&lt;/aside&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 11: <figure> & <figcaption> -->
-							<div id="item-11" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">11</span>
-										<strong class="text-black text-sm">&lt;figure&gt; &amp; &lt;figcaption&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro (all images)</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<figure class="m-0">
-										<div class="media-frame">
-											<img src="/images-vanguard/vg1_homepage.png" alt="Vanguard 3.1 Homepage" />
-										</div>
-										<figcaption>
-											Figure 1: Executive portal with standardized statistical process control yardsticks.
-										</figcaption>
-									</figure>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;figure&gt;
-  &lt;div class="media-frame"&gt;
-    &lt;img src="/images-vanguard/vg1_homepage.png" alt="Executive portal" /&gt;
-  &lt;/div&gt;
-  &lt;figcaption&gt;Figure 1: Executive portal with standardized yardsticks.&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 12: <table> -->
-							<div id="item-12" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">12</span>
-										<strong class="text-black text-sm">&lt;table&gt; (Data Matrix)</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L1140</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4 overflow-x-auto">
-									<table class="m-0 text-xs">
-										<thead>
-											<tr>
-												<th>Tier</th>
-												<th>Governance Meaning</th>
-												<th>SLA</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td><strong>BI Led</strong></td>
-												<td>Central team authored and owned</td>
-												<td><code>99.9%</code></td>
-											</tr>
-											<tr>
-												<td><strong>BI Approved</strong></td>
-												<td>Partner authored, centrally certified</td>
-												<td><code>99.5%</code></td>
-											</tr>
-										</tbody>
-									</table>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;table&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;&lt;th&gt;Tier&lt;/th&gt;&lt;th&gt;Meaning&lt;/th&gt;&lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;&lt;td&gt;BI Led&lt;/td&gt;&lt;td&gt;Central team authored&lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;
-&lt;/table&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 13: <ul> -->
-							<div id="item-13" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">13</span>
-										<strong class="text-black text-sm">&lt;ul&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L825</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<ul class="m-0 pl-4 text-xs font-sans space-y-1">
-										<li>Is there an explicit, unambiguous formula?</li>
-										<li>Are all contributing data sources declared?</li>
-										<li>What does "good" look like against the baseline?</li>
-									</ul>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;ul&gt;
-  &lt;li&gt;Is there an explicit formula?&lt;/li&gt;
-  &lt;li&gt;Are data sources declared?&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 14: <ol> -->
-							<div id="item-14" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">14</span>
-										<strong class="text-black text-sm">&lt;ol&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L840</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<ol class="m-0 pl-4 text-xs font-sans space-y-1">
-										<li>Detect anomaly against statistical control limit</li>
-										<li>Generate AI root-cause hypothesis draft</li>
-										<li>Request DRI sign-off before publishing note</li>
-									</ol>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;ol&gt;
-  &lt;li&gt;Detect anomaly&lt;/li&gt;
-  &lt;li&gt;Generate AI draft&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 15: <code> -->
-							<div id="item-15" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">15</span>
-										<strong class="text-black text-sm">&lt;code&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L1150</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<p class="m-0 text-xs font-departure text-black/80">Query syntax: <code>MTTD_ENDPOINT_V3</code> registered with <code>99.9%</code> SLA.</p>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;code&gt;MTTD_ENDPOINT_V3&lt;/code&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 16: <kbd> -->
-							<div id="item-16" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">16</span>
-										<strong class="text-black text-sm">&lt;kbd&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L1725</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<p class="m-0 text-xs font-departure text-black/80">Press <kbd>ESC</kbd> or click backdrop to close image modal.</p>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>Press &lt;kbd&gt;ESC&lt;/kbd&gt; to close</code></pre>
-							</div>
-
-							<!-- ITEM 17: <mark> -->
-							<div id="item-17" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">17</span>
-										<strong class="text-black text-sm">&lt;mark&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L1645</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<p class="m-0 text-xs font-sans text-black/80">Partner escalation requests were <mark>reduced by &gt;50%</mark> after self-service rollout.</p>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;mark&gt;reduced by &gt;50%&lt;/mark&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 18: <time> -->
-							<div id="item-18" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">18</span>
-										<strong class="text-black text-sm">&lt;time&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L130</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<p class="m-0 text-xs font-departure text-black/70">Project active: <time datetime="2024">2024</time> – <time datetime="2026">2026</time></p>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;time datetime="2024"&gt;2024&lt;/time&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 19: <hr> -->
-							<div id="item-19" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">19</span>
-										<strong class="text-black text-sm">&lt;hr&gt;</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L170</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<hr class="m-0" />
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;hr /&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 20: .kicker -->
-							<div id="item-20" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">20</span>
-										<strong class="text-black text-sm">.kicker</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro (all left rails)</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<span class="kicker m-0">strategy</span>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;span class="kicker"&gt;strategy&lt;/span&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 21: .card -->
-							<div id="item-21" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">21</span>
-										<strong class="text-black text-sm">.card</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro (scorecards, transcripts)</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4">
-									<div class="card">
-										<div class="flex items-center justify-between font-departure text-xs pb-2 mb-2 border-b border-dashed border-black/20">
-											<span class="text-black/50 font-bold">Metric / Note</span>
-											<span class="text-black/40 text-[10px]">Active</span>
-										</div>
-										<strong class="text-2xl font-bold font-departure text-black block mb-1">50%+</strong>
-										<p class="text-xs font-sans text-black/70 m-0">Reduction in routine escalations via self-service authoring.</p>
-									</div>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;div class="card"&gt;
-  &lt;strong&gt;Card Title&lt;/strong&gt;
-  &lt;p&gt;Card body content with dashed border and shadow elevation.&lt;/p&gt;
-&lt;/div&gt;</code></pre>
-							</div>
-
-							<!-- ITEM 22: #image-lightbox -->
-							<div id="item-22" class="border-2 border-black bg-white p-6 shadow-[3px_3px_0_0_#000]">
-								<div class="flex flex-wrap items-center justify-between pb-3 mb-4 border-b border-black/15 gap-2 font-departure text-xs">
-									<div class="flex items-center gap-2">
-										<span class="px-2 py-0.5 bg-black text-white font-bold">22</span>
-										<strong class="text-black text-sm">#image-lightbox</strong>
-									</div>
-									<span class="px-2 py-0.5 bg-black/5 text-black/70 border border-black/10">Used in: vanguard.astro:L1720</span>
-								</div>
-								<div class="p-4 bg-[#faf8f2] border border-black/10 mb-4 text-xs font-departure">
-									<p class="m-0 text-black/80">Interactive fullscreen image overlay component attached to all images in <code>&lt;figure&gt;</code> tags. Dismissed via backdrop click or <kbd>ESC</kbd>.</p>
-								</div>
-								<pre class="bg-neutral-900 text-neutral-100 p-3 text-xs font-mono overflow-x-auto rounded-xs m-0"><code>&lt;div id="image-lightbox" class="fixed inset-0 z-50 bg-black/90 hidden"&gt;
-  &lt;img id="lightbox-img" /&gt;
-  &lt;button id="lightbox-close"&gt;Close (ESC)&lt;/button&gt;
-&lt;/div&gt;</code></pre>
-							</div>
-
-						</div>
-					</div>
-
-				</div>
-			</div>
-		</main>
-
-		<Footer />
-	</div>
+      <div class="overflow-x-auto border border-black bg-white">
+        <table class="w-full text-left font-sans text-xs sm:text-sm m-0 border-collapse">
+          <thead class="bg-neutral-100 border-b border-black font-mono text-xs text-black uppercase tracking-wider">
+            <tr>
+              <th class="p-4">Element / Tag</th>
+              <th class="p-4">Font Family</th>
+              <th class="p-4">Size & Leading</th>
+              <th class="p-4">Weight</th>
+              <th class="p-4">Color</th>
+              <th class="p-4 min-w-[280px]">Example</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-neutral-200 text-xs">
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;h1&gt;</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans</td>
+              <td class="p-4 font-mono text-neutral-600">48-72px / 1.04</td>
+              <td class="p-4 font-mono text-neutral-600">Bold (700)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>primary</code></td>
+              <td class="p-4">
+                <h1>Systematic by Design.</h1>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;h2&gt;</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans</td>
+              <td class="p-4 font-mono text-neutral-600">30-48px / tight</td>
+              <td class="p-4 font-mono text-neutral-600">Bold (700)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>primary</code></td>
+              <td class="p-4">
+                <h2>Selected Works</h2>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;h3&gt;</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans</td>
+              <td class="p-4 font-mono text-neutral-600">24-36px / tight</td>
+              <td class="p-4 font-mono text-neutral-600">Bold (700)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>primary</code></td>
+              <td class="p-4">
+                <h3>Making Security Work Measurable</h3>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;h4&gt;</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans</td>
+              <td class="p-4 font-mono text-neutral-600">18-20px / 1.2</td>
+              <td class="p-4 font-mono text-neutral-600">Bold (700)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>primary</code></td>
+              <td class="p-4">
+                <h4>30% → 75%</h4>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>.eyebrow</code></td>
+              <td class="p-4 font-mono text-neutral-600">Space Mono</td>
+              <td class="p-4 font-mono text-neutral-600">12px / uppercase</td>
+              <td class="p-4 font-mono text-neutral-600">Medium (500)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>secondary</code></td>
+              <td class="p-4">
+                <small class="eyebrow">PRODUCT UX // DESIGN SYSTEMS ARCHITECT</small>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>.kicker</code></td>
+              <td class="p-4 font-mono text-neutral-600">Homemade Apple</td>
+              <td class="p-4 font-mono text-neutral-600">16-18px / normal</td>
+              <td class="p-4 font-mono text-neutral-600">Regular (400)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>accent</code></td>
+              <td class="p-4">
+                <small class="kicker">context</small>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;figcaption&gt;</code></td>
+              <td class="p-4 font-mono text-neutral-600">Space Mono</td>
+              <td class="p-4 font-mono text-neutral-600">12-13px / tracking</td>
+              <td class="p-4 font-mono text-neutral-600">Regular (400)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>secondary</code></td>
+              <td class="p-4">
+                <figcaption>Central executive dashboard displaying...</figcaption>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;p&gt;</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans</td>
+              <td class="p-4 font-mono text-neutral-600">16-18px / 1.6</td>
+              <td class="p-4 font-mono text-neutral-600">Regular (400)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>secondary</code></td>
+              <td class="p-4">
+                <p>Enterprise software doesn't have to feel like bureaucratic punishment.</p>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;button&gt; .primary</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans</td>
+              <td class="p-4 font-mono text-neutral-600">14-16px / pill</td>
+              <td class="p-4 font-mono text-neutral-600">Medium (500)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>accent</code></td>
+              <td class="p-4">
+                <button class="primary group">
+                  <span>See what I built</span>
+                  <span class="w-5 h-5 rounded-full bg-neutral-900 text-white inline-flex items-center justify-center text-xs leading-none">↓</span>
+                </button>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;button&gt; .secondary</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans</td>
+              <td class="p-4 font-mono text-neutral-600">14-16px / pill</td>
+              <td class="p-4 font-mono text-neutral-600">Medium (500)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>surface</code></td>
+              <td class="p-4">
+                <button class="secondary">
+                  <span>Connect on LinkedIn</span>
+                  <span>↗</span>
+                </button>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>&lt;blockquote&gt;</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans Italic</td>
+              <td class="p-4 font-mono text-neutral-600">18-24px / 1.5</td>
+              <td class="p-4 font-mono text-neutral-600">Regular (400)</td>
+              <td class="p-4 font-mono text-neutral-800"><code>primary</code></td>
+              <td class="p-4">
+                <blockquote>"Tushar brings people together"</blockquote>
+              </td>
+            </tr>
+            <tr class="hover:bg-neutral-50">
+              <td class="p-4 font-mono font-bold text-black"><code>.card</code></td>
+              <td class="p-4 font-mono text-neutral-600">DM Sans</td>
+              <td class="p-4 font-mono text-neutral-600">14-16px / rounded-2xl</td>
+              <td class="p-4 font-mono text-neutral-600">—</td>
+              <td class="p-4 font-mono text-neutral-800"><code>surface</code></td>
+              <td class="p-4">
+                <div class="card">
+                  <h4>Unified Metric Lineage</h4>
+                  <p>Consolidating multi-region telemetry into a single verified pane of glass.</p>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
 </Layout>

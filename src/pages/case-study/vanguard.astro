@@ -3,1213 +3,897 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 ---
 
 <CaseStudyLayout
-	title="Vanguard 3.1: Self-Service Business Intelligence • Case Study"
-	breadcrumbs={["Apple InfoSec", "Vanguard 3.1", "Lead Product Designer"]}
+	title="Vanguard: Self-Service Business Intelligence • Case Study"
+	breadcrumbs={["Apple InfoSec", "Vanguard", "Lead Product Designer"]}
 >
-<!-- ===================================================== -->
-			<!-- SECTION 1: HERO & TITLE                               -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<!-- Kicker & Tag -->
-				<div
-					class="flex flex-wrap items-center justify-between gap-3 mb-4"
+	<!-- ===================================================== -->
+	<!-- SECTION 1: HERO & TITLE                               -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<!-- Eyebrow -->
+		<div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+			<small class="eyebrow">Tushar Roy // Case Study // Vanguard</small>
+		</div>
+
+		<!-- Main Title -->
+		<h1>Making Security Work Measurable</h1>
+
+		<!-- Lead Paragraph -->
+		<div class="max-w-4xl mb-10">
+			<p>
+				The InfoSec organization at Apple struggled to answer one
+				question: <em>"How are we keeping Apple safe?"</em>.
+			</p>
+			<p>
+				I led design for a <strong
+					>self-service analytics platform</strong
+				> that answered it though coverage and on-time commentary on metrics.
+				The platform simplified metric management and paired AI-generated
+				insights with human validation. Security leaders used it to plan efforts,
+				investments, and priorities with confidence.
+			</p>
+		</div>
+
+		<!-- Hero Visual -->
+		<figure class="m-0 mb-4">
+			<div class="media-frame">
+				<img
+					src="/images-vanguard/vg1_homepage.png"
+					alt="Vanguard Homepage Interface - Executive Security Health Overview"
+					loading="eager"
+				/>
+			</div>
+			<figcaption>
+				Vanguard: Central executive dashboard displaying governed
+				security metrics with live trust tiers and anomaly alerts.
+			</figcaption>
+		</figure>
+
+		<!-- Metadata Matrix Box: Role and Timeline Panel -->
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
+			<div>
+				<small class="kicker">role</small>
+				<h4>Lead Product Designer</h4>
+				<p>Strategy, interaction model, governance design.</p>
+				<small class="eyebrow"
+					><time>2025 Q3</time> - <time>2026 Q2</time></small
 				>
-					<span class="m-0">Project Vanguard</span>
-				</div>
+			</div>
+			<div>
+				<small class="kicker">team</small>
+				<h4>Core &amp; Partner Teams</h4>
+				<p>
+					1 Designer (me), 4 Developers, 2 Data engineers, 1 PM, 1
+					SME, partner security orgs.
+				</p>
+			</div>
+			<div>
+				<small class="kicker">outcome</small>
+				<h4>30% → 75%</h4>
+				<p>
+					Escalation calls during incidents cut by more than half.
+					Onboarding dropped from 2 months → 5 days.
+				</p>
+			</div>
+		</div>
+	</article>
 
-				<!-- Main Title -->
-				<h1>Making Security Work Measurable</h1>
+	<!-- ===================================================== -->
+	<!-- SECTION 2: CONTEXT                                    -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">context</small>
+				<h2>Vanguard Business Intelligence (BI)</h2>
+			</div>
 
-				<!-- Lead Paragraph -->
-				<div class="case-prose max-w-4xl mb-10">
-					<p>
-						The InfoSec organization at Apple struggled to answer
-						one question: <em>"How are we keeping Apple safe?"</em>.
-					</p>
-					<p>
-						I led design for a <strong
-							>self-service analytics platform</strong
-						> that answered it though coverage and on-time commentary
-						on metrics. The platform simplified metric management and
-						paired AI-generated insights with human validation. Security
-						leaders used it to plan efforts, investments, and priorities
-						with confidence.
-					</p>
-				</div>
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					The BI team's charter was to publish performance metrics for
+					senior leadership and partner teams to help make strategic,
+					forward-looking decisions.
+				</p>
+				<p>
+					They closely worked with each partner team to hand-build
+					metrics - defining the measure, negotiating the formula,
+					working with multiple data engineering teams, publishing,
+					and handling ongoing maintenance.
+				</p>
+				<p>
+					<strong
+						>Metrics published in Vanguard were the single source of
+						trusted truth for Apple leadership.</strong
+					>
+				</p>
 
-				<!-- Hero Visual -->
-				<figure class="m-0 mb-4">
-					<div class="media-frame">
-						<img
-							src="/images-vanguard/vg1_homepage.png"
-							alt="Vanguard Homepage Interface - Executive Security Health Overview"
-							loading="eager"
-						/>
-					</div>
-					<figcaption>
-						Vanguard: Central executive dashboard displaying
-						governed security metrics with live trust tiers and
-						anomaly alerts.
-					</figcaption>
-				</figure>
-
-				<!-- Metadata Matrix Box: Role and Timeline Panel -->
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-16">
-					<div>
-						<span class="kicker">role</span>
-						<strong class="font-bold text-black text-sm block mb-1"
-							>Lead Product Designer</strong
-						>
-						<span class="text-black/75 block leading-relaxed"
-							>Strategy, interaction model, governance design.</span
-						>
-						<span class="text-black/50 block mt-1"
-							><time>2025 Q3</time> - <time>2026 Q2</time></span
-						>
-					</div>
-					<div>
-						<span class="kicker">team</span>
-						<strong class="font-bold text-black text-sm block mb-1"
-							>Core &amp; Partner Teams</strong
-						>
-						<span class="text-black/75 block leading-relaxed"
-							>1 Designer (me), 4 Developers, 2 Data engineers, 1
-							PM, 1 SME, partner security orgs.</span
-						>
-					</div>
-					<div>
-						<span class="kicker">outcome</span>
-						<div
-							class="text-emerald-700 font-bold text-sm block mb-1"
-						>
-							BI Coverage: 30% → 75%
+				<!-- Images: Side by Side -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg2_mttd_metric.png"
+								alt="Mean Time to Detect (MTTD) Metric View"
+							/>
 						</div>
-						<span class="text-black/75 block leading-relaxed"
-							>Escalation calls during incidents cut by more than
-							half. Onboarding dropped from 2 months → 5 days.</span
-						>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 2: CONTEXT                                    -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">context</span>
-						<h2>Vanguard Business Intelligence (BI)</h2>
-					</div>
-
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<div class="case-prose">
-							<p>
-								The BI team's charter was to publish performance
-								metrics for senior leadership and partner teams
-								to help make strategic, forward-looking
-								decisions.
-							</p>
-							<p>
-								They closely worked with each partner team to
-								hand-build metrics - defining the measure,
-								negotiating the formula, working with multiple
-								data engineering teams, publishing, and handling
-								ongoing maintenance.
-							</p>
-							<p>
-								<strong
-									>Metrics published in Vanguard were the
-									single source of trusted truth for Apple
-									leadership.</strong
-								>
-							</p>
-						</div>
-
-						<!-- Images: Side by Side -->
-						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg2_mttd_metric.png"
-										alt="Mean Time to Detect (MTTD) Metric View"
-									/>
-								</div>
-								<figcaption>
-									Single Metric Detail View (MTTD)
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg2_programs.png"
-										alt="Vanguard Security Programs Inventory"
-									/>
-								</div>
-								<figcaption>
-									Vanguard Security Programs Catalog
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Early Vanguard metrics and program structures were
-							manually maintained by a central BI squad.
+						<figcaption>
+							Single Metric Detail View (MTTD)
 						</figcaption>
-					</div>
-				</div>
-			</article>
+					</figure>
 
-			<!-- ===================================================== -->
-			<!-- SECTION 3: THE PROBLEM                                -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">problem</span>
-						<h2>
-							Executives had no defensible way to answer ‘How are
-							we keeping Apple safe?’
-						</h2>
-					</div>
-
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<div class="case-prose">
-							<p>
-								The small BI team could only cover <strong
-									>~30% of the security teams</strong
-								>. Others ended up creating their own dashboards
-								to share with leadership directly. Executives
-								were struggling for one holistic view they could
-								trust.
-							</p>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg2_programs.png"
+								alt="Vanguard Security Programs Inventory"
+							/>
 						</div>
+						<figcaption>
+							Vanguard Security Programs Catalog
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Early Vanguard metrics and program structures were manually
+					maintained by a central BI squad.
+				</figcaption>
+			</div>
+		</div>
+	</article>
 
-						<!-- Design Goals Aside -->
-						<aside>
-							<span
-								class="font-departure text-xs font-bold tracking-wider text-black block mb-3"
-							>
-								My Design Goals:
-							</span>
-							<ul
-								class="space-y-3 font-sans text-base text-black/85 list-none pl-0 m-0"
-							>
-								<li class="flex items-start gap-3">
-									<span
-										class="font-departure text-black font-bold"
-										>01.</span
-									>
-									<span
-										><strong>Increase BI coverage</strong> - through
-										simplified or faster onboarding.</span
-									>
-								</li>
-								<li class="flex items-start gap-3">
-									<span
-										class="font-departure text-black font-bold"
-										>02.</span
-									>
-									<span
-										><strong
-											>Design and implement a holistic
-											view for leadership</strong
-										> - using a top-down results map.</span
-									>
-								</li>
-								<li class="flex items-start gap-3">
-									<span
-										class="font-departure text-black font-bold"
-										>03.</span
-									>
-									<span
-										><strong
-											>Improve the platform interface</strong
-										> - to better the dashboards of non-BI teams.</span
-									>
-								</li>
-							</ul>
-						</aside>
+	<!-- ===================================================== -->
+	<!-- SECTION 3: THE PROBLEM                                -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">problem</small>
+				<h2>
+					Executives had no defensible way to answer ‘How are we
+					keeping Apple safe?’
+				</h2>
+			</div>
 
-						<!-- Images: Results Map & Incident Management -->
-						<div
-							class="grid grid-cols-1 sm:grid-cols-12 gap-5 pt-2"
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					The small BI team could only cover <strong
+						>~30% of the security teams</strong
+					>. Others ended up creating their own dashboards to share
+					with leadership directly. Executives were struggling for one
+					holistic view they could trust.
+				</p>
+
+				<!-- Design Goals Card -->
+				<div class="card my-8">
+					<small class="eyebrow">My Design Goals:</small>
+					<ul>
+						<li>
+							<strong>Increase BI coverage</strong> - through simplified
+							or faster onboarding.
+						</li>
+						<li>
+							<strong
+								>Design and implement a holistic view for
+								leadership</strong
+							> - using a top-down results map.
+						</li>
+						<li>
+							<strong>Improve the platform interface</strong> - to better
+							the dashboards of non-BI teams.
+						</li>
+					</ul>
+				</div>
+
+				<!-- Images: Results Map & Incident Management -->
+				<div class="grid grid-cols-1 sm:grid-cols-12 gap-5 pt-2">
+					<div class="sm:col-span-7">
+						<figure
+							class="m-0 h-full flex flex-col justify-between"
 						>
-							<div class="sm:col-span-7">
-								<figure
-									class="m-0 h-full flex flex-col justify-between"
-								>
-									<div class="media-frame">
-										<img
-											src="/images-vanguard/vg3_results_map.png"
-											alt="Top-down Results Map for Leadership"
-										/>
-									</div>
-									<figcaption>
-										Holistic leadership view: mapping
-										strategic goals to measures
-									</figcaption>
-								</figure>
+							<div class="media-frame">
+								<img
+									src="/images-vanguard/vg3_results_map.png"
+									alt="Top-down Results Map for Leadership"
+								/>
 							</div>
+							<figcaption>
+								Holistic leadership view: mapping strategic
+								goals to measures
+							</figcaption>
+						</figure>
+					</div>
 
-							<div class="sm:col-span-5 flex flex-col gap-5">
-								<figure class="m-0 flex-1">
-									<div class="media-frame">
-										<img
-											src="/images-vanguard/vg3_impact_metrics.png"
-											alt="Impact Metrics Breakdown"
-										/>
-									</div>
-									<figcaption>
-										High-level security impact metrics
-									</figcaption>
-								</figure>
-
-								<figure class="m-0 flex-1">
-									<div class="media-frame">
-										<img
-											src="/images-vanguard/vg3_incident_management.png"
-											alt="Incident Management Dashboard"
-										/>
-									</div>
-									<figcaption>
-										Non-BI team dashboard integration
-									</figcaption>
-								</figure>
+					<div class="sm:col-span-5 flex flex-col gap-5">
+						<figure class="m-0 flex-1">
+							<div class="media-frame">
+								<img
+									src="/images-vanguard/vg3_impact_metrics.png"
+									alt="Impact Metrics Breakdown"
+								/>
 							</div>
-						</div>
-						<figcaption class="text-left mt-2">
-							Connecting top-level strategic security objectives
-							to team-level operational metrics.
-						</figcaption>
+							<figcaption>
+								High-level security impact metrics
+							</figcaption>
+						</figure>
+
+						<figure class="m-0 flex-1">
+							<div class="media-frame">
+								<img
+									src="/images-vanguard/vg3_incident_management.png"
+									alt="Incident Management Dashboard"
+								/>
+							</div>
+							<figcaption>
+								Non-BI team dashboard integration
+							</figcaption>
+						</figure>
 					</div>
 				</div>
-			</article>
+				<figcaption class="mt-2">
+					Connecting top-level strategic security objectives to
+					team-level operational metrics.
+				</figcaption>
+			</div>
+		</div>
+	</article>
 
-			<!-- ===================================================== -->
-			<!-- SECTION 4: RESEARCH                                   -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">research</span>
-						<h2>Metrics went stale, and anomalies unexplained</h2>
+	<!-- ===================================================== -->
+	<!-- SECTION 4: RESEARCH                                   -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">research</small>
+				<h2>Metrics went stale, and anomalies unexplained</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					I started with a <strong>design sprint</strong> with the BI team
+					to align on goals and map how a metric actually gets made. Then
+					I ran interviews on both ends of the pipe.
+				</p>
+				<p>
+					I found onboarding was slow (<strong
+						>average 2 months</strong
+					>) primarily due to iteration between the two teams. Also,
+					different teams had a variety of dashboards - using varied
+					metrics across the board.
+				</p>
+				<p>
+					My conversations with partner teams and executives uncovered
+					two underlying challenges:
+				</p>
+
+				<!-- Two Core Challenges Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+					<div class="card">
+						<h4>1. Published metrics went stale soon</h4>
+						<p>
+							Teams had to spend a lot of time continuously
+							working with the BI team to maintain their metrics,
+							and back-and-forth caused more friction than help.
+						</p>
 					</div>
 
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<div class="case-prose">
-							<p>
-								I started with a <strong>design sprint</strong> with
-								the BI team to align on goals and map how a metric
-								actually gets made. Then I ran interviews on both
-								ends of the pipe.
-							</p>
-							<p>
-								I found onboarding was slow (<strong
-									>average 2 months</strong
-								>) primarily due to iteration between the two
-								teams. Also, different teams had a variety of
-								dashboards - using varied metrics across the
-								board.
-							</p>
-							<p>
-								My conversations with partner teams and
-								executives uncovered two underlying challenges:
-							</p>
-						</div>
-
-						<!-- Two Core Challenges Cards -->
-						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-							<aside class="m-0">
-								<h3
-									class="font-departure text-sm font-bold text-black m-0 mb-2"
-								>
-									1. Published metrics went stale soon
-								</h3>
-								<p
-									class="font-sans text-sm text-black/75 leading-relaxed m-0"
-								>
-									Teams had to spend a lot of time
-									continuously working with the BI team to
-									maintain their metrics, and back-and-forth
-									caused more friction than help.
-								</p>
-							</aside>
-
-							<aside class="m-0">
-								<h3
-									class="font-departure text-sm font-bold text-black m-0 mb-2"
-								>
-									2. Anomalies were displayed, but not
-									explained
-								</h3>
-								<p
-									class="font-sans text-sm text-black/75 leading-relaxed m-0"
-								>
-									When a metric spiked, there was a flurry of
-									questions, check-ins, and chaos as
-									leadership wanted to understand the full
-									picture.
-								</p>
-							</aside>
-						</div>
-
-						<!-- Images: Research Discovery & Latency -->
-						<div class="space-y-5 pt-2">
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg5.png"
-										alt="Research Findings: Onboarding Friction and Maintenance Choke Points"
-									/>
-								</div>
-								<figcaption>
-									Mapping the metric authoring lifecycle and
-									identifying failure points
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg6.png"
-										alt="Metric Workflow and Back-and-Forth Handoff Friction"
-									/>
-								</div>
-								<figcaption>
-									The 2-month handoff bottleneck between
-									partner teams and central BI
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Visualizing the iterative bottlenecks that made
-							central metrics lag operational realities.
-						</figcaption>
+					<div class="card">
+						<h4>2. Anomalies were displayed, but not explained</h4>
+						<p>
+							When a metric spiked, there was a flurry of
+							questions, check-ins, and chaos as leadership wanted
+							to understand the full picture.
+						</p>
 					</div>
 				</div>
-			</article>
 
-			<!-- ===================================================== -->
-			<!-- SECTION 5: STRATEGY & REFRAMING                       -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">strategy</span>
-						<h2>The team had two plans. I argued for one.</h2>
-					</div>
-
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<!-- Design Sprint Dialogue Box -->
-						<div class="card">
-							<div
-								class="font-departure text-xs tracking-wider text-black/50 pb-3 mb-4 border-b border-black/15 font-semibold"
-							>
-								Main points from the Design Sprint Debate
-							</div>
-							<div class="space-y-4 text-base">
-								<div class="p-3 border-l-2">
-									<strong
-										class="font-departure text-xs block text-black/60 mb-1"
-										>Director</strong
-									>
-									<p class="m-0 text-black/90">
-										"More BI headcount cannot solve the
-										bottleneck problem, since teams are
-										looking for autonomy and control."
-									</p>
-								</div>
-								<div class="p-3 border-l-2">
-									<strong
-										class="font-departure text-xs block text-emerald-800 mb-1"
-										>Me, Director, Dev Lead</strong
-									>
-									<p class="m-0 text-black/90 font-medium">
-										"Let's expand to a self-service
-										platform!"
-									</p>
-								</div>
-								<div class="p-3 border-l-2">
-									<strong
-										class="font-departure text-xs block text-amber-800 mb-1"
-										>Product Manager</strong
-									>
-									<p class="m-0 text-black/90">
-										"That will dilute the trust factor we
-										gained over years."
-									</p>
-								</div>
-							</div>
-
-							<div class="mt-6 pt-5 border-t border-black/15">
-								<span
-									class="font-departure text-xs tracking-wider text-red-700 font-bold block mb-1"
-								>
-									The Fundamental Question:
-								</span>
-								<p
-									class="italic text-lg italic text-black/90 m-0"
-								>
-									"If anyone can publish, why would an
-									executive believe anything?"
-								</p>
-							</div>
+				<!-- Images: Research Discovery & Latency -->
+				<div class="flex flex-col gap-6 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg5.png"
+								alt="Research Findings: Onboarding Friction and Maintenance Choke Points"
+							/>
 						</div>
-
-						<div class="c">
-							<p>
-								We also collectively agreed to bring in <strong
-									>AI-powered anomaly detection and analysis</strong
-								>.
-							</p>
-							<div
-								class="border-l-2 border-dashed border-black/40 pl-5 py-3 bg-white border border-black/10 p-4"
-							>
-								<span
-									class="font-departure text-xs tracking-wider text-black/60 block mb-1 font-semibold"
-								>
-									Reframed Design Challenge:
-								</span>
-								<p
-									class="text-xl sm:text-2xl text-black font-semibold m-0"
-								>
-									"How might we make governance and trust
-									signals visible in a scalable business
-									intelligence platform?"
-								</p>
-							</div>
-						</div>
-
-						<!-- Images: Strategic Architecture & Trust Signals -->
-						<div class="space-y-5 pt-2">
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg61.png"
-										alt="Strategic Architecture: Governance and Trust Model"
-									/>
-								</div>
-								<figcaption>
-									Architectural framework for self-service
-									with embedded governance
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg62.png"
-										alt="Governing Trust Signals in a Scalable BI Platform"
-									/>
-								</div>
-								<figcaption>
-									Detailed interaction model mapping trust
-									tiers directly into user workflows
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Strategy: Moving from gatekeeper reviews to visible,
-							embedded provenance signals.
+						<figcaption>
+							Mapping the metric authoring lifecycle and
+							identifying failure points
 						</figcaption>
-					</div>
-				</div>
-			</article>
+					</figure>
 
-			<!-- ===================================================== -->
-			<!-- SECTION 6: DESIGN 1/4 - QUALITY GATES                 -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">design</span>
-						<h2>1. Quality gates built into the onboarding flow</h2>
-					</div>
-
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<div class="case-prose">
-							<p>
-								Rather than reviewing quality after submission,
-								I baked checks directly into the authoring path.
-								The self-serve flow asks the same questions the
-								BI team used to ask in review meetings:
-							</p>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg6.png"
+								alt="Metric Workflow and Back-and-Forth Handoff Friction"
+							/>
 						</div>
-
-						<!-- 3 Checks Cards -->
-						<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
-							<aside class="m-0 p-4">
-								<span
-									class="font-departure text-xs text-black/50 block mb-1"
-									>CHECK 01</span
-								>
-								<strong
-									class="font-sans text-sm text-black block"
-									>Formula Clarity</strong
-								>
-								<p
-									class="font-sans text-xs text-black/70 mt-1 m-0"
-								>
-									Is there an explicit, unambiguous formula
-									for this measure?
-								</p>
-							</aside>
-							<aside class="m-0 p-4">
-								<span
-									class="font-departure text-xs text-black/50 block mb-1"
-									>CHECK 02</span
-								>
-								<strong
-									class="font-sans text-sm text-black block"
-									>Data Provenance</strong
-								>
-								<p
-									class="font-sans text-xs text-black/70 mt-1 m-0"
-								>
-									Are all contributing data sources declared?
-								</p>
-							</aside>
-							<aside class="m-0 p-4">
-								<span
-									class="font-departure text-xs text-black/50 block mb-1"
-									>CHECK 03</span
-								>
-								<strong
-									class="font-sans text-sm text-black block"
-									>Baseline Calibration</strong
-								>
-								<p
-									class="font-sans text-xs text-black/70 mt-1 m-0"
-								>
-									What does "good" look like, and against what
-									baseline?
-								</p>
-							</aside>
-						</div>
-
-						<!-- Six Onboarding Steps: Side-by-Side Grid -->
-						<div
-							class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2"
-						>
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-black"
-											>01. Measure</span
-										>
-										<span class="text-black/50"
-											>Formulas</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg_contribute_1.png"
-											alt="Step 1: Formula definition and verification"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Partner teams define measures with clear
-									formulas and data sources.
-								</p>
-							</figure>
-
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-black"
-											>02. Thresholds</span
-										>
-										<span class="text-black/50"
-											>Baselining</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg_contribute_2.png"
-											alt="Step 2: Baseline targets and anomaly limits"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Baseline calibration sets statistical
-									control limits and alert bands.
-								</p>
-							</figure>
-
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-black"
-											>03. Ownership</span
-										>
-										<span class="text-black/50"
-											>DRI Assignment</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg_contribute_3.png"
-											alt="Step 3: Direct Responsible Individual (DRI) assignment"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Every metric requires a named DRI
-									responsible for investigations.
-								</p>
-							</figure>
-
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-black"
-											>04. Automation</span
-										>
-										<span class="text-black/50"
-											>Pipelines</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg_contribute_4.png"
-											alt="Step 4: Continuous data pipeline validation"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Continuous queries poll endpoints to ensure
-									zero data drift.
-								</p>
-							</figure>
-
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-black"
-											>05. Audit Trail</span
-										>
-										<span class="text-black/50"
-											>Lineage</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg_contribute_5.png"
-											alt="Step 5: Change history and version logging"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Formula revisions and pipeline edits are
-									immutably versioned.
-								</p>
-							</figure>
-
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-black"
-											>06. Certification</span
-										>
-										<span class="text-black/50"
-											>Publication</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg_contribute_6.png"
-											alt="Step 6: Metric sign-off and publication"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Automated verification qualifies the metric
-									for live executive surfaces.
-								</p>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Caption: Steps 1 through 6 of the governed
-							onboarding flow. Checks happen automatically as
-							authors configure each metric.
+						<figcaption>
+							The 2-month handoff bottleneck between partner teams
+							and central BI
 						</figcaption>
-					</div>
+					</figure>
 				</div>
-			</article>
+				<figcaption class="mt-2">
+					Visualizing the iterative bottlenecks that made central
+					metrics lag operational realities.
+				</figcaption>
+			</div>
+		</div>
+	</article>
 
-			<!-- ===================================================== -->
-			<!-- SECTION 7: DESIGN 2/4 - TRUST TIERS & LINEAGE         -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">design</span>
-						<h2>2. Always-attached trust tiers and data lineage</h2>
-					</div>
+	<!-- ===================================================== -->
+	<!-- SECTION 5: STRATEGY & REFRAMING                       -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">strategy</small>
+				<h2>The team had two plans. I argued for one.</h2>
+			</div>
 
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<div class="case-prose">
-							<p>
-								We started with Gold / Silver / Bronze states,
-								but initial tests revealed <strong
-									>attitudinal biases</strong
-								> - lower tiers felt like something to hide, as opposed
-								to a step to climb.
-							</p>
-							<p>
-								We changed it to <strong
-									>actual state which describes the provenance
-									instead of status</strong
-								>.
-							</p>
-						</div>
-
-						<!-- Provenance Trust Tiers Matrix Table -->
-						<table class="m-0">
-							<thead>
-								<tr>
-									<th>Tier</th>
-									<th>Governance Meaning</th>
-									<th>Author</th>
-									<th>SLA</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td><strong>BI Led</strong></td>
-									<td
-										>Defined, built, and maintained by the
-										central BI team. Meets full enterprise
-										standards.</td
-									>
-									<td>Central BI Squad</td>
-									<td><code>99.9%</code></td>
-								</tr>
-								<tr>
-									<td><strong>BI Approved</strong></td>
-									<td
-										>Built by owning team, reviewed and
-										signed off by BI. Quality gates
-										verified.</td
-									>
-									<td>Partner Team + BI Review</td>
-									<td><code>99.5%</code></td>
-								</tr>
-								<tr>
-									<td><strong>Self-Service</strong></td>
-									<td
-										>Built and published autonomously by
-										owning team. Clear lineage badge
-										attached.</td
-									>
-									<td>Partner Team Autonomous</td>
-									<td><code>Best Effort</code></td>
-								</tr>
-							</tbody>
-						</table>
-
-						<!-- Images: Trust Tiers & Anomaly Data Lineage -->
-						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg8_trust_tiers.png"
-										alt="Trust Tiers Interface showing BI-Led, BI-Approved, and Self-Service Badges"
-									/>
-								</div>
-								<figcaption>
-									Trust tier badges displayed contextually
-									across dashboards
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg8_mttd_anomaly_data_lineage.png"
-										alt="MTTD Anomaly Data Lineage Explorer"
-									/>
-								</div>
-								<figcaption>
-									Interactive data lineage explorer tracing
-									raw telemetry sources
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Provenance, not status. Viewers evaluate confidence
-							based on concrete data lineage rather than
-							subjective rating.
-						</figcaption>
-					</div>
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>Main points from the Design Sprint Debate:</p>
+				<small class="eyebrow">Director</small>
+				<blockquote>
+					"More BI headcount cannot solve the bottleneck problem,
+					since teams are looking for autonomy and control."
+				</blockquote>
+				<p>
+					<small class="eyebrow">Me, Director, Dev Lead</small>
+					<blockquote>
+						"Let's expand to a self-service platform, AI-powered
+						anomaly detection and analysis."
+					</blockquote>
+				</p>
+				<small class="eyebrow">Product Manager</small><blockquote>
+					"That will dilute the trust factor we gained over years."
+				</blockquote>
+				<!-- Design Sprint Dialogue Box -->
+				<div class="card">
+					<h4>The Fundamental Question:</h4>
+					<blockquote>
+						"If anyone can publish, why would an executive believe
+						anything?"
+					</blockquote>
 				</div>
-			</article>
 
-			<!-- ===================================================== -->
-			<!-- SECTION 8: DESIGN 3/4 - HUMAN-IN-THE-LOOP AI          -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">design</span>
-						<h2>3. Human-in-the-loop anomaly analysis</h2>
-					</div>
-
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<div class="case-prose">
-							<p>
-								When a measure broke its control limits, an
-								automated analysis was drafted by an agent and a
-								notification sent to the directly responsible
-								individual (DRI). Once edited and approved by
-								the DRI, the analysis was available on the
-								dashboard.
-							</p>
-						</div>
-
-						<!-- Trade-off Box -->
-						<aside class="callout-warning">
-							<div
-								class="font-departure text-xs tracking-wider text-black font-bold mb-2 flex items-center gap-2"
-							>
-								<span
-									class="w-2.5 h-2.5 bg-black rounded-full inline-block"
-								></span>
-								<span
-									>Design Trade-Off: AI Transparency vs Review
-									Bottlenecks</span
-								>
-							</div>
-							<p
-								class="font-sans text-sm text-black/80 leading-relaxed mb-2"
-							>
-								Initially, the team wanted to hide automated
-								analysis unless verified by a human. But the
-								executives wanted to avoid another bottleneck of
-								approval, and insisted on viewing AI analysis as
-								well.
-							</p>
-							<p
-								class="font-sans text-sm text-black/90 font-medium leading-relaxed m-0"
-							>
-								<strong>Solution:</strong> We added a confidence score
-								along with reasoning. Most importantly, I made it
-								very clear visibly when somebody was looking at automated
-								analysis.
-							</p>
-						</aside>
-
-						<!-- Images: 3 side by side -->
-						<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-red-700"
-											>01. Trigger</span
-										>
-										<span class="text-black/50">Limits</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg9_mttd_anomaly.png"
-											alt="MTTD Anomaly Detection Trigger"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									Metric breaks control limits. System flags
-									anomaly immediately.
-								</p>
-							</figure>
-
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-amber-700"
-											>02. Agent</span
-										>
-										<span class="text-black/50"
-											>Confidence</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg9_mttd_anomaly_investigate.png"
-											alt="AI Anomaly Investigation and Confidence Score"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									AI drafts narrative with explicit reasoning
-									and confidence score.
-								</p>
-							</figure>
-
-							<figure class="m-0 flex flex-col justify-between">
-								<div>
-									<div
-										class="flex items-center justify-between pb-2 mb-2 border-b border-black/15 font-departure text-[10px]"
-									>
-										<span class="font-bold text-emerald-700"
-											>03. Sign-off</span
-										>
-										<span class="text-black/50"
-											>DRI Approval</span
-										>
-									</div>
-									<div class="media-frame mb-2">
-										<img
-											src="/images-vanguard/vg9_mttd_anomaly_sign.png"
-											alt="DRI Sign-Off and Executive Note Publication"
-										/>
-									</div>
-								</div>
-								<p
-									class="font-sans text-xs text-black/75 m-0 leading-normal"
-								>
-									DRI validates hypothesis and signs off
-									before publishing.
-								</p>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Human-in-the-loop lifecycle: Autonomous detection →
-							Transparent AI analysis → DRI human sign-off.
-						</figcaption>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 9: DESIGN 4/4 - THE EXECUTIVE SURFACE         -->
-			<!-- ===================================================== -->
-			<article class="case-section">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">design</span>
-						<h2>4. The executive surface</h2>
-					</div>
-
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<div class="case-prose">
-							<p>
-								The strategy was to have a single yardstick for
-								every measure. We used a <strong
-									>statistical process control (SPC) chart</strong
-								>, so we are able to distinguish normal
-								variation from a genuine signal.
-							</p>
-							<p>
-								This made it easy for executives to avoid
-								reacting to false positives like <em
-									>"we are off our average this week"</em
-								>.
-							</p>
-						</div>
-
-						<!-- Images: [vg1_homepage.png] [vg7_homepage_critical_services.png] -->
-						<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg1_homepage.png"
-										alt="Vanguard Executive Surface Overview"
-									/>
-								</div>
-								<figcaption>
-									Primary executive portal with standardized
-									yardstick metrics
-								</figcaption>
-							</figure>
-
-							<figure class="m-0">
-								<div class="media-frame">
-									<img
-										src="/images-vanguard/vg7_homepage_critical_services.png"
-										alt="Critical Services View on Executive Homepage"
-									/>
-								</div>
-								<figcaption>
-									Critical services roll-up utilizing
-									statistical process control
-								</figcaption>
-							</figure>
-						</div>
-						<figcaption class="text-left mt-2">
-							Standardized SPC visual language distinguishing
-							routine telemetry noise from true operational
-							emergencies.
-						</figcaption>
-					</div>
-				</div>
-			</article>
-
-			<!-- ===================================================== -->
-			<!-- SECTION 10: OUTCOME                                   -->
-			<!-- ===================================================== -->
-			<article id="outcome" class="case-section border-b-0 pb-0">
-				<div class="case-grid">
-					<!-- Left 25% Column -->
-					<div class="case-sidebar">
-						<span class="kicker">outcome</span>
-						<h2>The IKEA effect</h2>
-					</div>
-
-					<!-- Right 75% Column -->
-					<div class="case-content">
-						<div class="case-prose">
-							<p>
-								During the pilot, I noticed team leads were
-								excited with their new-found autonomy. They were
-								taking care of it like they own it.
-							</p>
-							<p>
-								Teams prioritized submitting well-crafted
-								measures for their teams, which in turn made it
-								easy for the BI team to review and approve
-								within days.
-							</p>
-						</div>
-
-						<!-- Impact Scorecard Grid -->
-						<div class="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
-							<div class="card">
-								<span
-									class="font-departure text-xs text-black/50 block mb-1"
-									>BI Coverage</span
-								>
-								<div
-									class="font-departure text-3xl font-bold text-black mb-1"
-								>
-									30% → 75%
-								</div>
-								<span class="font-sans text-xs text-black/70"
-									>Achieved in 3 months across partner
-									security teams.</span
-								>
-							</div>
-
-							<div class="card">
-								<span
-									class="font-departure text-xs text-black/50 block mb-1"
-									>Onboarding</span
-								>
-								<div
-									class="font-departure text-3xl font-bold text-black mb-1"
-								>
-									2 mo → 5 days
-								</div>
-								<span class="font-sans text-xs text-black/70"
-									>Average onboarding time reduced via
-									self-service authoring.</span
-								>
-							</div>
-
-							<div class="card">
-								<span
-									class="font-departure text-xs text-black/50 block mb-1"
-									>Escalations</span
-								>
-								<div
-									class="font-departure text-3xl font-bold text-emerald-700 mb-1"
-								>
-									Cut by &gt;50%
-								</div>
-								<span class="font-sans text-xs text-black/70"
-									>Escalation calls during anomalies cut in
-									half (Survey June 2026).</span
-								>
-							</div>
-						</div>
-
-						<!-- PM Closing Quote -->
-						<blockquote
-							class="bg-white border border-dashed border-black/30 p-6 sm:p-8 shadow-[3px_3px_0_0_#000] relative mt-4 m-0 font-sans"
-						>
-							<p
-								class="font-serif text-xl sm:text-2xl text-black italic leading-snug pl-6 border-l-2 border-dashed border-black/40 mb-4"
-							>
-								"Trust doesn't scale through review capacity. It
-								scales when it becomes a visible property of the
-								artifact."
-							</p>
-							<cite
-								class="pl-6 font-departure text-xs tracking-wider text-black/60 font-semibold not-italic block"
-							>
-								- Product Manager, Apple InfoSec BI Team
-							</cite>
+				<div class="mt-8">
+					<div class="card">
+						<h4>Reframed Design Challenge:</h4>
+						<blockquote>
+							"How might we make governance and trust signals
+							visible in a scalable business intelligence
+							platform?"
 						</blockquote>
-
-						<!-- Navigation Footer -->
-						<div
-							class="mt-12 pt-6 border-t border-black/15 flex flex-wrap items-center justify-between gap-4 font-departure text-xs"
-						>
-							<a
-								href="/"
-								class="text-black hover:text-neutral-600 transition-colors no-underline flex items-center gap-2"
-							>
-								<span>←</span>
-								<span>Back to Selected Works</span>
-							</a>
-							<a
-								href="#top"
-								class="px-3 py-1 bg-black/5 hover:bg-black/10 border border-black/20 text-black transition-colors no-underline"
-							>
-								Top ↑
-							</a>
-						</div>
 					</div>
 				</div>
-			</article>
+
+				<!-- Images: Strategic Architecture & Trust Signals -->
+				<div class="flex flex-col gap-6 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg61.png"
+								alt="Strategic Architecture: Governance and Trust Model"
+							/>
+						</div>
+						<figcaption>
+							Architectural framework for self-service with
+							embedded governance
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg62.png"
+								alt="Governing Trust Signals in a Scalable BI Platform"
+							/>
+						</div>
+						<figcaption>
+							Detailed interaction model mapping trust tiers
+							directly into user workflows
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Strategy: Moving from gatekeeper reviews to visible,
+					embedded provenance signals.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 6: DESIGN 1/4 - QUALITY GATES                 -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">design</small>
+				<h2>1. Quality gates built into the onboarding flow</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					Rather than reviewing quality after submission, I baked
+					checks directly into the authoring path. The self-serve flow
+					asks the same questions the BI team used to ask in review
+					meetings:
+				</p>
+
+				<!-- 3 Checks Cards -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+					<div class="card">
+						<small class="eyebrow">CHECK 01</small>
+						<h4>Formula Clarity</h4>
+						<p>
+							Is there an explicit, unambiguous formula for this
+							measure?
+						</p>
+					</div>
+					<div class="card">
+						<small class="eyebrow">CHECK 02</small>
+						<h4>Data Provenance</h4>
+						<p>Are all contributing data sources declared?</p>
+					</div>
+					<div class="card">
+						<small class="eyebrow">CHECK 03</small>
+						<h4>Baseline Calibration</h4>
+						<p>
+							What does "good" look like, and against what
+							baseline?
+						</p>
+					</div>
+				</div>
+
+				<!-- Six Onboarding Steps: Side-by-Side Grid -->
+				<div
+					class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 pt-2"
+				>
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg_contribute_1.png"
+								alt="Step 1: Formula definition and verification"
+							/>
+						</div>
+						<figcaption>
+							01. Measure — Partner teams define measures with
+							clear formulas and data sources.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg_contribute_2.png"
+								alt="Step 2: Baseline targets and anomaly limits"
+							/>
+						</div>
+						<figcaption>
+							02. Thresholds — Baseline calibration sets
+							statistical control limits and alert bands.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg_contribute_3.png"
+								alt="Step 3: Direct Responsible Individual (DRI) assignment"
+							/>
+						</div>
+						<figcaption>
+							03. Ownership — Every metric requires a named DRI
+							responsible for investigations.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg_contribute_4.png"
+								alt="Step 4: Continuous data pipeline validation"
+							/>
+						</div>
+						<figcaption>
+							04. Automation — Continuous queries poll endpoints
+							to ensure zero data drift.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg_contribute_5.png"
+								alt="Step 5: Change history and version logging"
+							/>
+						</div>
+						<figcaption>
+							05. Audit Trail — Formula revisions and pipeline
+							edits are immutably versioned.
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg_contribute_6.png"
+								alt="Step 6: Metric sign-off and publication"
+							/>
+						</div>
+						<figcaption>
+							06. Certification — Automated verification qualifies
+							the metric for live executive surfaces.
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Steps 1 through 6 of the governed onboarding flow. Checks
+					happen automatically as authors configure each metric.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 7: DESIGN 2/4 - TRUST TIERS & LINEAGE         -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">design</small>
+				<h2>2. Always-attached trust tiers and data lineage</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					We started with Gold / Silver / Bronze states, but initial
+					tests revealed <strong>attitudinal biases</strong> - lower tiers
+					felt like something to hide, as opposed to a step to climb.
+				</p>
+				<p>
+					We changed it to <strong
+						>actual state which describes the provenance instead of
+						status</strong
+					>.
+				</p>
+
+				<!-- Provenance Trust Tiers Matrix Table -->
+				<table class="m-0">
+					<thead>
+						<tr>
+							<th>Tier</th>
+							<th>Governance Meaning</th>
+							<th>Author</th>
+							<th>SLA</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td><strong>BI Led</strong></td>
+							<td>
+								Defined, built, and maintained by the central BI
+								team. Meets full enterprise standards.
+							</td>
+							<td>Central BI Squad</td>
+							<td><code>99.9%</code></td>
+						</tr>
+						<tr>
+							<td><strong>BI Approved</strong></td>
+							<td>
+								Built by owning team, reviewed and signed off by
+								BI. Quality gates verified.
+							</td>
+							<td>Partner Team + BI Review</td>
+							<td><code>99.5%</code></td>
+						</tr>
+						<tr>
+							<td><strong>Self-Service</strong></td>
+							<td>
+								Built and published autonomously by owning team.
+								Clear lineage badge attached.
+							</td>
+							<td>Partner Team Autonomous</td>
+							<td><code>Best Effort</code></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<!-- Images: Trust Tiers & Anomaly Data Lineage -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg8_trust_tiers.png"
+								alt="Trust Tiers Interface showing BI-Led, BI-Approved, and Self-Service Badges"
+							/>
+						</div>
+						<figcaption>
+							Trust tier badges displayed contextually across
+							dashboards
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg8_mttd_anomaly_data_lineage.png"
+								alt="MTTD Anomaly Data Lineage Explorer"
+							/>
+						</div>
+						<figcaption>
+							Interactive data lineage explorer tracing raw
+							telemetry sources
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Provenance, not status. Viewers evaluate confidence based on
+					concrete data lineage rather than subjective rating.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 8: DESIGN 3/4 - HUMAN-IN-THE-LOOP AI          -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">design</small>
+				<h2>3. Human-in-the-loop anomaly analysis</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					When a measure broke its control limits, an automated
+					analysis was drafted by an agent and a notification sent to
+					the directly responsible individual (DRI). Once edited and
+					approved by the DRI, the analysis was available on the
+					dashboard.
+				</p>
+
+				<!-- Trade-off Box -->
+				<div class="card my-8">
+					<small class="eyebrow mb-2">
+						AI Transparency vs Review Bottlenecks
+					</small>
+					<p>
+						<strong>Design Trade-Off:</strong> Initially, the team wanted
+						to hide automated analysis unless verified by a human. But
+						the executives wanted to avoid another bottleneck of approval,
+						and insisted on viewing AI analysis as well.
+					</p>
+					<p>
+						<strong>Solution:</strong> We added a confidence score along
+						with reasoning. Most importantly, I made it very clear visibly
+						when somebody was looking at automated analysis.
+					</p>
+				</div>
+
+				<!-- Images: 01 Trigger (Full Width) + 02 Agent & 03 Sign-off (Side by Side) -->
+				<div class="flex flex-col gap-6 pt-2">
+					<!-- Full Width: 01. Trigger -->
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg9_mttd_anomaly.png"
+								alt="MTTD Anomaly Detection Trigger"
+							/>
+						</div>
+						<figcaption>
+							01. Trigger — Metric breaks control limits; system
+							flags anomaly immediately.
+						</figcaption>
+					</figure>
+
+					<!-- Side by Side: 02 & 03 -->
+					<div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+						<figure class="m-0">
+							<div class="media-frame">
+								<img
+									src="/images-vanguard/vg9_mttd_anomaly_investigate.png"
+									alt="AI Anomaly Investigation and Confidence Score"
+								/>
+							</div>
+							<figcaption>
+								02. Agent — AI drafts narrative with explicit
+								reasoning and confidence score.
+							</figcaption>
+						</figure>
+
+						<figure class="m-0">
+							<div class="media-frame">
+								<img
+									src="/images-vanguard/vg9_mttd_anomaly_sign.png"
+									alt="DRI Sign-Off and Executive Note Publication"
+								/>
+							</div>
+							<figcaption>
+								03. Sign-off — DRI validates hypothesis and signs
+								off before publishing.
+							</figcaption>
+						</figure>
+					</div>
+				</div>
+				<figcaption class="mt-2">
+					Human-in-the-loop lifecycle: Autonomous detection →
+					Transparent AI analysis → DRI human sign-off.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 9: DESIGN 4/4 - THE EXECUTIVE SURFACE         -->
+	<!-- ===================================================== -->
+	<article class="case-section">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">design</small>
+				<h2>4. The executive surface</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					The strategy was to have a single yardstick for every
+					measure. We used a <strong
+						>statistical process control (SPC) chart</strong
+					>, so we are able to distinguish normal variation from a
+					genuine signal.
+				</p>
+				<p>
+					This made it easy for executives to avoid reacting to false
+					positives like <em>"we are off our average this week"</em>.
+				</p>
+
+				<!-- Images: [vg1_homepage.png] [vg7_homepage_critical_services.png] -->
+				<div class="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-2">
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg1_homepage.png"
+								alt="Vanguard Executive Surface Overview"
+							/>
+						</div>
+						<figcaption>
+							Primary executive portal with standardized yardstick
+							metrics
+						</figcaption>
+					</figure>
+
+					<figure class="m-0">
+						<div class="media-frame">
+							<img
+								src="/images-vanguard/vg7_homepage_critical_services.png"
+								alt="Critical Services View on Executive Homepage"
+							/>
+						</div>
+						<figcaption>
+							Critical services roll-up utilizing statistical
+							process control
+						</figcaption>
+					</figure>
+				</div>
+				<figcaption class="mt-2">
+					Standardized SPC visual language distinguishing routine
+					telemetry noise from true operational emergencies.
+				</figcaption>
+			</div>
+		</div>
+	</article>
+
+	<!-- ===================================================== -->
+	<!-- SECTION 10: OUTCOME                                   -->
+	<!-- ===================================================== -->
+	<article id="outcome" class="case-section border-b-0 pb-0">
+		<div class="case-grid">
+			<!-- Left Column -->
+			<div class="case-sidebar">
+				<small class="kicker">outcome</small>
+				<h2>The IKEA effect</h2>
+			</div>
+
+			<!-- Right Column -->
+			<div class="case-content">
+				<p>
+					During the pilot, I noticed team leads were excited with
+					their new-found autonomy. They were taking care of it like
+					they own it.
+				</p>
+				<p>
+					Teams prioritized submitting well-crafted measures for their
+					teams, which in turn made it easy for the BI team to review
+					and approve within days.
+				</p>
+
+				<!-- Impact Scorecard Grid -->
+				<div class="grid grid-cols-1 sm:grid-cols-3 gap-5 pt-2">
+					<div class="card">
+						<small class="eyebrow">BI Coverage</small>
+						<h4>30% → 75%</h4>
+						<p>
+							Achieved in 3 months across partner security teams.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">Onboarding</small>
+						<h4>2 mo → 5 days</h4>
+						<p>
+							Average onboarding time reduced via self-service
+							authoring.
+						</p>
+					</div>
+
+					<div class="card">
+						<small class="eyebrow">Escalations</small>
+						<h4>Cut by &gt;50%</h4>
+						<p>
+							Escalation calls during anomalies cut in half
+							(Survey June 2026).
+						</p>
+					</div>
+				</div>
+
+				<!-- PM Closing Quote -->
+				<blockquote>
+					<p>
+						"Trust doesn't scale through review capacity. It scales
+						when it becomes a visible property of the artifact."
+					</p>
+					<small class="eyebrow">
+						— Product Manager, Apple InfoSec BI Team
+					</small>
+				</blockquote>
+			</div>
+		</div>
+	</article>
+
+	<!-- Page Footer Navigation -->
+	<footer
+		class="mt-16 pt-8 border-t border-black/15 flex flex-wrap items-center justify-between gap-4"
+	>
+		<a href="/" class="btn-secondary flex items-center gap-2">
+			<span>←</span>
+			<span>Back to homepage</span>
+		</a>
+		<a
+			href="#top"
+			onclick="event.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' });"
+			class="btn-secondary flex items-center gap-1.5 cursor-pointer"
+			title="Scroll to top"
+		>
+			<span>Top</span>
+			<span>↑</span>
+		</a>
+		<a
+			href="/case-study/helpnow"
+			class="btn-primary flex items-center gap-2"
+			title="Next Case Study: HelpNow+"
+		>
+			<span>Next case study</span>
+			<span>→</span>
+		</a>
+	</footer>
 </CaseStudyLayout>

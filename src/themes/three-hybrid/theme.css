@@ -2,16 +2,16 @@
 
 @theme {
     /* -------------------------------------------------- */
-    /* Fonts by Job: Editorial Serif + Clean Sans + Mono   */
+    /* Fonts: DM Sans (Bold Headings & Body) + Mono       */
     /* -------------------------------------------------- */
-    --font-heading: "Fraunces", serif;
+    --font-heading: "DM Sans", sans-serif;
     --font-body: "DM Sans", sans-serif;
     --font-prose: "DM Sans", sans-serif;
     --font-mono: "Space Mono", monospace;
     --font-handwriting: "Homemade Apple", cursive;
 
     /* Legacy Aliases */
-    --font-serif: "Fraunces", serif;
+    --font-serif: var(--font-heading);
     --font-sans: "DM Sans", sans-serif;
     --font-space: var(--font-mono);
     --font-departure: var(--font-mono);
@@ -33,9 +33,9 @@
     --color-border-default: rgba(27, 25, 23, 0.22);
     --color-border-dashed: rgba(27, 25, 23, 0.32);
 
-    --color-accent: #c25e2e;
-    --color-accent-hover: #9e441c;
-    --color-accent-subtle: rgba(194, 94, 46, 0.12);
+    --color-accent: #b44c1e;
+    --color-accent-hover: #923a13;
+    --color-accent-subtle: rgba(180, 76, 30, 0.12);
 
     /* System Telemetry Colors */
     --color-sys-green: #10b981;
@@ -75,19 +75,19 @@
 
     /* Eyebrow Style with Monospace Precision */
     .eyebrow {
-        @apply font-mono text-xs uppercase tracking-[0.2em] font-bold text-[var(--color-text-secondary)] block mb-3;
+        @apply font-mono text-xs uppercase tracking-wider font-medium text-[var(--color-text-secondary)] block mb-3;
     }
 
     h1 {
-        @apply font-heading text-5xl md:text-6xl lg:text-7xl font-light text-[var(--color-text-primary)] leading-[1.05] mb-6 tracking-tight;
+        @apply font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--color-text-primary)] leading-[1.05] mb-6 tracking-tight;
     }
 
     h2 {
-        @apply font-heading text-3xl md:text-4xl lg:text-5xl font-light text-[var(--color-text-primary)] leading-tight mb-8 tracking-tight;
+        @apply font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] leading-tight mb-8 tracking-tight;
     }
 
     h3 {
-        @apply font-heading text-xl md:text-2xl font-normal text-[var(--color-text-primary)] mb-4;
+        @apply font-heading text-xl md:text-2xl font-semibold text-[var(--color-text-primary)] mb-4;
     }
 
     h4 {
@@ -204,7 +204,7 @@
     }
 
     .case-sidebar h2 {
-        @apply m-0 text-2xl sm:text-3xl font-light leading-snug tracking-tight text-[var(--color-text-primary)] font-heading;
+        @apply m-0 text-2xl sm:text-3xl font-bold leading-snug tracking-tight text-[var(--color-text-primary)] font-heading;
     }
 
     .case-content {
@@ -301,7 +301,7 @@
 
     /* Typography Classes */
     .font-heading {
-        font-family: var(--font-heading), serif;
+        font-family: var(--font-heading), sans-serif;
     }
 
     .font-body {
@@ -321,19 +321,19 @@
     }
 
     .heading-display {
-        @apply font-heading text-5xl sm:text-6xl md:text-7xl font-light leading-[1.02] tracking-tight;
+        @apply font-heading text-5xl sm:text-6xl md:text-7xl lg:text-[76px] font-bold leading-[1.02] tracking-tight;
     }
 
     .heading-medium {
-        @apply font-heading text-3xl md:text-5xl leading-tight font-light;
+        @apply font-heading text-3xl md:text-5xl leading-tight font-bold tracking-tight;
     }
 
     .lead-text {
-        @apply font-body text-xl md:text-2xl leading-relaxed text-[var(--color-text-secondary)];
+        @apply font-body text-base sm:text-lg md:text-lg leading-relaxed text-[var(--color-text-secondary)];
     }
 
     .case-title {
-        @apply font-heading text-3xl md:text-4xl lg:text-[42px] leading-tight font-light tracking-tight text-[var(--color-text-primary)];
+        @apply font-heading text-3xl md:text-4xl lg:text-[42px] leading-tight font-bold tracking-tight text-[var(--color-text-primary)];
     }
 
     .eyebrow-sm {
@@ -362,19 +362,29 @@
         background-size: 24px 24px;
     }
 
-    /* Perforated Spec Ticket Detail */
-    .spec-ticket {
-        @apply bg-[#fdfcf9] border border-black/15 shadow-[0_8px_28px_rgba(0,0,0,0.06)] relative;
+    /* Tactile Stamped Metal Dog Tag with Rolled Edge */
+    .dog-tag {
+        background: linear-gradient(150deg, #fbf9f4 0%, #ece6da 50%, #dfd7c8 100%);
+        box-shadow: 
+            0 14px 32px -6px rgba(45, 42, 38, 0.14),
+            0 4px 10px -2px rgba(45, 42, 38, 0.08),
+            inset 0 1.5px 1px rgba(255, 255, 255, 0.95),
+            inset 0 -1.5px 2px rgba(0, 0, 0, 0.12);
+        border: 2px solid rgba(27, 25, 23, 0.18);
     }
 
-    .spec-ticket::after {
-        content: "";
-        position: absolute;
-        bottom: -5px;
-        left: 0;
-        right: 0;
-        height: 10px;
-        background-image: radial-gradient(circle, transparent, transparent 50%, #fdfcf9 50%, #fdfcf9 100%);
-        background-size: 10px 10px;
+    .dog-tag-inner {
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.55) 0%, rgba(255, 255, 255, 0.12) 100%);
+        box-shadow:
+            inset 0 1px 2.5px rgba(0, 0, 0, 0.09),
+            0 1px 0 rgba(255, 255, 255, 0.85);
+    }
+
+    .dog-tag-grommet {
+        background: radial-gradient(circle at 35% 35%, #f5f2ea 0%, #c4bdae 70%, #9e9687 100%);
+        box-shadow:
+            0 1px 2px rgba(0, 0, 0, 0.2),
+            inset 0 1px 1px rgba(255, 255, 255, 0.9),
+            inset 0 -1px 2px rgba(0, 0, 0, 0.35);
     }
 }

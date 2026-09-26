@@ -1,0 +1,841 @@
+---
+import Layout from "./Layout.astro";
+import Header from "./Header.astro";
+---
+
+<Layout title="Tushar Roy – Systematic by Design • Product & AI Systems">
+  <Header />
+
+  <!-- ========================================================================= -->
+  <!-- HERO SECTION                                                              -->
+  <!-- ========================================================================= -->
+  <section
+    id="hero-section"
+    class="relative z-10 w-full pt-32 sm:pt-40 md:pt-44 pb-20 md:pb-28 overflow-hidden"
+  >
+    <!-- Interactive Dot Grid Canvas Background -->
+    <canvas
+      id="hero-dot-grid"
+      class="absolute inset-0 w-full h-full pointer-events-none z-0"
+      aria-hidden="true"></canvas>
+
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div
+        class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[70vh]"
+      >
+        <!-- Left Narrative Rail (7 Cols) -->
+        <div class="lg:col-span-7 flex flex-col text-left">
+          <!-- Eyebrow -->
+          <small class="eyebrow">
+            PRODUCT UX // SYSTEMS ARCHITECT
+          </small>
+
+          <!-- Main Display Headline -->
+          <h1>
+            Systematic <br class="hidden sm:block" />by Design.
+          </h1>
+
+          <!-- Lead Narrative -->
+          <p>
+            Making sense of AI-powered enterprise systems,<br
+              class="hidden sm:inline"
+            />
+            human&nbsp;workflows, and intelligence at scale.
+          </p>
+
+          <!-- CTA Action in Primary Pill -->
+          <div class="flex flex-wrap items-center gap-4">
+            <a href="#work" class="group btn-primary text-base px-7 py-3.5">
+              <span>See what I built</span>
+              <span
+                class="w-6 h-6 rounded-full bg-neutral-900 text-white flex items-center justify-center text-xs transition-transform duration-200 group-hover:translate-y-0.5"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M12 5v14M19 12l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Visual: Arch Portrait (5 Cols) -->
+        <div
+          class="lg:col-span-5 flex flex-col items-center justify-center relative"
+        >
+          <div class="relative w-full max-w-[280px] sm:max-w-[320px]">
+            <div class="relative aspect-[3/4] w-full">
+              <!-- Decorative Offset Border -->
+              <div
+                class="absolute top-4 -left-4 w-full h-full rounded-t-[220px] border border-black/10 z-0"
+              >
+              </div>
+
+              <!-- Rex & Tushar Window Mask (Static Arch Frame) -->
+              <div class="relative w-full h-full">
+                <img
+                  id="hero-portrait-img"
+                  src="/images/rex.jpg"
+                  alt="Tushar and Rex the golden retriever"
+                  class="object-cover w-full h-full origin-center grayscale-[12%] hover:grayscale-0 transition-all duration-700 pointer-events-none rounded-t-[220px] overflow-hidden"
+                  style="transform: rotate(0deg);"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- SELECTED WORK / ENTERPRISE CASE STUDIES                                   -->
+  <!-- ========================================================================= -->
+  <main
+    class="relative z-10 w-full bg-[var(--color-canvas)] border-t border-black/10 py-24 md:py-32"
+  >
+    <section id="work" class="max-w-6xl mx-auto px-6">
+      <!-- Section Header -->
+      <div
+        class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-16 pb-6 border-b border-black/10"
+      >
+        <div>
+          <small class="eyebrow">SYSTEMS & ARCHITECTURE</small>
+          <h2>Selected Works</h2>
+        </div>
+        <div>
+          <small class="eyebrow sm:text-right">03 PRODUCTION SYSTEMS • BUILT FOR SCALE</small>
+        </div>
+      </div>
+
+      <!-- Case Study Cards Stack -->
+      <div class="flex flex-col gap-10 w-full">
+        <!-- Case Study 01: Vanguard (Apple InfoSec) -->
+        <article
+          class="card p-8 md:p-12 md:sticky top-20 z-10 shadow-lg"
+        >
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 flex flex-col">
+              <!-- Systems Meta Badge -->
+              <small class="eyebrow">
+                SYS // 01 • APPLE INFOSEC • BI GOVERNANCE
+              </small>
+
+              <!-- Main Title -->
+              <h3>Making Security Work Measurable</h3>
+
+              <p>
+                Designed a self-service analytics platform that answered the
+                fundamental question:
+                <em>"How are we keeping Apple safe?"</em> through automated metric
+                coverage, DRI lineage, and AI commentary.
+              </p>
+
+              <!-- Impact Metrics Bar -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+                <div class="card p-4">
+                  <small class="eyebrow">Coverage</small>
+                  <h4>30% → 75%</h4>
+                </div>
+                <div class="card p-4">
+                  <small class="eyebrow">Onboarding</small>
+                  <h4>2 mo → 5 days</h4>
+                </div>
+                <div class="card p-4">
+                  <small class="eyebrow">Escalations</small>
+                  <h4>&gt;50% Cut</h4>
+                </div>
+              </div>
+
+              <!-- CTA -->
+              <div>
+                <a href="/case-study/vanguard" class="btn-secondary">
+                  <span>View Case Study</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Right Visual Graphic Box -->
+            <div class="md:col-span-4">
+              <figure class="m-0">
+                <div class="media-frame p-6 flex flex-col items-center justify-center bg-white">
+                  <img
+                    src="/images/logo-apple.png"
+                    alt="Apple InfoSec"
+                    class="w-16 h-16 object-contain mb-3"
+                  />
+                  <small class="eyebrow m-0">VANGUARD 3.1</small>
+                  <figcaption class="m-0 text-center">Self-Service BI Core</figcaption>
+                </div>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 02: HelpNow+ -->
+        <article
+          class="card p-8 md:p-12 md:sticky top-24 z-20 shadow-lg"
+        >
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 flex flex-col">
+              <small class="eyebrow">
+                SYS // 02 • VMWARE • SERVICE INFRASTRUCTURE
+              </small>
+
+              <h3>Workplace Support, Humanized</h3>
+
+              <p>
+                Transformed fragmented internal service portals into an
+                omnichannel PWA. Reduced expensive support escalations while
+                dramatically elevating employee satisfaction.
+              </p>
+
+              <!-- Impact Metrics Bar -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+                <div class="card p-4">
+                  <small class="eyebrow">Savings</small>
+                  <h4>$36M+</h4>
+                </div>
+                <div class="card p-4">
+                  <small class="eyebrow">Productivity</small>
+                  <h4>2x Boost</h4>
+                </div>
+                <div class="card p-4">
+                  <small class="eyebrow">CSAT</small>
+                  <h4>94%</h4>
+                </div>
+              </div>
+
+              <div>
+                <a href="/case-study/helpnow" class="btn-secondary">
+                  <span>View Case Study</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="md:col-span-4">
+              <figure class="m-0">
+                <div class="media-frame aspect-[4/3]">
+                  <img
+                    src="/images/case-study-helpnow3.png"
+                    alt="HelpNow+ Mobile PWA Interface"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption>HelpNow+ Mobile Experience</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+
+        <!-- Case Study 03: DevHub -->
+        <article
+          class="card p-8 md:p-12 md:sticky top-28 z-30 shadow-lg"
+        >
+          <div class="grid md:grid-cols-12 gap-8 items-center">
+            <div class="md:col-span-8 flex flex-col">
+              <small class="eyebrow">
+                SYS // 03 • VMWARE • DEVELOPER EXPERIENCE
+              </small>
+
+              <h3>Developer Ecosystem, Unified</h3>
+
+              <p>
+                Consolidated 14 disparate developer tools, SDK docs, and runtime
+                environments into a single coherent portal for 20,000+
+                engineers.
+              </p>
+
+              <!-- Impact Metrics Bar -->
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+                <div class="card p-4">
+                  <small class="eyebrow">Scale</small>
+                  <h4>20k+ Devs</h4>
+                </div>
+                <div class="card p-4">
+                  <small class="eyebrow">Friction</small>
+                  <h4>-65%</h4>
+                </div>
+                <div class="card p-4">
+                  <small class="eyebrow">Unified</small>
+                  <h4>14 Tools</h4>
+                </div>
+              </div>
+
+              <div>
+                <a href="/case-study/devhub" class="btn-secondary">
+                  <span>View Case Study</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="md:col-span-4">
+              <figure class="m-0">
+                <div class="media-frame aspect-[4/3]">
+                  <img
+                    src="/images/case-study-devhub3.png"
+                    alt="DevHub Developer Portal"
+                    class="w-full h-full object-cover"
+                  />
+                </div>
+                <figcaption>DevHub Portal Experience</figcaption>
+              </figure>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- ABOUT SECTION: PURPOSE & PLAY                                             -->
+  <!-- ========================================================================= -->
+  <section
+    id="about"
+    class="relative z-10 w-full py-24 md:py-32 bg-[var(--color-canvas)] border-t border-black/10"
+  >
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-12 items-center mb-24">
+        <!-- Text Column -->
+        <div class="lg:col-span-6 flex flex-col">
+          <small class="eyebrow">PROFILE // PHILOSOPHY</small>
+
+          <h2>
+            Rooted in Purpose <br class="hidden sm:block" />and Play.
+          </h2>
+
+          <p>
+            Enterprise software doesn't have to feel like bureaucratic
+            punishment. I lead inclusive, high-trust teams that tackle complex
+            plumbing with curiosity, humor, and relentless craft.
+          </p>
+
+          <blockquote>
+            "Why messy enterprise plumbing? Because that's where the leverage
+            is."
+          </blockquote>
+
+          <div>
+            <a
+              href="https://www.linkedin.com/in/tusharroy"
+              target="_blank"
+              class="btn-secondary"
+            >
+              <span>Connect on LinkedIn</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Video Frame -->
+        <div class="lg:col-span-6">
+          <figure class="m-0">
+            <div class="media-frame aspect-video">
+              <video
+                autoplay
+                loop
+                muted
+                playsinline
+                class="w-full h-full object-cover"
+              >
+                <source src="/images/speaking-video.mp4" type="video/mp4" />
+              </video>
+            </div>
+            <figcaption>
+              Keynote // Design Off-site • Sharing FY24 Design Vision
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <!-- Testimonials Grid -->
+      <div class="pt-12 border-t border-black/10">
+        <small class="eyebrow mb-8">PEER TELEMETRY // TESTIMONIALS</small>
+
+        <div class="grid md:grid-cols-2 gap-8">
+          <!-- Joy Busse -->
+          <div class="card flex flex-col justify-between">
+            <blockquote>
+              "Tushar brings people together. His energy and commitment led to a
+              standout enterprise culture. From internal conferences to engaging
+              podcasts, Tushar was the driving force behind many impactful
+              initiatives."
+            </blockquote>
+            <div class="flex items-center gap-3 pt-4 border-t border-black/10">
+              <img
+                src="/images/testimonial-joy.jpeg"
+                alt="Joy Busse"
+                class="w-10 h-10 rounded-full object-cover border border-black/10"
+              />
+              <div>
+                <small class="eyebrow m-0 font-bold">Joy Busse</small>
+                <figcaption class="m-0">Sr. Director of UX, Cribl</figcaption>
+              </div>
+            </div>
+          </div>
+
+          <!-- Razz Cortes-Maceda -->
+          <div class="card flex flex-col justify-between">
+            <blockquote>
+              "Tushar's talents extend beyond design — he is a problem solver.
+              His leadership of the UI dev team allowed us to stay on course. It
+              would be a privilege to work with him again."
+            </blockquote>
+            <div class="flex items-center gap-3 pt-4 border-t border-black/10">
+              <img
+                src="/images/testimonial-razz.jpeg"
+                alt="Razz Cortes-Maceda"
+                class="w-10 h-10 rounded-full object-cover border border-black/10"
+              />
+              <div>
+                <small class="eyebrow m-0 font-bold">Razz Cortes-Maceda</small>
+                <figcaption class="m-0">VP Digital Strategy, Bellco</figcaption>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- PODCAST SECTION: THOUGHT LEADERSHIP                                       -->
+  <!-- ========================================================================= -->
+  <section
+    id="podcast"
+    class="relative z-10 w-full py-24 md:py-32 bg-[var(--color-canvas)] border-t border-black/10"
+  >
+    <div class="max-w-6xl mx-auto px-6">
+      <small class="eyebrow mb-2">THOUGHT LEADERSHIP • 12-EPISODE SERIES</small>
+
+      <h2>Beyond the Product.</h2>
+
+      <!-- Podcast Card -->
+      <div class="card p-8 md:p-12 grid md:grid-cols-12 gap-8 items-center">
+        <div class="md:col-span-6 flex flex-col">
+          <small class="eyebrow">HOST & PRODUCER</small>
+          <h3>The Enterprise Design Podcast</h3>
+          <p>
+            Co-created and hosted this series to explore how we can humanize
+            enterprise software at scale, bringing Engineers, PMs, and Designers
+            to the same candid table.
+          </p>
+          <div>
+            <a
+              href="https://open.spotify.com/show/3klvSJS3QPLVLYBEf7UDWF"
+              target="_blank"
+              class="btn-primary"
+            >
+              <span>Listen on Spotify</span>
+              <span>↗</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="md:col-span-6 hidden md:block">
+          <figure class="m-0">
+            <div class="media-frame">
+              <iframe
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/episode/4AUNRf6VUxG6s9d0BvfBp5?utm_source=generator&theme=0"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"></iframe>
+            </div>
+            <figcaption>Featured Episode: Spotify Embed</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- CONNECT FOOTER                                                            -->
+  <!-- ========================================================================= -->
+  <footer
+    class="relative z-10 w-full bg-[var(--color-canvas)] py-24 border-t border-black/10"
+  >
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-12 gap-12 mb-20 items-start">
+        <!-- Left: Headline -->
+        <div class="md:col-span-6">
+          <small class="eyebrow">INITIALIZE DIALOGUE</small>
+          <h2>
+            Let's Make <br class="hidden sm:block" />It Happen.
+          </h2>
+          <p>
+            Big ideas. Messy problems. Unclear paths. If you’re navigating any
+            of that, or need a sounding board for complex systems, let's talk.
+          </p>
+        </div>
+
+        <!-- Right: Actions in Secondary Buttons -->
+        <div class="md:col-span-6 flex flex-col gap-3 pt-2">
+          <a
+            href="https://www.linkedin.com/in/tusharroy"
+            target="_blank"
+            class="btn-secondary justify-between w-full"
+          >
+            <span class="flex items-center gap-3">
+              <small class="eyebrow m-0">01 //</small>
+              <span>Message me on LinkedIn</span>
+            </span>
+            <span>→</span>
+          </a>
+
+          <a
+            href="https://adplist.org/mentors/tushar-roy"
+            target="_blank"
+            class="btn-secondary justify-between w-full"
+          >
+            <span class="flex items-center gap-3">
+              <small class="eyebrow m-0">02 //</small>
+              <span>Book a mentorship session</span>
+            </span>
+            <span>→</span>
+          </a>
+
+          <a
+            href="mailto:contact@tusharroy.com"
+            target="_blank"
+            class="btn-secondary justify-between w-full"
+          >
+            <span class="flex items-center gap-3">
+              <small class="eyebrow m-0">03 //</small>
+              <span>Direct email inquiry</span>
+            </span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <div
+        class="pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4"
+      >
+        <small class="eyebrow m-0"
+          >© {new Date().getFullYear()} Tushar Roy • Fremont, California</small
+        >
+        <div class="flex items-center gap-6">
+          <a
+            href="https://www.linkedin.com/in/tusharroy"
+            target="_blank"
+            class="text-xs font-mono"
+            >LinkedIn</a
+          >
+          <a
+            href="https://adplist.org/mentors/tushar-roy"
+            target="_blank"
+            class="text-xs font-mono"
+            >ADPList</a
+          >
+          <a
+            href="mailto:contact@tusharroy.com"
+            class="text-xs font-mono"
+            >Email</a
+          >
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Micro-Interaction Scripts: Ramp Dot Grid & Cursor-Based Image Rotation -->
+  <script>
+    function setupRampDotGrid() {
+      const heroSection = document.getElementById("hero-section");
+      const canvas = document.getElementById(
+        "hero-dot-grid",
+      ) as HTMLCanvasElement | null;
+      if (!heroSection || !canvas) return;
+
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      interface Dot {
+        baseX: number;
+        baseY: number;
+        x: number;
+        y: number;
+        size: number;
+        alpha: number;
+      }
+
+      let dots: Dot[] = [];
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      const SPACING = 28;
+      const INFLUENCE_RADIUS = 140;
+      const MAX_DISPLACEMENT = 12;
+      const BASE_SIZE = 0.95;
+      const BASE_ALPHA = 0.14;
+
+      let mouse = {
+        x: -9999,
+        y: -9999,
+        active: false,
+        intensity: 0,
+        targetIntensity: 0,
+      };
+
+      let stopTimeout: number | null = null;
+      let animationFrameId: number | null = null;
+      let isRunning = false;
+
+      function resize() {
+        const rect = heroSection.getBoundingClientRect();
+        width = rect.width;
+        height = rect.height;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        canvas.style.width = `${width}px`;
+        canvas.style.height = `${height}px`;
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+        dots = [];
+        const cols = Math.floor(width / SPACING);
+        const rows = Math.floor(height / SPACING);
+        const startX = (width - (cols - 1) * SPACING) / 2;
+        const startY = (height - (rows - 1) * SPACING) / 2;
+
+        for (let r = 0; r < rows; r++) {
+          for (let c = 0; c < cols; c++) {
+            const bx = startX + c * SPACING;
+            const by = startY + r * SPACING;
+            dots.push({
+              baseX: bx,
+              baseY: by,
+              x: bx,
+              y: by,
+              size: BASE_SIZE,
+              alpha: BASE_ALPHA,
+            });
+          }
+        }
+
+        renderStaticOrStart();
+      }
+
+      function renderFrame() {
+        ctx.clearRect(0, 0, width, height);
+
+        let needsMoreFrames = false;
+
+        // Smoothly interpolate mouse intensity (fades out when mouse stops moving)
+        const dIntensity = mouse.targetIntensity - mouse.intensity;
+        mouse.intensity += dIntensity * 0.12;
+        if (Math.abs(dIntensity) > 0.005) {
+          needsMoreFrames = true;
+        } else {
+          mouse.intensity = mouse.targetIntensity;
+        }
+
+        // Subtle ambient saffron halo under cursor when moving
+        if (mouse.active && mouse.intensity > 0.01) {
+          const haloAlpha = 0.11 * mouse.intensity;
+          const halo = ctx.createRadialGradient(
+            mouse.x,
+            mouse.y,
+            0,
+            mouse.x,
+            mouse.y,
+            INFLUENCE_RADIUS,
+          );
+          halo.addColorStop(0, `rgba(246, 200, 103, ${haloAlpha.toFixed(3)})`);
+          halo.addColorStop(
+            0.5,
+            `rgba(246, 200, 103, ${(haloAlpha * 0.35).toFixed(3)})`,
+          );
+          halo.addColorStop(1, "rgba(246, 200, 103, 0)");
+          ctx.fillStyle = halo;
+          ctx.beginPath();
+          ctx.arc(mouse.x, mouse.y, INFLUENCE_RADIUS, 0, Math.PI * 2);
+          ctx.fill();
+        }
+
+        const len = dots.length;
+        for (let i = 0; i < len; i++) {
+          const dot = dots[i];
+          let targetX = dot.baseX;
+          let targetY = dot.baseY;
+          let targetSize = BASE_SIZE;
+          let targetAlpha = BASE_ALPHA;
+          let isHovered = false;
+
+          if (mouse.active && mouse.intensity > 0.001) {
+            const dx = dot.baseX - mouse.x;
+            const dy = dot.baseY - mouse.y;
+            const dist = Math.sqrt(dx * dx + dy * dy);
+
+            if (dist < INFLUENCE_RADIUS && dist > 0.001) {
+              const factor = (1 - dist / INFLUENCE_RADIUS) * mouse.intensity;
+              const easeFactor = factor * factor;
+
+              // Subtle kinetic repulsion away from cursor scaled by motion intensity
+              targetX = dot.baseX + (dx / dist) * easeFactor * MAX_DISPLACEMENT;
+              targetY = dot.baseY + (dy / dist) * easeFactor * MAX_DISPLACEMENT;
+
+              // Scale & illumination scaled by motion intensity
+              targetSize = BASE_SIZE + factor * 0.95;
+              targetAlpha = BASE_ALPHA + factor * 0.45;
+              isHovered = true;
+            }
+          }
+
+          // Smooth spring physics / lerp towards target
+          const dxPos = targetX - dot.x;
+          const dyPos = targetY - dot.y;
+          const dSize = targetSize - dot.size;
+          const dAlpha = targetAlpha - dot.alpha;
+
+          dot.x += dxPos * 0.14;
+          dot.y += dyPos * 0.14;
+          dot.size += dSize * 0.14;
+          dot.alpha += dAlpha * 0.14;
+
+          if (
+            Math.abs(dxPos) > 0.02 ||
+            Math.abs(dyPos) > 0.02 ||
+            Math.abs(dSize) > 0.01 ||
+            Math.abs(dAlpha) > 0.01
+          ) {
+            needsMoreFrames = true;
+          }
+
+          // Draw individual dot
+          ctx.beginPath();
+          ctx.arc(dot.x, dot.y, dot.size, 0, Math.PI * 2);
+
+          if (isHovered && dot.alpha > 0.25) {
+            // Interactive high-contrast dark tone
+            ctx.fillStyle = `rgba(24, 24, 27, ${dot.alpha.toFixed(3)})`;
+          } else {
+            // Baseline refined warm charcoal dot
+            ctx.fillStyle = `rgba(45, 42, 38, ${dot.alpha.toFixed(3)})`;
+          }
+          ctx.fill();
+        }
+
+        if ((mouse.active && mouse.intensity > 0.001) || needsMoreFrames) {
+          animationFrameId = requestAnimationFrame(renderFrame);
+          isRunning = true;
+        } else {
+          isRunning = false;
+          animationFrameId = null;
+        }
+      }
+
+      function startAnimation() {
+        if (!isRunning) {
+          isRunning = true;
+          animationFrameId = requestAnimationFrame(renderFrame);
+        }
+      }
+
+      function renderStaticOrStart() {
+        if (mouse.active && mouse.intensity > 0.001) {
+          startAnimation();
+        } else {
+          renderFrame();
+        }
+      }
+
+      function onMouseMove(e: MouseEvent) {
+        const rect = heroSection.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+        mouse.active = true;
+        mouse.targetIntensity = 1;
+
+        if (stopTimeout) {
+          clearTimeout(stopTimeout);
+        }
+
+        // When mouse stops moving, ease back to resting state after 180ms
+        stopTimeout = window.setTimeout(() => {
+          mouse.targetIntensity = 0;
+          startAnimation();
+        }, 180);
+
+        startAnimation();
+      }
+
+      function onMouseLeave() {
+        if (stopTimeout) {
+          clearTimeout(stopTimeout);
+        }
+        mouse.active = false;
+        mouse.targetIntensity = 0;
+        mouse.x = -9999;
+        mouse.y = -9999;
+        startAnimation();
+      }
+
+      heroSection.addEventListener("mousemove", onMouseMove, { passive: true });
+      heroSection.addEventListener("mouseleave", onMouseLeave, {
+        passive: true,
+      });
+      window.addEventListener("resize", resize, { passive: true });
+
+      resize();
+    }
+
+    function setupHeroImageRotation() {
+      const heroSection = document.getElementById("hero-section");
+      const portraitImg = document.getElementById("hero-portrait-img");
+      if (!heroSection || !portraitImg) return;
+
+      let ticking = false;
+
+      function onMouseMove(e: MouseEvent) {
+        if (ticking) return;
+        ticking = true;
+
+        requestAnimationFrame(() => {
+          const rect = heroSection.getBoundingClientRect();
+          const progress = Math.max(
+            0,
+            Math.min(1, (e.clientY - rect.top) / rect.height),
+          );
+          const rotation = 10 - progress * 20;
+
+          portraitImg.style.transition =
+            "transform 0.12s cubic-bezier(0.2, 0, 0, 1)";
+          portraitImg.style.transform = `rotate(${rotation.toFixed(2)}deg)`;
+          ticking = false;
+        });
+      }
+
+      function onMouseLeave() {
+        portraitImg.style.transition =
+          "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
+        portraitImg.style.transform = "rotate(0deg)";
+      }
+
+      heroSection.addEventListener("mousemove", onMouseMove);
+      heroSection.addEventListener("mouseleave", onMouseLeave);
+    }
+
+    setupRampDotGrid();
+    setupHeroImageRotation();
+    document.addEventListener("astro:page-load", () => {
+      setupRampDotGrid();
+      setupHeroImageRotation();
+    });
+  </script>
+</Layout>

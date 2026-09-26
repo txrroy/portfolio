@@ -8,6 +8,8 @@ interface Props {
   backUrl?: string;
   backLabel?: string;
   breadcrumbs?: string[];
+  nextUrl?: string;
+  nextLabel?: string;
 }
 
 const {
@@ -17,52 +19,139 @@ const {
   backLabel = "Selected Works",
   breadcrumbs = ["Apple InfoSec", "Vanguard 3.1", "Lead Product Designer"],
 } = Astro.props;
+
+// Determine next case study URL and label automatically
+const currentPath = Astro.url.pathname.replace(/\/$/, "");
+let defaultNextUrl = "/case-study/helpnow";
+let defaultNextLabel = "HelpNow+";
+
+if (currentPath.includes("helpnow")) {
+  defaultNextUrl = "/case-study/devhub";
+  defaultNextLabel = "DevHub";
+} else if (currentPath.includes("devhub")) {
+  defaultNextUrl = "/case-study/vlp";
+  defaultNextLabel = "VLP";
+} else if (currentPath.includes("vlp")) {
+  defaultNextUrl = "/case-study/vanguard";
+  defaultNextLabel = "Project Vanguard";
+} else {
+  defaultNextUrl = "/case-study/helpnow";
+  defaultNextLabel = "HelpNow+";
+}
+
+const resolvedNextUrl = Astro.props.nextUrl || defaultNextUrl;
+const resolvedNextLabel = Astro.props.nextLabel || defaultNextLabel;
 ---
 
 <Layout title={title} description={description}>
-  <div class="min-h-screen bg-canvas text-primary antialiased font-body selection:bg-black selection:text-white">
-    <Header backUrl={backUrl} backLabel={backLabel} breadcrumbs={breadcrumbs} />
+  <div class="min-h-screen bg-canvas text-primary antialiased selection:bg-black selection:text-white">
+    <Header
+      backUrl={backUrl}
+      backLabel={backLabel}
+      breadcrumbs={breadcrumbs}
+      isCaseStudy={true}
+      nextUrl={resolvedNextUrl}
+      nextLabel={resolvedNextLabel}
+    />
     <main class="max-w-6xl mx-auto px-6 sm:px-8 pt-12 md:pt-16 pb-28">
       <slot />
     </main>
   </div>
 
-  <!-- Image Zoom Lightbox Overlay -->
+  <!-- Image Zoom Lightbox Overlay with Gallery Navigation -->
   <div
     id="image-zoom-overlay"
-    class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-300 flex flex-col items-center justify-center p-4 sm:p-8"
+    class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-300 flex flex-col items-center justify-between p-4 sm:p-6 select-none"
     role="dialog"
     aria-modal="true"
-    aria-label="Image Preview"
+    aria-label="Image Preview Gallery"
   >
-    <!-- Top Bar with Close Button -->
+    <!-- Top Bar with Title, Counter, and Close Button -->
     <div
-      class="w-full max-w-6xl flex items-center justify-between text-white font-mono text-xs mb-3 px-2"
+      class="w-full max-w-6xl flex items-center justify-between text-white font-mono text-xs mb-3 px-2 z-20"
     >
-      <span id="zoom-title" class="truncate max-w-md text-white/80">
-        Visual Inspection
-      </span>
-      <button
-        id="image-zoom-close"
-        class="px-3 py-1 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-xs transition-colors flex items-center gap-1.5 cursor-pointer"
-      >
-        <span>Close</span>
-        <kbd
-          class="text-[10px] bg-white/20 border-white/40 text-white px-1 shadow-none"
-        >ESC</kbd>
-      </button>
+      <div class="flex items-center gap-3 truncate max-w-lg">
+        <span id="zoom-title" class="truncate text-white/90 font-sans text-sm">
+          Visual Inspection
+        </span>
+        <span id="zoom-counter" class="text-white/50 text-xs shrink-0 font-mono">
+          1 / 1
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <button
+          id="image-zoom-close"
+          class="px-3 py-1 bg-white/10 hover:bg-white/20 border border-white/30 text-white rounded-full transition-colors flex items-center gap-1.5 cursor-pointer text-xs"
+        >
+          <span>Close</span>
+          <kbd
+            class="text-[10px] bg-white/20 border-white/40 text-white px-1 shadow-none rounded"
+          >ESC</kbd>
+        </button>
+      </div>
     </div>
 
-    <!-- Image Modal Viewport -->
+    <!-- Center Viewport with Floating Left / Right Navigation Arrows -->
     <div
-      class="relative max-w-6xl max-h-[85vh] w-full flex items-center justify-center overflow-hidden"
+      class="relative max-w-6xl max-h-[82vh] w-full flex-1 flex items-center justify-center overflow-hidden my-auto"
     >
+      <!-- Previous Arrow Button -->
+      <button
+        id="image-zoom-prev"
+        type="button"
+        class="absolute left-2 sm:left-4 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-white/80 hover:text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-all cursor-pointer active:scale-95 group shadow-lg"
+        title="Previous Image (Left Arrow)"
+        aria-label="Previous Image"
+      >
+        <svg
+          class="w-5 h-5 transition-transform group-hover:-translate-x-0.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M15 18l-6-6 6-6"></path>
+        </svg>
+      </button>
+
+      <!-- Full-size Image Display -->
       <img
         id="image-zoom-img"
         src=""
         alt="Full size view"
-        class="max-w-full max-h-[85vh] object-contain shadow-2xl border border-white/20"
+        class="max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg border border-white/15 transition-opacity duration-200"
       />
+
+      <!-- Next Arrow Button -->
+      <button
+        id="image-zoom-next"
+        type="button"
+        class="absolute right-2 sm:right-4 z-30 w-11 h-11 rounded-full bg-black/60 hover:bg-black/90 text-white/80 hover:text-white flex items-center justify-center backdrop-blur-md border border-white/20 transition-all cursor-pointer active:scale-95 group shadow-lg"
+        title="Next Image (Right Arrow)"
+        aria-label="Next Image"
+      >
+        <svg
+          class="w-5 h-5 transition-transform group-hover:translate-x-0.5"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M9 18l6-6-6-6"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Bottom Hint Bar -->
+    <div class="text-white/40 font-mono text-[11px] pt-2 flex items-center gap-4 z-20">
+      <span>Use <kbd class="px-1 bg-white/10 rounded">←</kbd> <kbd class="px-1 bg-white/10 rounded">→</kbd> to navigate</span>
+      <span>•</span>
+      <span><kbd class="px-1 bg-white/10 rounded">ESC</kbd> to close</span>
     </div>
   </div>
 
@@ -70,16 +159,38 @@ const {
     const overlay = document.getElementById("image-zoom-overlay");
     const zoomImg = document.getElementById("image-zoom-img") as HTMLImageElement | null;
     const zoomTitle = document.getElementById("zoom-title");
+    const zoomCounter = document.getElementById("zoom-counter");
     const closeBtn = document.getElementById("image-zoom-close");
+    const prevBtn = document.getElementById("image-zoom-prev");
+    const nextBtn = document.getElementById("image-zoom-next");
     let isZoomOpen = false;
+    let currentIndex = 0;
+    let imagesList: HTMLImageElement[] = [];
 
-    function openZoom(src: string, alt: string) {
-      if (!overlay || !zoomImg) return;
-      zoomImg.src = src;
-      zoomImg.alt = alt || "Case Study Visual";
+    function updateZoomView(index: number) {
+      if (!imagesList.length || !zoomImg) return;
+      // Seamless circular wrap
+      currentIndex = (index + imagesList.length) % imagesList.length;
+      const targetImg = imagesList[currentIndex];
+
+      zoomImg.style.opacity = "0.7";
+      zoomImg.src = targetImg.src;
+      zoomImg.alt = targetImg.alt || "Case Study Visual";
+
       if (zoomTitle) {
-        zoomTitle.textContent = alt || "Visual Inspection";
+        zoomTitle.textContent = targetImg.alt || "Visual Inspection";
       }
+      if (zoomCounter) {
+        zoomCounter.textContent = `${currentIndex + 1} / ${imagesList.length}`;
+      }
+      requestAnimationFrame(() => {
+        if (zoomImg) zoomImg.style.opacity = "1";
+      });
+    }
+
+    function openZoom(index: number) {
+      if (!overlay || !zoomImg) return;
+      updateZoomView(index);
       overlay.classList.remove("hidden");
       requestAnimationFrame(() => {
         overlay.classList.remove("opacity-0");
@@ -99,17 +210,29 @@ const {
       isZoomOpen = false;
     }
 
-    // Register all clickable images in main
-    const allImages = document.querySelectorAll("main img");
-    allImages.forEach((img) => {
-      (img as HTMLElement).style.cursor = "zoom-in";
-      img.addEventListener("click", (e) => {
-        const target = e.currentTarget as HTMLImageElement;
-        openZoom(target.src, target.alt);
+    function initImageZoom() {
+      imagesList = Array.from(document.querySelectorAll("main img")) as HTMLImageElement[];
+      imagesList.forEach((img, idx) => {
+        img.style.cursor = "zoom-in";
+        img.addEventListener("click", () => {
+          openZoom(idx);
+        });
       });
+    }
+
+    initImageZoom();
+
+    // Navigation Click listeners
+    prevBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      updateZoomView(currentIndex - 1);
     });
 
-    // Close actions
+    nextBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      updateZoomView(currentIndex + 1);
+    });
+
     closeBtn?.addEventListener("click", closeZoom);
     overlay?.addEventListener("click", (e) => {
       if (
@@ -120,10 +243,107 @@ const {
       }
     });
 
+    // Keyboard navigation: ArrowLeft, ArrowRight, Escape
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && isZoomOpen) {
+      if (!isZoomOpen) return;
+      if (e.key === "Escape") {
         closeZoom();
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        updateZoomView(currentIndex - 1);
+      } else if (e.key === "ArrowRight") {
+        e.preventDefault();
+        updateZoomView(currentIndex + 1);
       }
     });
+
+    // -----------------------------------------------------------------
+    // Section Kicker Typewriter Effect
+    // -----------------------------------------------------------------
+    function setupKickers() {
+      const allKickers = document.querySelectorAll<HTMLElement>(".kicker");
+      if (!allKickers.length) return;
+
+      // Initialize eligible kickers (exclude role, team, and outcome)
+      allKickers.forEach((kicker) => {
+        const text = kicker.textContent?.trim().toLowerCase() || "";
+        const isHeroMetadata = kicker.closest(".grid") !== null;
+        const isExcluded = isHeroMetadata || text === "role" || text === "team" || text === "outcome";
+
+        if (isExcluded) return; // Keep static and visible
+
+        if (!kicker.hasAttribute("data-text")) {
+          const raw = kicker.textContent?.trim() || "";
+          kicker.setAttribute("data-text", raw);
+          kicker.textContent = "";
+          kicker.style.opacity = "0";
+        }
+      });
+
+      function typewrite(el: HTMLElement) {
+        if (el.dataset.typed === "true") return;
+        el.dataset.typed = "true";
+
+        const text = el.getAttribute("data-text") || "";
+        if (!text) return;
+
+        el.style.opacity = "1";
+        let i = 0;
+        const charDelay = 75; // Slower, relaxed typing speed
+
+        function typeNext() {
+          if (i < text.length) {
+            el.textContent = text.slice(0, i + 1);
+            i++;
+            setTimeout(typeNext, charDelay + (Math.random() * 16 - 8));
+          }
+        }
+        typeNext();
+      }
+
+      // Trigger only when kicker reaches about 1/3 of the screen from the bottom
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target as HTMLElement;
+              typewrite(el);
+              observer.unobserve(el);
+            }
+          });
+        },
+        {
+          rootMargin: "0px 0px -33% 0px",
+          threshold: 0.1,
+        }
+      );
+
+      allKickers.forEach((kicker) => {
+        if (kicker.hasAttribute("data-text")) {
+          observer.observe(kicker);
+        }
+      });
+    }
+
+    // Run on load and on astro page swaps
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", setupKickers);
+    } else {
+      setupKickers();
+    }
+    document.addEventListener("astro:page-load", setupKickers);
   </script>
+
+  <style is:global>
+    /* Clean Typewriter Effect for Case Study Kickers (No cursor) */
+    .kicker {
+      font-family: var(--font-handwriting, "Homemade Apple", cursive) !important;
+      color: #c98c1c;
+      display: inline-flex !important;
+      align-items: center;
+      position: relative !important;
+      margin-bottom: 0.25rem;
+      min-height: 1.5rem;
+    }
+  </style>
 </Layout>

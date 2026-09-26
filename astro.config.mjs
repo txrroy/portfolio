@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const requestedTheme = process.env.THEME || 'three-hybrid';
+const requestedTheme = process.env.THEME || 'four-zelt';
 const themeMap = {
   'one-dog': 'one-dog',
   dog: 'one-dog',
@@ -17,6 +17,10 @@ const themeMap = {
   'three-hybrid': 'three-hybrid',
   hybrid: 'three-hybrid',
   '3': 'three-hybrid',
+  'four-zelt': 'four-zelt',
+  zelt: 'four-zelt',
+  four: 'four-zelt',
+  '4': 'four-zelt',
 };
 const ACTIVE_THEME = themeMap[requestedTheme] || requestedTheme;
 

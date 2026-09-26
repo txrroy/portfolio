@@ -14,34 +14,36 @@ import Header from "./Header.astro";
   <!-- HERO SECTION                                          -->
   <!-- ===================================================== -->
   <section
-    class="relative z-10 max-w-6xl mx-auto px-6 pt-32 sm:pt-40 md:pt-44 pb-20 md:pb-28"
+    id="hero-section"
+    class="relative z-10 w-full pt-32 sm:pt-40 md:pt-44 pb-20 md:pb-28"
   >
-    <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[70vh]">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center min-h-[70vh]">
       <!-- Left Narrative Rail (7 Cols) -->
       <div class="lg:col-span-7 flex flex-col text-left">
         <!-- Eyebrow & System Coordinate -->
-        <div class="flex items-center gap-3 mb-6">
+        <div class="flex items-center gap-3 mb-3.5">
           <span
-            class="font-mono text-xs font-semibold tracking-[0.2em] uppercase text-[var(--color-accent)]"
+            class="font-mono text-xs font-medium tracking-wider uppercase text-[var(--color-accent)]"
           >
             PRODUCT UX // DESIGN SYSTEMS ARCHITECT
           </span>
         </div>
 
         <!-- Main Display Headline -->
-        <h1 class="heading-display mb-8">
+        <h1 class="heading-display mb-9">
           Systematic <br class="hidden sm:block" />by Design.
         </h1>
 
         <!-- Lead Narrative -->
-        <p class="lead-text mb-8 max-w-2xl font-body">
-          Making sense of AI-powered enterprise systems, human workflows, and
-          intelligence at scale.
+        <p class="lead-text mb-9 max-w-xl font-body">
+          Making sense of AI-powered enterprise systems,<br class="hidden sm:inline" />
+          human&nbsp;workflows, and intelligence at scale.
         </p>
 
         <!-- CTA & Quick Metadata -->
-        <div class="flex flex-wrap items-center gap-6 pt-2">
-          <a href="#work" class="btn-primary px-7 py-3.5 text-base">
+        <div class="flex flex-wrap items-center gap-6">
+          <a href="#work" class="btn-primary px-7 py-3.5 text-base sm:text-lg font-semibold">
             <span>See what I built</span>
             <svg
               class="btn-link-icon"
@@ -74,74 +76,102 @@ import Header from "./Header.astro";
             >
             </div>
 
-            <!-- Rex & Tushar Image Container -->
+            <!-- Rex & Tushar Window Mask (Static Arch Frame - Does NOT rotate) -->
             <div
-              class="relative w-full h-full bg-[#eee7dd] rounded-t-[220px] overflow-hidden shadow-[0_24px_48px_-12px_rgba(27,25,23,0.18)] rotate-1 hover:rotate-0 transition-transform duration-500 z-10 border border-black/10"
+              class="relative w-full h-full bg-[#eee7dd] rounded-t-[220px] overflow-hidden shadow-[0_24px_48px_-12px_rgba(27,25,23,0.18)] z-10 border border-black/10"
             >
               <img
+                id="hero-portrait-img"
                 src="/images/rex.jpg"
                 alt="Tushar and Rex the golden retriever"
-                class="object-cover w-full h-full grayscale-[15%] hover:grayscale-0 transition-all duration-700"
+                class="object-cover w-full h-full origin-center grayscale-[15%] hover:grayscale-0 transition-all duration-700 pointer-events-none"
+                style="transform: rotate(0deg);"
               />
             </div>
           </div>
 
           <!-- ===================================================== -->
-          <!-- UNEXPECTED GRAPHIC DEVICE: Engineering Telemetry Tag  -->
-          <!-- Deliberate imperfection: Tilted spec ticket with tape -->
-          <!-- Docked below the portrait to keep photo 100% clear    -->
+          <!-- CO-PILOT DOG TAG: Rex & Tushar Physical Identifier   -->
+          <!-- Stamped metal dog tag with grommet & ball-chain ring -->
           <!-- ===================================================== -->
           <div
             id="telemetry-ticket"
-            class="spec-ticket relative mt-5 w-full p-3 sm:p-3.5 rounded-lg border border-black/15 shadow-[0_8px_20px_rgba(0,0,0,0.06)] z-20 transform -rotate-1 hover:rotate-0 transition-all duration-300 cursor-pointer select-none"
+            class="dog-tag relative mt-6 w-full p-2.5 sm:p-3 rounded-[22px] z-20 transform -rotate-1 hover:rotate-0 hover:scale-[1.01] transition-all duration-300 cursor-pointer select-none"
+            title="Click dog tag to cycle Rex's status"
           >
-            <!-- Translucent Frosted Tape Detail at Top -->
+            <!-- Hanging Ball Chain / Ring Connector from Portrait Frame -->
             <div
-              class="w-12 h-3 bg-white/80 backdrop-blur-xs absolute -top-2 left-1/2 -translate-x-1/2 shadow-xs -rotate-1 border border-black/5 pointer-events-none"
+              class="absolute -top-4.5 left-7 flex flex-col items-center pointer-events-none z-30"
             >
+              <svg width="22" height="24" viewBox="0 0 22 24" fill="none" class="drop-shadow-xs">
+                <!-- Outer Metallic Split Ring -->
+                <ellipse cx="11" cy="12" rx="7" ry="9.5" stroke="#78716c" stroke-width="2.5" fill="none" />
+                <ellipse cx="11" cy="12" rx="7" ry="9.5" stroke="#d6d3d1" stroke-width="1" fill="none" />
+                <!-- Small Chain Bead at Joint -->
+                <circle cx="11" cy="2" r="2.2" fill="#a8a29e" stroke="#57534e" stroke-width="0.8" />
+              </svg>
             </div>
 
-            <div
-              class="flex items-center justify-between font-mono text-[9px] uppercase tracking-widest text-black/50 pb-1.5 border-b border-black/10"
-            >
-              <span>FIELD NOTES // 01</span>
-              <span>CAL: PASS</span>
-            </div>
-
-            <div class="pt-2 pb-1 space-y-1 font-mono text-[11px]">
-              <div class="flex items-center justify-between text-black/75">
-                <span class="text-[9px] text-black/45">ROLE:</span>
-                <span class="font-bold">Staff Product Designer</span>
-              </div>
-              <div class="flex items-center justify-between text-black/75">
-                <span class="text-[9px] text-black/45">LOCATION:</span>
-                <span>Fremont, CA</span>
-              </div>
-              <div class="flex items-center justify-between text-black/75">
-                <span class="text-[9px] text-black/45">CO-PILOT:</span>
-                <span class="text-[var(--color-accent)] font-bold"
-                  >Rex [Golden Retriever]</span
-                >
-              </div>
-            </div>
-
-            <!-- Interactive Micro-Interaction for Rex -->
-            <div
-              class="mt-2 pt-1.5 border-t border-dashed border-black/15 font-mono text-[9px] flex items-center justify-between text-black/60 group"
-            >
-              <span id="rex-status-text" class="truncate">
-                ● STATUS: ALL SYSTEMS NOMINAL
-              </span>
-              <span
-                class="text-[9px] text-[var(--color-accent)] opacity-60 group-hover:opacity-100 transition-opacity"
+            <!-- Stamped Inner Plate (Recessed Dog Tag Metal) -->
+            <div class="dog-tag-inner rounded-[16px] p-3 sm:p-3.5 border border-black/10">
+              <!-- Top Row: Grommet Eyelet & Tag Serial -->
+              <div
+                class="flex items-center justify-between pb-2 border-b border-black/10 font-mono text-[9px] uppercase tracking-wider text-black/55"
               >
-                [TAP]
-              </span>
+                <div class="flex items-center gap-2">
+                  <!-- Metallic Grommet Hole (Hole Punch with Rivet) -->
+                  <div
+                    class="dog-tag-grommet w-3.5 h-3.5 rounded-full p-0.5 flex items-center justify-center shrink-0"
+                  >
+                    <div
+                      class="w-1.5 h-1.5 rounded-full bg-[var(--color-canvas)] shadow-[inset_0_1px_2px_rgba(0,0,0,0.6)]"
+                    >
+                    </div>
+                  </div>
+                  <span class="font-bold tracking-widest text-black/70">TAG // REX-01</span>
+                </div>
+                <span class="font-bold text-[var(--color-accent)] tracking-widest">K9 CO-PILOT</span>
+              </div>
+
+              <!-- Stamped Spec Info -->
+              <div class="py-2 space-y-1 font-mono text-[11px]">
+                <div class="flex items-center justify-between text-black/80">
+                  <span class="text-[9px] text-black/45 tracking-wider">UNIT:</span>
+                  <span class="font-bold tracking-tight">Tushar & Rex</span>
+                </div>
+                <div class="flex items-center justify-between text-black/80">
+                  <span class="text-[9px] text-black/45 tracking-wider">ROLE:</span>
+                  <span class="font-semibold">Staff Product Designer</span>
+                </div>
+                <div class="flex items-center justify-between text-black/80">
+                  <span class="text-[9px] text-black/45 tracking-wider">BASE:</span>
+                  <span>Fremont, CA</span>
+                </div>
+                <div class="flex items-center justify-between text-black/80">
+                  <span class="text-[9px] text-black/45 tracking-wider">BREED:</span>
+                  <span class="text-[var(--color-accent)] font-bold">Golden Retriever 🐾</span>
+                </div>
+              </div>
+
+              <!-- Interactive Micro-Interaction for Rex (Cycles on Click) -->
+              <div
+                class="pt-2 border-t border-dashed border-black/15 font-mono text-[9.5px] flex items-center justify-between text-black/60 group"
+              >
+                <span id="rex-status-text" class="truncate font-medium">
+                  ● STATUS: ALL SYSTEMS NOMINAL
+                </span>
+                <span
+                  class="text-[9px] font-bold text-[var(--color-accent)] px-1.5 py-0.5 rounded bg-[var(--color-accent)]/10 border border-[var(--color-accent)]/25 shrink-0 ml-2 group-hover:bg-[var(--color-accent)] group-hover:text-white transition-colors"
+                >
+                  TAP
+                </span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
   </section>
 
   <!-- ===================================================== -->
@@ -159,7 +189,7 @@ import Header from "./Header.astro";
             >SYSTEMS & ARCHITECTURE</span
           >
           <h2
-            class="m-0 font-heading text-3xl sm:text-4xl md:text-5xl font-light text-[var(--color-text-primary)]"
+            class="m-0 font-heading text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight text-[var(--color-text-primary)]"
           >
             Selected Works
           </h2>
@@ -193,7 +223,7 @@ import Header from "./Header.astro";
 
               <!-- Main Title -->
               <h3
-                class="font-heading text-3xl md:text-4xl font-light text-[var(--color-text-primary)] mb-4 leading-tight"
+                class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-text-primary)] mb-4 leading-tight"
               >
                 Making Security Work Measurable
               </h3>
@@ -295,7 +325,7 @@ import Header from "./Header.astro";
               </div>
 
               <h3
-                class="font-heading text-3xl md:text-4xl font-light text-[var(--color-text-primary)] mb-4 leading-tight"
+                class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-text-primary)] mb-4 leading-tight"
               >
                 Workplace Support, Humanized
               </h3>
@@ -379,7 +409,7 @@ import Header from "./Header.astro";
               </div>
 
               <h3
-                class="font-heading text-3xl md:text-4xl font-light text-[var(--color-text-primary)] mb-4 leading-tight"
+                class="font-heading text-3xl md:text-4xl font-bold tracking-tight text-[var(--color-text-primary)] mb-4 leading-tight"
               >
                 Developer Ecosystem, Unified
               </h3>
@@ -463,7 +493,7 @@ import Header from "./Header.astro";
             >PROFILE // PHILOSOPHY</span
           >
           <h2
-            class="font-heading text-4xl sm:text-5xl font-light text-[var(--color-text-primary)] mb-6"
+            class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-[var(--color-text-primary)] mb-6"
           >
             Rooted in Purpose <br class="hidden sm:block" />and Play.
           </h2>
@@ -605,7 +635,7 @@ import Header from "./Header.astro";
       </div>
 
       <h2
-        class="font-heading text-4xl sm:text-5xl font-light text-[var(--color-text-primary)] mb-14"
+        class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-[var(--color-text-primary)] mb-14"
       >
         Beyond the Product.
       </h2>
@@ -617,7 +647,7 @@ import Header from "./Header.astro";
           >
             HOST & PRODUCER
           </span>
-          <h3 class="font-heading text-3xl font-light text-white mb-4">
+          <h3 class="font-heading text-3xl font-bold tracking-tight text-white mb-4">
             The Enterprise Design Podcast
           </h3>
           <p class="font-body text-base text-white/80 leading-relaxed mb-8">
@@ -669,7 +699,7 @@ import Header from "./Header.astro";
             >INITIALIZE DIALOGUE</span
           >
           <h2
-            class="font-heading text-4xl sm:text-5xl font-light text-white mb-6 leading-tight"
+            class="font-heading text-4xl sm:text-5xl font-bold tracking-tight text-white mb-6 leading-tight"
           >
             Let's Make <br class="hidden sm:block" />It Happen.
           </h2>
@@ -771,7 +801,44 @@ import Header from "./Header.astro";
       });
     }
 
+    function setupHeroImageRotation() {
+      const heroSection = document.getElementById("hero-section");
+      const portraitImg = document.getElementById("hero-portrait-img");
+      if (!heroSection || !portraitImg) return;
+
+      let ticking = false;
+
+      function onMouseMove(e: MouseEvent) {
+        if (ticking) return;
+        ticking = true;
+
+        requestAnimationFrame(() => {
+          const rect = heroSection.getBoundingClientRect();
+          // Progress: 0 at top of hero/screen, 1 at bottom of hero section
+          const progress = Math.max(0, Math.min(1, (e.clientY - rect.top) / rect.height));
+          // Flipped direction: top of screen = -10deg or +10deg
+          const rotation = 10 - progress * 20;
+
+          portraitImg.style.transition = "transform 0.12s cubic-bezier(0.2, 0, 0, 1)";
+          portraitImg.style.transform = `rotate(${rotation.toFixed(2)}deg)`;
+          ticking = false;
+        });
+      }
+
+      function onMouseLeave() {
+        portraitImg.style.transition = "transform 0.6s cubic-bezier(0.25, 1, 0.5, 1)";
+        portraitImg.style.transform = "rotate(0deg)";
+      }
+
+      heroSection.addEventListener("mousemove", onMouseMove);
+      heroSection.addEventListener("mouseleave", onMouseLeave);
+    }
+
     setupTelemetryTicket();
-    document.addEventListener("astro:page-load", setupTelemetryTicket);
+    setupHeroImageRotation();
+    document.addEventListener("astro:page-load", () => {
+      setupTelemetryTicket();
+      setupHeroImageRotation();
+    });
   </script>
 </Layout>

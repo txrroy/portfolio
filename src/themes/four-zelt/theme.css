@@ -1,0 +1,334 @@
+@import "tailwindcss";
+
+@theme {
+    /* -------------------------------------------------- */
+    /* Zelt Fonts: DM Sans + Space Mono + Homemade Apple  */
+    /* -------------------------------------------------- */
+    --font-heading: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-prose: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-mono: "Space Mono", monospace;
+    --font-handwriting: "Homemade Apple", cursive;
+
+    /* Legacy Aliases */
+    --font-serif: var(--font-heading);
+    --font-sans: var(--font-body);
+    --font-space: var(--font-mono);
+
+    /* -------------------------------------------------- */
+    /* Zelt Color Palette: Warm Cream, Pure White, Slate, */
+    /* and Sunny Saffron Accent                           */
+    /* -------------------------------------------------- */
+    --color-canvas: #f8f6f0;
+    --color-canvas-alt: #ffffff;
+    --color-surface: #ffffff;
+    --color-surface-subtle: #f3f0e8;
+
+    /* Dark Slate / Charcoal for UI Windows & Cards */
+    --color-slate-bg: #232221;
+    --color-slate-card: #2a2928;
+    --color-slate-border: rgba(255, 255, 255, 0.1);
+    --color-slate-text: #f4f3ef;
+    --color-slate-muted: #a19f99;
+
+    /* Text Colors */
+    --color-text-primary: #18181b;
+    --color-text-secondary: #52525b;
+    --color-text-muted: #71717a;
+
+    /* Borders */
+    --color-border-subtle: rgba(24, 24, 27, 0.08);
+    --color-border-default: rgba(24, 24, 27, 0.14);
+    --color-border-dashed: rgba(24, 24, 27, 0.25);
+
+    /* Zelt Signature Saffron Yellow / Golden Amber */
+    --color-accent: #f6c867;
+    --color-accent-hover: #ebb950;
+    --color-accent-dark: #c98c1c;
+    --color-accent-subtle: rgba(246, 200, 103, 0.18);
+
+    /* System Status Badges */
+    --color-sys-green: #10b981;
+    --color-sys-amber: #f59e0b;
+    --color-sys-cyan: #06b6d4;
+
+    /* Legacy Color Aliases */
+    --color-bg-primary: #f8f6f0;
+}
+
+@layer base {
+    html {
+        scroll-behavior: smooth;
+        background-color: var(--color-canvas);
+        color: var(--color-text-primary);
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-family: var(--font-body), sans-serif;
+    }
+
+    body {
+        font-family: var(--font-body), sans-serif;
+        background-color: var(--color-canvas);
+        color: var(--color-text-primary);
+    }
+
+    /* Eyebrow Style with Monospace Precision */
+    .eyebrow {
+        @apply font-mono text-xs uppercase tracking-wider font-medium text-[var(--color-text-secondary)] block mb-3;
+    }
+
+    h1 {
+        @apply font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-[var(--color-text-primary)] leading-[1.05] mb-6 tracking-tight;
+    }
+
+    h2 {
+        @apply font-heading text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--color-text-primary)] leading-tight mb-8 tracking-tight;
+    }
+
+    h3 {
+        @apply font-heading text-xl md:text-2xl font-semibold text-[var(--color-text-primary)] mb-4;
+    }
+
+    h4 {
+        @apply font-heading text-lg sm:text-xl font-bold text-[var(--color-text-primary)] mb-1.5;
+    }
+
+    p {
+        @apply text-base md:text-lg text-[var(--color-text-secondary)] leading-relaxed max-w-[65ch] mb-6;
+    }
+
+    a {
+        @apply text-[var(--color-text-primary)] hover:text-[#c98c1c] transition-colors duration-200;
+    }
+
+    strong,
+    b {
+        @apply font-semibold text-[var(--color-text-primary)];
+    }
+
+    blockquote {
+        @apply my-8 border-l-3 border-[#f6c867] pl-6 font-heading text-2xl text-[var(--color-text-primary)] italic leading-snug;
+    }
+
+    ul {
+        @apply list-disc list-outside ml-5 mb-6 text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed;
+    }
+
+    ol {
+        @apply list-decimal list-outside ml-6 mb-6 text-[var(--color-text-secondary)] text-base md:text-lg leading-relaxed;
+    }
+
+    li {
+        @apply pl-1 mb-2;
+    }
+
+    li::marker {
+        @apply text-[#c98c1c];
+    }
+
+    /* Figures & Media Containers */
+    figure {
+        @apply p-3 my-8 block relative border border-black/10;
+        background-color: var(--color-surface);
+        border-radius: var(--radius-xl);
+    }
+
+    figure>div.media-frame,
+    figure>.media-frame {
+        @apply overflow-hidden relative rounded-lg;
+    }
+
+    figure img {
+        @apply w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 block rounded-lg border border-black/10;
+    }
+
+    figure:hover img {
+        transform: scale(1.008);
+    }
+
+    figcaption {
+        @apply font-mono text-xs md:text-[13px] text-[var(--color-text-secondary)] tracking-wider mt-2.5 text-left block;
+    }
+
+    /* Tables & Tabular Data with Schematics */
+    table {
+        @apply w-full text-left font-sans text-sm md:text-base border-separate border-spacing-0 border border-black/10 bg-white my-8 rounded-xl overflow-hidden;
+    }
+
+    thead {
+        @apply bg-[#f5f0e8] border-b border-black/10 font-mono text-xs text-black/75 tracking-wider;
+    }
+
+    th {
+        @apply p-4 font-bold;
+    }
+
+    td {
+        @apply p-4 border-t border-black/10 font-sans;
+    }
+
+    /* Technical Inline Elements */
+    code {
+        @apply font-mono text-xs bg-black/5 px-2 py-0.5 rounded border border-black/10 text-[var(--color-text-primary)];
+    }
+
+    kbd {
+        @apply font-mono text-[11px] bg-white border border-black/20 px-1.5 py-0.5 rounded text-black font-semibold;
+        box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.2);
+    }
+
+    /* Surface Cards */
+    aside {
+        @apply bg-white border border-black/10 p-6 sm:p-8 rounded-2xl relative transition-all duration-300;
+    }
+}
+
+@layer components {
+
+    /* Editorial Case Study Framework */
+    .kicker {
+        font-family: var(--font-handwriting);
+        @apply text-base sm:text-lg text-[#c98c1c] inline-block mb-1 relative;
+    }
+
+    .case-section {
+        @apply mb-20 md:mb-28 border-b border-dashed border-black/15 pb-16 relative;
+    }
+
+    .case-grid {
+        @apply grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12 items-start;
+    }
+
+    .case-sidebar {
+        @apply md:col-span-3 md:sticky md:top-24;
+    }
+
+    .case-sidebar h2 {
+        @apply m-0 text-2xl sm:text-3xl font-bold leading-snug tracking-tight text-[var(--color-text-primary)] font-heading;
+    }
+
+    .case-content {
+        @apply md:col-span-9 space-y-6;
+    }
+
+    /* Hybrid Cards */
+    .card,
+    .scorecard-card,
+    .dialogue-box {
+        @apply bg-white border border-black/10 p-6 sm:p-8 rounded-2xl relative transition-all duration-300 text-sm md:text-base font-sans;
+    }
+
+    .card p,
+    .dialogue-box p {
+        @apply text-sm md:text-base leading-relaxed mb-3 max-w-none text-[var(--color-text-secondary)];
+    }
+
+    .card p:last-child,
+    .dialogue-box p:last-child {
+        @apply mb-0;
+    }
+
+    .card ul,
+    .card ol {
+        @apply text-sm md:text-base leading-relaxed mb-3;
+    }
+
+    .card ul:last-child,
+    .card ol:last-child {
+        @apply mb-0;
+    }
+
+    /* Systems Badges & Schematics */
+    .sys-badge {
+        @apply inline-flex items-center gap-1.5 font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md bg-black/5 text-[var(--color-text-secondary)] border border-black/10 font-bold;
+    }
+
+    .sys-badge-accent {
+        @apply inline-flex items-center gap-1.5 font-mono text-[10px] tracking-wider uppercase px-2.5 py-1 rounded-md bg-[#f6c867]/20 text-[#925f0e] border border-[#f6c867]/40 font-bold;
+    }
+
+    .telemetry-dot {
+        @apply w-1.5 h-1.5 rounded-full animate-pulse;
+    }
+
+    /* Metric Display */
+    .metric-item {
+        @apply flex flex-col p-4 rounded-xl bg-black/[0.02] border border-black/5;
+    }
+
+    .metric-value {
+        @apply font-heading text-3xl md:text-4xl font-normal text-[var(--color-text-primary)] mb-1;
+    }
+
+    .metric-label {
+        @apply font-mono tracking-[0.15em] text-[11px] font-bold text-[var(--color-text-secondary)] mb-1.5 uppercase;
+    }
+
+    .metric-desc {
+        @apply font-sans text-xs sm:text-sm text-[var(--color-text-secondary)] leading-normal;
+    }
+
+    /* Interactive Timeline */
+    .timeline {
+        @apply relative border-l border-dashed border-[var(--color-border-dashed)] ml-4 md:ml-8 pl-8 md:pl-12 space-y-12;
+    }
+
+    .timeline-item {
+        @apply relative;
+    }
+
+    .timeline-marker {
+        @apply absolute -left-[37px] md:-left-[53px] top-6 w-3 h-3 bg-white border-2 border-[#f6c867] rounded-full z-10;
+    }
+
+    .timeline-item.current .timeline-marker {
+        @apply bg-[#f6c867];
+        box-shadow: 0 0 8px rgba(246, 200, 103, 0.6);
+    }
+
+    .timeline-card {
+        @apply bg-white/80 p-6 md:p-8 rounded-2xl border border-black/10 transition-all duration-300 hover:border-[#f6c867];
+    }
+
+    .timeline-year {
+        @apply font-mono text-xs tracking-widest text-[var(--color-text-secondary)] mb-2 uppercase block;
+    }
+
+    /* Primary & Secondary Action Buttons */
+    button.primary,
+    .btn-primary,
+    .btn-zelt-primary {
+        @apply inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-full font-medium text-sm text-neutral-900 bg-[#f6c867] hover:bg-[#ebb950] active:scale-[0.98] shadow-xs hover:shadow-sm transition-all duration-200 cursor-pointer no-underline;
+    }
+
+    button.secondary,
+    .btn-secondary,
+    .btn-zelt-secondary {
+        @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-full font-medium text-sm text-neutral-800 bg-white hover:bg-neutral-50 border border-black/10 shadow-xs hover:shadow-sm transition-all duration-200 cursor-pointer no-underline;
+    }
+
+    /* Zelt Dark Slate UI Tablet Container */
+    .zelt-slate-window {
+        @apply bg-[#232221] text-[#f4f3ef] rounded-[28px] p-6 sm:p-7 border border-white/10 relative overflow-hidden;
+        box-shadow: 0 24px 50px -12px rgba(27, 25, 23, 0.3);
+    }
+
+    /* Ramp-style interactive dot grid canvas mask */
+    #hero-dot-grid {
+        mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, black 40%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 90% 80% at 50% 45%, black 40%, transparent 100%);
+    }
+}
+
+/* ==========================================================================
+   Typewriter Effect for Section Kickers (No cursor)
+   ========================================================================== */
+.kicker {
+    font-family: var(--font-handwriting);
+    color: #c98c1c;
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 0.25rem;
+    min-height: 1.5rem;
+}

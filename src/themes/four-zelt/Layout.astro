@@ -1,0 +1,47 @@
+---
+import "./theme.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Tushar Roy – Enterprise Systems & Product Design",
+  description = "Staff Product Designer crafting AI-powered enterprise systems and high-leverage workflows.",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.tusharroy.com" />
+    <meta
+      property="og:image"
+      content="https://www.tusharroy.com/images/logo-tr-banner.jpg"
+    />
+
+    <!-- Google Fonts: DM Sans & Space Mono -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300..900;1,9..40,300..900&family=Homemade+Apple&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>{title}</title>
+  </head>
+  <body class="bg-[var(--color-canvas)] text-[var(--color-text-primary)] antialiased selection:bg-[#f6c867] selection:text-neutral-900">
+    <slot />
+  </body>
+</html>

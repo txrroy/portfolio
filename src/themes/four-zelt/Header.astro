@@ -1,0 +1,497 @@
+---
+interface Props {
+  backUrl?: string;
+  backLabel?: string;
+  breadcrumbs?: string[];
+  isCaseStudy?: boolean;
+  nextUrl?: string;
+  nextLabel?: string;
+}
+
+const {
+  backUrl = "/",
+  backLabel = "Selected Works",
+  breadcrumbs = [],
+  isCaseStudy = false,
+  nextUrl = "/case-study/helpnow",
+  nextLabel = "HelpNow+",
+} = Astro.props;
+
+const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathname.includes('/case-study/');
+---
+
+<nav
+  id="navbar"
+  class="fixed top-5 z-50 bg-[#faf8f2]/95 backdrop-blur-xl border border-black/12 overflow-hidden rounded-[24px] shadow-[0_8px_30px_rgba(27,25,23,0.06),0_1px_2px_rgba(0,0,0,0.04)]"
+  data-state="closed"
+  data-case-study={isCaseStudyPage ? "true" : "false"}
+  data-scrolled="false"
+>
+  <!-- 1. Default View: Content-Hugging Identity & Navigation -->
+  <div
+    id="nav-default-view"
+    class="flex items-center gap-2.5 sm:gap-3.5 px-3 py-1.5 w-auto whitespace-nowrap transition-all duration-300"
+  >
+    <!-- Left: Identity / Back Link -->
+    <a
+      href={breadcrumbs.length > 0 ? backUrl : "/"}
+      id="brand-link"
+      class="flex items-center gap-2 text-[var(--color-text-primary)] hover:opacity-80 transition-opacity whitespace-nowrap no-underline group/brand"
+    >
+      <div
+        class="relative w-6.5 h-6.5 sm:w-7 sm:h-7 rounded-full overflow-hidden flex items-center justify-center shrink-0"
+      >
+        <!-- Favicon -->
+        <img
+          id="icon-logo"
+          src="/images/favicon.png"
+          alt="Tushar Roy"
+          class="absolute inset-0 w-full h-full object-cover transition-opacity duration-300 opacity-100"
+        />
+
+        <!-- Arrow Up Icon (On Scroll for non-casestudy pages) -->
+        <svg
+          id="icon-arrow"
+          class="absolute inset-0 m-auto translate-y-8 opacity-0 transition-all duration-300"
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="var(--color-text-primary)"
+          stroke-width="2.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 19V5"></path>
+          <path d="M5 12l7-7 7 7"></path>
+        </svg>
+      </div>
+
+      <span
+        class="nav-text font-heading text-sm sm:text-base font-bold tracking-tight overflow-hidden transition-all duration-500 text-[var(--color-text-primary)]"
+      >
+        {breadcrumbs.length > 0 ? (breadcrumbs[1] || "Tushar Roy") : "Tushar Roy"}
+      </span>
+    </a>
+
+    <!-- Center / Status Indicator (Only on Subpages / Case Studies) -->
+    {breadcrumbs.length > 0 && (
+      <>
+        <div class="nav-divider hidden md:block w-px h-3.5 bg-black/15"></div>
+        <div
+          class="nav-status hidden md:flex items-center text-xs font-mono text-[var(--color-text-secondary)] overflow-hidden transition-all duration-500"
+        >
+          <span class="text-black/60 truncate">
+            {breadcrumbs[0]} • {breadcrumbs[2]}
+          </span>
+        </div>
+      </>
+    )}
+
+    <!-- Right: Quick Navigation (Desktop for Homepage) -->
+    {breadcrumbs.length === 0 && (
+      <>
+        <div class="nav-divider hidden sm:block w-px h-3.5 bg-black/15"></div>
+        <div class="hidden sm:flex items-center gap-3 text-xs font-mono tracking-wider">
+          <a href="#work" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
+            <span class="text-black/40 mr-0.5">01.</span>WORK
+          </a>
+          <a href="#about" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
+            <span class="text-black/40 mr-0.5">02.</span>ABOUT
+          </a>
+          <a href="#podcast" class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline">
+            <span class="text-black/40 mr-0.5">03.</span>PODCAST
+          </a>
+        </div>
+      </>
+    )}
+
+    <!-- Divider before Hamburger -->
+    <div class="nav-divider w-px h-3.5 bg-black/15"></div>
+
+    <!-- Hamburger Button -->
+    <button
+      id="hamburger"
+      class="nav-hamburger flex flex-col justify-center gap-[4px] w-7 h-7 group p-1 hover:bg-black/5 rounded-full transition-colors relative cursor-pointer overflow-hidden duration-500 shrink-0"
+      aria-label="Toggle Menu"
+    >
+      <span
+        class="w-3.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 origin-center group-[.active]:rotate-45 group-[.active]:translate-y-[6px]"
+      ></span>
+      <span
+        class="w-3.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 group-[.active]:opacity-0"
+      ></span>
+      <span
+        class="w-3.5 mx-auto h-0.5 bg-[var(--color-text-primary)] transition-all duration-300 origin-center group-[.active]:-rotate-45 group-[.active]:-translate-y-[6px]"
+      ></span>
+    </button>
+  </div>
+
+  <!-- 2. Compact Scrolled Case Study View (3 Icons with Hover Text Reveals) -->
+  {isCaseStudyPage && (
+    <div
+      id="nav-scrolled-casestudy"
+      class="hidden items-center gap-1.5 px-2 py-1.5 w-auto whitespace-nowrap transition-all duration-300"
+    >
+      <!-- 1. Favicon -> Back to Home -->
+      <a
+        href="/"
+        class="group/item flex items-center gap-1.5 p-1 rounded-full hover:bg-black/6 transition-all duration-300 no-underline text-[var(--color-text-primary)]"
+        title="back to home"
+        aria-label="back to home"
+      >
+        <img
+          src="/images/favicon.png"
+          alt="Home"
+          class="w-6 h-6 rounded-full object-cover shrink-0 transition-transform group-hover/item:scale-105"
+        />
+        <span class="max-w-0 opacity-0 group-hover/item:max-w-[120px] group-hover/item:opacity-100 group-hover/item:pr-2 transition-all duration-300 ease-out overflow-hidden text-xs font-mono font-medium text-[var(--color-text-secondary)] whitespace-nowrap">
+          back to home
+        </span>
+      </a>
+
+      <!-- Divider -->
+      <div class="w-px h-3.5 bg-black/15 shrink-0"></div>
+
+      <!-- 2. Top Arrow -> Top of Page -->
+      <button
+        id="btn-scroll-top"
+        type="button"
+        class="group/item flex items-center gap-1.5 p-1 rounded-full hover:bg-black/6 transition-all duration-300 cursor-pointer text-[var(--color-text-primary)]"
+        title="top of page"
+        aria-label="top of page"
+      >
+        <span class="w-6 h-6 rounded-full flex items-center justify-center shrink-0">
+          <svg
+            class="w-4 h-4 transition-transform group-hover/item:-translate-y-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M12 19V5"></path>
+            <path d="M5 12l7-7 7 7"></path>
+          </svg>
+        </span>
+        <span class="max-w-0 opacity-0 group-hover/item:max-w-[120px] group-hover/item:opacity-100 group-hover/item:pr-2 transition-all duration-300 ease-out overflow-hidden text-xs font-mono font-medium text-[var(--color-text-secondary)] whitespace-nowrap">
+          top of page
+        </span>
+      </button>
+
+      <!-- Divider -->
+      <div class="w-px h-3.5 bg-black/15 shrink-0"></div>
+
+      <!-- 3. Next Arrow -> Next Case Study -->
+      <a
+        href={nextUrl}
+        class="group/item flex items-center gap-1.5 p-1 rounded-full hover:bg-black/6 transition-all duration-300 no-underline text-[var(--color-text-primary)]"
+        title="next case study"
+        aria-label="next case study"
+      >
+        <span class="w-6 h-6 rounded-full flex items-center justify-center shrink-0">
+          <svg
+            class="w-4 h-4 transition-transform group-hover/item:translate-x-0.5"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2.3"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <path d="M5 12h14"></path>
+            <path d="M12 5l7 7-7 7"></path>
+          </svg>
+        </span>
+        <span class="max-w-0 opacity-0 group-hover/item:max-w-[140px] group-hover/item:opacity-100 group-hover/item:pr-2 transition-all duration-300 ease-out overflow-hidden text-xs font-mono font-medium text-[var(--color-text-secondary)] whitespace-nowrap">
+          next case study
+        </span>
+      </a>
+    </div>
+  )}
+
+  <!-- Expanded Drawer: System Menu & Telemetry -->
+  <div
+    id="nav-wrapper"
+    class="grid grid-rows-[0fr] transition-[grid-template-rows] duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]"
+  >
+    <div class="overflow-hidden">
+      <div
+        id="nav-content"
+        class="px-6 pb-6 pt-2 flex flex-col gap-5 opacity-0 transition-opacity duration-300 delay-100"
+      >
+        <div class="h-px bg-black/10 my-1"></div>
+
+        <!-- Main Links: 3 Case Studies + 1 Podcast (Clean Editorial Index) -->
+        <nav class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs pt-1">
+          <!-- Case Study 01: Project Vanguard -->
+          <a
+            href="/case-study/vanguard"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>01 // APPLE INFOSEC</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Project Vanguard</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Security Metrics & BI Platform</span>
+          </a>
+
+          <!-- Case Study 02: HelpNow+ -->
+          <a
+            href="/case-study/helpnow"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>02 // VMWARE</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">HelpNow+</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Omnichannel Support PWA</span>
+          </a>
+
+          <!-- Case Study 03: DevHub -->
+          <a
+            href="/case-study/devhub"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>03 // VMWARE</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">DevHub</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">Developer Tooling Ecosystem</span>
+          </a>
+
+          <!-- Feature 04: Enterprise Design Podcast -->
+          <a
+            href="/#podcast"
+            class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
+          >
+            <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
+              <span>04 // PODCAST</span>
+              <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
+            </div>
+            <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Enterprise Design</span>
+            <span class="font-sans text-xs text-black/55 leading-tight">12-Episode Candid Series</span>
+          </a>
+        </nav>
+
+        <!-- Connect Links -->
+        <div class="flex items-center justify-between pt-2 border-t border-black/10 text-xs font-mono">
+          <a
+            href="https://www.linkedin.com/in/tusharroy"
+            target="_blank"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors no-underline flex items-center gap-1.5"
+          >
+            <span>↗</span>
+            <span>LinkedIn</span>
+          </a>
+          <a
+            href="https://adplist.org/mentors/tushar-roy"
+            target="_blank"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors no-underline flex items-center gap-1.5"
+          >
+            <span>↗</span>
+            <span>Mentorship (ADPList)</span>
+          </a>
+          <a
+            href="mailto:contact@tusharroy.com"
+            class="text-[var(--color-text-primary)] hover:text-[var(--color-accent)] transition-colors no-underline flex items-center gap-1.5"
+          >
+            <span>✉</span>
+            <span>Contact</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Backdrop -->
+<div
+  id="backdrop"
+  class="fixed inset-0 bg-black/20 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"
+>
+</div>
+
+<style>
+  #navbar {
+    left: 50%;
+    transform: translateX(-50%);
+    width: max-content;
+    max-width: 92vw;
+    transition: left 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                transform 0.45s cubic-bezier(0.25, 1, 0.5, 1),
+                width 0.35s ease,
+                border-radius 0.35s ease,
+                box-shadow 0.35s ease,
+                background-color 0.3s ease;
+  }
+
+  /* When drawer is closed, hide drawer wrapper completely so its content never forces extra horizontal width */
+  #navbar:not([data-state="open"]) #nav-wrapper {
+    display: none !important;
+  }
+
+  #navbar[data-state="open"] #nav-wrapper {
+    display: grid !important;
+  }
+
+  #navbar[data-state="open"] {
+    width: min(92vw, 560px) !important;
+  }
+
+  /* When scrolled on case study and drawer is closed: dock to left edge and hug 3 icons */
+  #navbar[data-case-study="true"][data-scrolled="true"]:not([data-state="open"]) {
+    left: 1rem;
+    transform: translateX(0);
+    width: max-content !important;
+    border-radius: 9999px;
+    box-shadow: 0 10px 25px -4px rgba(27, 25, 23, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+  }
+
+  @media (min-width: 640px) {
+    #navbar[data-case-study="true"][data-scrolled="true"]:not([data-state="open"]) {
+      left: 1.5rem;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    #navbar[data-case-study="true"][data-scrolled="true"]:not([data-state="open"]) {
+      left: 2rem;
+    }
+  }
+
+  /* View toggling between default view and compact left-docked view */
+  #navbar[data-case-study="true"][data-scrolled="true"]:not([data-state="open"]) #nav-default-view {
+    display: none !important;
+  }
+
+  #navbar[data-case-study="true"][data-scrolled="true"]:not([data-state="open"]) #nav-scrolled-casestudy {
+    display: flex !important;
+  }
+</style>
+
+<script>
+  function setupNav() {
+    const navbar = document.getElementById("navbar");
+    const hamburger = document.getElementById("hamburger");
+    const backdrop = document.getElementById("backdrop");
+    const navWrapper = document.getElementById("nav-wrapper");
+    const navContent = document.getElementById("nav-content");
+    const menuLinks = document.querySelectorAll(".menu-link");
+    const iconLogo = document.getElementById("icon-logo");
+    const iconArrow = document.getElementById("icon-arrow");
+    const brandLink = document.getElementById("brand-link");
+    const btnScrollTop = document.getElementById("btn-scroll-top");
+    const navStatus = document.querySelector(".nav-status") as HTMLElement | null;
+    const navBadge = document.querySelector(".nav-badge") as HTMLElement | null;
+
+    const isCaseStudy = navbar?.getAttribute("data-case-study") === "true";
+    let isMenuOpen = false;
+
+    function toggleMenu() {
+      isMenuOpen = !isMenuOpen;
+      if (!navbar || !navWrapper || !backdrop || !navContent) return;
+
+      if (isMenuOpen) {
+        navbar.setAttribute("data-state", "open");
+        navWrapper.classList.remove("grid-rows-[0fr]");
+        navWrapper.classList.add("grid-rows-[1fr]");
+        hamburger?.classList.add("active");
+        backdrop.classList.remove("hidden");
+
+        if (iconLogo) iconLogo.style.opacity = "1";
+        if (iconArrow) {
+          iconArrow.classList.add("translate-y-8", "opacity-0");
+          iconArrow.style.opacity = "0";
+        }
+
+        setTimeout(() => backdrop.classList.remove("opacity-0"), 10);
+        setTimeout(() => navContent.classList.remove("opacity-0"), 150);
+      } else {
+        navWrapper.classList.remove("grid-rows-[1fr]");
+        navWrapper.classList.add("grid-rows-[0fr]");
+        hamburger?.classList.remove("active");
+        backdrop.classList.add("opacity-0");
+        navContent.classList.add("opacity-0");
+        setTimeout(() => {
+          navbar.setAttribute("data-state", "closed");
+          backdrop.classList.add("hidden");
+        }, 300);
+        handleScroll();
+      }
+    }
+
+    hamburger?.addEventListener("click", toggleMenu);
+    backdrop?.addEventListener("click", toggleMenu);
+    menuLinks.forEach((link) => link.addEventListener("click", toggleMenu));
+
+    // Top arrow button click: smooth scroll to top and return header to default view
+    btnScrollTop?.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+
+      const checkScrollToTop = () => {
+        if (window.scrollY <= 80) {
+          navbar?.setAttribute("data-scrolled", "false");
+        } else {
+          requestAnimationFrame(checkScrollToTop);
+        }
+      };
+      requestAnimationFrame(checkScrollToTop);
+    });
+
+    function handleScroll() {
+      if (isMenuOpen || !navbar) return;
+      const scrollPosition = window.scrollY;
+      const threshold = 80;
+
+      if (scrollPosition > threshold) {
+        navbar.setAttribute("data-scrolled", "true");
+        if (!isCaseStudy) {
+          if (iconLogo) iconLogo.style.opacity = "0";
+          if (iconArrow) {
+            iconArrow.classList.remove("translate-y-8", "opacity-0");
+            iconArrow.style.opacity = "1";
+            iconArrow.style.transform = "translateY(0)";
+          }
+          if (navStatus) navStatus.style.display = "none";
+          if (navBadge) navBadge.style.display = "none";
+
+          if (brandLink) {
+            brandLink.setAttribute("href", "#");
+            brandLink.onclick = (e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            };
+          }
+        }
+      } else {
+        navbar.setAttribute("data-scrolled", "false");
+        if (!isCaseStudy) {
+          if (iconLogo) iconLogo.style.opacity = "1";
+          if (iconArrow) {
+            iconArrow.classList.add("translate-y-8", "opacity-0");
+            iconArrow.style.opacity = "0";
+          }
+          if (navStatus) navStatus.style.display = "";
+          if (navBadge) navBadge.style.display = "";
+
+          if (brandLink) {
+            brandLink.setAttribute("href", "/");
+            brandLink.onclick = null;
+          }
+        }
+      }
+    }
+
+    window.addEventListener("scroll", () => requestAnimationFrame(handleScroll), { passive: true });
+    handleScroll();
+  }
+
+  setupNav();
+  document.addEventListener("astro:page-load", setupNav);
+</script>
