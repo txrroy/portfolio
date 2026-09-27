@@ -28,15 +28,15 @@ import Header from "./Header.astro";
           class="lg:col-span-7 flex flex-col items-center text-center lg:items-start lg:text-left"
         >
           <!-- Eyebrow -->
-          <small class="eyebrow"> PRODUCT UX // SYSTEMS ARCHITECT </small>
+          <small class="eyebrow text-center lg:text-left"> PRODUCT UX // SYSTEMS ARCHITECT </small>
 
           <!-- Main Display Headline -->
-          <h1>
+          <h1 class="text-center lg:text-left">
             Systematic <br class="hidden sm:block" />by Design.
           </h1>
 
           <!-- Lead Narrative -->
-          <p class="mx-auto lg:mx-0">
+          <p class="mx-auto lg:mx-0 text-center lg:text-left">
             Making sense of AI-powered enterprise systems,<br
               class="hidden sm:inline"
             />
@@ -101,29 +101,27 @@ import Header from "./Header.astro";
   <!-- SELECTED WORK / ENTERPRISE CASE STUDIES                                   -->
   <!-- ========================================================================= -->
   <main
-    class="relative z-10 w-full bg-[var(--color-canvas)] border-t border-black/10 py-24 md:py-32"
+    class="relative z-10 w-full bg-[var(--color-canvas)] border-t border-black/10 py-16 sm:py-20 lg:py-32"
   >
     <section id="work" class="max-w-6xl mx-auto px-6">
       <!-- Section Header -->
       <div
-        class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-4 sm:mb-0"
+        class="w-full mb-6 sm:mb-8 lg:mb-12 flex flex-col items-center lg:items-start text-center lg:text-left"
       >
-        <div class="w-full text-center sm:text-left">
-          <small class="eyebrow">DESIGN CASE STUDIES</small>
-          <h2>Selected Works</h2>
-        </div>
+        <small class="eyebrow text-center lg:text-left">DESIGN CASE STUDIES</small>
+        <h2 class="text-center lg:text-left m-0">Selected Works</h2>
       </div>
 
       <!-- Case Study Cards Stack -->
       <div class="flex flex-col gap-10 w-full">
         <!-- Case Study 01: Vanguard (Apple InfoSec) -->
         <article
-          class="card p-0 md:sticky top-20 z-10 shadow-lg overflow-hidden flex flex-col md:flex-row"
+          class="card p-0 top-0 lg:sticky lg:top-20 z-10 shadow-lg overflow-hidden flex flex-col lg:flex-row"
         >
           <!-- Left 1/4: Image filling 1/4 of the card -->
           <a
             href="/case-study/vanguard"
-            class="block w-full md:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] md:min-h-full self-stretch"
+            class="block w-full lg:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] sm:min-h-[260px] lg:min-h-full self-stretch"
             title="View Vanguard Case Study"
           >
             <img
@@ -135,21 +133,21 @@ import Header from "./Header.astro";
 
           <!-- Right 3/4: Content -->
           <div
-            class="w-full md:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-center md:items-start md:text-left"
+            class="w-full lg:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-center lg:items-start lg:text-left"
           >
-            <div class="w-full flex flex-col items-center md:items-start">
+            <div class="w-full flex flex-col items-center lg:items-start">
               <!-- Systems Meta Badge -->
-              <small class="eyebrow mb-2">
+              <small class="eyebrow mb-2 text-center lg:text-left">
                 SYS // 01 • UNDISCLOSED • PRODUCT UX
               </small>
 
               <!-- Main Title -->
-              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-center lg:text-left">
                 Making Security Work Measurable
               </h3>
 
               <p
-                class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl mx-auto md:mx-0"
+                class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
               >
                 Designed a self-service analytics platform that answered a
                 fundamental question for a large organization, through automated
@@ -158,21 +156,21 @@ import Header from "./Header.astro";
 
               <!-- Impact Metrics: Compact with thin line between each, no card borders -->
               <div
-                class="grid grid-cols-3 divide-x divide-black/10 my-4 py-1 w-full max-w-md mx-auto md:mx-0 md:max-w-none md:flex md:w-auto"
+                class="grid grid-cols-3 divide-x divide-black/10 my-4 py-1 w-full max-w-md mx-auto lg:mx-0 lg:max-w-none lg:flex lg:w-auto"
               >
-                <div class="pr-2 sm:pr-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Coverage</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">30% → 75%</h4>
+                <div class="px-2 sm:px-6 lg:px-0 lg:pr-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Coverage</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">30% → 75%</h4>
                 </div>
-                <div class="px-2 sm:px-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Onboarding</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">
+                <div class="px-2 sm:px-6 lg:px-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Onboarding</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">
                     2 mo → 5 days
                   </h4>
                 </div>
-                <div class="pl-2 sm:pl-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Escalations</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">
+                <div class="px-2 sm:px-6 lg:px-0 lg:pl-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Escalations</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">
                     &gt;50% Cut
                   </h4>
                 </div>
@@ -181,7 +179,7 @@ import Header from "./Header.astro";
 
             <!-- CTA with primary color from case study image -->
             <div
-              class="pt-4 flex justify-center md:justify-start w-full md:w-auto"
+              class="pt-4 flex justify-center lg:justify-start w-full lg:w-auto"
             >
               <a
                 href="/case-study/vanguard"
@@ -197,12 +195,12 @@ import Header from "./Header.astro";
 
         <!-- Case Study 02: HelpNow+ -->
         <article
-          class="card p-0 md:sticky top-24 z-20 shadow-lg overflow-hidden flex flex-col md:flex-row"
+          class="card p-0 top-0 lg:sticky lg:top-24 z-20 shadow-lg overflow-hidden flex flex-col lg:flex-row"
         >
           <!-- Left 1/4: Image filling 1/4 of the card -->
           <a
             href="/case-study/helpnow"
-            class="block w-full md:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] md:min-h-full self-stretch"
+            class="block w-full lg:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] sm:min-h-[260px] lg:min-h-full self-stretch"
             title="View HelpNow+ Case Study"
           >
             <img
@@ -214,19 +212,19 @@ import Header from "./Header.astro";
 
           <!-- Right 3/4: Content -->
           <div
-            class="w-full md:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-center md:items-start md:text-left"
+            class="w-full lg:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-center lg:items-start lg:text-left"
           >
-            <div class="w-full flex flex-col items-center md:items-start">
-              <small class="eyebrow mb-2">
+            <div class="w-full flex flex-col items-center lg:items-start">
+              <small class="eyebrow mb-2 text-center lg:text-left">
                 SYS // 02 • VMWARE • SERVICE INFRASTRUCTURE
               </small>
 
-              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-center lg:text-left">
                 Workplace Support, Humanized
               </h3>
 
               <p
-                class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl mx-auto md:mx-0"
+                class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
               >
                 Transformed fragmented internal service portals into an
                 omnichannel PWA. Reduced expensive support escalations while
@@ -235,25 +233,25 @@ import Header from "./Header.astro";
 
               <!-- Impact Metrics: Compact with thin line between each, no card borders -->
               <div
-                class="grid grid-cols-3 divide-x divide-black/10 my-4 py-1 w-full max-w-md mx-auto md:mx-0 md:max-w-none md:flex md:w-auto"
+                class="grid grid-cols-3 divide-x divide-black/10 my-4 py-1 w-full max-w-md mx-auto lg:mx-0 lg:max-w-none lg:flex lg:w-auto"
               >
-                <div class="pr-2 sm:pr-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Savings</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">$36M+</h4>
+                <div class="px-2 sm:px-6 lg:px-0 lg:pr-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Savings</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">$36M+</h4>
                 </div>
-                <div class="px-2 sm:px-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Productivity</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">2x Boost</h4>
+                <div class="px-2 sm:px-6 lg:px-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Productivity</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">2x Boost</h4>
                 </div>
-                <div class="pl-2 sm:pl-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">CSAT</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">94%</h4>
+                <div class="px-2 sm:px-6 lg:px-0 lg:pl-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">CSAT</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">94%</h4>
                 </div>
               </div>
             </div>
 
             <div
-              class="pt-4 flex justify-center md:justify-start w-full md:w-auto"
+              class="pt-4 flex justify-center lg:justify-start w-full lg:w-auto"
             >
               <a
                 href="/case-study/helpnow"
@@ -269,12 +267,12 @@ import Header from "./Header.astro";
 
         <!-- Case Study 03: DevHub -->
         <article
-          class="card p-0 md:sticky top-28 z-30 shadow-lg overflow-hidden flex flex-col md:flex-row"
+          class="card p-0 top-0 lg:sticky lg:top-28 z-30 shadow-lg overflow-hidden flex flex-col lg:flex-row"
         >
           <!-- Left 1/4: Image filling 1/4 of the card -->
           <a
             href="/case-study/devhub"
-            class="block w-full md:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] md:min-h-full self-stretch"
+            class="block w-full lg:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] sm:min-h-[260px] lg:min-h-full self-stretch"
             title="View DevHub Case Study"
           >
             <img
@@ -286,19 +284,19 @@ import Header from "./Header.astro";
 
           <!-- Right 3/4: Content -->
           <div
-            class="w-full md:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-center md:items-start md:text-left"
+            class="w-full lg:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-center lg:items-start lg:text-left"
           >
-            <div class="w-full flex flex-col items-center md:items-start">
-              <small class="eyebrow mb-2">
+            <div class="w-full flex flex-col items-center lg:items-start">
+              <small class="eyebrow mb-2 text-center lg:text-left">
                 SYS // 03 • VMWARE • DEVELOPER EXPERIENCE
               </small>
 
-              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-center lg:text-left">
                 Developer Ecosystem, Unified
               </h3>
 
               <p
-                class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl mx-auto md:mx-0"
+                class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
               >
                 Consolidated 14 disparate developer tools, SDK docs, and runtime
                 environments into a single coherent portal for 20,000+
@@ -307,25 +305,25 @@ import Header from "./Header.astro";
 
               <!-- Impact Metrics: Compact with thin line between each, no card borders -->
               <div
-                class="grid grid-cols-3 divide-x divide-black/10 my-4 py-1 w-full max-w-md mx-auto md:mx-0 md:max-w-none md:flex md:w-auto"
+                class="grid grid-cols-3 divide-x divide-black/10 my-4 py-1 w-full max-w-md mx-auto lg:mx-0 lg:max-w-none lg:flex lg:w-auto"
               >
-                <div class="pr-2 sm:pr-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Scale</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">20k+ Devs</h4>
+                <div class="px-2 sm:px-6 lg:px-0 lg:pr-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Scale</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">20k+ Devs</h4>
                 </div>
-                <div class="px-2 sm:px-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Friction</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">-65%</h4>
+                <div class="px-2 sm:px-6 lg:px-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Friction</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">-65%</h4>
                 </div>
-                <div class="pl-2 sm:pl-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Unified</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">14 Tools</h4>
+                <div class="px-2 sm:px-6 lg:px-0 lg:pl-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Unified</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">14 Tools</h4>
                 </div>
               </div>
             </div>
 
             <div
-              class="pt-4 flex justify-center md:justify-start w-full md:w-auto"
+              class="pt-4 flex justify-center lg:justify-start w-full lg:w-auto"
             >
               <a
                 href="/case-study/devhub"
@@ -341,12 +339,12 @@ import Header from "./Header.astro";
 
         <!-- Case Study 04: VLP (VMware Learning Platform) -->
         <article
-          class="card p-0 md:sticky top-32 z-40 shadow-lg overflow-hidden flex flex-col md:flex-row"
+          class="card p-0 top-0 lg:sticky lg:top-32 z-40 shadow-lg overflow-hidden flex flex-col lg:flex-row"
         >
           <!-- Left 1/4: Image filling 1/4 of the card -->
           <a
             href="/case-study/vlp"
-            class="block w-full md:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] md:min-h-full self-stretch"
+            class="block w-full lg:w-1/4 shrink-0 relative overflow-hidden group/img min-h-[220px] sm:min-h-[260px] lg:min-h-full self-stretch"
             title="View VMware Learning Platform Case Study"
           >
             <img
@@ -358,19 +356,19 @@ import Header from "./Header.astro";
 
           <!-- Right 3/4: Content -->
           <div
-            class="w-full md:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-center md:items-start md:text-left"
+            class="w-full lg:w-3/4 p-6 sm:p-8 md:p-10 flex flex-col justify-between items-center text-center lg:items-start lg:text-left"
           >
-            <div class="w-full flex flex-col items-center md:items-start">
-              <small class="eyebrow mb-2">
+            <div class="w-full flex flex-col items-center lg:items-start">
+              <small class="eyebrow mb-2 text-center lg:text-left">
                 SYS // 04 • VMWARE • SAAS TRANSFORMATION
               </small>
 
-              <h3 class="text-2xl sm:text-3xl font-bold mb-3">
+              <h3 class="text-2xl sm:text-3xl font-bold mb-3 text-center lg:text-left">
                 From Internal Tool to $1M+ SaaS
               </h3>
 
               <p
-                class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl mx-auto md:mx-0"
+                class="text-base text-[var(--color-text-secondary)] leading-relaxed mb-4 max-w-2xl mx-auto lg:mx-0 text-center lg:text-left"
               >
                 Led the product design transformation that reshaped an aging
                 internal infrastructure tool into a commercial cloud training
@@ -379,19 +377,19 @@ import Header from "./Header.astro";
 
               <!-- Impact Metrics: Compact with thin line between each, no card borders -->
               <div
-                class="grid grid-cols-3 divide-x divide-black/10 my-4 py-1 w-full max-w-md mx-auto md:mx-0 md:max-w-none md:flex md:w-auto"
+                class="grid grid-cols-3 divide-x divide-black/10 my-4 py-1 w-full max-w-md mx-auto lg:mx-0 lg:max-w-none lg:flex lg:w-auto"
               >
-                <div class="pr-2 sm:pr-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Revenue</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">$1M+ ARR</h4>
+                <div class="px-2 sm:px-6 lg:px-0 lg:pr-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Revenue</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">$1M+ ARR</h4>
                 </div>
-                <div class="px-2 sm:px-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Scale</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">100k+ Labs</h4>
+                <div class="px-2 sm:px-6 lg:px-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Scale</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">100k+ Labs</h4>
                 </div>
-                <div class="pl-2 sm:pl-8 py-1 text-center md:text-left">
-                  <small class="eyebrow mb-1">Commercial</small>
-                  <h4 class="text-lg sm:text-2xl font-bold mb-0">
+                <div class="px-2 sm:px-6 lg:px-0 lg:pl-8 py-1 text-center lg:text-left">
+                  <small class="eyebrow mb-1 text-center lg:text-left">Commercial</small>
+                  <h4 class="text-lg sm:text-2xl font-bold mb-0 text-center lg:text-left">
                     15+ Partners
                   </h4>
                 </div>
@@ -399,7 +397,7 @@ import Header from "./Header.astro";
             </div>
 
             <div
-              class="pt-4 flex justify-center md:justify-start w-full md:w-auto"
+              class="pt-4 flex justify-center lg:justify-start w-full lg:w-auto"
             >
               <a
                 href="/case-study/vlp"
@@ -424,25 +422,25 @@ import Header from "./Header.astro";
     class="relative z-10 w-full py-24 md:py-32 bg-[var(--color-canvas)] border-t border-black/10"
   >
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid lg:grid-cols-12 gap-12 items-center mb-24">
+      <div class="grid lg:grid-cols-12 gap-12 items-center mb-20 lg:mb-24">
         <!-- Text Column -->
         <div
           class="lg:col-span-6 flex flex-col items-center text-center lg:items-start lg:text-left"
         >
-          <small class="eyebrow">ABOUT // PHILOSOPHY</small>
+          <small class="eyebrow text-center lg:text-left">ABOUT // PHILOSOPHY</small>
 
-          <h2>
+          <h2 class="text-center lg:text-left">
             Rooted in Purpose <br class="hidden sm:block" />and Play.
           </h2>
 
-          <p class="mx-auto lg:mx-0">
+          <p class="mx-auto lg:mx-0 text-center lg:text-left">
             Enterprise software doesn't have to feel like bureaucratic
             punishment. I lead inclusive, high-trust teams that tackle complex
             plumbing with curiosity, humor, and relentless craft.
           </p>
 
           <blockquote
-            class="border-l-0 lg:border-l-3 border-[#f6c867] pl-0 lg:pl-6 my-8 text-center lg:text-left"
+            class="border-l-0 lg:border-l-3 border-[#f6c867] pl-0 lg:pl-6 my-8 text-center lg:text-left mx-auto lg:mx-0"
           >
             "Why messy enterprise plumbing? Because that's where the leverage
             is."
@@ -481,63 +479,66 @@ import Header from "./Header.astro";
         </div>
       </div>
 
+      <!-- Testimonials Header -->
+      <div class="pt-16 border-t border-black/10 mb-8 flex flex-col items-center lg:items-start text-center lg:text-left">
+        <small class="eyebrow mb-0 text-center lg:text-left">PEER TELEMETRY // TESTIMONIALS</small>
+      </div>
+
       <!-- Testimonials Grid -->
-      <div>
-        <div class="grid md:grid-cols-2 gap-8">
-          <!-- Joy Busse -->
-          <div
-            class="card flex flex-col justify-between items-center text-center sm:items-start sm:text-left"
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Joy Busse -->
+        <div
+          class="card flex flex-col justify-between items-center text-center lg:items-start lg:text-left"
+        >
+          <blockquote
+            class="border-l-0 lg:border-l-3 border-[#f6c867] pl-0 lg:pl-6 my-4 text-center lg:text-left"
           >
-            <blockquote
-              class="border-l-0 sm:border-l-3 border-[#f6c867] pl-0 sm:pl-6 my-4 text-center sm:text-left"
-            >
-              "Tushar brings people together. His energy and commitment led to a
-              standout enterprise culture. From internal conferences to engaging
-              podcasts, Tushar was the driving force behind many impactful
-              initiatives."
-            </blockquote>
-            <div
-              class="flex items-center justify-center sm:justify-start gap-3 pt-4 border-t border-black/10 w-full"
-            >
-              <img
-                src="/images/testimonial-joy.jpeg"
-                alt="Joy Busse"
-                class="w-10 h-10 rounded-full object-cover border border-black/10 shrink-0"
-              />
-              <div class="text-left">
-                <small class="eyebrow m-0 font-bold">Joy Busse</small>
-                <figcaption class="m-0 text-left">
-                  Sr. Director of UX, Cribl
-                </figcaption>
-              </div>
+            "Tushar brings people together. His energy and commitment led to a
+            standout enterprise culture. From internal conferences to engaging
+            podcasts, Tushar was the driving force behind many impactful
+            initiatives."
+          </blockquote>
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-4 border-t border-black/10 w-full text-center sm:text-left lg:text-left"
+          >
+            <img
+              src="/images/testimonial-joy.jpeg"
+              alt="Joy Busse"
+              class="w-10 h-10 rounded-full object-cover border border-black/10 shrink-0"
+            />
+            <div class="text-center sm:text-left lg:text-left">
+              <small class="eyebrow m-0 font-bold text-center sm:text-left lg:text-left">Joy Busse</small>
+              <figcaption class="m-0 text-center sm:text-left lg:text-left">
+                Sr. Director of UX, Cribl
+              </figcaption>
             </div>
           </div>
+        </div>
 
-          <!-- Razz Cortes-Maceda -->
-          <div
-            class="card flex flex-col justify-between items-center text-center sm:items-start sm:text-left"
+        <!-- Razz Cortes-Maceda -->
+        <div
+          class="card flex flex-col justify-between items-center text-center lg:items-start lg:text-left"
+        >
+          <blockquote
+            class="border-l-0 lg:border-l-3 border-[#f6c867] pl-0 lg:pl-6 my-4 text-center lg:text-left"
           >
-            <blockquote
-              class="border-l-0 sm:border-l-3 border-[#f6c867] pl-0 sm:pl-6 my-4 text-center sm:text-left"
-            >
-              "Tushar's talents extend beyond design — he is a problem solver.
-              His leadership of the UI dev team allowed us to stay on course. It
-              would be a privilege to work with him again."
-            </blockquote>
-            <div
-              class="flex items-center justify-center sm:justify-start gap-3 pt-4 border-t border-black/10 w-full"
-            >
-              <img
-                src="/images/testimonial-razz.jpeg"
-                alt="Razz Cortes-Maceda"
-                class="w-10 h-10 rounded-full object-cover border border-black/10 shrink-0"
-              />
-              <div class="text-left">
-                <small class="eyebrow m-0 font-bold">Razz Cortes-Maceda</small>
-                <figcaption class="m-0 text-left">
-                  VP Digital Strategy, Bellco
-                </figcaption>
-              </div>
+            "Tushar's talents extend beyond design — he is a problem solver.
+            His leadership of the UI dev team allowed us to stay on course. It
+            would be a privilege to work with him again."
+          </blockquote>
+          <div
+            class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 pt-4 border-t border-black/10 w-full text-center sm:text-left lg:text-left"
+          >
+            <img
+              src="/images/testimonial-razz.jpeg"
+              alt="Razz Cortes-Maceda"
+              class="w-10 h-10 rounded-full object-cover border border-black/10 shrink-0"
+            />
+            <div class="text-center sm:text-left lg:text-left">
+              <small class="eyebrow m-0 font-bold text-center sm:text-left lg:text-left">Razz Cortes-Maceda</small>
+              <figcaption class="m-0 text-center sm:text-left lg:text-left">
+                VP Digital Strategy, Bellco
+              </figcaption>
             </div>
           </div>
         </div>
@@ -553,27 +554,27 @@ import Header from "./Header.astro";
     class="relative z-10 w-full py-24 md:py-32 bg-[var(--color-canvas)] border-t border-black/10"
   >
     <div
-      class="max-w-6xl mx-auto px-6 flex flex-col items-center md:items-start text-center md:text-left"
+      class="max-w-6xl mx-auto px-6 flex flex-col items-center lg:items-start text-center lg:text-left"
     >
-      <small class="eyebrow mb-2">THOUGHT LEADERSHIP</small>
+      <small class="eyebrow mb-2 text-center lg:text-left">THOUGHT LEADERSHIP</small>
 
-      <h2>Beyond the Product.</h2>
+      <h2 class="text-center lg:text-left">Beyond the Product.</h2>
 
       <!-- Podcast Card -->
       <div
-        class="card p-8 md:p-12 grid md:grid-cols-12 gap-8 items-center w-full"
+        class="card p-8 md:p-12 grid lg:grid-cols-12 gap-8 items-center w-full"
       >
         <div
-          class="md:col-span-6 flex flex-col items-center md:items-start text-center md:text-left"
+          class="lg:col-span-6 flex flex-col items-center lg:items-start text-center lg:text-left"
         >
-          <small class="eyebrow">CO-HOST & PRODUCER</small>
-          <h3>The Enterprise Design Podcast</h3>
-          <p class="mx-auto md:mx-0">
+          <small class="eyebrow text-center lg:text-left">CO-HOST & PRODUCER</small>
+          <h3 class="text-center lg:text-left">The Enterprise Design Podcast</h3>
+          <p class="mx-auto lg:mx-0 text-center lg:text-left">
             Co-created and hosted this series to explore how we can humanize
             enterprise software at scale, bringing Engineers, PMs, and Designers
             to the same candid table.
           </p>
-          <div class="flex justify-center md:justify-start w-full">
+          <div class="flex justify-center lg:justify-start w-full">
             <a
               href="https://open.spotify.com/show/3klvSJS3QPLVLYBEf7UDWF"
               target="_blank"
@@ -585,8 +586,8 @@ import Header from "./Header.astro";
           </div>
         </div>
 
-        <div class="md:col-span-6 hidden md:block text-left">
-          <figure class="m-0">
+        <div class="lg:col-span-6 w-full text-center lg:text-left">
+          <figure class="m-0 text-center lg:text-left">
             <div class="media-frame">
               <iframe
                 style="border-radius:12px"
@@ -598,7 +599,7 @@ import Header from "./Header.astro";
                 allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                 loading="lazy"></iframe>
             </div>
-            <figcaption>Featured Episode: Spotify Embed</figcaption>
+            <figcaption class="text-center lg:text-left">Featured Episode: Spotify Embed</figcaption>
           </figure>
         </div>
       </div>
@@ -612,23 +613,23 @@ import Header from "./Header.astro";
     class="relative z-10 w-full bg-[var(--color-canvas)] py-24 border-t border-black/10"
   >
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-12 gap-12 mb-20 items-start">
+      <div class="grid lg:grid-cols-12 gap-12 mb-20 items-start">
         <!-- Left: Headline -->
         <div
-          class="md:col-span-6 text-center md:text-left flex flex-col items-center md:items-start"
+          class="lg:col-span-6 text-center lg:text-left flex flex-col items-center lg:items-start"
         >
-          <small class="eyebrow">INITIALIZE DIALOGUE</small>
-          <h2>
+          <small class="eyebrow text-center lg:text-left">INITIALIZE DIALOGUE</small>
+          <h2 class="text-center lg:text-left">
             Let's Make <br class="hidden sm:block" />It Happen.
           </h2>
-          <p class="mx-auto md:mx-0">
+          <p class="mx-auto lg:mx-0 text-center lg:text-left">
             Big ideas. Messy problems. Unclear paths. If you’re navigating any
             of that, or need a sounding board for complex systems, let's talk.
           </p>
         </div>
 
         <!-- Right: Actions in Secondary Buttons -->
-        <div class="md:col-span-6 flex flex-col gap-3 pt-2">
+        <div class="lg:col-span-6 flex flex-col gap-3 pt-2 w-full max-w-md mx-auto lg:mx-0">
           <a
             href="https://www.linkedin.com/in/tusharroy"
             target="_blank"
@@ -668,9 +669,9 @@ import Header from "./Header.astro";
       </div>
 
       <div
-        class="pt-8 border-t border-black/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left"
+        class="pt-8 border-t border-black/10 flex flex-col lg:flex-row items-center justify-between gap-4 text-center lg:text-left"
       >
-        <small class="eyebrow m-0 text-center sm:text-left"
+        <small class="eyebrow m-0 text-center lg:text-left"
           >© {new Date().getFullYear()} Tushar Roy • Fremont, California</small
         >
         <div class="flex items-center justify-center gap-6">
