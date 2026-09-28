@@ -154,7 +154,13 @@
 
     figure>div.media-frame,
     figure>.media-frame {
-        @apply bg-neutral-100 border border-black/15 overflow-hidden relative;
+        @apply bg-neutral-100 overflow-hidden relative;
+    }
+
+    figure>div.media-frame::after,
+    figure>.media-frame::after {
+        content: "";
+        @apply absolute inset-0 border border-black/15 pointer-events-none z-10;
     }
 
     figure img {

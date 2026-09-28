@@ -4,11 +4,11 @@
 
 <div
     id="image-zoom-overlay"
-    class="fixed inset-0 bg-black/90 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4"
+    class="fixed inset-0 bg-black/90 z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4 cursor-zoom-out"
 >
     <button
         id="image-zoom-close"
-        class="absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none"
+        class="absolute top-4 right-4 text-white hover:text-gray-300 focus:outline-none cursor-pointer"
         aria-label="Close zoom"
     >
         <svg
@@ -30,7 +30,7 @@
         id="image-zoom-img"
         src=""
         alt="Zoomed view"
-        class="max-w-full max-h-full object-contain shadow-2xl rounded-sm"
+        class="max-w-full max-h-full object-contain shadow-2xl rounded-sm cursor-default"
     />
 </div>
 
@@ -80,11 +80,12 @@
     // Close button
     closeBtn?.addEventListener("click", closeZoom);
 
-    // Close on click outside (overlay background)
+    // Close on click outside (blank area or overlay background)
     overlay?.addEventListener("click", (e) => {
-        if (e.target === overlay) {
-            closeZoom();
-        }
+        const target = e.target as HTMLElement | null;
+        if (!target) return;
+        if (target === zoomImg || zoomImg?.contains(target)) return;
+        closeZoom();
     });
 
     // Close on Escape key

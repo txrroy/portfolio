@@ -156,14 +156,14 @@ const resolvedNextLabel = Astro.props.nextLabel || defaultNextLabel;
   <!-- Image Zoom Lightbox Overlay with Gallery Navigation -->
   <div
     id="image-zoom-overlay"
-    class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-300 flex flex-col items-center justify-between p-4 sm:p-6 select-none"
+    class="fixed inset-0 bg-black/95 z-50 hidden opacity-0 transition-opacity duration-300 flex flex-col items-center justify-between p-4 sm:p-6 select-none cursor-zoom-out"
     role="dialog"
     aria-modal="true"
     aria-label="Image Preview Gallery"
   >
     <!-- Top Bar with Title, Counter, and Close Button -->
     <div
-      class="w-full max-w-6xl flex items-center justify-between text-white font-mono text-xs mb-3 px-2 z-20"
+      class="w-full max-w-6xl flex items-center justify-between text-white font-mono text-xs mb-3 px-2 z-20 cursor-default"
     >
       <div class="flex items-center gap-3 truncate max-w-lg">
         <span id="zoom-title" class="truncate text-white/90 font-sans text-sm">
@@ -189,7 +189,7 @@ const resolvedNextLabel = Astro.props.nextLabel || defaultNextLabel;
 
     <!-- Center Viewport with Floating Left / Right Navigation Arrows -->
     <div
-      class="relative max-w-6xl max-h-[82vh] w-full flex-1 flex items-center justify-center overflow-hidden my-auto"
+      class="relative max-w-6xl max-h-[82vh] w-full flex-1 flex items-center justify-center overflow-hidden my-auto cursor-zoom-out"
     >
       <!-- Previous Arrow Button -->
       <button
@@ -217,7 +217,7 @@ const resolvedNextLabel = Astro.props.nextLabel || defaultNextLabel;
         id="image-zoom-img"
         src=""
         alt="Full size view"
-        class="max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg border border-white/15 transition-opacity duration-200"
+        class="max-w-full max-h-[80vh] object-contain shadow-2xl rounded-lg border border-white/15 transition-opacity duration-200 cursor-default"
       />
 
       <!-- Next Arrow Button -->
@@ -328,14 +328,27 @@ const resolvedNextLabel = Astro.props.nextLabel || defaultNextLabel;
       updateZoomView(currentIndex + 1);
     });
 
-    closeBtn?.addEventListener("click", closeZoom);
+    closeBtn?.addEventListener("click", (e) => {
+      e.stopPropagation();
+      closeZoom();
+    });
+
     overlay?.addEventListener("click", (e) => {
-      if (
-        e.target === overlay ||
-        (e.target as HTMLElement).id === "zoom-title"
-      ) {
-        closeZoom();
+      const target = e.target as HTMLElement | null;
+      if (!target) return;
+
+      // Do not close if clicking directly on the image itself
+      if (target === zoomImg || zoomImg?.contains(target)) {
+        return;
       }
+
+      // Do not close if clicking navigation arrows
+      if (prevBtn?.contains(target) || nextBtn?.contains(target)) {
+        return;
+      }
+
+      // Any click on a blank area (overlay background, viewport container, top/bottom bars) closes the overlay
+      closeZoom();
     });
 
     // Keyboard navigation: ArrowLeft, ArrowRight, Escape
@@ -359,11 +372,34 @@ const resolvedNextLabel = Astro.props.nextLabel || defaultNextLabel;
       const allKickers = document.querySelectorAll<HTMLElement>(".kicker");
       if (!allKickers.length) return;
 
+      // In case of mobile, kickers remain static with no animation
+      const isMobile =
+        window.innerWidth < 768 ||
+        window.matchMedia("(max-width: 767px)").matches;
+      if (
+        isMobile ||
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        allKickers.forEach((kicker) => {
+          const raw =
+            kicker.getAttribute("data-text") ||
+            kicker.textContent?.trim() ||
+            "";
+          if (raw) kicker.textContent = raw;
+          kicker.style.opacity = "1";
+        });
+        return;
+      }
+
       // Initialize eligible kickers (exclude role, team, and outcome)
       allKickers.forEach((kicker) => {
         const text = kicker.textContent?.trim().toLowerCase() || "";
         const isHeroMetadata = kicker.closest(".grid") !== null;
-        const isExcluded = isHeroMetadata || text === "role" || text === "team" || text === "outcome";
+        const isExcluded =
+          isHeroMetadata ||
+          text === "role" ||
+          text === "team" ||
+          text === "outcome";
 
         if (isExcluded) return; // Keep static and visible
 
@@ -418,6 +454,24 @@ const resolvedNextLabel = Astro.props.nextLabel || defaultNextLabel;
           observer.observe(kicker);
         }
       });
+
+      // Handle window resize dynamically
+      window.addEventListener(
+        "resize",
+        () => {
+          if (window.innerWidth < 768) {
+            allKickers.forEach((kicker) => {
+              const raw =
+                kicker.getAttribute("data-text") ||
+                kicker.textContent?.trim() ||
+                "";
+              if (raw) kicker.textContent = raw;
+              kicker.style.opacity = "1";
+            });
+          }
+        },
+        { passive: true }
+      );
     }
 
     // Password protection gate script

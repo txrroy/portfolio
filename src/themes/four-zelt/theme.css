@@ -138,8 +138,18 @@
         @apply overflow-hidden relative rounded-lg;
     }
 
+    figure>div.media-frame::after,
+    figure>.media-frame::after {
+        content: "";
+        @apply absolute inset-0 rounded-lg border border-black/10 pointer-events-none z-10;
+    }
+
     figure img {
-        @apply w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 block rounded-lg border border-black/10;
+        @apply w-full h-auto object-contain cursor-zoom-in transition-transform duration-300 block rounded-lg;
+    }
+
+    figure:not(:has(.media-frame)) img {
+        @apply border border-black/10;
     }
 
     figure:hover img {

@@ -133,7 +133,13 @@
 
     figure>div.media-frame,
     figure>.media-frame {
-        @apply bg-[#f4eee6] overflow-hidden relative rounded-xl border border-black/10;
+        @apply bg-[#f4eee6] overflow-hidden relative rounded-xl;
+    }
+
+    figure>div.media-frame::after,
+    figure>.media-frame::after {
+        content: "";
+        @apply absolute inset-0 rounded-xl border border-black/10 pointer-events-none z-10;
     }
 
     figure img {
