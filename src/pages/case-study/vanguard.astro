@@ -658,17 +658,21 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 			<!-- Left Column -->
 			<div class="case-sidebar">
 				<small class="kicker">design</small>
-				<h2>3. Human-in-the-loop anomaly analysis</h2>
+				<h2>3. AI drafts the analysis. A person owns it.</h2>
 			</div>
 
 			<!-- Right Column -->
 			<div class="case-content">
 				<p>
-					When a measure broke its control limits, an automated
-					analysis was drafted by an agent and a notification sent to
-					the directly responsible individual (DRI). Once edited and
-					approved by the DRI, the analysis was available on the
-					dashboard.
+					Detection could be automatic, but every explanation needed
+					an owner. When a measure broke its control limits, an agent
+					drafted the analysis and notified the directly responsible
+					individual (DRI). The DRI edited and approved it before it
+					became the official analysis on the dashboard.
+				</p>
+				<p>
+					I built this flow as a working prototype in code, including
+					the agent-drafted analysis and the DRI sign-off.
 				</p>
 
 				<!-- Trade-off Box -->
@@ -683,9 +687,10 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 						and insisted on viewing AI analysis as well.
 					</p>
 					<p>
-						<strong>Solution:</strong> We added a confidence score along
-						with reasoning. Most importantly, I made it very clear visibly
-						when somebody was looking at automated analysis.
+						<strong>Solution:</strong> We showed the AI analysis right
+						away, with a confidence score and its reasoning. Most
+						importantly, I made it obvious whenever someone was looking
+						at automated analysis instead of a signed-off one.
 					</p>
 				</div>
 
@@ -869,9 +874,9 @@ import CaseStudyLayout from "../../layouts/CaseStudyLayout.astro";
 
 				<!-- Confidentiality Note -->
 				<figcaption class="mt-8">
-					Note: All screens in this case study are representative
-					recreations. Names, values, and the project name are
-					fictitious.
+					Note: I built every screen in this case study in code, as a
+					working prototype. They are representative recreations:
+					names, values, and the project name are fictitious.
 				</figcaption>
 			</div>
 		</div>
