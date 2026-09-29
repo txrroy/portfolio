@@ -76,22 +76,25 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
 
     <!-- Right: Quick Navigation (Shown by default on all pages) -->
     <div class="nav-divider hidden sm:block w-px h-3.5 bg-black/15"></div>
-    <div class="hidden sm:flex items-center gap-3 text-xs font-mono tracking-wider">
+    <div
+      id="nav-quick-links"
+      class="nav-quick-links hidden sm:flex items-center gap-3 text-xs font-mono tracking-wider"
+    >
       <a
         href={isCaseStudyPage ? "/#work" : "#work"}
-        class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
+        class="menu-quick-link text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
       >
         <span class="text-black/40 mr-0.5">01.</span>WORK
       </a>
       <a
         href="/#about"
-        class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
+        class="menu-quick-link text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
       >
         <span class="text-black/40 mr-0.5">02.</span>ABOUT
       </a>
       <a
         href={isCaseStudyPage ? "/#podcast" : "#podcast"}
-        class="text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
+        class="menu-quick-link text-black/70 hover:text-[var(--color-accent)] transition-colors no-underline"
       >
         <span class="text-black/40 mr-0.5">03.</span>PODCAST
       </a>
@@ -230,19 +233,19 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
     <div class="overflow-hidden">
       <div
         id="nav-content"
-        class="px-6 pb-6 pt-2 flex flex-col gap-5 opacity-0 transition-opacity duration-300 delay-100"
+        class="px-6 pb-6 pt-0 flex flex-col gap-5 opacity-0 transition-opacity duration-300 delay-100"
       >
-        <div class="h-px bg-black/10 my-1"></div>
+        <div class="h-px bg-black/10 w-full"></div>
 
         <!-- Main Links: 4 Case Studies + 1 Podcast + About -->
-        <nav class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs pt-1">
+        <nav class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-4 font-mono text-xs">
           <!-- Case Study 01: Project Vanguard -->
           <a
             href="/case-study/vanguard"
             class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
-              <span>01 // APPLE INFOSEC</span>
+              <span>01</span>
               <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Project Vanguard</span>
@@ -255,7 +258,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
             class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
-              <span>02 // VMWARE</span>
+              <span>02</span>
               <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">HelpNow+</span>
@@ -268,7 +271,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
             class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
-              <span>03 // VMWARE</span>
+              <span>03</span>
               <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">DevHub</span>
@@ -281,7 +284,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
             class="menu-link py-2 px-2 -mx-2 rounded-lg hover:bg-black/[0.025] transition-all no-underline flex flex-col gap-1 text-[var(--color-text-primary)] group"
           >
             <div class="flex items-center justify-between text-[10px] text-black/50 uppercase tracking-widest font-bold">
-              <span>04 // VMWARE</span>
+              <span>04</span>
               <span class="text-[var(--color-accent)] opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all">↗</span>
             </div>
             <span class="font-sans font-medium text-base text-[var(--color-text-primary)] group-hover:text-[var(--color-accent)] transition-colors">Learning Platform</span>
@@ -380,6 +383,33 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
     width: min(92vw, 560px) !important;
   }
 
+  /* Expanded menu first line styling: full width, vertically centered, X on the right, menu items equidistant */
+  #navbar[data-state="open"] #nav-default-view {
+    display: flex !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 1.125rem 1.5rem !important;
+    gap: 0 !important;
+  }
+
+  #navbar[data-state="open"] .nav-divider {
+    display: none !important;
+  }
+
+  #navbar[data-state="open"] .nav-quick-links {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  #navbar[data-state="open"] #brand-link {
+    flex-shrink: 0 !important;
+  }
+
+  #navbar[data-state="open"] #hamburger {
+    flex-shrink: 0 !important;
+  }
+
   /* When scrolled on case study and drawer is closed: dock to left edge and hug icons */
   #navbar[data-case-study="true"][data-scrolled="true"]:not([data-state="open"]) {
     left: 1rem;
@@ -419,7 +449,7 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
     const backdrop = document.getElementById("backdrop");
     const navWrapper = document.getElementById("nav-wrapper");
     const navContent = document.getElementById("nav-content");
-    const menuLinks = document.querySelectorAll(".menu-link");
+    const menuLinks = document.querySelectorAll(".menu-link, .menu-quick-link");
     const iconLogo = document.getElementById("icon-logo");
     const iconArrow = document.getElementById("icon-arrow");
     const brandLink = document.getElementById("brand-link");
@@ -466,7 +496,13 @@ const isCaseStudyPage = isCaseStudy || breadcrumbs.length > 0 || Astro.url.pathn
     hamburger?.addEventListener("click", toggleMenu);
     hamburgerCompact?.addEventListener("click", toggleMenu);
     backdrop?.addEventListener("click", toggleMenu);
-    menuLinks.forEach((link) => link.addEventListener("click", toggleMenu));
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (isMenuOpen) {
+          toggleMenu();
+        }
+      });
+    });
 
     // Top arrow button click: smooth scroll to top and return header to default view
     btnScrollTop?.addEventListener("click", (e) => {
