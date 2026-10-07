@@ -1,43 +1,68 @@
-# Astro Starter Kit: Minimal
+# Portfolio
+
+Source code for [tusharroy.com](https://www.tusharroy.com), the portfolio of Tushar Roy, Staff Product Designer and Design Engineer.
+
+I designed and built this site in code. It shows how I work: I define the design system first, then build pages from it.
+
+## What to look at
+
+- **Four switchable themes.** One codebase renders four different visual designs. One environment variable selects the theme at build time.
+- **A documented design system.** Colors, type styles, and components are listed at [tusharroy.com/design-system](https://www.tusharroy.com/design-system/).
+- **Theme-independent routes.** The home route imports from the active theme, so a theme can change the full layout without changes to the route.
+- **Built with AI coding agents.** The rules the agents follow are in `.agents/rules/` and `.claude/`.
+
+## How theming works
+
+`astro.config.mjs` reads the `THEME` environment variable and points the `@theme` alias to the matching folder in `src/themes/`.
+
+```js
+// src/pages/index.astro
+import HomePage from "@theme/HomePage.astro";
+```
+
+| Theme | Dev command | Build command |
+| --- | --- | --- |
+| `one-dog` | `npm run dev:one` | `npm run build:one` |
+| `two-printer` | `npm run dev:two` | `npm run build:two` |
+| `three-hybrid` | `npm run dev:three` | `npm run build:three` |
+| `four-zelt` (default) | `npm run dev` | `npm run build` |
+
+You can also set the variable directly:
 
 ```sh
-npm create astro@latest -- --template minimal
+THEME=two-printer npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- [Astro 5](https://astro.build)
+- [Tailwind CSS 4](https://tailwindcss.com), through the Vite plugin
+- TypeScript
 
-Inside of your Astro project, you'll see the following folders and files:
+## Run locally
+
+```sh
+npm install
+npm run dev        # start the dev server at localhost:4321
+npm run build      # build the site to ./dist/
+npm run preview    # preview the build
+```
+
+## Project structure
 
 ```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+.agents/rules/     rules for AI coding agents
+.claude/           Claude Code settings
+public/            images and static files
+src/
+  layouts/         shared layouts, such as the case study layout
+  pages/           routes
+  themes/          one folder per theme
+astro.config.mjs   theme selection and the @theme alias
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Contact
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+- Website: [tusharroy.com](https://www.tusharroy.com)
+- LinkedIn: [linkedin.com/in/tusharroy](https://www.linkedin.com/in/tusharroy)
+- Email: [contact@tusharroy.com](mailto:contact@tusharroy.com)
